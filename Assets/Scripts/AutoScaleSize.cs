@@ -14,25 +14,38 @@ public class AutoScaleSprites : MonoBehaviour
         float screenHeight = Camera.main.orthographicSize * 2;
         float screenWidth = screenHeight * Camera.main.aspect;
 
-        float baseWidth = 1704f;
-        float baseHeight = 786f;
-        float baseRatio = baseWidth / baseHeight;
-        float screenRatio = screenWidth / screenHeight;
-
-        // 根據比例決定縮放方式
-        float scale;
-        if (screenRatio < baseRatio)
+        Transform background = transform.Find("Background");
+        if (background != null)
         {
-            // 螢幕比較寬，依高度縮放（留左右黑邊）
-            scale = screenHeight / baseHeight * 100;
-        }
-        else
-        {
-            // 螢幕比較高，依寬度縮放（留上下黑邊）
-            scale = screenWidth / baseWidth * 100;
-        }
+            SpriteRenderer sr = background.GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                // 取得 sprite 原始大小（單位：世界座標）
+                Vector2 spriteSize = sr.sprite.bounds.size;
 
-        // 設定 container 的 scale
-        transform.localScale = new Vector3(scale, scale, 1);
+                // 計算要填滿螢幕的 scale
+                float bgScaleX = screenWidth / spriteSize.x;
+                float bgScaleY = screenHeight / spriteSize.y;
+
+                // 維持比例
+                float scale = Mathf.Min(bgScaleX, bgScaleY);
+
+                Debug.Log($"Screen: {screenWidth}x{screenHeight}, Sprite: {spriteSize.x}x{spriteSize.y}, Scale: {bgScaleX}, {bgScaleY}");
+
+                background.localScale = new Vector3(scale, scale, 1);
+            }
+        }
+    }
+
+    // 用 gizmo 畫出 screen 範圍
+    void OnDrawGizmos()
+    {
+        if (Camera.main == null) return;
+
+        float screenHeight = Camera.main.orthographicSize * 2;
+        float screenWidth = screenHeight * Camera.main.aspect;
+
+        Gizmos.color = new Color(1, 0, 0, 0.5f);
+        Gizmos.DrawCube(Vector3.zero, new Vector3(screenWidth, screenHeight, 0));
     }
 }
