@@ -788,10 +788,10 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    Android: TMP_PRESENT;USE_NEW_INPUT
-    Standalone: TMP_PRESENT;USE_NEW_INPUT
-    WebGL: TMP_PRESENT;USE_NEW_INPUT
-    iPhone: TMP_PRESENT;USE_NEW_INPUT
+    Android: TMP_PRESENT;USE_NEW_INPUT;USE_PHYSICS2D
+    Standalone: TMP_PRESENT;USE_NEW_INPUT;USE_PHYSICS2D
+    WebGL: TMP_PRESENT;USE_NEW_INPUT;USE_PHYSICS2D
+    iPhone: TMP_PRESENT;USE_NEW_INPUT;USE_PHYSICS2D
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
@@ -888,7 +888,7 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 1
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: a0803b3b-3b40-4e26-b929-9dd59484cc4e
   framebufferDepthMemorylessMode: 0
