@@ -42,15 +42,28 @@ public class AutoScaleSprites : MonoBehaviour
 
     private void CreateBackground()
     {
-        if (backgroundObject != null) return;
+        // 先檢查是否已有 Background 子物件
+        if (backgroundObject == null)
+        {
+            Transform existingBg = transform.Find("Background");
+            if (existingBg != null)
+            {
+                backgroundObject = existingBg.gameObject;
+                return;
+            }
+        }
+        else
+        {
+            return;
+        }
 
         backgroundObject = new GameObject("Background");
+        backgroundObject.tag = "Background";
         backgroundObject.transform.SetParent(transform);
         backgroundObject.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
 
         SpriteRenderer sr = backgroundObject.AddComponent<SpriteRenderer>();
         sr.sprite = backgroundSprite;
-        sr.sortingOrder = -100; // 確保在最底層
     }
 
     // 用 gizmo 畫出 screen 範圍
@@ -69,21 +82,31 @@ public class AutoScaleSprites : MonoBehaviour
     private void OnValidate()
     {
         // Only run in editor, not at runtime
-        if (backgroundSprite != null)
+        if (backgroundSprite != null && Application.isPlaying == false)
         {
-            // If backgroundObject doesn't exist, create it
+            // 尋找現有的 Background 物件
+            if (backgroundObject == null)
+            {
+                Transform existingBg = transform.Find("Background");
+                if (existingBg != null)
+                {
+                    backgroundObject = existingBg.gameObject;
+                }
+            }
+
+            // 只有在找不到時才建立新的
             if (backgroundObject == null)
             {
                 CreateBackground();
             }
-            else
+
+            // 更新 sprite
+            var sr = backgroundObject?.GetComponent<SpriteRenderer>();
+            if (sr != null)
             {
-                var sr = backgroundObject.GetComponent<SpriteRenderer>();
-                if (sr != null)
-                {
-                    sr.sprite = backgroundSprite;
-                }
+                sr.sprite = backgroundSprite;
             }
+
             AutoScaleSize();
         }
     }
