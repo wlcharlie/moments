@@ -317,16 +317,16 @@ MonoBehaviour:
       onExecute:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 11400000, guid: 2cea348a9f3614ced8920c26434a681c, type: 2}
-            m_TargetAssemblyTypeName: NewScriptableObjectScript, Assembly-CSharp
-            m_MethodName: MyMethod
-            m_Mode: 1
+          - m_Target: {fileID: 11400000, guid: 755146eb11ad846b8a5867cd24a9813d, type: 2}
+            m_TargetAssemblyTypeName: BackgroundSettings, Assembly-CSharp
+            m_MethodName: ChangeBackgroundByTag
+            m_Mode: 5
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
               m_IntArgument: 0
               m_FloatArgument: 0
-              m_StringArgument: 
+              m_StringArgument: Home_MaiRoom_MaiWakeUp
               m_BoolArgument: 0
             m_CallState: 2
       canvasRect:
@@ -576,7 +576,7 @@ MonoBehaviour:
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
               m_IntArgument: 0
               m_FloatArgument: 0
-              m_StringArgument: CatchBus
+              m_StringArgument: GreenDot
               m_BoolArgument: 0
             m_CallState: 2
       canvasRect:
@@ -753,11 +753,23 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 755146eb11ad846b8a5867cd24a9813d, type: 2}
+            m_TargetAssemblyTypeName: BackgroundSettings, Assembly-CSharp
+            m_MethodName: ChangeBackgroundByTag
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Home_LivingRoom
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 160
-        y: 80
+        y: 81.437805
         width: 160
         height: 30
     - id: 2
@@ -816,7 +828,19 @@ MonoBehaviour:
       userScript: 
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 755146eb11ad846b8a5867cd24a9813d, type: 2}
+            m_TargetAssemblyTypeName: BackgroundSettings, Assembly-CSharp
+            m_MethodName: ChangeBackgroundByTag
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
       canvasRect:
         serializedVersion: 2
         x: 160
@@ -1561,7 +1585,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 3
+        originDialogueID: 14
+        destinationConversationID: 4
+        destinationDialogueID: 0
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -1575,7 +1605,188 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.71950334
+    canvasZoom: 0.69550246
+  - id: 4
+    fields:
+    - title: Title
+      value: CH01_SC02_SE01
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Actor
+      value: 1
+      type: 5
+      typeString: CustomFieldType_Actor
+    - title: Conversant
+      value: -1
+      type: 5
+      typeString: CustomFieldType_Actor
+    overrideSettings:
+      useOverrides: 0
+      overrideSubtitleSettings: 0
+      showNPCSubtitlesDuringLine: 1
+      showNPCSubtitlesWithResponses: 1
+      showPCSubtitlesDuringLine: 0
+      skipPCSubtitleAfterResponseMenu: 0
+      subtitleCharsPerSecond: 30
+      minSubtitleSeconds: 2
+      continueButton: 0
+      overrideSequenceSettings: 0
+      defaultSequence: 
+      defaultPlayerSequence: 
+      defaultResponseMenuSequence: 
+      overrideInputSettings: 0
+      alwaysForceResponseMenu: 1
+      includeInvalidEntries: 0
+      responseTimeout: 0
+      emTagForOldResponses: 0
+      emTagForInvalidResponses: 0
+      cancelSubtitle:
+        key: 27
+        buttonName: 
+      cancelConversation:
+        key: 27
+        buttonName: 
+    nodeColor: 
+    dialogueEntries:
+    - id: 0
+      fields:
+      - title: Title
+        value: START
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: -1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: None()
+        type: 0
+        typeString: 
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      conversationID: 4
+      isRoot: 1
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 4
+        originDialogueID: 0
+        destinationConversationID: 4
+        destinationDialogueID: 1
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 159
+        y: 30
+        width: 160
+        height: 30
+    - id: 1
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: -1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u8173\u9084\u6709\u9EDE\u75DB\uFF0C\u4ECA\u5929\u8981\u600E\u9EBC\u53BB\u516C\u53F8\u5462\uFF1F"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      conversationID: 4
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 11400000, guid: 755146eb11ad846b8a5867cd24a9813d, type: 2}
+            m_TargetAssemblyTypeName: BackgroundSettings, Assembly-CSharp
+            m_MethodName: ChangeBackgroundByTag
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Home_EnterWay
+              m_BoolArgument: 0
+            m_CallState: 2
+      canvasRect:
+        serializedVersion: 2
+        x: 159
+        y: 80
+        width: 160
+        height: 30
+    entryGroups: []
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 1
   syncInfo:
     syncActors: 0
     syncItems: 0

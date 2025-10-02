@@ -15,5 +15,13 @@ MonoBehaviour:
   backgroundSprites:
   - spriteName: CatchBus
     sprite: {fileID: -1559892975431095028, guid: b712b6a15e8514f7fbf7f0d173fc9233, type: 3}
+  - spriteName: GreenDot
+    sprite: {fileID: 30116714203477484, guid: 31100644e2b654c4fb4f8d9cd3c901d1, type: 3}
+  - spriteName: Home_BaiRoom
+    sprite: {fileID: 7195648742729240087, guid: 5ee78bb6e8f0f403faebf16b5dfed92c, type: 3}
+  - spriteName: Home_LivingRoom
+    sprite: {fileID: -8595222554870109781, guid: f52a13f36fa87465ea67d4007c800d6c, type: 3}
   - spriteName: Home_MaiRoom_MaiWakeUp
-    sprite: {fileID: 4681175826523375171, guid: ebfd493669bdf4175b66177e98fe00e5, type: 3}
+    sprite: {fileID: 4115031808763572823, guid: ebfd493669bdf4175b66177e98fe00e5, type: 3}
+  - spriteName: Home_EnterWay
+    sprite: {fileID: -5450662263735310863, guid: 29bc6ef4370e64666bcb052b925aa771, type: 3}

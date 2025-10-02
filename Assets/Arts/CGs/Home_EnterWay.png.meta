@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: ebfd493669bdf4175b66177e98fe00e5
+guid: 29bc6ef4370e64666bcb052b925aa771
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4681175826523375171
-    second: HomeMaiWakeUp_0
+      213: -7001386183799404272
+    second: entryway_0
   - first:
-      213: 4115031808763572823
-    second: Home_MaiRoom_MaiWakeUp_0
+      213: -5450662263735310863
+    second: Home_EnterWay_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -142,7 +142,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Home_MaiRoom_MaiWakeUp_0
+      name: Home_EnterWay_0
       rect:
         serializedVersion: 2
         x: 0
@@ -157,8 +157,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 75239c0b0a78b1930800000000000000
-      internalID: 4115031808763572823
+      spriteID: 1f52e6bcc8b5b54b0800000000000000
+      internalID: -5450662263735310863
       vertices: []
       indices: 
       edges: []
@@ -177,8 +177,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      HomeMaiWakeUp_0: 4681175826523375171
-      Home_MaiRoom_MaiWakeUp_0: 4115031808763572823
+      Home_EnterWay_0: -5450662263735310863
+      entryway_0: -7001386183799404272
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
