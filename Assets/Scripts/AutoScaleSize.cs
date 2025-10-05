@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using System.Collections;
 using UnityEngine;
 
 public class AutoScaleSprites : MonoBehaviour
@@ -8,13 +9,31 @@ public class AutoScaleSprites : MonoBehaviour
 
     private void Start()
     {
-        CreateBackground();
+        SetBackgroundObject();
+        StartCoroutine(WaitForSpriteAndScale());
+    }
+
+    private IEnumerator WaitForSpriteAndScale()
+    {
+        if (backgroundObject == null) yield break;
+
+        SpriteRenderer sr = backgroundObject.GetComponent<SpriteRenderer>();
+        if (sr == null) yield break;
+
+        // 等待 sprite 被設定
+        while (sr.sprite == null)
+        {
+            yield return null;
+        }
+
         AutoScaleSize();
     }
 
     [ContextMenu("Auto Scale Size")]
     private void AutoScaleSize()
     {
+        if (!backgroundObject) return;
+
         // 取得螢幕寬高（世界座標，假設正交攝影機）
         float screenHeight = Camera.main.orthographicSize * 2;
         float screenWidth = screenHeight * Camera.main.aspect;
@@ -23,7 +42,7 @@ public class AutoScaleSprites : MonoBehaviour
         if (background != null)
         {
             SpriteRenderer sr = background.GetComponent<SpriteRenderer>();
-            if (sr != null)
+            if (sr != null && sr.sprite != null)
             {
                 // 取得 sprite 原始大小（單位：世界座標）
                 Vector2 spriteSize = sr.sprite.bounds.size;
@@ -40,30 +59,13 @@ public class AutoScaleSprites : MonoBehaviour
         }
     }
 
-    private void CreateBackground()
+    private void SetBackgroundObject()
     {
-        // 先檢查是否已有 Background 子物件
+        backgroundObject = GameObject.FindGameObjectWithTag("Background");
         if (backgroundObject == null)
         {
-            Transform existingBg = transform.Find("Background");
-            if (existingBg != null)
-            {
-                backgroundObject = existingBg.gameObject;
-                return;
-            }
+            Debug.LogWarning("找不到標籤為 'Background' 的物件");
         }
-        else
-        {
-            return;
-        }
-
-        backgroundObject = new GameObject("Background");
-        backgroundObject.tag = "Background";
-        backgroundObject.transform.SetParent(transform);
-        backgroundObject.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
-
-        SpriteRenderer sr = backgroundObject.AddComponent<SpriteRenderer>();
-        sr.sprite = backgroundSprite;
     }
 
     // 用 gizmo 畫出 screen 範圍
@@ -77,38 +79,4 @@ public class AutoScaleSprites : MonoBehaviour
         Gizmos.color = new Color(1, 0, 0, 0.5f);
         Gizmos.DrawCube(Vector3.zero, new Vector3(screenWidth, screenHeight, 0));
     }
-
-#if UNITY_EDITOR
-    private void OnValidate()
-    {
-        // Only run in editor, not at runtime
-        if (backgroundSprite != null && Application.isPlaying == false)
-        {
-            // 尋找現有的 Background 物件
-            if (backgroundObject == null)
-            {
-                Transform existingBg = transform.Find("Background");
-                if (existingBg != null)
-                {
-                    backgroundObject = existingBg.gameObject;
-                }
-            }
-
-            // 只有在找不到時才建立新的
-            if (backgroundObject == null)
-            {
-                CreateBackground();
-            }
-
-            // 更新 sprite
-            var sr = backgroundObject?.GetComponent<SpriteRenderer>();
-            if (sr != null)
-            {
-                sr.sprite = backgroundSprite;
-            }
-
-            AutoScaleSize();
-        }
-    }
-#endif
 }
