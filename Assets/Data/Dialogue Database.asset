@@ -38,7 +38,7 @@ MonoBehaviour:
   - id: 1
     fields:
     - title: Name
-      value: "\u5C0F\u9EA5"
+      value: Mai
       type: 0
       typeString: CustomFieldType_Text
     - title: Pictures
@@ -61,14 +61,23 @@ MonoBehaviour:
       value: 
       type: 4
       typeString: CustomFieldType_Localization
+    - title: Display Name
+      value: "\u5C0F\u9EA5"
+      type: 0
+      typeString: CustomFieldType_Text
     portrait: {fileID: 0}
-    spritePortrait: {fileID: 0}
+    spritePortrait: {fileID: -6919567958068358389, guid: f4712a148043b42928b4a6d95eba2dca, type: 3}
     alternatePortraits: []
-    spritePortraits: []
+    spritePortraits:
+    - {fileID: 1910663379177754505, guid: 255ec36ef4ec64488969ecf8e5e2b646, type: 3}
+    - {fileID: -5347617973417912543, guid: bb607a7745fa844638bc632a75468bb9, type: 3}
+    - {fileID: 3357194329682569268, guid: 0fca6dfc9637844e4a5cb079807933f4, type: 3}
+    - {fileID: 4054933027246109190, guid: d7145486710764cc3a961495241c6da6, type: 3}
+    - {fileID: 3901299226461418296, guid: 67b5220193069442fa146f1e6a001dab, type: 3}
   - id: 2
     fields:
     - title: Name
-      value: "\u5C0F\u767D"
+      value: Bai
       type: 0
       typeString: CustomFieldType_Text
     - title: Pictures
@@ -91,6 +100,10 @@ MonoBehaviour:
       value: 
       type: 4
       typeString: CustomFieldType_Localization
+    - title: Display Name
+      value: "\u5C0F\u767D"
+      type: 0
+      typeString: 
     portrait: {fileID: 0}
     spritePortrait: {fileID: 0}
     alternatePortraits: []
@@ -113,13 +126,31 @@ MonoBehaviour:
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
+    - title: Display Name
+      value: "\u65C1\u767D"
+      type: 0
+      typeString: CustomFieldType_Text
     portrait: {fileID: 0}
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
   items: []
   locations: []
-  variables: []
+  variables:
+  - id: 1
+    fields:
+    - title: Name
+      value: MaiAngry
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: 5
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
   conversations:
   - id: 1
     fields:
@@ -505,7 +536,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetPortrait(Mai, pic=MaiAngry)
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -572,7 +603,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetPortrait(Mai, pic=3)
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -639,7 +670,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetPortrait(Mai, pic=4)
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -706,7 +737,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetPortrait(Mai, pic=5)
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -737,7 +768,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 159
-        y: 230.00705
+        y: 231.00705
         width: 160
         height: 30
     entryGroups: []
