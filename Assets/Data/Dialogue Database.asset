@@ -536,7 +536,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiAngry)
+        value: SetPortrait(Mai, pic=MaiAngry);FMODPlay(StartButton);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja

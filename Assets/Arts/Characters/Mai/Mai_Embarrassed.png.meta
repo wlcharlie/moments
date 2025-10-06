@@ -116,12 +116,12 @@ TextureImporter:
       name: Mai_Embarrassed_0
       rect:
         serializedVersion: 2
-        x: 6
+        x: 0
         y: 0
-        width: 399
+        width: 410
         height: 480
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8a44872e35514472d9ea3d27e6c0c052
     internalID: 0
     vertices: []
     indices: 

@@ -138,3 +138,6 @@
 *.gz lfs-file
 *.rar lfs-file
 *.tar lfs-file
+
+Assets/Plugins/FMOD/**/*.bundle text eol=lf
+Assets/Plugins/FMOD/**/Info.plist text eol=lf

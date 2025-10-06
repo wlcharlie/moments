@@ -116,12 +116,12 @@ TextureImporter:
       name: Mai_Happy_0
       rect:
         serializedVersion: 2
-        x: 13
+        x: 0
         y: 0
-        width: 385
-        height: 474
+        width: 410
+        height: 480
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bc26efc6a47414612a66b16dca111429
     internalID: 0
     vertices: []
     indices: 
