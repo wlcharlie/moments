@@ -551,6 +551,10 @@ MonoBehaviour:
         value: Assets/Arts/CGs/Home_MaiRoom_MaiWakeUp_Dark.png
         type: 0
         typeString: CustomFieldType_Sprite
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
       conversationID: 2
       isRoot: 0
       isGroup: 0
@@ -563,6 +567,12 @@ MonoBehaviour:
         originDialogueID: 1
         destinationConversationID: 2
         destinationDialogueID: 2
+        isConnector: 0
+        priority: 2
+      - originConversationID: 2
+        originDialogueID: 1
+        destinationConversationID: 2
+        destinationDialogueID: 5
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -579,7 +589,7 @@ MonoBehaviour:
     - id: 2
       fields:
       - title: Title
-        value: 
+        value: "\u4E8C\u9078\u4E00"
         type: 0
         typeString: CustomFieldType_Text
       - title: Description
@@ -595,7 +605,7 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: Menu 1
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
@@ -769,6 +779,67 @@ MonoBehaviour:
         serializedVersion: 2
         x: 159
         y: 231.00705
+        width: 160
+        height: 30
+    - id: 5
+      fields:
+      - title: Title
+        value: "\u4E8C\u9078\u4E00"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: Menu 2
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: I am 2
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 2
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 370
+        y: 130.00705
         width: 160
         height: 30
     entryGroups: []

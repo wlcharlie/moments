@@ -1,10 +1,14 @@
+using System;
+using System.Linq;
 using PixelCrushers.DialogueSystem;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DialogueEventManager", menuName = "Dialogue/DialogueEventManager")]
 public class DialogueEventManager : ScriptableObject
 {
+    [SerializeField] GameObject ResponseMenuTitle;
     public static DialogueEventManager Instance { get; private set; }
 
     public void Initialize()
@@ -48,6 +52,20 @@ public class DialogueEventManager : ScriptableObject
                     }
                 }
             }
+        }
+    }
+
+    public static void OnConversationResponseMenu(Response[] responses)
+    {
+        // get entry title
+        String entryTitle = responses.First<Response>().destinationEntry.Title;
+        Debug.Log($"OnConversationResponseMenu: {entryTitle}");
+        // find the component "Response Menu Title"
+        GameObject responseMenuTitleObject = GameObject.Find("Response Menu Title");
+        if (responseMenuTitleObject != null)
+        {
+            Debug.Log("找到 Response Menu Title 物件");
+
         }
     }
 }
