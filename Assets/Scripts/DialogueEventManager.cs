@@ -8,7 +8,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DialogueEventManager", menuName = "Dialogue/DialogueEventManager")]
 public class DialogueEventManager : ScriptableObject
 {
-    [SerializeField] GameObject ResponseMenuTitle;
     public static DialogueEventManager Instance { get; private set; }
 
     public void Initialize()
