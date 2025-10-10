@@ -680,7 +680,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=4)
+        value: SetPortrait(Mai, pic=4);SetBackgroundColor(#808080)
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
