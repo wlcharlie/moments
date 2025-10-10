@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Linq;
 using PixelCrushers.DialogueSystem;
 using TMPro;
@@ -9,6 +10,7 @@ using UnityEngine;
 public class DialogueEventManager : ScriptableObject
 {
     public static DialogueEventManager Instance { get; private set; }
+    private static float comicFadeDuration = 0.3f;
 
     public void Initialize()
     {
@@ -17,7 +19,12 @@ public class DialogueEventManager : ScriptableObject
 
     public static void OnConversationLine(Subtitle subtitle)
     {
-        // 處理 Background Image
+        HandleBackgroundImage(subtitle);
+        HandleComicImage(subtitle);
+    }
+
+    private static void HandleBackgroundImage(Subtitle subtitle)
+    {
         Field backgroundField = subtitle.dialogueEntry.fields.Find(f => f.title == "Background Image");
         if (backgroundField != null)
         {
@@ -51,6 +58,49 @@ public class DialogueEventManager : ScriptableObject
                     }
                 }
             }
+        }
+    }
+
+    private static void HandleComicImage(Subtitle subtitle)
+    {
+        Field comicField = subtitle.dialogueEntry.fields.Find(f => f.title == "Comic Image");
+        string comicImagePath = comicField?.value;
+
+        GameObject comicObject = GameObject.Find("ComicImage");
+        if (comicObject != null)
+        {
+            SpriteRenderer spriteRenderer = comicObject.GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                if (!string.IsNullOrEmpty(comicImagePath))
+                {
+                    // 載入並設置新的 Comic Image
+                    Sprite comicSprite = AssetDatabase.LoadAssetAtPath<Sprite>(comicImagePath);
+                    if (comicSprite != null)
+                    {
+                        Debug.Log($"更改漫畫圖片為: {comicImagePath}");
+                        spriteRenderer.sprite = comicSprite;
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"找不到漫畫圖片: {comicImagePath}");
+                    }
+                }
+                else
+                {
+                    // 當 Comic Image field 為 null 或 empty 時，清空 sprite
+                    Debug.Log("清空漫畫圖片");
+                    spriteRenderer.sprite = null;
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Comic Image 物件沒有 SpriteRenderer 組件");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("找不到 Comic Image 物件");
         }
     }
 
