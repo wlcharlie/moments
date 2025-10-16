@@ -92,9 +92,13 @@ public class UIArrow : Graphic
         return vertex;
     }
 
+
+#if UNITY_EDITOR
     protected override void OnValidate()
     {
+        // Do something.
         base.OnValidate();
         SetVerticesDirty();
     }
+#endif // UNITY_EDITOR
 }
