@@ -71,39 +71,57 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f; // 恢復遊戲時間
     }
 
-    // ===== 通用方法（可傳參數）=====
-
-    public void ShowPanel(GameObject panel)
-    {
-        panel.SetActive(true);
-        Debug.Log($"顯示 Panel: {panel.name}");
-    }
-
-    public void HidePanel(GameObject panel)
-    {
-        panel.SetActive(false);
-        Debug.Log($"隱藏 Panel: {panel.name}");
-    }
-
-    public void TogglePanel(GameObject panel)
-    {
-        panel.SetActive(!panel.activeSelf);
-        Debug.Log($"切換 Panel: {panel.name} - 現在是 {panel.activeSelf}");
-    }
-
     // ===== 遊戲狀態管理 =====
 
     private int score = 0;
 
-    public void AddScore(int amount)
+    public int AddScore(int amount)
     {
         score += amount;
         Debug.Log($"得分: {score}");
         // 更新 UI 顯示分數
+
+        return score;
     }
 
     public int GetScore()
     {
         return score;
+    }
+
+    // 角色狀態
+    private int statusHeart = 100;
+    private int statusMoney = 50;
+    private int statusEnergy = 75;
+
+    public int StatusHeart { get => statusHeart; }
+    public int StatusMoney { get => statusMoney; }
+    public int StatusEnergy { get => statusEnergy; }
+
+    // 角色狀態監聽
+    public delegate void StatusChangedHandler(int newValue);
+    public event StatusChangedHandler OnStatusHeartChanged;
+    public event StatusChangedHandler OnStatusMoneyChanged;
+    public event StatusChangedHandler OnStatusEnergyChanged;
+
+    public void UpdateStatusHeart(int amount)
+    {
+        statusHeart = Mathf.Clamp(statusHeart + amount, 0, 100);
+        OnStatusHeartChanged?.Invoke(statusHeart);
+        Debug.Log($"心情值: {statusHeart}");
+    }
+
+    public void UpdateStatusMoney(int amount)
+    {
+        statusMoney = Mathf.Clamp(statusMoney + amount, 0, 100);
+        OnStatusMoneyChanged?.Invoke(statusMoney);
+        Debug.Log($"金錢值: {statusMoney}");
+    }
+
+    public void UpdateStatusEnergy(int amount)
+    {
+        statusEnergy = Mathf.Clamp(statusEnergy + amount, 0, 100);
+        OnStatusEnergyChanged?.Invoke(statusEnergy);
+        Debug.Log($"體力值: {statusEnergy}");
     }
 }
