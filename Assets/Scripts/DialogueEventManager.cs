@@ -2,10 +2,8 @@ using System;
 using System.Linq;
 using PixelCrushers.DialogueSystem;
 using UnityEngine;
-
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 [CreateAssetMenu(fileName = "DialogueEventManager", menuName = "Dialogue/DialogueEventManager")]
 public class DialogueEventManager : ScriptableObject
@@ -32,32 +30,35 @@ public class DialogueEventManager : ScriptableObject
             string backgroundImagePath = backgroundField.value;
             if (!string.IsNullOrEmpty(backgroundImagePath))
             {
-                // 假設你有一個方法可以根據名稱獲取背景圖片
-                Sprite backgroundSprite = AssetDatabase.LoadAssetAtPath<Sprite>(backgroundImagePath);
-                if (backgroundSprite != null)
+                // 使用 Addressables 載入背景圖片
+                Addressables.LoadAssetAsync<Sprite>(backgroundImagePath).Completed += (AsyncOperationHandle<Sprite> handle) =>
                 {
-                    Debug.Log($"更改背景圖片為: {backgroundImagePath}");
-
-                    // get game object with tag Background
-                    // change its sprite to backgroundSprite
-                    GameObject backgroundObject = GameObject.FindGameObjectWithTag("Background");
-                    if (backgroundObject != null)
+                    if (handle.Status == AsyncOperationStatus.Succeeded)
                     {
-                        SpriteRenderer spriteRenderer = backgroundObject.GetComponent<SpriteRenderer>();
-                        if (spriteRenderer != null)
+                        Sprite backgroundSprite = handle.Result;
+                        Debug.Log($"更改背景圖片為: {backgroundImagePath}");
+
+                        // get game object with tag Background
+                        // change its sprite to backgroundSprite
+                        GameObject backgroundObject = GameObject.FindGameObjectWithTag("Background");
+                        if (backgroundObject != null)
                         {
-                            spriteRenderer.sprite = backgroundSprite;
-                        }
-                        else
-                        {
-                            Debug.LogWarning("Background 物件沒有 SpriteRenderer 組件");
+                            SpriteRenderer spriteRenderer = backgroundObject.GetComponent<SpriteRenderer>();
+                            if (spriteRenderer != null)
+                            {
+                                spriteRenderer.sprite = backgroundSprite;
+                            }
+                            else
+                            {
+                                Debug.LogWarning("Background 物件沒有 SpriteRenderer 組件");
+                            }
                         }
                     }
                     else
                     {
                         Debug.LogWarning($"找不到背景圖片: {backgroundImagePath}");
                     }
-                }
+                };
             }
         }
     }
@@ -75,17 +76,23 @@ public class DialogueEventManager : ScriptableObject
             {
                 if (!string.IsNullOrEmpty(comicImagePath))
                 {
-                    // 載入並設置新的 Comic Image
-                    Sprite comicSprite = AssetDatabase.LoadAssetAtPath<Sprite>(comicImagePath);
-                    if (comicSprite != null)
+                    // 使用 Addressables 載入並設置新的 Comic Image
+                    Addressables.LoadAssetAsync<Sprite>(comicImagePath).Completed += (AsyncOperationHandle<Sprite> handle) =>
                     {
-                        Debug.Log($"更改漫畫圖片為: {comicImagePath}");
-                        spriteRenderer.sprite = comicSprite;
-                    }
-                    else
-                    {
-                        Debug.LogWarning($"找不到漫畫圖片: {comicImagePath}");
-                    }
+                        if (handle.Status == AsyncOperationStatus.Succeeded)
+                        {
+                            Sprite comicSprite = handle.Result;
+                            Debug.Log($"更改漫畫圖片為: {comicImagePath}");
+                            if (spriteRenderer != null)
+                            {
+                                spriteRenderer.sprite = comicSprite;
+                            }
+                        }
+                        else
+                        {
+                            Debug.LogWarning($"找不到漫畫圖片: {comicImagePath}");
+                        }
+                    };
                 }
                 else
                 {

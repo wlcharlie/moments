@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Default Local Group
+  m_GUID: b1e7cf42e33d645dfba5149ce947e023
+  m_SerializeEntries:
+  - m_GUID: 1afd832d2009649ef855cc35e8a6e5d1
+    m_Address: Assets/Arts/CGs/Home_MaiRoom_MaiWakeUp_Dark.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 217800a219f9d44bbaf5d2a395a3971f
+    m_Address: Assets/Arts/CGs/Office_Room_Focus.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 29bc6ef4370e64666bcb052b925aa771
+    m_Address: Assets/Arts/CGs/Home_EnterWay.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 31100644e2b654c4fb4f8d9cd3c901d1
+    m_Address: Assets/Arts/CGs/GreenDot.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 435243a1214574957a42c7cb7b5edec3
+    m_Address: Assets/Arts/CGs/Office_Room_Colleague.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b4684f2503ce44cca0fec59a318f688
+    m_Address: Assets/Arts/CGs/Home_BaiRoom_Day.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f8f8a4ec8c35416bad37553f1d71844
+    m_Address: Assets/Arts/CGs/Office_Lobby.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 51fa111cd458a4390805def8ab1ba09c
+    m_Address: Assets/Arts/CGs/Home_BaiRoom_Door.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ee78bb6e8f0f403faebf16b5dfed92c
+    m_Address: Assets/Arts/CGs/Home_BaiRoom.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68726823dc34f4cbeb9b071f003c666a
+    m_Address: Assets/Arts/CGs/Home_LivingRoom_evening.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85d7b2ca29e2f442598dcea2314b1945
+    m_Address: Assets/Arts/CGs/Home_LivingRoom_night.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a49b96021aa684d16aae539d3cc39096
+    m_Address: Assets/Arts/CGs/Street_ToHome.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b712b6a15e8514f7fbf7f0d173fc9233
+    m_Address: Assets/Arts/CGs/CatchBus.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ebfd493669bdf4175b66177e98fe00e5
+    m_Address: Assets/Arts/CGs/Home_MaiRoom_MaiWakeUp.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f39d7ec51c1fc49c383e3460b0462282
+    m_Address: Assets/Arts/CGs/Street.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f52a13f36fa87465ea67d4007c800d6c
+    m_Address: Assets/Arts/CGs/Home_LivingRoom.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 713f9d6c56c91408d9f008d912dbc451, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: e088f8fc3306d4ec78aef7e0ba3aeefc, type: 2}
+    - {fileID: 11400000, guid: d49bcfcdb7baf4e1581e61be738c38bd, type: 2}
