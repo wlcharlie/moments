@@ -15,8 +15,23 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: b1e7cf42e33d645dfba5149ce947e023
   m_SerializeEntries:
+  - m_GUID: 09be421e5aa684e62839d792ed1ec5ec
+    m_Address: Assets/Arts/Events/LanePark.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1690a91c2f2c245e68ae84a419a1d769
+    m_Address: Assets/Arts/Events/COMM_STREET_01.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1afd832d2009649ef855cc35e8a6e5d1
     m_Address: Assets/Arts/CGs/Home_MaiRoom_MaiWakeUp_Dark.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1e27b6108bf784996bf4eb9ab3c0d973
+    m_Address: Assets/Arts/Events/MRT_Escalator_Entrance.jpg
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -32,6 +47,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 31100644e2b654c4fb4f8d9cd3c901d1
     m_Address: Assets/Arts/CGs/GreenDot.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 369346399556e44d8943263b3219d227
+    m_Address: Assets/Arts/Events/Mart.jpg
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -75,8 +95,28 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a9100856ee26b42579d92fee5ded5d25
+    m_Address: Assets/Arts/Events/HarmonyPark.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b712b6a15e8514f7fbf7f0d173fc9233
     m_Address: Assets/Arts/CGs/CatchBus.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c261bd073206f4791a8311e6ed4acb36
+    m_Address: Assets/Arts/Events/Ally.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c8c42b5a95e334f8a88461cbb80efd91
+    m_Address: Assets/Arts/Events/COMM_STREET_01_OPT_02.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dcf6a1f11e8c54ae487dc130dac86180
+    m_Address: Assets/Arts/Events/COMM_STREET_01_OPT_01.jpg
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

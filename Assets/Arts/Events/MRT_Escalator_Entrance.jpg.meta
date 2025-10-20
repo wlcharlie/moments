@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e2706502ae8af4f61b7dac3191db11ff
+guid: 1e27b6108bf784996bf4eb9ab3c0d973
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3550104675532902518
-    second: Mai_NormalTalk_0
+      213: -4739869063843058430
+    second: MRT_Escalator_Entrance_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mai_NormalTalk_0
+      name: MRT_Escalator_Entrance_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 410
-        height: 480
+        width: 786
+        height: 1704
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6709794a461844130800000000000000
-      internalID: 3550104675532902518
+      spriteID: 20d65c7033a983eb0800000000000000
+      internalID: -4739869063843058430
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ae4bc40c53999439dbf4a2d1244a1077
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mai_NormalTalk_0: 3550104675532902518
+      MRT_Escalator_Entrance_0: -4739869063843058430
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
