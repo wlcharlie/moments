@@ -89,4 +89,23 @@ public class UIStatus : MonoBehaviour
             rectTransform.sizeDelta = size;
         }
     }
+
+    public void SetStatusType(StatusType newStatusType)
+    {
+        statusType = newStatusType;
+        if (references.meterObject != null)
+        {
+            references.meterObject.GetComponent<UnityEngine.UI.Image>().color = GetStatusColor();
+        }
+        if (references.imageObject != null)
+        {
+            references.imageObject.GetComponent<UnityEngine.UI.Image>().sprite = GetStatusSprite();
+        }
+    }
+
+    public void SetValue(float newValue)
+    {
+        value = Mathf.Clamp01(newValue);
+        UpdateMeterHeight();
+    }
 }

@@ -830,7 +830,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=3)
+        value: SetPortrait(Mai, pic=3);UpdateStatus(Heart, 5)
         type: 0
         typeString: CustomFieldType_Text
       - title: ja

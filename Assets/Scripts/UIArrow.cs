@@ -93,6 +93,21 @@ public class UIArrow : Graphic
     }
 
 
+    public void SetDirection(bool up)
+    {
+        // 調整位置：向上時 Y=-12，向下時 Y=12
+        RectTransform rectTransform = GetComponent<RectTransform>();
+        if (rectTransform != null)
+        {
+            Vector2 pos = rectTransform.anchoredPosition;
+            pos.y = up ? -12 : 12;
+            rectTransform.anchoredPosition = pos;
+            rectTransform.localScale = new Vector3(1, up ? -1 : 1, 1);
+        }
+    }
+
+
+
 #if UNITY_EDITOR
     protected override void OnValidate()
     {

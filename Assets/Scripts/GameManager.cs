@@ -90,9 +90,9 @@ public class GameManager : MonoBehaviour
     }
 
     // 角色狀態
-    private int statusHeart = 100;
+    private int statusHeart = 50;
     private int statusMoney = 50;
-    private int statusEnergy = 75;
+    private int statusEnergy = 50;
 
     public int StatusHeart { get => statusHeart; }
     public int StatusMoney { get => statusMoney; }
