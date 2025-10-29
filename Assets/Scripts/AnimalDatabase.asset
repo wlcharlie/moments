@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac10e8090073e45efab3291c87ffaf33, type: 3}
+  m_Name: AnimalDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalDatabase
+  animals:
+  - no: 001
+    animalName: Bear
+    mainSprite: {fileID: 5418251923771880902, guid: 22d7c02d6b2e04e32837dcece12ea3c5, type: 3}
+    captureSprites: []
+    collected: 1
+    seen: 1
+    description: 
+  - no: 002
+    animalName: Capybara
+    mainSprite: {fileID: -9032679894510146780, guid: 22d7c02d6b2e04e32837dcece12ea3c5, type: 3}
+    captureSprites: []
+    collected: 1
+    seen: 1
+    description: 
+  - no: 003
+    animalName: Chier
+    mainSprite: {fileID: -572441457409238538, guid: 22d7c02d6b2e04e32837dcece12ea3c5, type: 3}
+    captureSprites: []
+    collected: 0
+    seen: 1
+    description: 
+  - no: 004
+    animalName: Collie
+    mainSprite: {fileID: 317992643207404597, guid: 22d7c02d6b2e04e32837dcece12ea3c5, type: 3}
+    captureSprites: []
+    collected: 0
+    seen: 0
+    description: 
+  - no: 005
+    animalName: Deer
+    mainSprite: {fileID: -7471737639575287114, guid: 22d7c02d6b2e04e32837dcece12ea3c5, type: 3}
+    captureSprites: []
+    collected: 0
+    seen: 0
+    description: 
+  - no: 006
+    animalName: Elephant
+    mainSprite: {fileID: 2754641126406819059, guid: 22d7c02d6b2e04e32837dcece12ea3c5, type: 3}
+    captureSprites: []
+    collected: 0
+    seen: 0
+    description: 
+  - no: 007
+    animalName: Giraffe
+    mainSprite: {fileID: 7731280736659419474, guid: 22d7c02d6b2e04e32837dcece12ea3c5, type: 3}
+    captureSprites: []
+    collected: 0
+    seen: 0
+    description: 
+  - no: 008
+    animalName: Golden
+    mainSprite: {fileID: 6319160278514444104, guid: 22d7c02d6b2e04e32837dcece12ea3c5, type: 3}
+    captureSprites: []
+    collected: 0
+    seen: 0
+    description: 
+  - no: 009
+    animalName: Hamusta
+    mainSprite: {fileID: 9146032051937369585, guid: 22d7c02d6b2e04e32837dcece12ea3c5, type: 3}
+    captureSprites: []
+    collected: 0
+    seen: 0
+    description: 
+  - no: 010
+    animalName: Hippo
+    mainSprite: {fileID: 23452990138164187, guid: 22d7c02d6b2e04e32837dcece12ea3c5, type: 3}
+    captureSprites: []
+    collected: 0
+    seen: 0
+    description: 
+  - no: 011
+    animalName: Pig
+    mainSprite: {fileID: -6203373411985998299, guid: 22d7c02d6b2e04e32837dcece12ea3c5, type: 3}
+    captureSprites: []
+    collected: 0
+    seen: 0
+    description: 
+  - no: 012
+    animalName: Rabbit
+    mainSprite: {fileID: -7584833386708112887, guid: 22d7c02d6b2e04e32837dcece12ea3c5, type: 3}
+    captureSprites: []
+    collected: 0
+    seen: 0
+    description: 
