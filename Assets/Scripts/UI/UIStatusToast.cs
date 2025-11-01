@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 
-public class StatusToast : MonoBehaviour
+public class UIStatusToast : MonoBehaviour
 {
     [SerializeField] private float displayDuration = 2f;
     [SerializeField] private TextMeshProUGUI statusName;

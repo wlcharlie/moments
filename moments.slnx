@@ -5,6 +5,9 @@
   <Project Path="FMODUnityResonanceEditor.csproj" />
   <Project Path="FMODUnityEditor.csproj" />
   <Project Path="FMODUnity.csproj" />
+  <Project Path="UI.csproj" />
+  <Project Path="Dialogue.csproj" />
+  <Project Path="Manager.csproj" />
   <Project Path="FMODUnityResonance.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
 </Solution>

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AutoScaleSprites : MonoBehaviour
 {
-    [SerializeField] private Sprite backgroundSprite;
     private GameObject backgroundObject;
 
     private void Start()
