@@ -1,7 +1,10 @@
 ﻿<Solution>
-  <Project Path="Assembly-CSharp-firstpass.csproj" />
-  <Project Path="Assembly-CSharp-Editor-firstpass.csproj" />
+  <Project Path="DialogueSystem.csproj" />
+  <Project Path="DialogueSystemEditor.csproj" />
+  <Project Path="PixelCrushers.csproj" />
+  <Project Path="PixelCrushersEditor.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Utils.csproj" />
   <Project Path="FMODUnityResonanceEditor.csproj" />
   <Project Path="FMODUnityEditor.csproj" />
   <Project Path="FMODUnity.csproj" />
@@ -10,4 +13,5 @@
   <Project Path="Manager.csproj" />
   <Project Path="FMODUnityResonance.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="Data.csproj" />
 </Solution>

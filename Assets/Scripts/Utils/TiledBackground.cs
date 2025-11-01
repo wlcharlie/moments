@@ -19,5 +19,6 @@ public class TiledBackground : MonoBehaviour
 
         // Center it on camera
         transform.position = cam.transform.position;
+        //123
     }
 }
