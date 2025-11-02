@@ -1,9 +1,8 @@
 {
-    "name": "Capture",
+    "name": "InputSystem",
     "rootNamespace": "",
     "references": [
-        "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:ff9405271d4954fa6a9cb0e5f84223f1"
+        "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

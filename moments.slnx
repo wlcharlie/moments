@@ -15,4 +15,5 @@
   <Project Path="FMODUnityResonance.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Data.csproj" />
+  <Project Path="InputSystem.csproj" />
 </Solution>
