@@ -9,6 +9,7 @@
   <Project Path="FMODUnityEditor.csproj" />
   <Project Path="FMODUnity.csproj" />
   <Project Path="UI.csproj" />
+  <Project Path="Capture.csproj" />
   <Project Path="Dialogue.csproj" />
   <Project Path="Manager.csproj" />
   <Project Path="FMODUnityResonance.csproj" />
