@@ -75,6 +75,7 @@ MonoBehaviour:
     - {fileID: -5347617973417912543, guid: bb607a7745fa844638bc632a75468bb9, type: 3}
     - {fileID: 3901299226461418296, guid: 67b5220193069442fa146f1e6a001dab, type: 3}
     - {fileID: 4054933027246109190, guid: d7145486710764cc3a961495241c6da6, type: 3}
+    - {fileID: 2035548606830618590, guid: c7a21559c3f374723ae82c4515ac2fa3, type: 3}
   - id: 2
     fields:
     - title: Name
@@ -113,6 +114,7 @@ MonoBehaviour:
     - {fileID: -1212688818919483392, guid: 4133061ccd5b143169515f10697e5449, type: 3}
     - {fileID: 670109915176814998, guid: fd74561c488c44a6f91a0a956e718d52, type: 3}
     - {fileID: -8124901713907631946, guid: 5edadd4171f494b3cbfd6cd2ad8c4b07, type: 3}
+    - {fileID: 7115573143849444869, guid: 57cf2ce21d62346efa2ec1aa4bf7d8b8, type: 3}
   - id: 3
     fields:
     - title: Name
@@ -356,6 +358,34 @@ MonoBehaviour:
       typeString: 
     - title: Initial Value
       value: 5
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+  - id: 13
+    fields:
+    - title: Name
+      value: MaiBlank
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: 8
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+  - id: 14
+    fields:
+    - title: Name
+      value: BaiTired
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: 6
       type: 1
       typeString: CustomFieldType_Number
     - title: Description
@@ -1138,7 +1168,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: SC01_SE02
+        value: SC02
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -1167,7 +1197,7 @@ MonoBehaviour:
       outgoingLinks:
       - originConversationID: 2
         originDialogueID: 5
-        destinationConversationID: 4
+        destinationConversationID: 3
         destinationDialogueID: 0
         isConnector: 0
         priority: 2
@@ -1397,7 +1427,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.7755002
+    canvasZoom: 0.4430003
   - id: 3
     fields:
     - title: Title
@@ -1538,7 +1568,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiNormal);
+        value: SetPortrait(Mai, pic=MaiBlank);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -1550,7 +1580,7 @@ MonoBehaviour:
         type: 4
         typeString: CustomFieldType_Localization
       - title: Background Image
-        value: Assets/Arts/CGs/Home_EnterWay.png
+        value: Assets/Arts/CGs/Doorstep_Day.png
         type: 0
         typeString: CustomFieldType_Sprite
       conversationID: 3
@@ -1651,8 +1681,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 142
-        y: 138
+        x: 153.47223
+        y: 144.37347
         width: 160
         height: 30
     - id: 3
@@ -1694,7 +1724,7 @@ MonoBehaviour:
         type: 4
         typeString: CustomFieldType_Localization
       - title: Background Image
-        value: Assets/Arts/CGs/Street.png
+        value: Assets/Arts/CGs/Sidewalk_Day.png
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image
@@ -1723,7 +1753,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 378
-        y: 137
+        y: 138.2747
         width: 160
         height: 30
     - id: 4
@@ -1765,7 +1795,7 @@ MonoBehaviour:
         type: 4
         typeString: CustomFieldType_Localization
       - title: Background Image
-        value: 
+        value: Assets/Arts/CGs/Sidewalk_Day.png
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image
@@ -1869,8 +1899,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 0, y: 8.057467}
+    canvasZoom: 0.7845002
   - id: 4
     fields:
     - title: Title
@@ -2370,7 +2400,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Bai, pic=BaiNormalTalk);
+        value: SetPortrait(Bai, pic=BaiTired);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -3054,8 +3084,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 174.512, y: 0.87916195}
-    canvasZoom: 0.7974987
+    canvasScrollPosition: {x: 71.4008, y: 0}
+    canvasZoom: 0.5899984
   - id: 6
     fields:
     - title: Title
@@ -3212,7 +3242,7 @@ MonoBehaviour:
         type: 4
         typeString: CustomFieldType_Localization
       - title: Background Image
-        value: Assets/Arts/CGs/Office_Lobby.png
+        value: Assets/Arts/CGs/Office_Desk_Day.png
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image
@@ -3743,7 +3773,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasZoom: 0.9394998
   - id: 7
     fields:
     - title: Title

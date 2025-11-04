@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0fca6dfc9637844e4a5cb079807933f4
+    m_Address: Assets/Arts/Characters/Mai/Mai_Awkward.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1690a91c2f2c245e68ae84a419a1d769
     m_Address: Assets/Arts/Events/COMM_STREET_01.jpg
     m_ReadOnly: 0
@@ -47,6 +52,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 217800a219f9d44bbaf5d2a395a3971f
     m_Address: Assets/Arts/CGs/Office_Room_Focus.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 255ec36ef4ec64488969ecf8e5e2b646
+    m_Address: Assets/Arts/Characters/Mai/Mai_Happy.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -90,8 +100,23 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 57cf2ce21d62346efa2ec1aa4bf7d8b8
+    m_Address: Assets/Arts/Characters/Bai/Bai_Tired.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5ee78bb6e8f0f403faebf16b5dfed92c
     m_Address: Assets/Arts/CGs/Home_BaiRoom.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67b5220193069442fa146f1e6a001dab
+    m_Address: Assets/Arts/Characters/Mai/Mai_Uncomfortable.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68303073035ce4874b9008207be73367
+    m_Address: Assets/Arts/CGs/Doorstep_Day.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -135,8 +160,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bb607a7745fa844638bc632a75468bb9
+    m_Address: Assets/Arts/Characters/Mai/Mai_Embarrassed.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c261bd073206f4791a8311e6ed4acb36
     m_Address: Assets/Arts/Events/Ally.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c7a21559c3f374723ae82c4515ac2fa3
+    m_Address: Assets/Arts/Characters/Mai/Mai_Blank.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -145,8 +180,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d7145486710764cc3a961495241c6da6
+    m_Address: Assets/Arts/Characters/Mai/Mai_Angry.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dcf6a1f11e8c54ae487dc130dac86180
     m_Address: Assets/Arts/Events/COMM_STREET_01_OPT_01.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e2706502ae8af4f61b7dac3191db11ff
+    m_Address: Assets/Arts/Characters/Mai/Mai_NormalTalk.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -157,6 +202,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f39d7ec51c1fc49c383e3460b0462282
     m_Address: Assets/Arts/CGs/Street.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f4712a148043b42928b4a6d95eba2dca
+    m_Address: Assets/Arts/Characters/Mai/Mai_Normal.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
