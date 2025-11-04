@@ -25,6 +25,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 16bf4bd61ecc34de1889c7db9c4999b0
+    m_Address: Assets/Arts/CGs/Home_BaiRoom_Pick.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 19d47c43cd3b445e289ff19f5841a9c5
+    m_Address: Assets/Arts/Comics/CH01_Fall.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1afd832d2009649ef855cc35e8a6e5d1
     m_Address: Assets/Arts/CGs/Home_MaiRoom_MaiWakeUp_Dark.png
     m_ReadOnly: 0
@@ -60,6 +70,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ad72e000be78474796b96f7c0053ca1
+    m_Address: Assets/Arts/CGs/Home_BaiRoom_Fall.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4b4684f2503ce44cca0fec59a318f688
     m_Address: Assets/Arts/CGs/Home_BaiRoom_Day.jpg
     m_ReadOnly: 0
@@ -87,6 +102,21 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 85d7b2ca29e2f442598dcea2314b1945
     m_Address: Assets/Arts/CGs/Home_LivingRoom_night.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e5cfd04804a14e85bf5e512c6060fd7
+    m_Address: Assets/Arts/CGs/Vortex.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96926f31befc947279aae922ada4f958
+    m_Address: Assets/Arts/Comics/CH01_Step.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 978e1b3f19add4bb7bfd809418845bd6
+    m_Address: Assets/Arts/Comics/ModelOnFloor.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -132,6 +162,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f52a13f36fa87465ea67d4007c800d6c
     m_Address: Assets/Arts/CGs/Home_LivingRoom.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fcd28c0760dbb4768af277cbbac5fda0
+    m_Address: Assets/Arts/Comics/CH01_Throw.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
