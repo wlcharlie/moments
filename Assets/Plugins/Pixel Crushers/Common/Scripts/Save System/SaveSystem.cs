@@ -818,7 +818,8 @@ namespace PixelCrushers
         {
             m_savedGameData.version = version;
             m_savedGameData.sceneName = GetCurrentSceneName();
-            foreach (var saver in m_savers)
+            PrepareTempSaversList();
+            foreach (var saver in m_tmpSavers)
             {
                 try
                 {
@@ -859,8 +860,7 @@ namespace PixelCrushers
                 m_savedGameData = savedGameData;
                 if (m_savers.Count > 0)
                 {
-                    m_tmpSavers.Clear();
-                    m_tmpSavers.AddRange(m_savers); // Make a copy in case a saver ends up removing multiple savers.
+                    PrepareTempSaversList();
                     for (int i = m_tmpSavers.Count - 1; i >= 0; i--) // A saver may remove itself from list during apply.
                     {
                         try
@@ -887,6 +887,19 @@ namespace PixelCrushers
                 instance.StartCoroutine(DelayedSaveDataAppliedCoroutine(framesToWaitBeforeSaveDataAppliedEvent));
                 framesToWaitBeforeSaveDataAppliedEvent = 0;
             }
+        }
+
+        private static void PrepareTempSaversList()
+        {
+            // Make a copy in case a saver ends up removing multiple savers and
+            // sort the list by order.
+            m_tmpSavers.Clear();
+            m_tmpSavers.AddRange(m_savers); 
+            try
+            {
+                m_tmpSavers.Sort((x, y) => x.order.CompareTo(y.order));
+            }
+            catch (System.Exception) { }
         }
 
         protected static IEnumerator DelayedSaveDataAppliedCoroutine(int frames)

@@ -4,10 +4,10 @@ AssetOrigin:
   serializedVersion: 1
   productId: 11672
   packageName: Dialogue System for Unity
-  packageVersion: 2.2.59
+  packageVersion: 2.2.61
   assetPath: Assets/Plugins/Pixel Crushers/Dialogue System/Prefabs/Art/Textures/UnityUI/Unity
     - Button.psd
-  uploadId: 789748
+  uploadId: 804490
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -93,32 +93,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 4096
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 4096
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1

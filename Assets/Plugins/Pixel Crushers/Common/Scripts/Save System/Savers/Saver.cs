@@ -28,6 +28,10 @@ namespace PixelCrushers
         [SerializeField]
         private bool m_restoreStateOnStart = false;
 
+        [Tooltip("Order in which savers should restore their data.")]
+        [SerializeField]
+        private int m_order = 0;
+
         protected string m_runtimeKey = null;
 
         /// <summary>
@@ -84,10 +88,24 @@ namespace PixelCrushers
             set { m_saveAcrossSceneChanges = value; }
         }
 
+        /// <summary>
+        /// When starting, restore this saver's state from current saved game data. 
+        /// Normally the save system restores state when loading games or changing 
+        /// scenes without this value, so it should usually be false.
+        /// </summary>
         public virtual bool restoreStateOnStart
         {
             get { return m_restoreStateOnStart; }
             set { m_restoreStateOnStart = value; }
+        }
+
+        /// <summary>
+        /// Order in which savers should restore their data.
+        /// </summary>
+        public virtual int order
+        { 
+            get { return m_order; }
+            set { m_order = value; }
         }
 
         public virtual void Awake() { }

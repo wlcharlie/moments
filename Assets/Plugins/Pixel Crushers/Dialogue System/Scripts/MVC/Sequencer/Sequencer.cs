@@ -1282,21 +1282,7 @@ namespace PixelCrushers.DialogueSystem
                 // Handle right now:
                 string angle = SequencerTools.GetParameter(args, 0, "default");
                 Transform subject = SequencerTools.GetSubject(SequencerTools.GetParameter(args, 1), m_speaker, m_listener);
-
-                // Get the angle:
-                bool isDefault = string.Equals(angle, "default");
-                if (isDefault) angle = SequencerTools.GetDefaultCameraAngle(subject);
-                bool isOriginal = string.Equals(angle, "original");
-                Transform angleTransform = isOriginal
-                    ? m_originalCamera.transform
-                    : ((m_cameraAngles != null) ? m_cameraAngles.transform.Find(angle) : null);
-                bool isLocalTransform = true;
-                if (angleTransform == null)
-                {
-                    isLocalTransform = false;
-                    GameObject go = GameObject.Find(angle);
-                    if (go != null) angleTransform = go.transform;
-                }
+                var angleTransform = SequencerTools.GetCameraAngle(cameraAngles, angle, subject, out bool isLocalTransform, out bool isOriginal);
 
                 // Log:
                 if (DialogueDebug.logInfo) Debug.Log(string.Format(System.Globalization.CultureInfo.InvariantCulture, "{0}: Sequencer: Camera({1}, {2}, {3}s)", new System.Object[] { DialogueDebug.Prefix, angle, Tools.GetObjectName(subject), duration }));

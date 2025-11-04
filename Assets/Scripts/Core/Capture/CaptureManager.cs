@@ -1,10 +1,15 @@
 using UnityEngine;
+using System.Collections;
 
 public class CaptureManager : MonoBehaviour
 {
     [SerializeField] private GameObject captureCamera;
     [SerializeField] private GameObject animal;
     [SerializeField] private Flash flash;
+
+    [Header("Canvas Settings")]
+    [SerializeField] private GameObject targetCanvas;
+    [SerializeField] private float delayBeforeShowCanvas = 2f;
 
     private CaptureCameraTrigger cameraTrigger;
     private bool isAnimalInRange = false;
@@ -77,6 +82,24 @@ public class CaptureManager : MonoBehaviour
         {
             captureCamera.SetActive(false);
             Debug.Log("CaptureCamera 已停用");
+        }
+
+        // 拍照觸發後，延遲啟用 Canvas
+        StartCoroutine(ShowCanvasAfterDelay());
+    }
+
+    private IEnumerator ShowCanvasAfterDelay()
+    {
+        yield return new WaitForSeconds(delayBeforeShowCanvas);
+
+        if (targetCanvas != null)
+        {
+            targetCanvas.SetActive(true);
+            Debug.Log("Canvas 已啟用");
+        }
+        else
+        {
+            Debug.LogWarning("CaptureManager: targetCanvas 未設定！");
         }
     }
 

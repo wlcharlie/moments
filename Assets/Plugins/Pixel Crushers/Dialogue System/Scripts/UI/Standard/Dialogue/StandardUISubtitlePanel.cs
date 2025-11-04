@@ -3,7 +3,6 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
-using System;
 using System.Text.RegularExpressions;
 
 namespace PixelCrushers.DialogueSystem
@@ -572,6 +571,7 @@ namespace PixelCrushers.DialogueSystem
                 }
             }
             shouldShowContinueButton = true;
+            if (panel != null) panel.ForceUpdateRectTransforms();
         }
 
         /// <summary>

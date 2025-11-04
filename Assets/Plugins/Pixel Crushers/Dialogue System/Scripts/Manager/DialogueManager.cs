@@ -216,6 +216,15 @@ namespace PixelCrushers.DialogueSystem
         public static bool useLinearGroupMode { get { return hasInstance ? instance.useLinearGroupMode : false; } }
 
         /// <summary>
+        /// Update any actively-displayed conversations' text when current language changes.
+        /// </summary>
+        public static bool updateActiveConversationTextWhenLanguageChanges 
+        { 
+            get { return hasInstance ? instance.updateActiveConversationTextWhenLanguageChanges : false; } 
+            set { if (hasInstance) instance.updateActiveConversationTextWhenLanguageChanges = value; }
+        }
+
+        /// <summary>
         /// If <c>true</c>, Dialogue System Triggers set to OnStart should wait until save data has been applied or variables initialized.
         /// </summary>
         public static bool onStartTriggerWaitForSaveDataApplied

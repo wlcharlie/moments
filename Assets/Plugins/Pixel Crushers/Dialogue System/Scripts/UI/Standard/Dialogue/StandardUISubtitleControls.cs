@@ -814,10 +814,25 @@ namespace PixelCrushers.DialogueSystem
 
             // Check main Actor & Conversant:
             var mainActorID = conversation.ActorID;
-            var mainActor = DialogueManager.masterDatabase.GetActor(DialogueActor.GetActorName(DialogueManager.currentActor));
-            if (mainActor != null) mainActorID = mainActor.id;
+            //var mainActor = DialogueManager.masterDatabase.GetActor(DialogueActor.GetActorName(DialogueManager.currentActor));
+            //if (mainActor != null) mainActorID = mainActor.id;
+            var mainDialogueActor = DialogueActor.GetDialogueActorComponent(DialogueManager.currentActor);
+            if (mainDialogueActor != null)
+            {
+                var mainActor = DialogueManager.masterDatabase.GetActor(mainDialogueActor.actor);
+                if (mainActor != null) mainActorID = mainActor.id;
+            }
+
+            var mainConversantID = conversation.ConversantID;
+            var conversantDialogueActor = DialogueActor.GetDialogueActorComponent(DialogueManager.currentConversant);
+            if (conversantDialogueActor != null)
+            {
+                var mainConversant = DialogueManager.masterDatabase.GetActor(conversantDialogueActor.actor);
+                if (mainConversant != null) mainConversantID = mainConversant.id;
+            }
+
             CheckActorIDOnStartConversation(mainActorID, checkedActorIDs, checkedPanels, ui);
-            CheckActorIDOnStartConversation(conversation.ConversantID, checkedActorIDs, checkedPanels, ui);
+            CheckActorIDOnStartConversation(mainConversantID, checkedActorIDs, checkedPanels, ui);
 
             // Check other actors:
             for (int i = 0; i < conversation.dialogueEntries.Count; i++)
