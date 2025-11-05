@@ -46,7 +46,14 @@ public class GameManager : MonoBehaviour
     public void OnStartButtonClicked()
     {
         Debug.Log("開始遊戲");
-        SceneManager.LoadScene("MainStoryScene"); // 載入遊戲場景
+        if (TransitionManager.Instance != null)
+        {
+            TransitionManager.Instance.LoadSceneWithTransition("MainStoryScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("MainStoryScene"); // 後備方案
+        }
     }
 
     public void OnQuitButtonClicked()

@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainStoryScene.unity
     guid: 7caccddbe190048e19c1a77079ee1848
+  - enabled: 1
+    path: Assets/Scenes/TrafficScene.unity
+    guid: 0c505a6b2be4b4cd2805f97632e32d23
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 580c278d777854186a74b9011fb3c4f0, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

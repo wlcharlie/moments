@@ -1,0 +1,19 @@
+{
+    "name": "SequencerCommand",
+    "rootNamespace": "",
+    "references": [
+        "GUID:25bb11dd35c063e4aa2c7cccc0212586",
+        "GUID:48f3d3d77bae2446dbbba0818eb894c1",
+        "GUID:0c752da273b17c547ae705acf0f2adf2",
+        "GUID:198bb6182c6e04fd2974411cb26590c8"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
