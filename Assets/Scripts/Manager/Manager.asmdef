@@ -2,7 +2,8 @@
     "name": "Manager",
     "rootNamespace": "",
     "references": [
-        "DialogueSystem"
+        "DialogueSystem",
+        "Utils"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -48,7 +48,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("開始遊戲");
         if (TransitionManager.Instance != null)
         {
-            TransitionManager.Instance.LoadSceneWithTransition("MainStoryScene");
+            Debug.Log("開始遊戲過場");
+            TransitionManager.Instance.LoadSceneWithTransition("MainStoryScene", TransitionType.LoadingScreen);
         }
         else
         {
@@ -62,7 +63,7 @@ public class GameManager : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
-            Application.Quit();
+        Application.Quit();
 #endif
     }
 
