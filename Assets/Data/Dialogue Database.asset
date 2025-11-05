@@ -1950,6 +1950,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Sprite
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
       conversationID: 3
       isRoot: 0
       isGroup: 0
@@ -11410,8 +11414,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0.41038358, y: 0}
-    canvasZoom: 1.0755
+    canvasScrollPosition: {x: 0, y: 0.24874526}
+    canvasZoom: 1.0690004
   - id: 15
     fields:
     - title: Title

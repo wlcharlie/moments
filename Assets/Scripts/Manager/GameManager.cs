@@ -1,3 +1,4 @@
+using PixelCrushers.DialogueSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -46,14 +47,20 @@ public class GameManager : MonoBehaviour
     public void OnStartButtonClicked()
     {
         Debug.Log("開始遊戲");
+
         if (TransitionManager.Instance != null)
         {
             Debug.Log("開始遊戲過場");
-            TransitionManager.Instance.LoadSceneWithTransition("MainStoryScene", TransitionType.LoadingScreen);
+            TransitionManager.Instance.LoadSceneWithTransition("MainStoryScene", TransitionType.LoadingScreen, onLoadDone: () =>
+            {
+                // 場景載入完成後啟動對話 CH01_SC01_SE01
+                DialogueManager.StartConversation("CH01_SC01_SE01");
+            });
         }
         else
         {
             SceneManager.LoadScene("MainStoryScene"); // 後備方案
+            DialogueManager.StartConversation("CH01_SC01_SE01");
         }
     }
 

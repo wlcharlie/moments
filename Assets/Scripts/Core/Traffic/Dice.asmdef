@@ -1,10 +1,11 @@
 {
-    "name": "Manager",
+    "name": "Traffic",
     "rootNamespace": "",
     "references": [
-        "DialogueSystem",
-        "Utils",
-        "Unity.TextMeshPro"
+        "GUID:25bb11dd35c063e4aa2c7cccc0212586",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:198bb6182c6e04fd2974411cb26590c8",
+        "GUID:ca0befaaa9bc7498ca86001a8bf16ccf"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

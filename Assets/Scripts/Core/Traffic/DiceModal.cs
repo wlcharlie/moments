@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using PixelCrushers.DialogueSystem;
 
 /// <summary>
 /// 控制骰子 Modal 的顯示、隱藏和結果文字
@@ -175,7 +176,22 @@ public class DiceModal : MonoBehaviour
         {
             manager.MovePlayer(result);
         }
+
+        // 切回 MainStoryScene 並啟動對話 CH0004
+        if (TransitionManager.Instance != null)
+        {
+
+            // 使用 Cover 模式切換場景
+            TransitionManager.Instance.LoadSceneWithTransition("MainStoryScene", TransitionType.Cover, onLoadDone: () =>
+            {
+                // 場景載入完成後啟動對話 CH0004
+                DialogueManager.StopAllConversations();
+                DialogueManager.StartConversation("COMM_STREET_01");
+            });
+        }
     }
+
+
 
     /// <summary>
     /// 手動觸發擲骰子（供外部按鈕調用）

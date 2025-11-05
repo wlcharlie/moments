@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -73,18 +74,19 @@ public class TransitionManager : MonoBehaviour
     /// </summary>
     /// <param name="sceneName">要載入的場景名稱</param>
     /// <param name="transitionType">轉場類型（預設為 Cover）</param>
-    public void LoadSceneWithTransition(string sceneName, TransitionType transitionType = TransitionType.Cover)
+    /// <param name="onLoadDone">場景載入完成後的回調函數（可選）</param>
+    public void LoadSceneWithTransition(string sceneName, TransitionType transitionType = TransitionType.Cover, Action onLoadDone = null)
     {
         if (!isTransitioning)
         {
-            StartCoroutine(TransitionCoroutine(sceneName, transitionType));
+            StartCoroutine(TransitionCoroutine(sceneName, transitionType, onLoadDone));
         }
     }
 
     /// <summary>
     /// 執行過渡動畫的協程
     /// </summary>
-    private IEnumerator TransitionCoroutine(string sceneName, TransitionType transitionType)
+    private IEnumerator TransitionCoroutine(string sceneName, TransitionType transitionType, Action onLoadDone)
     {
         isTransitioning = true;
 
@@ -92,15 +94,15 @@ public class TransitionManager : MonoBehaviour
         switch (transitionType)
         {
             case TransitionType.Cover:
-                yield return StartCoroutine(CoverTransition(sceneName));
+                yield return StartCoroutine(CoverTransition(sceneName, onLoadDone));
                 break;
 
             case TransitionType.Splash:
-                yield return StartCoroutine(SplashTransition(sceneName));
+                yield return StartCoroutine(SplashTransition(sceneName, onLoadDone));
                 break;
 
             case TransitionType.LoadingScreen:
-                yield return StartCoroutine(LoadingScreenTransition(sceneName));
+                yield return StartCoroutine(LoadingScreenTransition(sceneName, onLoadDone));
                 break;
         }
 
@@ -110,7 +112,7 @@ public class TransitionManager : MonoBehaviour
     /// <summary>
     /// Cover 轉場：滑動遮罩效果
     /// </summary>
-    private IEnumerator CoverTransition(string sceneName)
+    private IEnumerator CoverTransition(string sceneName, Action onLoadDone)
     {
         // 階段 1: 從右邊滑入至中間
         yield return StartCoroutine(SlideIn());
@@ -124,6 +126,9 @@ public class TransitionManager : MonoBehaviour
             yield return null;
         }
 
+        // 場景載入完成，觸發回調
+        onLoadDone?.Invoke();
+
         // 階段 2: 從中間滑出至左邊
         yield return StartCoroutine(SlideOut());
     }
@@ -131,7 +136,7 @@ public class TransitionManager : MonoBehaviour
     /// <summary>
     /// Splash 轉場：白色閃光效果
     /// </summary>
-    private IEnumerator SplashTransition(string sceneName)
+    private IEnumerator SplashTransition(string sceneName, Action onLoadDone)
     {
         // 非同步載入場景
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
@@ -142,6 +147,9 @@ public class TransitionManager : MonoBehaviour
             yield return null;
         }
 
+        // 場景載入完成，觸發回調
+        onLoadDone?.Invoke();
+
         // 白色閃光效果
         yield return StartCoroutine(SplashEffect());
     }
@@ -149,7 +157,7 @@ public class TransitionManager : MonoBehaviour
     /// <summary>
     /// LoadingScreen 轉場：僅顯示載入畫面和進度條
     /// </summary>
-    private IEnumerator LoadingScreenTransition(string sceneName)
+    private IEnumerator LoadingScreenTransition(string sceneName, Action onLoadDone)
     {
         // 顯示載入畫面
         ShowLoadingScreen();
@@ -168,6 +176,9 @@ public class TransitionManager : MonoBehaviour
 
         // 確保進度達到 100%
         UpdateLoadingProgress(1f);
+
+        // 場景載入完成，觸發回調
+        onLoadDone?.Invoke();
 
         // 短暫延遲讓使用者看到 100%
         yield return new WaitForSeconds(1f);
