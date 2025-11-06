@@ -5,6 +5,7 @@ using UnityEngine;
 public class AutoScaleSprites : MonoBehaviour
 {
     private GameObject backgroundObject;
+    private Vector3 fixedScale = Vector3.one;
 
     private void Start()
     {
@@ -54,7 +55,14 @@ public class AutoScaleSprites : MonoBehaviour
                 float scale = Mathf.Min(bgScaleX, bgScaleY);
 
                 background.localScale = new Vector3(scale, scale, 1);
+                fixedScale = new Vector3(scale, scale, 1);
             }
+        }
+
+        // loop all children to fix their scale
+        foreach (Transform child in gameObject.GetComponentInChildren<Transform>())
+        {
+            child.localScale = fixedScale;
         }
     }
 
