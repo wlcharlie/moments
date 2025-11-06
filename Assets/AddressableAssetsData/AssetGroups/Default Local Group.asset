@@ -170,6 +170,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c5ba67595b7dc489692165cd9b1c73b9
+    m_Address: Assets/Arts/CGs/Office_Room_Look.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c7a21559c3f374723ae82c4515ac2fa3
     m_Address: Assets/Arts/Characters/Mai/Mai_Blank.png
     m_ReadOnly: 0
