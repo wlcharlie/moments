@@ -76,6 +76,7 @@ MonoBehaviour:
     - {fileID: 3901299226461418296, guid: 67b5220193069442fa146f1e6a001dab, type: 3}
     - {fileID: 4054933027246109190, guid: d7145486710764cc3a961495241c6da6, type: 3}
     - {fileID: 2035548606830618590, guid: c7a21559c3f374723ae82c4515ac2fa3, type: 3}
+    - {fileID: 0}
   - id: 2
     fields:
     - title: Name
@@ -386,6 +387,20 @@ MonoBehaviour:
       typeString: 
     - title: Initial Value
       value: 6
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+  - id: 15
+    fields:
+    - title: Name
+      value: MaiNone
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: 9
       type: 1
       typeString: CustomFieldType_Number
     - title: Description
@@ -2329,7 +2344,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u9019\u6A23\u4E0B\u53BB\u4E0D\u884C"
+        value: "\u8001\u662F\u9019\u6A23\u4E0D\u884C"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -2373,8 +2388,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 158.24844
-        y: 230
+        x: 154.91322
+        y: 231.11172
         width: 160
         height: 30
     - id: 5
@@ -3084,7 +3099,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 601.0015
-        y: 29
+        y: 27.888275
         width: 160
         height: 30
     - id: 15
@@ -3114,7 +3129,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiUncomfortable);CameraShake(0.3, 0.25);
+        value: SetPortrait(Mai, pic=MaiNone);CameraShake(0.3, 0.25);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -3126,7 +3141,7 @@ MonoBehaviour:
         type: 4
         typeString: CustomFieldType_Localization
       - title: Background Image
-        value: Assets/Arts/CGs/Home_LivingRoom.png
+        value: 
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image
@@ -3154,12 +3169,12 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 601.0015
+        x: 602.1132
         y: 78.012726
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 377.62054, y: 124.84414}
+    canvasScrollPosition: {x: 0, y: 1.1117249}
     canvasZoom: 0.8994999
   - id: 6
     fields:
@@ -12939,7 +12954,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiUncomfortable);CameraShake(0.3, 0.25);
+        value: SetPortrait(Mai, pic=MaiNone);CameraShake(0.3, 0.25);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -13148,7 +13163,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u9084\u5BB3\u6211\u6454\u5012\uFF0C\u5C0F\u767D\u59B3\u5230\u5E95\u8981\u6211\u8B1B\u5E7E\u6B21"
+        value: "\u8D85\u75DB\u7684....\u5C0F\u767D\uFF01\u59B3\u5230\u5E95\u8981\u6211\u8B1B\u5E7E\u6B21\uFF01\n\u9019\u4E9B\u6771\u897F\u99AC\u4E0A\u6536\u4E7E\u6DE8\uFF01\u9084\u6709\u5916\u9762\uFF0C\u4E5F\u4E00\u8D77\u6574\u7406\uFF01"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -13207,11 +13222,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 3
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 3
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -13219,11 +13234,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u5C0F\u9EA5\u4E00\u628A\u626F\u4E0B\u5C0F\u767D\u61F7\u88E1\u7684\u756B\u518A\uFF0C\u91CD\u91CD\u6454\u5728\u5730\u4E0A"
+        value: "\u539F\u672C\u58D3\u6291\u7684\u6012\u6C23\uFF0C\u5FCD\u4E0D\u4F4F\u7206\u767C\uFF0C\u59B3\u4E00\u628A\u626F\u4E0B\u5C0F\u767D\u61F7\u88E1\u7684\u756B\u518A\uFF0C\u91CD\u91CD\u6454\u5012\u5730\u4E0A"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetPortrait(Mai, pic=MaiNone);CameraShake(0.3, 0.25);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -13306,7 +13321,7 @@ MonoBehaviour:
         type: 4
         typeString: CustomFieldType_Localization
       - title: Background Image
-        value: Assets/Arts/CGs/Home_BaiRoom.png
+        value: 
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image
@@ -13377,7 +13392,7 @@ MonoBehaviour:
         type: 4
         typeString: CustomFieldType_Localization
       - title: Background Image
-        value: Assets/Arts/CGs/Vortex.png
+        value: 
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image
@@ -13404,8 +13419,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 75.887695}
-    canvasZoom: 0.9525001
+    canvasScrollPosition: {x: 41.316624, y: 98.56973}
+    canvasZoom: 1.1480016
   syncInfo:
     syncActors: 0
     syncItems: 0
