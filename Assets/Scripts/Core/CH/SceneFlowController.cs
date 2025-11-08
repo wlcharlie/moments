@@ -14,11 +14,11 @@ public class SceneFlowController : MonoBehaviour
     [Header("Visual Cleanup")]
     [Tooltip("在切換前要停掉動畫的 Animator 清單。")]
     [SerializeField] private Animator[] animatorsToDisable;
-    [Tooltip("在切換前要關閉的物件 (通常是書本/特效，以避免殘影。")] 
+    [Tooltip("在切換前要關閉的物件 (通常是書本/特效，以避免殘影。")]
     [SerializeField] private GameObject[] objectsToHide;
-    [Tooltip("在切換前要淡出的 CanvasGroup。")] 
+    [Tooltip("在切換前要淡出的 CanvasGroup。")]
     [SerializeField] private CanvasGroup[] canvasGroupsToZero;
-    [Tooltip("在切換前要設為透明的 Image。")] 
+    [Tooltip("在切換前要設為透明的 Image。")]
     [SerializeField] private UnityEngine.UI.Image[] imagesToTransparent;
 
     public void OnBookGlowEnd()
@@ -30,7 +30,11 @@ public class SceneFlowController : MonoBehaviour
             TransitionManager.Instance.LoadSceneWithTransition(
                 targetSceneName,
                 transitionType,
-                onLoadDone: () => DialogueManager.StartConversation(conversationId));
+                onLoadDone: () =>
+                {
+                    DialogueManager.StopAllConversations();
+                    DialogueManager.StartConversation(conversationId);
+                });
         }
         else
         {
