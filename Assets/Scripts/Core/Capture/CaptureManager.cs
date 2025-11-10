@@ -83,6 +83,15 @@ public class CaptureManager : MonoBehaviour
             captureCamera.SetActive(false);
             Debug.Log("CaptureCamera 已停用");
         }
+        if (animal != null)
+        {
+            Animal animalScript = animal.GetComponent<Animal>();
+            if (animalScript != null)
+            {
+                animalScript.StopAndReturnToCenter();
+                Debug.Log("Animal 開始回到中央");
+            }
+        }
 
         // 拍照觸發後，延遲啟用 Canvas
         StartCoroutine(ShowCanvasAfterDelay());
