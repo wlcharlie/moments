@@ -48,20 +48,64 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("開始遊戲");
 
+        // 讀取存檔中的對話進度
+        string conversationToResume = GetSavedConversation();
+
         if (TransitionManager.Instance != null)
         {
             Debug.Log("開始遊戲過場");
             TransitionManager.Instance.LoadSceneWithTransition("MainStoryScene", TransitionType.LoadingScreen, onLoadDone: () =>
             {
-                // 場景載入完成後啟動對話 CH01_SC01_SE01
-                DialogueManager.StartConversation("CH01_SC01_SE01");
+                // 場景載入完成後啟動對話
+                DialogueManager.StartConversation(conversationToResume);
             });
         }
         else
         {
             SceneManager.LoadScene("MainStoryScene"); // 後備方案
-            DialogueManager.StartConversation("CH01_SC01_SE01");
+            DialogueManager.StartConversation(conversationToResume);
         }
+    }
+
+    /// <summary>
+    /// 從存檔中讀取對話進度
+    /// </summary>
+    private string GetSavedConversation()
+    {
+        // 預設對話
+        string defaultConversation = "CH01_SC01_SE01";
+
+        // 檢查 PersistentDataManager 是否存在
+        if (global::PersistentDataManager.Instance == null)
+        {
+            Debug.LogWarning("PersistentDataManager 不存在，使用預設對話");
+            return defaultConversation;
+        }
+
+        // 檢查是否有存檔
+        if (!global::PersistentDataManager.Instance.HasSaveData("dialogue"))
+        {
+            Debug.Log("沒有存檔，從頭開始遊戲");
+            return defaultConversation;
+        }
+
+        // 載入存檔資料
+        var saveData = global::PersistentDataManager.Instance.LoadData<DialogueData>("dialogue");
+
+        if (saveData != null && saveData.entries != null)
+        {
+            // 取得 mainStory 的值
+            string savedConversation = saveData.GetValue("mainStory");
+
+            if (!string.IsNullOrEmpty(savedConversation))
+            {
+                Debug.Log($"載入存檔進度: {savedConversation}");
+                return savedConversation;
+            }
+        }
+
+        Debug.Log("存檔中沒有 mainStory，使用預設對話");
+        return defaultConversation;
     }
 
     public void OnQuitButtonClicked()

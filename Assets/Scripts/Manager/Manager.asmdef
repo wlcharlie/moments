@@ -4,7 +4,8 @@
     "references": [
         "DialogueSystem",
         "Utils",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "Data"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
