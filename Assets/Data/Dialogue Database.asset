@@ -1208,6 +1208,12 @@ MonoBehaviour:
         destinationDialogueID: 1
         isConnector: 0
         priority: 2
+      - originConversationID: 4
+        originDialogueID: 0
+        destinationConversationID: 4
+        destinationDialogueID: 16
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -2284,6 +2290,71 @@ MonoBehaviour:
         y: 78.012726
         width: 160
         height: 30
+    - id: 16
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: "\u5207\u53BB debugScene"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u5207\u53BB debugScene"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: SwitchScene(DialogueDebugScene)
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 4
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 8.782103
+        y: 80.000015
+        width: 160
+        height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 1.1117249}
     canvasZoom: 0.8994999
@@ -3084,7 +3155,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 162.49219
+        x: 163.73831
         y: 178.4424
         width: 160
         height: 30
@@ -3127,7 +3198,7 @@ MonoBehaviour:
         type: 4
         typeString: CustomFieldType_Localization
       - title: Background Image
-        value: Assets/Arts/CGs/Street.png
+        value: Assets/Arts/CGs/Doorstep_Day.png
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image
@@ -3156,7 +3227,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 157.21059
-        y: 287.6759
+        y: 286.4298
         width: 160
         height: 30
     - id: 3
@@ -3198,7 +3269,7 @@ MonoBehaviour:
         type: 4
         typeString: CustomFieldType_Localization
       - title: Background Image
-        value: Assets/Arts/CGs/Sidewalk_Day.png
+        value: Assets/Arts/CGs/Doorstep_Day.png
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image
@@ -3269,7 +3340,7 @@ MonoBehaviour:
         type: 4
         typeString: CustomFieldType_Localization
       - title: Background Image
-        value: Assets/Arts/CGs/Sidewalk_Day.png
+        value: Assets/Arts/CGs/Doorstep_Day.png
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image
@@ -3438,7 +3509,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 391.84186
-        y: 561.1532
+        y: 562.3993
         width: 160
         height: 30
     - id: 7

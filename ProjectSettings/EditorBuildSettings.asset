@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CH01_SC01_BookFadeScene.unity
     guid: e047a192cb133464c9472b7f0a28bdd6
+  - enabled: 1
+    path: Assets/Scenes/DialogueDebugScene.unity
+    guid: 656cfe6d955374e1184f3045ae7b175c
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 580c278d777854186a74b9011fb3c4f0, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
