@@ -35,6 +35,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0fcfe27aa07ca49e793553b3f325c54b
+    m_Address: Assets/Arts/CGs/reference/MRT_PrioritySeat.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1690a91c2f2c245e68ae84a419a1d769
     m_Address: Assets/Arts/Events/COMM_STREET_01.jpg
     m_ReadOnly: 0
@@ -52,6 +57,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1afd832d2009649ef855cc35e8a6e5d1
     m_Address: Assets/Arts/CGs/Home_MaiRoom_MaiWakeUp_Dark.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1dc035a300cf24a1c87e1dc129b57ca3
+    m_Address: Assets/Arts/CGs/Office_Desk_Day.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -92,6 +102,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 37c8d80a0b1b54e88a5c37c84504843d
     m_Address: Assets/Arts/CH/CH01/CH01_Style.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e74dc1467eb24227955e1cc07658866
+    m_Address: Assets/Arts/CGs/Sidewalk_Dusk.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -145,6 +160,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 70553016780fc4968b7e7844b0c17c36
+    m_Address: Assets/Arts/CGs/Office_Desk_Night.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 85d7b2ca29e2f442598dcea2314b1945
     m_Address: Assets/Arts/CGs/Home_LivingRoom_night.png
     m_ReadOnly: 0
@@ -152,6 +172,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8e5cfd04804a14e85bf5e512c6060fd7
     m_Address: Assets/Arts/CGs/Vortex.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 948396cc40c4745b98f0e23c1c31e488
+    m_Address: Assets/Arts/CGs/Sidewalk_Night.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -222,6 +247,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ebfd493669bdf4175b66177e98fe00e5
     m_Address: Assets/Arts/CGs/Home_MaiRoom_MaiWakeUp.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f2710f9977d0c4ee685efd2245feaf06
+    m_Address: Assets/Arts/CGs/Office_Desk_Dusk.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
