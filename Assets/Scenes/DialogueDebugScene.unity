@@ -584,6 +584,21 @@ MonoBehaviour:
   - buttonName: CH01_SC03_SE02
     sceneToLoad: MainStoryScene
     conversationStart: CH01_SC03_SE02
+  - buttonName: CH01_SC04_SE01
+    sceneToLoad: MainStoryScene
+    conversationStart: CH01_SC04_SE01
+  - buttonName: CH01_SC04_SE02
+    sceneToLoad: MainStoryScene
+    conversationStart: CH01_SC04_SE02
+  - buttonName: CH01_SC04_SE03
+    sceneToLoad: MainStoryScene
+    conversationStart: CH01_SC04_SE03
+  - buttonName: CH01_SC04_SE04
+    sceneToLoad: MainStoryScene
+    conversationStart: CH01_SC04_SE04
+  - buttonName: CH01_SC05_SE01
+    sceneToLoad: MainStoryScene
+    conversationStart: CH01_SC05_SE01
   - buttonName: COMM_MART_02
     sceneToLoad: MainStoryScene
     conversationStart: COMM_MART_02
