@@ -117,4 +117,16 @@ public class CaptureManager : MonoBehaviour
     {
         return isAnimalInRange;
     }
+
+    public void OnTapOKButton()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.SwitchScene("CollectionScene");
+        }
+        else
+        {
+            Debug.LogError("CaptureManager: GameManager.Instance is null!");
+        }
+    }
 }

@@ -149,6 +149,8 @@ public class GameManager : MonoBehaviour
         // 讀取存檔中的對話進度
         string conversationToResume = GetSavedConversation();
 
+        Debug.Log($"準備從對話 {conversationToResume} 繼續遊戲");
+
         if (TransitionManager.Instance != null)
         {
             Debug.Log("開始遊戲過場");
@@ -174,13 +176,48 @@ public class GameManager : MonoBehaviour
     public void OnDebugModeButtonClicked()
     {
         Debug.Log("進入偵錯模式");
-        // TODO: 後續補上邏輯
+        TransitionManager.Instance.LoadSceneWithTransition("DialogueDebugScene", TransitionType.LoadingScreen);
     }
 
     public void OnFollowUsButtonClicked()
     {
         Debug.Log("關注我們");
         // TODO: 後續補上邏輯
+    }
+
+    // ===== 流程 管理 =====
+
+    public void SwitchScene(string sceneName)
+    {
+        Debug.Log($"切換場景到 {sceneName}");
+
+        if (TransitionManager.Instance != null)
+        {
+            TransitionManager.Instance.LoadSceneWithTransition(sceneName, TransitionType.Cover);
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneName); // 後備方案
+        }
+    }
+
+    public void SwitchSceneAndConversation(string sceneName, string conversationName)
+    {
+        Debug.Log($"切換場景到 {sceneName} 並啟動對話 {conversationName}");
+
+        if (TransitionManager.Instance != null)
+        {
+            TransitionManager.Instance.LoadSceneWithTransition(sceneName, TransitionType.LoadingScreen, onLoadDone: () =>
+            {
+                // 場景載入完成後啟動對話
+                DialogueManager.StartConversation(conversationName);
+            });
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneName); // 後備方案
+            DialogueManager.StartConversation(conversationName);
+        }
     }
 
     // ===== 遊戲狀態管理 =====

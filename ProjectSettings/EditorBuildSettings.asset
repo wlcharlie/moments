@@ -20,6 +20,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DialogueDebugScene.unity
     guid: 656cfe6d955374e1184f3045ae7b175c
+  - enabled: 1
+    path: Assets/Scenes/CaptureScene.unity
+    guid: 4c7bf0badcbb146fbbc72f1109d4a38b
+  - enabled: 1
+    path: Assets/Scenes/WorkRoutineScene.unity
+    guid: 47ea3adbcda23461ea7f48291cdaf7e0
+  - enabled: 1
+    path: Assets/Scenes/CollectionScene.unity
+    guid: 8e8b8bb6628634ac6b8c31d5bdf6c500
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 580c278d777854186a74b9011fb3c4f0, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
