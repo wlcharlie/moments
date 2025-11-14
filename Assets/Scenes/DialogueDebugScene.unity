@@ -605,6 +605,9 @@ MonoBehaviour:
   - buttonName: COMM_MRT_02
     sceneToLoad: MainStoryScene
     conversationStart: COMM_MRT_02
+  - buttonName: CH01_SC01_SE01
+    sceneToLoad: MainStoryScene
+    conversationStart: CH01_SC01_SE01
   buttonPrefab: {fileID: 7508075941483278943, guid: c203f83f647f84cf5bf5f0743cba10fe, type: 3}
   buttonParent: {fileID: 265248287}
 --- !u!4 &838698891
