@@ -129,4 +129,30 @@ public class PersistentDataManager : MonoBehaviour
     {
         return Path.Combine(saveFolderPath, fileName + ".json");
     }
+
+    /// <summary>
+    /// 刪除所有存檔資料 (清除所有 .json 檔案)
+    /// </summary>
+    public void DeleteAllSaveData()
+    {
+        try
+        {
+            // 取得存檔資料夾中所有的 .json 檔案
+            string[] saveFiles = Directory.GetFiles(saveFolderPath, "*.json");
+
+            int deletedCount = 0;
+            foreach (string filePath in saveFiles)
+            {
+                File.Delete(filePath);
+                deletedCount++;
+                Debug.Log($"已刪除: {Path.GetFileName(filePath)}");
+            }
+
+            Debug.Log($"已刪除 {deletedCount} 個存檔檔案");
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"刪除所有存檔失敗: {e.Message}");
+        }
+    }
 }

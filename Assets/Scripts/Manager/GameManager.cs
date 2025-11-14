@@ -46,24 +46,34 @@ public class GameManager : MonoBehaviour
     // 首頁 開始遊戲按鈕
     public void OnStartButtonClicked()
     {
-        Debug.Log("開始遊戲");
+        Debug.Log("顯示選單");
 
-        // 讀取存檔中的對話進度
-        string conversationToResume = GetSavedConversation();
-
-        if (TransitionManager.Instance != null)
+        GameObject uiTitleSceneButtons = GameObject.Find("UITitleSceneButtons");
+        if (uiTitleSceneButtons != null)
         {
-            Debug.Log("開始遊戲過場");
-            TransitionManager.Instance.LoadSceneWithTransition("MainStoryScene", TransitionType.LoadingScreen, onLoadDone: () =>
+            Transform menuTransform = uiTitleSceneButtons.transform.Find("Menu");
+            if (menuTransform != null)
             {
-                // 場景載入完成後啟動對話
-                DialogueManager.StartConversation(conversationToResume);
-            });
+                menuTransform.gameObject.SetActive(true);
+            }
+            else
+            {
+                Debug.LogWarning("在 UITitleSceneButtons 下找不到 'Menu' 子物件");
+            }
         }
         else
         {
-            SceneManager.LoadScene("MainStoryScene"); // 後備方案
-            DialogueManager.StartConversation(conversationToResume);
+            Debug.LogWarning("找不到名為 'UITitleSceneButtons' 的 GameObject");
+        }
+
+        GameObject startGameButton = GameObject.Find("StartGameButton");
+        if (startGameButton != null)
+        {
+            startGameButton.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("找不到名為 'StartGameButton' 的 GameObject");
         }
     }
 
@@ -128,6 +138,49 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("繼續遊戲");
         Time.timeScale = 1f; // 恢復遊戲時間
+    }
+
+    // ===== 模式選擇按鈕 =====
+
+    public void OnStoryModeButtonClicked()
+    {
+        Debug.Log("開始遊戲");
+
+        // 讀取存檔中的對話進度
+        string conversationToResume = GetSavedConversation();
+
+        if (TransitionManager.Instance != null)
+        {
+            Debug.Log("開始遊戲過場");
+            TransitionManager.Instance.LoadSceneWithTransition("MainStoryScene", TransitionType.LoadingScreen, onLoadDone: () =>
+            {
+                // 場景載入完成後啟動對話
+                DialogueManager.StartConversation(conversationToResume);
+            });
+        }
+        else
+        {
+            SceneManager.LoadScene("MainStoryScene"); // 後備方案
+            DialogueManager.StartConversation(conversationToResume);
+        }
+    }
+
+    public void OnEventModeButtonClicked()
+    {
+        Debug.Log("進入事件模式");
+        // TODO: 後續補上邏輯
+    }
+
+    public void OnDebugModeButtonClicked()
+    {
+        Debug.Log("進入偵錯模式");
+        // TODO: 後續補上邏輯
+    }
+
+    public void OnFollowUsButtonClicked()
+    {
+        Debug.Log("關注我們");
+        // TODO: 後續補上邏輯
     }
 
     // ===== 遊戲狀態管理 =====
