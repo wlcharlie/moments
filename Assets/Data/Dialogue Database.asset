@@ -11275,7 +11275,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiHappy);SetDialoguePanel(false)
+        value: SetPortrait(Mai, pic=MaiHappy); SetDialoguePanel(false)
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -11315,8 +11315,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 432
-        y: 168
+        x: 379.88303
+        y: 213.48041
         width: 160
         height: 30
     - id: 11
@@ -11381,12 +11381,12 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 383
-        y: 238.54544
+        y: 290.4935
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0.38636696, y: 0.3896002}
-    canvasZoom: 0.96399987
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.9624999
   - id: 17
     fields:
     - title: Title
