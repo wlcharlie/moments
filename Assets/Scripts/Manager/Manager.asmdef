@@ -5,7 +5,8 @@
         "DialogueSystem",
         "Utils",
         "Unity.TextMeshPro",
-        "Data"
+        "Data",
+        "FMODUnity"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
