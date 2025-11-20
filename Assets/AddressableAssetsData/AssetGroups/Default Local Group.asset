@@ -30,6 +30,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0bb2e1f56bd454df194f7049557bbe5b
+    m_Address: Assets/Arts/CH/CH01/CH01_SC02_SE03_Head.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c3eddac48fb84cd08f2caeabd1ec7e9
+    m_Address: Assets/Arts/Comics/CH01_SC02_SE03_Beigo_Jump.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0fca6dfc9637844e4a5cb079807933f4
     m_Address: Assets/Arts/Characters/Mai/Mai_Awkward.png
     m_ReadOnly: 0
@@ -110,6 +120,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4351289ddc8f14186837b0ee4f198b2e
+    m_Address: Assets/Arts/Characters/Mai/Mai_Hesitate.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 435243a1214574957a42c7cb7b5edec3
     m_Address: Assets/Arts/CGs/Office_Room_Colleague.png
     m_ReadOnly: 0
@@ -132,6 +147,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 51fa111cd458a4390805def8ab1ba09c
     m_Address: Assets/Arts/CGs/Home_BaiRoom_Door.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 523a21631c4cf4e5f968ff5b41291f5e
+    m_Address: Assets/Arts/Characters/Mai/Mai_Puzzled.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -170,6 +190,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d2de126c71c14a978259b955f3a57a6
+    m_Address: Assets/Arts/Comics/CH01_SC02_SE03_Beigo_Head.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 85d7b2ca29e2f442598dcea2314b1945
     m_Address: Assets/Arts/CGs/Home_LivingRoom_night.png
     m_ReadOnly: 0
@@ -195,8 +220,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9889c0cd0fa974be58d131f737d73976
+    m_Address: Assets/Arts/CGs/Doorstep_Night.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a49b96021aa684d16aae539d3cc39096
     m_Address: Assets/Arts/CGs/Street_ToHome.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7265637ba0d14568be9b7328a968419
+    m_Address: Assets/Arts/Comics/CH01_SC02_SE03_Beigo_ Tail.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -245,6 +280,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d7de3260e16fd4c3586c4ca7aa8d3df8
+    m_Address: Assets/Arts/CH/CH01/Doorstep_Night_ZoomIn_Beigo_Hello.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dcf6a1f11e8c54ae487dc130dac86180
     m_Address: Assets/Arts/Events/COMM_STREET_01_OPT_01.jpg
     m_ReadOnly: 0
@@ -252,6 +292,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e2706502ae8af4f61b7dac3191db11ff
     m_Address: Assets/Arts/Characters/Mai/Mai_NormalTalk.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e3ec6825cefad457f9a67d48867bcd1f
+    m_Address: Assets/Arts/CGs/Doorstep_Night_ZoomIn.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -280,8 +325,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f87a782f83b6e48178313108d2180356
+    m_Address: Assets/Arts/CH/CH01/Doorstep_Night_ZoomIn_Beigo_Worry.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fcd28c0760dbb4768af277cbbac5fda0
     m_Address: Assets/Arts/Comics/CH01_Throw.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe0924bf69e9e43359815a314c117da2
+    m_Address: Assets/Arts/Comics/CH01_SC02_SE03_Beigo_Head.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
