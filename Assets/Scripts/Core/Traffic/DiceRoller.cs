@@ -48,6 +48,9 @@ public class DiceRoller : MonoBehaviour
     /// </summary>
     private IEnumerator RollAnimation()
     {
+        // FMOD  obj_dice_drop
+        FMODUnity.RuntimeManager.PlayOneShot("event:/object/obj_dice_drop");
+
         isRolling = true;
         float elapsed = 0f;
 

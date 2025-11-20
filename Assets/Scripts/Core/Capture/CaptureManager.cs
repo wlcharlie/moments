@@ -70,6 +70,9 @@ public class CaptureManager : MonoBehaviour
     // 當螢幕被點擊時的 callback
     private void HandleScreenTap()
     {
+        // FMOD obj_take_photo
+        FMODUnity.RuntimeManager.PlayOneShot("event:/object/obj_take_photo");
+
         Debug.Log("CaptureManager: 螢幕被點擊");
 
         if (flash != null)

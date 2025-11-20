@@ -48,6 +48,9 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("顯示選單");
 
+        // 播放FMOD ui_start_game
+        FMODUnity.RuntimeManager.PlayOneShot("event:/ui/ui_start_game");
+
         GameObject uiTitleSceneButtons = GameObject.Find("UITitleSceneButtons");
         if (uiTitleSceneButtons != null)
         {
