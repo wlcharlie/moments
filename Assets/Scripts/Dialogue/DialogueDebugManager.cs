@@ -116,7 +116,7 @@ public class DialogueDebugManager : MonoBehaviour
 
         if (DialogueManager.instance == null)
         {
-            Debug.LogWarning("DialogueDebugManager: DialogueManager instance 不存在，無法啟動對話。");
+            Debug.LogWarning("DialogueDebugManager: DialogueManager instance 不存在,無法啟動對話。");
             return;
         }
 
