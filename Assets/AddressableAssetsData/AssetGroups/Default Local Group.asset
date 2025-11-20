@@ -85,6 +85,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 223027eea78274608922751831cd383d
+    m_Address: Assets/Arts/CGs/Office_Room_Focus_Dusk.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 255ec36ef4ec64488969ecf8e5e2b646
     m_Address: Assets/Arts/Characters/Mai/Mai_Happy.png
     m_ReadOnly: 0
@@ -102,6 +107,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 314d5e73c180044f7a1cd2b79ecd1395
     m_Address: Assets/Arts/CH/CH01/CH01_Book_Spirt.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 33c5b39204bcb40048deaa0e5bcdc727
+    m_Address: Assets/Arts/CGs/Doorstep_Dusk.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -177,6 +187,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 68726823dc34f4cbeb9b071f003c666a
     m_Address: Assets/Arts/CGs/Home_LivingRoom_evening.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6d3adcea90f1e420bbb8b2ab3d03ab6a
+    m_Address: Assets/Arts/CGs/Sidewalk_Day.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
