@@ -6,9 +6,9 @@
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Utils.csproj" />
   <Project Path="FMODUnityResonanceEditor.csproj" />
+  <Project Path="SequencerCommand.csproj" />
   <Project Path="FMODUnityEditor.csproj" />
   <Project Path="FMODUnity.csproj" />
-  <Project Path="SequencerCommand.csproj" />
   <Project Path="UI.csproj" />
   <Project Path="Capture.csproj" />
   <Project Path="Dialogue.csproj" />

@@ -95,6 +95,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2f9db22eda79b4905b1e1a0eec9848f3
+    m_Address: Assets/Arts/Characters/Beigo/Beigo_CG_Worry.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 31100644e2b654c4fb4f8d9cd3c901d1
     m_Address: Assets/Arts/CGs/GreenDot.png
     m_ReadOnly: 0
