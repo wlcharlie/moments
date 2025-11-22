@@ -12,11 +12,11 @@
   <Project Path="UI.csproj" />
   <Project Path="Capture.csproj" />
   <Project Path="Dialogue.csproj" />
+  <Project Path="Controller.csproj" />
   <Project Path="Traffic.csproj" />
   <Project Path="Manager.csproj" />
   <Project Path="FMODUnityResonance.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Data.csproj" />
   <Project Path="InputSystem.csproj" />
-  <Project Path="Controller.csproj" />
 </Solution>

@@ -200,6 +200,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 81c3382cbbcac4a66bcadf66b8c14e2e
+    m_Address: Assets/Arts/Characters/Coworker/Coworker.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 85d7b2ca29e2f442598dcea2314b1945
     m_Address: Assets/Arts/CGs/Home_LivingRoom_night.png
     m_ReadOnly: 0

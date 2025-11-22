@@ -431,6 +431,34 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: 
+  - id: 16
+    fields:
+    - title: Name
+      value: MaiPuzzled
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: 10
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+  - id: 17
+    fields:
+    - title: Name
+      value: MaiHesitate
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: 11
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
   conversations:
   - id: 2
     fields:
@@ -4357,7 +4385,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=9); CharacterShake(start, 0.1, 2, 0);
+        value: SetPortrait(Mai, pic=MaiPuzzled); CharacterShake(start, 0.1, 2, 0);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -4402,7 +4430,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 104.98746
-        y: 451.29163
+        y: 450.00385
         width: 160
         height: 30
     - id: 6
@@ -4548,7 +4576,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 353.05182
-        y: 111.43532
+        y: 139.7676
         width: 160
         height: 30
     - id: 10
@@ -4578,7 +4606,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiUncomfortable);
+        value: SetPortrait(Mai, pic=MaiHesitate);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -4618,8 +4646,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 353.05182
-        y: 209.32559
+        x: 354.33966
+        y: 305.9128
         width: 160
         height: 30
     - id: 11
@@ -4689,8 +4717,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 354.06912
-        y: 313.43524
+        x: 354.06915
+        y: 370.09976
         width: 160
         height: 30
     - id: 12
@@ -4760,8 +4788,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 354.06912
-        y: 364.4525
+        x: 355.35693
+        y: 437.8588
         width: 160
         height: 30
     - id: 13
@@ -4775,11 +4803,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 4
+        value: 6
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 4
+        value: 6
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -4832,7 +4860,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 352.03452
-        y: 413.43524
+        y: 508.73465
         width: 160
         height: 30
     - id: 14
@@ -4862,7 +4890,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetPortrait(Mai, pic=MaiPuzzled);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -4902,8 +4930,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 564.0518
-        y: 111.43532
+        x: 565.3396
+        y: 114.01097
         width: 160
         height: 30
     - id: 15
@@ -4933,7 +4961,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetPortrait(Mai, pic=MaiHesitate);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -5075,7 +5103,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetPortrait(Mai, pic=MaiNormalTalk);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
