@@ -5,6 +5,7 @@
   <Project Path="PixelCrushersEditor.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Utils.csproj" />
+  <Project Path="Manager.csproj" />
   <Project Path="FMODUnityResonanceEditor.csproj" />
   <Project Path="SequencerCommand.csproj" />
   <Project Path="FMODUnityEditor.csproj" />
@@ -14,7 +15,6 @@
   <Project Path="Dialogue.csproj" />
   <Project Path="Controller.csproj" />
   <Project Path="Traffic.csproj" />
-  <Project Path="Manager.csproj" />
   <Project Path="FMODUnityResonance.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Data.csproj" />

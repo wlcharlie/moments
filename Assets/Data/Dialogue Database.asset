@@ -11315,7 +11315,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiHappy); SetDialoguePanel(false)
+        value: SetPortrait(Mai, pic=MaiHappy)
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -11386,7 +11386,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SwitchScene(TitleScene)
+        value: SwitchScene(TitleScene);SetDialoguePanel(false);StopConversation()
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -11420,8 +11420,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 383
-        y: 290.4935
+        x: 336
+        y: 276
         width: 160
         height: 30
     entryGroups: []
