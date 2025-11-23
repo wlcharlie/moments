@@ -5,9 +5,11 @@ using PixelCrushers.DialogueSystem;
 namespace PixelCrushers.DialogueSystem.SequencerCommands
 {
     /// <summary>
-    /// 讓現有背景圖放大並移動到右下角
-    /// 用法: ShowSceneDetail(zoomScale, duration, reset)
-    /// 範例: ShowSceneDetail(2.5, 0.8, false) - 放大 2.5 倍，動畫 0.8 秒，不自動恢復
+    /// 讓現有背景圖放大並移動到指定位置
+    /// 用法: ShowSceneDetail(zoomScale, duration, reset, [position])
+    /// 位置選項: "bottom-left" (左下角，預設), "left-center-up" (左邊中間偏上)
+    /// 範例: ShowSceneDetail(2.5, 0.8, false) - 放大 2.5 倍，動畫 0.8 秒，不自動恢復，左下角
+    /// 範例: ShowSceneDetail(2.5, 0.8, false, left-center-up) - 放大 2.5 倍，左邊中間偏上
     /// 範例: ShowSceneDetail(2.5, 0.8, true) - 放大 2.5 倍，動畫 0.8 秒，自動恢復原狀
     /// </summary>
     public class SequencerCommandShowSceneDetail : SequencerCommand
@@ -24,10 +26,11 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
 
         public void Awake()
         {
-            // 參數: zoomScale, duration, reset
+            // 參數: zoomScale, duration, reset, [position]
             float zoomScale = GetParameterAsFloat(0, 2.5f); // 預設放大 2.5 倍
             float duration = GetParameterAsFloat(1, 0.8f); // 預設動畫時間 0.8 秒
             bool reset = GetParameterAsBool(2, false); // 預設不自動恢復
+            string position = GetParameter(3, "bottom-left").ToLower(); // 位置選項，預設左下角
 
             // 找到背景物件
             backgroundObject = GameObject.FindGameObjectWithTag("Background");
@@ -64,13 +67,13 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
             }
 
             // 開始放大動畫
-            StartCoroutine(ZoomToDetail(zoomScale, duration, reset));
+            StartCoroutine(ZoomToDetail(zoomScale, duration, reset, position));
         }
 
-        private IEnumerator ZoomToDetail(float zoomScale, float duration, bool autoReset)
+        private IEnumerator ZoomToDetail(float zoomScale, float duration, bool autoReset, string position)
         {
             Vector3 targetScale = originalScale * zoomScale;
-            Vector3 targetPosition = CalculateBottomRightPosition(zoomScale);
+            Vector3 targetPosition = CalculateTargetPosition(zoomScale, position);
 
             float elapsed = 0f;
 
@@ -102,7 +105,7 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
             Stop();
         }
 
-        private Vector3 CalculateBottomRightPosition(float zoomScale)
+        private Vector3 CalculateTargetPosition(float zoomScale, string position)
         {
             if (Camera.main == null) return originalPosition;
 
@@ -114,10 +117,79 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
             Vector2 spriteSize = backgroundRenderer.sprite.bounds.size;
             Vector2 scaledSize = spriteSize * zoomScale * originalScale.x;
 
-            // 計算左下角位置（讓放大圖的左下角對齊螢幕左下角）
             float margin = 0.3f; // 邊距
-            float x = (-screenWidth / 2) + (scaledSize.x / 2) - margin;
-            float y = (-screenHeight / 2) + (scaledSize.y / 2) - margin;
+            float x, y;
+
+            switch (position)
+            {
+                case "left-center-up":
+                case "left-center":
+                    // 左邊中間偏上一點
+                    // x: 左邊對齊，確保放大圖的左邊緣對齊或超出螢幕左邊緣（避免露出藍色）
+                    // 如果放大圖不夠寬，則讓它居中；如果夠寬，則左對齊
+                    if (scaledSize.x >= screenWidth)
+                    {
+                        // 放大圖夠寬，可以左對齊
+                        x = (-screenWidth / 2) + (scaledSize.x / 2) - margin;
+                    }
+                    else
+                    {
+                        // 放大圖不夠寬，居中顯示（避免露出左右邊緣）
+                        x = 0f; // 螢幕中心
+                    }
+                    
+                    // y: 讓「圖片的中上部分」對齊到「螢幕中心（或稍微偏上）」
+                    // 計算邏輯：
+                    // 1. 螢幕中心是 y = 0，螢幕上方是 y > 0，下方是 y < 0
+                    // 2. 圖片中心是 y（我們要計算的值）
+                    // 3. 圖片的上邊緣 = y + scaledSize.y/2
+                    // 4. 圖片的中上部分（從上往下 1/4 處）= y + scaledSize.y/2 - scaledSize.y/4 = y + scaledSize.y/4
+                    // 5. 我們要讓「圖片的中上部分」對齊到「螢幕中心往上 offset」
+                    // 6. 所以：y + scaledSize.y/4 = offset，因此 y = offset - scaledSize.y/4
+                    
+                    // 目標：讓圖片的中上部分對齊到螢幕中心（或稍微偏上）
+                    // 這樣螢幕會顯示圖片的上半部分（中上區域）
+                    // 圖片需要往下移動（y 變成負值），讓圖片的上半部分顯示在螢幕上
+                    
+                    // 計算：讓圖片的中上部分對齊到螢幕中心（或稍微偏上）
+                    // 要讓玩家看到圖片的下面一點點，圖片需要往上移動（y 變大）
+                    // 圖片的中上部分 = y + scaledSize.y/4（從上往下 1/4 處）
+                    // 讓它對齊到螢幕中心往上 offset = screenHeight * offsetPercent
+                    float offsetPercent = 0.05f; // 螢幕中心往上 5%（稍微偏上一點）
+                    float targetY = screenHeight * offsetPercent; // 目標位置（螢幕中心往上）
+                    
+                    // 計算圖片中心：讓圖片往上移動，讓玩家看到圖片的下面一點點
+                    // 要讓圖片往上移動，需要增加 y 值（讓 y 更接近 0 或正值）
+                    // 使用更大的除數（1/7），讓 y 更大（圖片往上移動）
+                    y = targetY - (scaledSize.y / 7);
+                    
+                    // 不檢查邊緣，直接使用計算出的 y 值
+                    // 因為放大圖通常會比螢幕大，下邊緣露出是正常的
+                    break;
+
+                case "bottom-left":
+                default:
+                    // 左下角位置（預設）
+                    // 確保放大圖能覆蓋螢幕，如果不夠大則調整位置
+                    if (scaledSize.x >= screenWidth)
+                    {
+                        x = (-screenWidth / 2) + (scaledSize.x / 2) - margin;
+                    }
+                    else
+                    {
+                        x = 0f; // 居中
+                    }
+                    
+                    if (scaledSize.y >= screenHeight)
+                    {
+                        y = (-screenHeight / 2) + (scaledSize.y / 2) - margin;
+                    }
+                    else
+                    {
+                        y = 0f; // 居中
+                    }
+                    break;
+            }
 
             return new Vector3(x, y, originalPosition.z);
         }

@@ -170,6 +170,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5b88d1842800342a4850533fa538668e
+    m_Address: Assets/Arts/CGs/Home_BaiRoom_Door_Work_Open.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5ee78bb6e8f0f403faebf16b5dfed92c
     m_Address: Assets/Arts/CGs/Home_BaiRoom.png
     m_ReadOnly: 0
@@ -357,6 +362,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fcd28c0760dbb4768af277cbbac5fda0
     m_Address: Assets/Arts/Comics/CH01_Throw.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fd35d32d2fa0b4f02af2e8e69f103af5
+    m_Address: Assets/Arts/CGs/Home_BaiRoom_Door_Work_Close.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

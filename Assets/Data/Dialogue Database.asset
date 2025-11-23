@@ -5611,11 +5611,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 1
+        value: 3
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 1
+        value: 3
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -5623,7 +5623,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u6211\u56DE\u4F86\u4E86\uFF01"
+        value: "\u56DE\u5230\u5BB6"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -5667,8 +5667,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 78.56734
+        x: 161.6488
+        y: 85.16252
         width: 160
         height: 30
     - id: 2
@@ -5694,12 +5694,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u5E73\u5E38\u9019\u6642\u5019\uFF0C\u5C0F\u767D\u90FD\u6703\u56DE\u61C9\u3002
-          \u662F\u9084\u5728\u70BA\u65E9\u4E0A\u7684\u4E8B\u4E0D\u958B\u5FC3\u55CE....."
+        value: "\u6211\u56DE\u4F86\u4E86\uFF01"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetBackgroundColor(#808080); SetPortrait(Mai, pic=MaiAwkward);
+        value: SetPortrait(Mai, pic=MaiBeigoNormal);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -5711,7 +5710,7 @@ MonoBehaviour:
         type: 4
         typeString: CustomFieldType_Localization
       - title: Background Image
-        value: 
+        value: Assets/Arts/CGs/Home_LivingRoom_night.png
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image
@@ -5729,7 +5728,7 @@ MonoBehaviour:
       - originConversationID: 8
         originDialogueID: 2
         destinationConversationID: 8
-        destinationDialogueID: 3
+        destinationDialogueID: 30
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -5739,8 +5738,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 158.64774
-        y: 126.647736
+        x: 160.29657
+        y: 135.21094
         width: 160
         height: 30
     - id: 3
@@ -5770,7 +5769,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetBackgroundColor(#FFFFFF)
+        value: ShowSceneDetail(2, 0.8,false, left-center-up)
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -5782,7 +5781,7 @@ MonoBehaviour:
         type: 4
         typeString: CustomFieldType_Localization
       - title: Background Image
-        value: Assets/Arts/CGs/Home_LivingRoom.png
+        value: Assets/Arts/CGs/Home_LivingRoom_night.png
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image
@@ -5810,8 +5809,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 180
+        x: 130.73701
+        y: 286.31143
         width: 160
         height: 30
     - id: 4
@@ -5841,7 +5840,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: RestoreSceneDetail(0)
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -5881,8 +5880,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 228.64774
+        x: 130.73701
+        y: 345.51627
         width: 160
         height: 30
     - id: 5
@@ -5952,8 +5951,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 280
+        x: 126.30246
+        y: 396.86853
         width: 160
         height: 30
     - id: 6
@@ -6023,8 +6022,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 142.52408
-        y: 438.17157
+        x: 144.17288
+        y: 497.5285
         width: 160
         height: 30
     - id: 7
@@ -7591,13 +7590,155 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 99.606674
-        y: 358.72644
+        x: 130.94987
+        y: 446.031
+        width: 160
+        height: 30
+    - id: 30
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 3
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: .....
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: Assets/Arts/CGs/Home_BaiRoom_Door_Work_Close.png
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 8
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 8
+        originDialogueID: 30
+        destinationConversationID: 8
+        destinationDialogueID: 31
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 163.363
+        y: 186.86751
+        width: 160
+        height: 30
+    - id: 31
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u5C0F\u767D\u662F\u9084\u5728\u70BA\u4E86\u65E9\u4E0A\u7684\u4E8B\u9B27\u5F46\u626D\u55CE"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: ' SetPortrait(Mai, pic=MaiBeigoWorry);'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: Assets/Arts/CGs/Home_LivingRoom_night.png
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 8
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 8
+        originDialogueID: 31
+        destinationConversationID: 8
+        destinationDialogueID: 3
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 160.60455
+        y: 237.21638
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 11.839447, y: 0}
-    canvasZoom: 0.80649906
+    canvasScrollPosition: {x: 95.85673, y: 83.75104}
+    canvasZoom: 0.8879998
   - id: 9
     fields:
     - title: Title
