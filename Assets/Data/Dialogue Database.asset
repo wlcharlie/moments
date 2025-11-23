@@ -66,19 +66,22 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_Text
     portrait: {fileID: 0}
-    spritePortrait: {fileID: -6919567958068358389, guid: f4712a148043b42928b4a6d95eba2dca, type: 3}
+    spritePortrait: {fileID: 6383869705450872973, guid: fe74360d893de48c58b86f3d1095c9e0, type: 3}
     alternatePortraits: []
     spritePortraits:
-    - {fileID: 3550104675532902518, guid: e2706502ae8af4f61b7dac3191db11ff, type: 3}
-    - {fileID: 1910663379177754505, guid: 255ec36ef4ec64488969ecf8e5e2b646, type: 3}
-    - {fileID: 3357194329682569268, guid: 0fca6dfc9637844e4a5cb079807933f4, type: 3}
-    - {fileID: -5347617973417912543, guid: bb607a7745fa844638bc632a75468bb9, type: 3}
-    - {fileID: 3901299226461418296, guid: 67b5220193069442fa146f1e6a001dab, type: 3}
-    - {fileID: 4054933027246109190, guid: d7145486710764cc3a961495241c6da6, type: 3}
-    - {fileID: 2035548606830618590, guid: c7a21559c3f374723ae82c4515ac2fa3, type: 3}
+    - {fileID: 7005274126718593917, guid: fe74360d893de48c58b86f3d1095c9e0, type: 3}
+    - {fileID: 6909578625854313261, guid: fe74360d893de48c58b86f3d1095c9e0, type: 3}
+    - {fileID: -6808374854013175737, guid: fe74360d893de48c58b86f3d1095c9e0, type: 3}
+    - {fileID: 2730671977564056553, guid: fe74360d893de48c58b86f3d1095c9e0, type: 3}
+    - {fileID: -978731283511814011, guid: fe74360d893de48c58b86f3d1095c9e0, type: 3}
+    - {fileID: -3044462056762459217, guid: fe74360d893de48c58b86f3d1095c9e0, type: 3}
+    - {fileID: 2937722842523295231, guid: fe74360d893de48c58b86f3d1095c9e0, type: 3}
     - {fileID: 0}
-    - {fileID: 4787969064501815011, guid: 523a21631c4cf4e5f968ff5b41291f5e, type: 3}
-    - {fileID: 8980727392101037990, guid: 4351289ddc8f14186837b0ee4f198b2e, type: 3}
+    - {fileID: -2808038476608809720, guid: fe74360d893de48c58b86f3d1095c9e0, type: 3}
+    - {fileID: -5347361605456425000, guid: fe74360d893de48c58b86f3d1095c9e0, type: 3}
+    - {fileID: -4284571477258108302, guid: fe74360d893de48c58b86f3d1095c9e0, type: 3}
+    - {fileID: -7328162975840370041, guid: 26f7849e8d695495bb1ec78ddb7abe90, type: 3}
+    - {fileID: 5088503592753446604, guid: 26f7849e8d695495bb1ec78ddb7abe90, type: 3}
   - id: 2
     fields:
     - title: Name
@@ -453,6 +456,48 @@ MonoBehaviour:
       typeString: 
     - title: Initial Value
       value: 11
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+  - id: 18
+    fields:
+    - title: Name
+      value: MaiShock
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: 12
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+  - id: 19
+    fields:
+    - title: Name
+      value: MaiBeigoNormal
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: 13
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+  - id: 20
+    fields:
+    - title: Name
+      value: MaiBeigoWorry
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: 14
       type: 1
       typeString: CustomFieldType_Number
     - title: Description
@@ -5582,7 +5627,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetPortrait(Mai, pic=MaiBeigoNormal);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -7551,8 +7596,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 39.60797, y: 0}
-    canvasZoom: 0.40099958
+    canvasScrollPosition: {x: 11.839447, y: 0}
+    canvasZoom: 0.80649906
   - id: 9
     fields:
     - title: Title

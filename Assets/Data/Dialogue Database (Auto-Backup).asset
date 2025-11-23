@@ -79,6 +79,9 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 4787969064501815011, guid: 523a21631c4cf4e5f968ff5b41291f5e, type: 3}
     - {fileID: 8980727392101037990, guid: 4351289ddc8f14186837b0ee4f198b2e, type: 3}
+    - {fileID: 3914443075264106705, guid: ee4e64d128b7a412fa753d6c55415a28, type: 3}
+    - {fileID: -3185557987760097226, guid: 7bf7c1278a6344986bbe809a0e4508f0, type: 3}
+    - {fileID: -5876075957077025321, guid: 006f3005bf44947e8aa22c295b42f1ca, type: 3}
   - id: 2
     fields:
     - title: Name
@@ -453,6 +456,48 @@ MonoBehaviour:
       typeString: 
     - title: Initial Value
       value: 11
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+  - id: 18
+    fields:
+    - title: Name
+      value: MaiShock
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: 12
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+  - id: 19
+    fields:
+    - title: Name
+      value: MaiBeigoNormal
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: 13
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+  - id: 20
+    fields:
+    - title: Name
+      value: MaiBeigoWorry
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: 14
       type: 1
       typeString: CustomFieldType_Number
     - title: Description
@@ -5436,8 +5481,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 58.72757, y: 67.888626}
-    canvasZoom: 0.7765001
+    canvasScrollPosition: {x: 47.21666, y: 59.68086}
+    canvasZoom: 0.72050023
   - id: 8
     fields:
     - title: Title
@@ -5582,7 +5627,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetPortrait(Mai, pic=MaiBeigoNormal);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -7551,8 +7596,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 39.60797, y: 0}
-    canvasZoom: 0.40099958
+    canvasScrollPosition: {x: 11.839447, y: 0}
+    canvasZoom: 0.80649906
   - id: 9
     fields:
     - title: Title
@@ -11315,7 +11360,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiHappy); SetDialoguePanel(false)
+        value: SetPortrait(Mai, pic=MaiHappy)
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -11386,7 +11431,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SwitchScene(TitleScene)
+        value: SwitchScene(TitleScene);SetDialoguePanel(false);StopConversation()
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -11420,8 +11465,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 383
-        y: 290.4935
+        x: 336
+        y: 276
         width: 160
         height: 30
     entryGroups: []
@@ -14769,6 +14814,191 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 104}
+    canvasZoom: 1
+  - id: 23
+    fields:
+    - title: Title
+      value: Test_Work
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Actor
+      value: 1
+      type: 5
+      typeString: CustomFieldType_Actor
+    - title: Conversant
+      value: -1
+      type: 5
+      typeString: CustomFieldType_Actor
+    overrideSettings:
+      useOverrides: 0
+      overrideSubtitleSettings: 0
+      showNPCSubtitlesDuringLine: 1
+      showNPCSubtitlesWithResponses: 1
+      showPCSubtitlesDuringLine: 0
+      skipPCSubtitleAfterResponseMenu: 0
+      subtitleCharsPerSecond: 30
+      minSubtitleSeconds: 2
+      continueButton: 0
+      overrideSequenceSettings: 0
+      defaultSequence: 
+      defaultPlayerSequence: 
+      defaultResponseMenuSequence: 
+      overrideInputSettings: 0
+      alwaysForceResponseMenu: 1
+      includeInvalidEntries: 0
+      responseTimeout: 0
+      emTagForOldResponses: 0
+      emTagForInvalidResponses: 0
+      cancelSubtitle:
+        key: 27
+        buttonName: 
+      cancelConversation:
+        key: 27
+        buttonName: 
+    nodeColor: 
+    dialogueEntries:
+    - id: 0
+      fields:
+      - title: Title
+        value: START
+        type: 0
+        typeString: 
+      - title: Description
+        value: 
+        type: 0
+        typeString: 
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: -1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: 
+      - title: Sequence
+        value: None()
+        type: 0
+        typeString: 
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      conversationID: 23
+      isRoot: 1
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 23
+        originDialogueID: 0
+        destinationConversationID: 23
+        destinationDialogueID: 1
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 160
+        y: 30
+        width: 160
+        height: 30
+    - id: 1
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: Test_Work
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: SwitchScene(WorkRoutineScene)
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 23
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 161
+        y: 80
+        width: 160
+        height: 30
+    entryGroups: []
+    canvasScrollPosition: {x: 0, y: 0}
     canvasZoom: 1
   syncInfo:
     syncActors: 0

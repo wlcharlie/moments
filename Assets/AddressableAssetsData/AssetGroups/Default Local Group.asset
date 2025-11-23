@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: b1e7cf42e33d645dfba5149ce947e023
   m_SerializeEntries:
+  - m_GUID: 006f3005bf44947e8aa22c295b42f1ca
+    m_Address: Assets/Arts/Characters/Mai/Mai_Beigo_Worry.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 021161ab2705a4d12a6e8142274fc506
     m_Address: Assets/Arts/CH/CH01/Book_Light.png
     m_ReadOnly: 0
@@ -195,6 +200,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7bf7c1278a6344986bbe809a0e4508f0
+    m_Address: Assets/Arts/Characters/Mai/Mai_Beigo_Normal.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7d2de126c71c14a978259b955f3a57a6
     m_Address: Assets/Arts/Comics/CH01_SC02_SE03_Beigo_Head.png
     m_ReadOnly: 0
@@ -312,6 +322,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ebfd493669bdf4175b66177e98fe00e5
     m_Address: Assets/Arts/CGs/Home_MaiRoom_MaiWakeUp.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ee4e64d128b7a412fa753d6c55415a28
+    m_Address: Assets/Arts/Characters/Mai/Mai_Shock.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
