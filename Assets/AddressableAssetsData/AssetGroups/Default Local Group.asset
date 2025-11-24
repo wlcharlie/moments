@@ -165,6 +165,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 565ed6207c4c94c20ab2b7be2a33397a
+    m_Address: Assets/Arts/Characters/Beigo/Beigo_move.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 566f07d5408dd4163a9b6738a70eeed6
+    m_Address: Assets/Arts/Comics/CH01_SC03_SE01_Beigo_leave.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 57cf2ce21d62346efa2ec1aa4bf7d8b8
     m_Address: Assets/Arts/Characters/Bai/Bai_Tired.png
     m_ReadOnly: 0

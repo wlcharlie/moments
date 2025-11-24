@@ -6,14 +6,19 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
 {
     /// <summary>
     /// Sequencer command to switch scenes.
-    /// Usage: SwitchScene(sceneName[, loadSceneMode])
+    /// Usage: SwitchScene(sceneName[, loadSceneMode][, transitionType])
     /// - sceneName: Name of the scene to load (required)
     /// - loadSceneMode: "Single" or "Additive" (optional, defaults to "Single")
+    /// - transitionType: "Cover", "Splash", "LoadingScreen", or "None" (optional, defaults to "Cover")
+    ///   - "None": 不使用轉場效果，直接載入場景
     ///
     /// Examples:
     /// - SwitchScene(MainStoryScene)
     /// - SwitchScene(TitleScene, Single)
     /// - SwitchScene(Playground, Additive)
+    /// - SwitchScene(CH01_SC03_BeigoSneakDoor, Single, LoadingScreen)
+    /// - SwitchScene(CH01_SC03_BeigoSneakDoor, Single, None)
+    /// - SwitchScene(CH01_SC03_BeigoSneakDoor, Single, Cover)
     /// </summary>
     public class SequencerCommandSwitchScene : SequencerCommand
     {
@@ -32,6 +37,31 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
                 loadMode = LoadSceneMode.Additive;
             }
 
+            // 獲取轉場類型參數 (可選，預設為 Cover)
+            string transitionTypeString = GetParameter(2, "Cover");
+            TransitionType? transitionType = null;
+            bool useTransition = true;
+
+            // 解析轉場類型
+            if (transitionTypeString.Equals("None", System.StringComparison.OrdinalIgnoreCase))
+            {
+                useTransition = false;
+            }
+            else
+            {
+                // 嘗試解析轉場類型
+                if (System.Enum.TryParse<TransitionType>(transitionTypeString, true, out TransitionType parsedType))
+                {
+                    transitionType = parsedType;
+                }
+                else
+                {
+                    // 如果無法解析，使用預設值 Cover
+                    Debug.LogWarning($"SwitchScene: 無法識別轉場類型 '{transitionTypeString}'，使用預設值 'Cover'");
+                    transitionType = TransitionType.Cover;
+                }
+            }
+
             // 驗證場景名稱
             if (string.IsNullOrEmpty(sceneName))
             {
@@ -43,17 +73,17 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
             // 載入場景
             try
             {
-                // 優先使用 TransitionManager 進行場景切換
-                if (TransitionManager.Instance != null && loadMode == LoadSceneMode.Single)
+                // 如果使用轉場且是 Single 模式，使用 TransitionManager
+                if (useTransition && TransitionManager.Instance != null && loadMode == LoadSceneMode.Single && transitionType.HasValue)
                 {
-                    TransitionManager.Instance.LoadSceneWithTransition(sceneName);
-                    Debug.Log($"SwitchScene: Loading scene '{sceneName}' with TransitionManager.");
+                    TransitionManager.Instance.LoadSceneWithTransition(sceneName, transitionType.Value);
+                    Debug.Log($"SwitchScene: Loading scene '{sceneName}' with TransitionManager, transition type: {transitionType.Value}");
                 }
                 else
                 {
-                    // 如果是 Additive 模式或 TransitionManager 不存在，使用原本的方式
+                    // 不使用轉場、Additive 模式或 TransitionManager 不存在，直接載入場景
                     SceneManager.LoadScene(sceneName, loadMode);
-                    Debug.Log($"SwitchScene: Loading scene '{sceneName}' with mode '{loadMode}'.");
+                    Debug.Log($"SwitchScene: Loading scene '{sceneName}' with mode '{loadMode}' (no transition).");
                 }
             }
             catch (System.Exception e)
