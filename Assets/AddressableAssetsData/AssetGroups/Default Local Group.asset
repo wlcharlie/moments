@@ -45,6 +45,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0ce2cad945b0f47a1833e7c353bbd5d1
+    m_Address: Assets/Arts/CH/CH01/BaiFloatPages.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0fca6dfc9637844e4a5cb079807933f4
     m_Address: Assets/Arts/Characters/Mai/Mai_Awkward.png
     m_ReadOnly: 0
@@ -185,6 +190,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5bc234bc9c0bc4916aba4c7c21a16d08
+    m_Address: Assets/Arts/Comics/CH01_SC03_SE03_Book.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5ee78bb6e8f0f403faebf16b5dfed92c
     m_Address: Assets/Arts/CGs/Home_BaiRoom.png
     m_ReadOnly: 0
@@ -277,6 +287,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a9100856ee26b42579d92fee5ded5d25
     m_Address: Assets/Arts/Events/HarmonyPark.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a9623ee5847534da3862ebccd6687aff
+    m_Address: Assets/Arts/Comics/CH01_SC02_SE03_Beigo_Stand_Book.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

@@ -32,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CH01_SC03_BeigoSneakDoor.unity
     guid: 1058a2da5da884b45abb71a9ae3cf2c7
+  - enabled: 1
+    path: Assets/Scenes/CH01_SC03_BaiFloatPages.unity
+    guid: 4c254536f8aa540abab31aa7f8c4152c
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 580c278d777854186a74b9011fb3c4f0, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
