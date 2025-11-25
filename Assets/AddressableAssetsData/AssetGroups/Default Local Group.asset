@@ -50,6 +50,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0ed0377d99e37420abfd72703c185f4d
+    m_Address: Assets/Arts/CH/CH01/Beigo_Reveal_Page_01.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0fca6dfc9637844e4a5cb079807933f4
     m_Address: Assets/Arts/Characters/Mai/Mai_Awkward.png
     m_ReadOnly: 0
@@ -125,6 +130,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3795f28ac100b41458b4260c90f393db
+    m_Address: Assets/Arts/CH/CH01/Beigo_Reveal_Star.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 37c8d80a0b1b54e88a5c37c84504843d
     m_Address: Assets/Arts/CH/CH01/CH01_Style.png
     m_ReadOnly: 0
@@ -170,6 +180,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 525345ecf838c4d1588dddbee9a37b7d
+    m_Address: Assets/Arts/Comics/CH01_SC03/Comic_Beigo_Reveal_02.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 555f00c5aea8348a9a937e4125339edc
+    m_Address: Assets/Arts/Comics/CH01_SC03/Comic_Beigo_Reveal_01.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 565ed6207c4c94c20ab2b7be2a33397a
     m_Address: Assets/Arts/Characters/Beigo/Beigo_move.png
     m_ReadOnly: 0
@@ -177,6 +197,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 566f07d5408dd4163a9b6738a70eeed6
     m_Address: Assets/Arts/Comics/CH01_SC03_SE01_Beigo_leave.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 566fd97b5c2b04b8eb11da647407ad0b
+    m_Address: Assets/Arts/CH/CH01/Beigo_Reveal_Page_Behind.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -245,13 +270,28 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 88295b148046446b5bbfb50f93c54b0a
+    m_Address: Assets/Arts/CH/CH01/Beigo_Reveal_Bg.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8e5cfd04804a14e85bf5e512c6060fd7
     m_Address: Assets/Arts/CGs/Vortex.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9387f0f2315ef4a22bd57b7d96c3ba32
+    m_Address: Assets/Arts/Comics/CH01_SC03/Comic_Beigo_Reveal_03.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 948396cc40c4745b98f0e23c1c31e488
     m_Address: Assets/Arts/CGs/Sidewalk_Night.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 961889aedf1b94bf692a9e4a25494814
+    m_Address: Assets/Arts/CH/CH01/Beigo_Reveal_Page_02.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -325,6 +365,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d36ce1c112dce4a4cae22b3527b6c38f
+    m_Address: Assets/Arts/CH/CH01/BaiFloat.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d7145486710764cc3a961495241c6da6
     m_Address: Assets/Arts/Characters/Mai/Mai_Angry.png
     m_ReadOnly: 0
@@ -332,6 +377,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d7de3260e16fd4c3586c4ca7aa8d3df8
     m_Address: Assets/Arts/CH/CH01/Doorstep_Night_ZoomIn_Beigo_Hello.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d8084cb8aa1d34747bea6d0bed2585db
+    m_Address: Assets/Arts/Comics/CH01_SC03/Comic_Beigo_Reveal_04.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d8af64e619b51476882d38522b59d797
+    m_Address: Assets/Arts/CH/CH01/Beigo_Reveal_Page_03.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -397,6 +452,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fe0924bf69e9e43359815a314c117da2
     m_Address: Assets/Arts/Comics/CH01_SC02_SE03_Beigo_Head.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ffc526b2e4e344a519e4e8041b0567a2
+    m_Address: Assets/Arts/CH/CH01/glow_white_blue.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
