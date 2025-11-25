@@ -6540,7 +6540,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 161.6488
-        y: 133.69084
+        y: 132.21916
         width: 160
         height: 30
     entryGroups: []
@@ -6832,7 +6832,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SwitchScene(CH01_SC03_BeigoReveal, Single, Cover)
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -9085,7 +9085,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasZoom: 0.7964999
   - id: 12
     fields:
     - title: Title
@@ -15416,7 +15416,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.65599936
+    canvasZoom: 0.5864992
   syncInfo:
     syncActors: 0
     syncItems: 0
