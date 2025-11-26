@@ -90,6 +90,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1de758d09f3f14958b07f2cdfa217c6a
+    m_Address: Assets/Arts/Characters/Beigo/Beigo_Portrait_Spirt.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1e27b6108bf784996bf4eb9ab3c0d973
     m_Address: Assets/Arts/Events/MRT_Escalator_Entrance.jpg
     m_ReadOnly: 0

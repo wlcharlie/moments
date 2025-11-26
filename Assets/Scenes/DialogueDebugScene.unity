@@ -584,6 +584,9 @@ MonoBehaviour:
   - buttonName: CH01_SC03_SE02
     sceneToLoad: MainStoryScene
     conversationStart: CH01_SC03_SE02
+  - buttonName: CH01_SC03_SE04
+    sceneToLoad: MainStoryScene
+    conversationStart: CH01_SC03_SE04
   - buttonName: CH01_SC04_SE01
     sceneToLoad: MainStoryScene
     conversationStart: CH01_SC04_SE01
