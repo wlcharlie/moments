@@ -189,6 +189,7 @@ MonoBehaviour:
   targetSceneName: MainStoryScene
   conversationId: CH01_SC03_SE03
   transitionType: 1
+  useTransition: 1
 --- !u!114 &786823952
 MonoBehaviour:
   m_ObjectHideFlags: 0

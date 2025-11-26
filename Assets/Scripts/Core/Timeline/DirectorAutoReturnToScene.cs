@@ -8,6 +8,10 @@ using PixelCrushers.DialogueSystem;
 /// </summary>
 public class DirectorAutoReturnToScene : MonoBehaviour
 {
+    // 靜態變數：保存要啟動的對話信息（用於場景切換後啟動對話）
+    private static string pendingConversationId = null;
+    private static string pendingSceneName = null;
+
     [Header("目標場景設定")]
     [Tooltip("要回到的對話場景名稱")]
     [SerializeField] private string targetSceneName = "MainStoryScene";
@@ -16,8 +20,12 @@ public class DirectorAutoReturnToScene : MonoBehaviour
     [SerializeField] private string conversationId = "";
     
     [Header("轉場設定")]
-    [Tooltip("轉場類型")]
+    [Tooltip("轉場類型（選擇 None 則不使用轉場效果）")]
     [SerializeField] private TransitionType transitionType = TransitionType.LoadingScreen;
+    
+    [Tooltip("是否使用轉場效果（取消勾選則直接載入場景，不使用轉場）")]
+    [SerializeField] private bool useTransition = true;
+
 
     /// <summary>
     /// 回到指定的對話場景
@@ -33,8 +41,8 @@ public class DirectorAutoReturnToScene : MonoBehaviour
 
         Debug.Log($"DirectorAutoReturnToScene: 準備回到場景 {targetSceneName}");
 
-        // 使用 TransitionManager 載入場景
-        if (TransitionManager.Instance != null)
+        // 如果使用轉場且 TransitionManager 存在，使用轉場效果
+        if (useTransition && TransitionManager.Instance != null)
         {
             TransitionManager.Instance.LoadSceneWithTransition(
                 targetSceneName,
@@ -52,28 +60,102 @@ public class DirectorAutoReturnToScene : MonoBehaviour
         }
         else
         {
-            // 後備方案：直接載入場景
-            Debug.LogWarning("DirectorAutoReturnToScene: TransitionManager.Instance 為 null，使用直接載入場景");
-            SceneManager.LoadScene(targetSceneName);
+            // 不使用轉場或 TransitionManager 不存在，直接載入場景
+            if (!useTransition)
+            {
+                Debug.Log("DirectorAutoReturnToScene: 不使用轉場效果，直接載入場景");
+            }
+            else
+            {
+                Debug.LogWarning("DirectorAutoReturnToScene: TransitionManager.Instance 為 null，使用直接載入場景");
+            }
             
-            // 場景載入後啟動對話（需要等待一幀）
+            // 如果有對話 ID，保存到靜態變數
             if (!string.IsNullOrEmpty(conversationId))
             {
-                StartCoroutine(StartConversationAfterLoad());
+                pendingConversationId = conversationId;
+                pendingSceneName = targetSceneName;
             }
+            
+            // 訂閱場景載入完成事件
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            SceneManager.LoadScene(targetSceneName);
         }
     }
 
     /// <summary>
-    /// 場景載入後啟動對話（用於後備方案）
+    /// 場景載入完成後的回調（靜態方法，用於場景切換）
     /// </summary>
-    private System.Collections.IEnumerator StartConversationAfterLoad()
+    private static void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // 等待一幀，確保場景完全載入
+        // 取消訂閱，避免重複觸發
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        
+        // 確保載入的是目標場景
+        if (scene.name != pendingSceneName)
+        {
+            return;
+        }
+        
+        // 立即啟動對話（使用協程）
+        // 在目標場景中查找任何 GameObject 來執行協程
+        GameObject tempObj = new GameObject("TempConversationStarter");
+        DirectorAutoReturnToScene tempScript = tempObj.AddComponent<DirectorAutoReturnToScene>();
+        tempScript.StartCoroutine(tempScript.StartPendingConversation());
+    }
+
+    /// <summary>
+    /// 啟動待處理的對話（靜態方法調用）
+    /// </summary>
+    private System.Collections.IEnumerator StartPendingConversation()
+    {
+        // 等待幾幀，確保場景和對話系統完全載入
+        yield return null;
         yield return null;
         
-        Debug.Log($"DirectorAutoReturnToScene: 啟動對話 {conversationId}");
+        // 確保 DialogueManager 存在
+        int retryCount = 0;
+        while (DialogueManager.instance == null && retryCount < 10)
+        {
+            Debug.LogWarning($"DirectorAutoReturnToScene: DialogueManager.instance 為 null，等待載入... (重試 {retryCount + 1}/10)");
+            yield return new WaitForSeconds(0.1f);
+            retryCount++;
+        }
+        
+        if (DialogueManager.instance == null)
+        {
+            Debug.LogError("DirectorAutoReturnToScene: DialogueManager.instance 仍然為 null，無法啟動對話");
+            pendingConversationId = null;
+            pendingSceneName = null;
+            
+            // 銷毀臨時物件
+            if (gameObject.name == "TempConversationStarter")
+            {
+                Destroy(gameObject);
+            }
+            yield break;
+        }
+        
+        string conversationToStart = pendingConversationId;
+        pendingConversationId = null;
+        pendingSceneName = null;
+        
+        Debug.Log($"DirectorAutoReturnToScene: 啟動對話 {conversationToStart}");
         DialogueManager.StopAllConversations();
-        DialogueManager.StartConversation(conversationId);
+        DialogueManager.StartConversation(conversationToStart);
+        
+        // 銷毀臨時物件
+        if (gameObject.name == "TempConversationStarter")
+        {
+            Destroy(gameObject);
+        }
+    }
+    
+    /// <summary>
+    /// 清理：取消訂閱事件
+    /// </summary>
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
