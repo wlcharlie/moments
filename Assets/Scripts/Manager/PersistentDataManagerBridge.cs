@@ -1,4 +1,5 @@
 using UnityEngine;
+using PixelCrushers.DialogueSystem;
 
 /// <summary>
 /// 轉發呼叫給 PersistentDataManager Singleton
@@ -21,5 +22,47 @@ public class PersistentDataManagerBridge : ScriptableObject
     {
         if (PersistentDataManager.Instance != null)
             PersistentDataManager.Instance.DeleteAllSaveData();
+    }
+
+    /// <summary>
+    /// 當對話行顯示時觸發
+    /// 用於 Dialogue System 的 OnConversationLine 事件
+    /// 會自動將 conversation title 儲存到 dialogue.json
+    /// </summary>
+    public static void OnConversationLine(Subtitle subtitle)
+    {
+        Debug.Log("PersistentDataManagerBridge: OnConversationLine 被呼叫");
+
+        // 取得 conversation title
+        int conversationID = subtitle.dialogueEntry.conversationID;
+        string conversationTitle = DialogueManager.GetConversationTitle(conversationID);
+
+        Debug.Log($"Conversation ID: {conversationID}");
+        Debug.Log($"Conversation Title: {conversationTitle}");
+
+        // 儲存 conversation title 到 dialogue.json
+        if (PersistentDataManager.Instance != null)
+        {
+            // 載入現有資料
+            DialogueData data = PersistentDataManager.Instance.LoadData<DialogueData>("dialogue");
+
+            // 如果資料結構是 null，初始化它
+            if (data == null)
+            {
+                data = new DialogueData();
+            }
+
+            // 儲存 conversation title（使用 key: "mainStory"）
+            data.SetValue("mainStory", conversationTitle);
+
+            // 儲存回檔案
+            PersistentDataManager.Instance.SaveData(data, "dialogue");
+
+            Debug.Log($"已儲存 mainStory = {conversationTitle} 到 dialogue.json");
+        }
+        else
+        {
+            Debug.LogError("PersistentDataManagerBridge: PersistentDataManager.Instance is null.");
+        }
     }
 }

@@ -1116,7 +1116,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiUncomfortable);SaveData(mainStory, CH01_SC01_SE02)
+        value: SetPortrait(Mai, pic=MaiUncomfortable)
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -2155,8 +2155,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 1.1117249}
-    canvasZoom: 0.8994999
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.3899997
   - id: 19
     fields:
     - title: Title
