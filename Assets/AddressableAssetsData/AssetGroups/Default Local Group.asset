@@ -415,6 +415,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ec82169fedb2d45528ae352711843644
+    m_Address: Assets/Arts/CH/CH01/BaiFloat_ZoomIn.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ee4e64d128b7a412fa753d6c55415a28
     m_Address: Assets/Arts/Characters/Mai/Mai_Shock.png
     m_ReadOnly: 0
