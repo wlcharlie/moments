@@ -5862,17 +5862,17 @@ MonoBehaviour:
       - title: Background Image
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Comic Image
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 8
       isRoot: 1
       isGroup: 0
       nodeColor: 
       delaySimStatus: 0
-      falseConditionAction: 
+      falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 8
@@ -6061,7 +6061,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiNone);howSceneDetail(2, 0.8,false, left-center-up)
+        value: SetPortrait(Mai, pic=MaiNone);ShowSceneDetail(2, 0.8,false, left-center-up)
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -6101,8 +6101,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 162.99504
-        y: 292.28516
+        x: 156
+        y: 312
         width: 160
         height: 30
     - id: 4
@@ -6132,8 +6132,17 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: RestoreSceneDetail(0);SwitchScene(CH01_SC03_BeigoSneakDoor, Single,
-          None)
+        value: 'RestoreSceneDetail(0)@0;
+
+          AnimatorPlay(Hide, Dialogue Panel)@0;
+
+          SwitchScene(CH01_SC03_BeigoSneakDoor,
+          Additive, FadeIn)@1;
+
+          Delay(2)@2;
+
+          AnimatorPlay(Show,
+          Dialogue Panel)@3;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -6163,7 +6172,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 8
+        originDialogueID: 4
+        destinationConversationID: 24
+        destinationDialogueID: 0
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -6171,8 +6186,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 166.93762
-        y: 341.81256
+        x: 156
+        y: 372
         width: 160
         height: 30
     - id: 30
@@ -6242,8 +6257,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 163.363
-        y: 188.1021
+        x: 144
+        y: 192
         width: 160
         height: 30
     - id: 31
@@ -6318,8 +6333,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 18.030014, y: 12.382048}
-    canvasZoom: 0.810002
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.6880035
   - id: 24
     fields:
     - title: Title
@@ -6433,8 +6448,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 30
+        x: 180
+        y: 12
         width: 160
         height: 30
     - id: 1
@@ -6464,7 +6479,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiNone);
+        value: UnloadScene(CH01_SC03_BeigoSneakDoor, false);SetPortrait(Mai, pic=MaiNone);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -6508,8 +6523,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160.17712
-        y: 83.69081
+        x: 204
+        y: 84
         width: 160
         height: 30
     - id: 2

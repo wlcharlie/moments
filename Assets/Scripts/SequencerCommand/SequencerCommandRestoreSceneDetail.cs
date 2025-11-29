@@ -37,6 +37,8 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
 
             backgroundTransform = backgroundObject.transform;
 
+            Debug.Log($"hasOriginalState: {hasOriginalState}, originalPos: {originalPosition}, originalScale: {originalScale}");
+
             // 如果沒有保存的原始狀態，使用當前狀態作為原始狀態
             if (!hasOriginalState)
             {

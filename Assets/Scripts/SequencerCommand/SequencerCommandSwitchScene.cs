@@ -76,7 +76,10 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
                 // 如果使用轉場且是 Single 模式，使用 TransitionManager
                 if (useTransition && TransitionManager.Instance != null && loadMode == LoadSceneMode.Single && transitionType.HasValue)
                 {
-                    TransitionManager.Instance.LoadSceneWithTransition(sceneName, transitionType.Value);
+                    TransitionManager.Instance.LoadSceneWithTransition(sceneName, transitionType.Value, onLoadDone: () =>
+                    {
+                        Sequencer.Message("SceneLoaded");
+                    });
                     Debug.Log($"SwitchScene: Loading scene '{sceneName}' with TransitionManager, transition type: {transitionType.Value}");
                 }
                 else

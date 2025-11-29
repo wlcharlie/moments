@@ -63,6 +63,7 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
                 originalPosition = backgroundTransform.position;
                 originalScale = backgroundTransform.localScale;
                 // 同時保存到 RestoreSceneDetail 以便共享
+                Debug.Log($"ShowSceneDetail: 保存原始狀態。 {originalPosition}, {originalScale}");
                 SequencerCommandRestoreSceneDetail.SaveOriginalState(originalPosition, originalScale);
             }
 
@@ -137,7 +138,7 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
                         // 放大圖不夠寬，居中顯示（避免露出左右邊緣）
                         x = 0f; // 螢幕中心
                     }
-                    
+
                     // y: 讓「圖片的中上部分」對齊到「螢幕中心（或稍微偏上）」
                     // 計算邏輯：
                     // 1. 螢幕中心是 y = 0，螢幕上方是 y > 0，下方是 y < 0
@@ -146,23 +147,23 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
                     // 4. 圖片的中上部分（從上往下 1/4 處）= y + scaledSize.y/2 - scaledSize.y/4 = y + scaledSize.y/4
                     // 5. 我們要讓「圖片的中上部分」對齊到「螢幕中心往上 offset」
                     // 6. 所以：y + scaledSize.y/4 = offset，因此 y = offset - scaledSize.y/4
-                    
+
                     // 目標：讓圖片的中上部分對齊到螢幕中心（或稍微偏上）
                     // 這樣螢幕會顯示圖片的上半部分（中上區域）
                     // 圖片需要往下移動（y 變成負值），讓圖片的上半部分顯示在螢幕上
-                    
+
                     // 計算：讓圖片的中上部分對齊到螢幕中心（或稍微偏上）
                     // 要讓玩家看到圖片的下面一點點，圖片需要往上移動（y 變大）
                     // 圖片的中上部分 = y + scaledSize.y/4（從上往下 1/4 處）
                     // 讓它對齊到螢幕中心往上 offset = screenHeight * offsetPercent
                     float offsetPercent = 0.05f; // 螢幕中心往上 5%（稍微偏上一點）
                     float targetY = screenHeight * offsetPercent; // 目標位置（螢幕中心往上）
-                    
+
                     // 計算圖片中心：讓圖片往上移動，讓玩家看到圖片的下面一點點
                     // 要讓圖片往上移動，需要增加 y 值（讓 y 更接近 0 或正值）
                     // 使用更大的除數（1/7），讓 y 更大（圖片往上移動）
                     y = targetY - (scaledSize.y / 7);
-                    
+
                     // 不檢查邊緣，直接使用計算出的 y 值
                     // 因為放大圖通常會比螢幕大，下邊緣露出是正常的
                     break;
@@ -179,7 +180,7 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
                     {
                         x = 0f; // 居中
                     }
-                    
+
                     if (scaledSize.y >= screenHeight)
                     {
                         y = (-screenHeight / 2) + (scaledSize.y / 2) - margin;

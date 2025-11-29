@@ -8,7 +8,8 @@ public enum TransitionType
 {
     Cover,         // 滑動遮罩效果
     Splash,        // 白色閃光效果
-    LoadingScreen  // 僅顯示載入畫面
+    LoadingScreen, // 僅顯示載入畫面
+    FadeIn         // 淡入效果（僅限 Additive 模式）
 }
 
 public class TransitionManager : MonoBehaviour
@@ -20,6 +21,8 @@ public class TransitionManager : MonoBehaviour
     [SerializeField] private LoadingScreen loadingScreen;
     [SerializeField] private float transitionDuration = 0.5f;
     [SerializeField] private float splashDuration = 0.3f;
+    [SerializeField] private float fadeInDuration = 0.5f;
+    [SerializeField] private float fadeOutDuration = 0.5f;
 
     private bool isTransitioning = false;
     private Image splashImage;
@@ -77,32 +80,54 @@ public class TransitionManager : MonoBehaviour
     /// <param name="onLoadDone">場景載入完成後的回調函數（可選）</param>
     public void LoadSceneWithTransition(string sceneName, TransitionType transitionType = TransitionType.Cover, Action onLoadDone = null)
     {
+        LoadSceneWithTransition(sceneName, transitionType, LoadSceneMode.Single, onLoadDone);
+    }
+
+    /// <summary>
+    /// 載入場景並執行過渡動畫（支援 Additive 模式）
+    /// </summary>
+    /// <param name="sceneName">要載入的場景名稱</param>
+    /// <param name="transitionType">轉場類型</param>
+    /// <param name="loadSceneMode">場景載入模式</param>
+    /// <param name="onLoadDone">場景載入完成後的回調函數（可選）</param>
+    public void LoadSceneWithTransition(string sceneName, TransitionType transitionType, LoadSceneMode loadSceneMode, Action onLoadDone = null)
+    {
+        // FadeIn 只能在 Additive 模式下使用
+        if (transitionType == TransitionType.FadeIn && loadSceneMode != LoadSceneMode.Additive)
+        {
+            Debug.LogWarning("TransitionManager: FadeIn 轉場類型只能在 Additive 模式下使用，已自動切換為 Additive 模式");
+            loadSceneMode = LoadSceneMode.Additive;
+        }
+
         if (!isTransitioning)
         {
-            StartCoroutine(TransitionCoroutine(sceneName, transitionType, onLoadDone));
+            StartCoroutine(TransitionCoroutine(sceneName, transitionType, loadSceneMode, onLoadDone));
         }
     }
 
     /// <summary>
     /// 執行過渡動畫的協程
     /// </summary>
-    private IEnumerator TransitionCoroutine(string sceneName, TransitionType transitionType, Action onLoadDone)
+    private IEnumerator TransitionCoroutine(string sceneName, TransitionType transitionType, LoadSceneMode loadSceneMode, Action onLoadDone)
     {
         isTransitioning = true;
-
 
         switch (transitionType)
         {
             case TransitionType.Cover:
-                yield return StartCoroutine(CoverTransition(sceneName, onLoadDone));
+                yield return StartCoroutine(CoverTransition(sceneName, loadSceneMode, onLoadDone));
                 break;
 
             case TransitionType.Splash:
-                yield return StartCoroutine(SplashTransition(sceneName, onLoadDone));
+                yield return StartCoroutine(SplashTransition(sceneName, loadSceneMode, onLoadDone));
                 break;
 
             case TransitionType.LoadingScreen:
-                yield return StartCoroutine(LoadingScreenTransition(sceneName, onLoadDone));
+                yield return StartCoroutine(LoadingScreenTransition(sceneName, loadSceneMode, onLoadDone));
+                break;
+
+            case TransitionType.FadeIn:
+                yield return StartCoroutine(FadeInTransition(sceneName, onLoadDone));
                 break;
         }
 
@@ -112,13 +137,13 @@ public class TransitionManager : MonoBehaviour
     /// <summary>
     /// Cover 轉場：滑動遮罩效果
     /// </summary>
-    private IEnumerator CoverTransition(string sceneName, Action onLoadDone)
+    private IEnumerator CoverTransition(string sceneName, LoadSceneMode loadSceneMode, Action onLoadDone)
     {
         // 階段 1: 從右邊滑入至中間
         yield return StartCoroutine(SlideIn());
 
         // 非同步載入場景
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, loadSceneMode);
 
         // 等待場景載入完成
         while (!asyncLoad.isDone)
@@ -136,10 +161,10 @@ public class TransitionManager : MonoBehaviour
     /// <summary>
     /// Splash 轉場：白色閃光效果
     /// </summary>
-    private IEnumerator SplashTransition(string sceneName, Action onLoadDone)
+    private IEnumerator SplashTransition(string sceneName, LoadSceneMode loadSceneMode, Action onLoadDone)
     {
         // 非同步載入場景
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, loadSceneMode);
 
         // 等待場景載入完成
         while (!asyncLoad.isDone)
@@ -157,7 +182,7 @@ public class TransitionManager : MonoBehaviour
     /// <summary>
     /// LoadingScreen 轉場：僅顯示載入畫面和進度條
     /// </summary>
-    private IEnumerator LoadingScreenTransition(string sceneName, Action onLoadDone)
+    private IEnumerator LoadingScreenTransition(string sceneName, LoadSceneMode loadSceneMode, Action onLoadDone)
     {
         // 顯示載入畫面
         ShowLoadingScreen();
@@ -165,7 +190,7 @@ public class TransitionManager : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
 
         // 非同步載入場景
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, loadSceneMode);
 
         // 等待場景載入完成，同時更新進度條
         while (!asyncLoad.isDone)
@@ -185,6 +210,190 @@ public class TransitionManager : MonoBehaviour
 
         // 隱藏載入畫面
         HideLoadingScreen();
+    }
+
+    /// <summary>
+    /// FadeIn 轉場：淡入效果（僅限 Additive 模式）
+    /// </summary>
+    private IEnumerator FadeInTransition(string sceneName, Action onLoadDone)
+    {
+        // 非同步載入場景（Additive 模式）
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+
+        // 等待場景載入完成
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        // 取得新載入的場景
+        Scene loadedScene = SceneManager.GetSceneByName(sceneName);
+
+        // 對場景中所有根物件的 CanvasGroup 執行淡入
+        yield return StartCoroutine(FadeInSceneCanvasGroups(loadedScene));
+
+        // 場景載入完成，觸發回調
+        onLoadDone?.Invoke();
+    }
+
+    /// <summary>
+    /// 對場景中所有 CanvasGroup 執行淡入效果
+    /// </summary>
+    private IEnumerator FadeInSceneCanvasGroups(Scene scene)
+    {
+        if (!scene.IsValid())
+        {
+            yield break;
+        }
+
+        // 取得場景中所有根物件的 CanvasGroup
+        GameObject[] rootObjects = scene.GetRootGameObjects();
+        System.Collections.Generic.List<CanvasGroup> canvasGroups = new System.Collections.Generic.List<CanvasGroup>();
+
+        foreach (GameObject root in rootObjects)
+        {
+            CanvasGroup cg = root.GetComponent<CanvasGroup>();
+            if (cg != null)
+            {
+                cg.alpha = 0f;
+                canvasGroups.Add(cg);
+            }
+        }
+
+        // 如果沒有 CanvasGroup，直接結束
+        if (canvasGroups.Count == 0)
+        {
+            yield break;
+        }
+
+        // 執行淡入動畫
+        float elapsed = 0f;
+        while (elapsed < fadeInDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / fadeInDuration;
+            float alpha = Mathf.Lerp(0f, 1f, t);
+
+            foreach (CanvasGroup cg in canvasGroups)
+            {
+                if (cg != null)
+                {
+                    cg.alpha = alpha;
+                }
+            }
+
+            yield return null;
+        }
+
+        // 確保完全不透明
+        foreach (CanvasGroup cg in canvasGroups)
+        {
+            if (cg != null)
+            {
+                cg.alpha = 1f;
+            }
+        }
+    }
+
+    /// <summary>
+    /// 卸載 Additive 場景（帶淡出效果）
+    /// </summary>
+    /// <param name="sceneName">要卸載的場景名稱</param>
+    /// <param name="useFadeOut">是否使用淡出效果（預設為 true）</param>
+    /// <param name="onUnloadDone">卸載完成後的回調函數（可選）</param>
+    public void UnloadScene(string sceneName, bool useFadeOut = true, Action onUnloadDone = null)
+    {
+        Scene scene = SceneManager.GetSceneByName(sceneName);
+        if (!scene.IsValid() || !scene.isLoaded)
+        {
+            Debug.LogWarning($"TransitionManager: 場景 '{sceneName}' 不存在或未載入");
+            onUnloadDone?.Invoke();
+            return;
+        }
+
+        StartCoroutine(UnloadSceneCoroutine(scene, useFadeOut, onUnloadDone));
+    }
+
+    /// <summary>
+    /// 卸載場景的協程
+    /// </summary>
+    private IEnumerator UnloadSceneCoroutine(Scene scene, bool useFadeOut, Action onUnloadDone)
+    {
+        if (useFadeOut)
+        {
+            // 執行淡出效果
+            yield return StartCoroutine(FadeOutSceneCanvasGroups(scene));
+        }
+
+        // 卸載場景
+        AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(scene);
+
+        // 等待卸載完成
+        while (!asyncUnload.isDone)
+        {
+            yield return null;
+        }
+
+        // 卸載完成，觸發回調
+        onUnloadDone?.Invoke();
+    }
+
+    /// <summary>
+    /// 對場景中所有 CanvasGroup 執行淡出效果
+    /// </summary>
+    private IEnumerator FadeOutSceneCanvasGroups(Scene scene)
+    {
+        if (!scene.IsValid())
+        {
+            yield break;
+        }
+
+        // 取得場景中所有根物件的 CanvasGroup
+        GameObject[] rootObjects = scene.GetRootGameObjects();
+        System.Collections.Generic.List<CanvasGroup> canvasGroups = new System.Collections.Generic.List<CanvasGroup>();
+
+        foreach (GameObject root in rootObjects)
+        {
+            CanvasGroup cg = root.GetComponent<CanvasGroup>();
+            if (cg != null)
+            {
+                canvasGroups.Add(cg);
+            }
+        }
+
+        // 如果沒有 CanvasGroup，直接結束
+        if (canvasGroups.Count == 0)
+        {
+            yield break;
+        }
+
+        // 執行淡出動畫
+        float elapsed = 0f;
+        while (elapsed < fadeOutDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / fadeOutDuration;
+            float alpha = Mathf.Lerp(1f, 0f, t);
+
+            foreach (CanvasGroup cg in canvasGroups)
+            {
+                if (cg != null)
+                {
+                    cg.alpha = alpha;
+                }
+            }
+
+            yield return null;
+        }
+
+        // 確保完全透明
+        foreach (CanvasGroup cg in canvasGroups)
+        {
+            if (cg != null)
+            {
+                cg.alpha = 0f;
+            }
+        }
     }
 
     /// <summary>
