@@ -177,17 +177,10 @@ public class DiceModal : MonoBehaviour
             manager.MovePlayer(result);
         }
 
-        // 切回 MainStoryScene 並啟動對話 CH0004
-        if (TransitionManager.Instance != null)
+        // 切回 MainStoryScene 並從存檔繼續對話
+        if (GameManager.Instance != null)
         {
-
-            // 使用 Cover 模式切換場景
-            TransitionManager.Instance.LoadSceneWithTransition("MainStoryScene", TransitionType.Cover, onLoadDone: () =>
-            {
-                // 場景載入完成後啟動對話 CH0004
-                DialogueManager.StopAllConversations();
-                DialogueManager.StartConversation("COMM_STREET_01");
-            });
+            GameManager.Instance.ResumeConversation();
         }
     }
 

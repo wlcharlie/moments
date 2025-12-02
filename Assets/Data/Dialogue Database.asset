@@ -2809,7 +2809,7 @@ MonoBehaviour:
       type: 0
       typeString: CustomFieldType_Text
     - title: Description
-      value: 
+      value: "\u7B2C\u4E00\u6B21\u9032\u5165\u9AB0\u5B50\u4E8B\u4EF6"
       type: 0
       typeString: CustomFieldType_Text
     - title: Actor
@@ -3291,15 +3291,15 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: "\u9AB0\u5B50\u904A\u6232"
+        value: "\u9032\u5165\u6377\u904B"
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u9AB0\u5B50\u904A\u6232"
+        value: "\u9032\u5165\u6377\u904B"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SwitchScene(TrafficScene)
+        value: SwitchScene(TrafficScene);StopConversation()
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -3413,8 +3413,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 6.571411}
-    canvasZoom: 0.72949624
+    canvasScrollPosition: {x: 26.381067, y: 18.263912}
+    canvasZoom: 0.6069962
   - id: 6
     fields:
     - title: Title
@@ -5289,8 +5289,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 565.0518
-        y: 311.43524
+        x: 600
+        y: 288
         width: 160
         height: 30
     - id: 19
@@ -6333,7 +6333,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 0, y: 127.21094}
     canvasZoom: 0.6880035
   - id: 24
     fields:
@@ -6523,8 +6523,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 204
-        y: 84
+        x: 180
+        y: 72
         width: 160
         height: 30
     - id: 2
@@ -6593,8 +6593,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.6794999
+    canvasScrollPosition: {x: 0, y: 28.364624}
+    canvasZoom: 0.5929998
   - id: 25
     fields:
     - title: Title
@@ -9131,8 +9131,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 74.87247, y: 15.882051}
-    canvasZoom: 0.8814999
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.6925001
   - id: 9
     fields:
     - title: Title
@@ -9922,7 +9922,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SwitchScene(TrafficScene);StopConversation()
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -10038,8 +10038,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.5130004
+    canvasScrollPosition: {x: 188.83998, y: 120.85766}
+    canvasZoom: 0.7920007
   - id: 10
     fields:
     - title: Title

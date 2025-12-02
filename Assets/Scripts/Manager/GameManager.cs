@@ -190,6 +190,58 @@ public class GameManager : MonoBehaviour
 
     // ===== 流程 管理 =====
 
+    // 小遊戲結束後的對話映射表
+    // Key: 存檔中記錄的對話, Value: 小遊戲結束後要進入的對話
+    private static readonly System.Collections.Generic.Dictionary<string, string> minigameNextConversationMap = new()
+    {
+        { "CH01_SC02_SE01", "COMM_STREET_01" },
+        { "CH01_SC04_SE01", "CH01_SC04_SE02" },
+    };
+
+    /// <summary>
+    /// 取得小遊戲結束後應該進入的對話
+    /// 根據存檔中記錄的對話查找映射表
+    /// </summary>
+    private string GetMinigameNextConversation()
+    {
+        string savedConversation = GetSavedConversation();
+
+        if (minigameNextConversationMap.TryGetValue(savedConversation, out string nextConversation))
+        {
+            Debug.Log($"找到映射: {savedConversation} -> {nextConversation}");
+            return nextConversation;
+        }
+
+        // 如果沒有映射，直接返回存檔中的對話
+        Debug.Log($"沒有找到 {savedConversation} 的映射，使用存檔對話");
+        return savedConversation;
+    }
+
+    /// <summary>
+    /// 切換到 MainStoryScene 並從存檔繼續對話
+    /// 從 dialogue.json 讀取 mainStory 值作為對話起點
+    /// </summary>
+    public void ResumeConversation()
+    {
+        string conversationToResume = GetMinigameNextConversation();
+        Debug.Log($"ResumeConversation: 準備從對話 {conversationToResume} 繼續");
+
+        if (TransitionManager.Instance != null)
+        {
+            TransitionManager.Instance.LoadSceneWithTransition("MainStoryScene", TransitionType.Cover, onLoadDone: () =>
+            {
+                DialogueManager.StopAllConversations();
+                DialogueManager.StartConversation(conversationToResume);
+            });
+        }
+        else
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MainStoryScene");
+            DialogueManager.StopAllConversations();
+            DialogueManager.StartConversation(conversationToResume);
+        }
+    }
+
     public void SwitchScene(string sceneName)
     {
         Debug.Log($"切換場景到 {sceneName}");
