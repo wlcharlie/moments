@@ -2443,7 +2443,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 96
-        y: 138
+        y: 132
         width: 160
         height: 30
     - id: 3
@@ -2599,11 +2599,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 1
+        value: 3
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 1
+        value: -1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -2611,7 +2611,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u539F\u672C\u58D3\u6291\u7684\u6012\u6C23\uFF0C\u5FCD\u4E0D\u4F4F\u7206\u767C\uFF0C\u59B3\u4E00\u628A\u626F\u4E0B\u5C0F\u767D\u61F7\u88E1\u7684\u756B\u518A\uFF0C\u91CD\u91CD\u6454\u5012\u5730\u4E0A"
+        value: "<i>\u539F\u672C\u58D3\u6291\u7684\u6012\u6C23\uFF0C\u5FCD\u4E0D\u4F4F\u7206\u767C\uFF0C\u59B3\u4E00\u628A\u626F\u4E0B\u5C0F\u767D\u61F7\u88E1\u7684\u756B\u518A\uFF0C\u91CD\u91CD\u6454\u5012\u5730\u4E0A</i>"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -2801,7 +2801,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.89200103
+    canvasZoom: 0.7630013
   - id: 3
     fields:
     - title: Title
@@ -3413,8 +3413,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 26.381067, y: 18.263912}
-    canvasZoom: 0.6069962
+    canvasScrollPosition: {x: 35.38471, y: 0}
+    canvasZoom: 0.62449616
   - id: 6
     fields:
     - title: Title

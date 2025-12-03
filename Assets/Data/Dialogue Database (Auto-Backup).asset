@@ -5888,8 +5888,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 30
+        x: 156
+        y: 24
         width: 160
         height: 30
     - id: 1
@@ -5959,8 +5959,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 161.6488
-        y: 85.16252
+        x: 156
+        y: 84
         width: 160
         height: 30
     - id: 2
@@ -6030,7 +6030,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 132
+        x: 156
         y: 132
         width: 160
         height: 30
@@ -6102,7 +6102,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 156
-        y: 312
+        y: 276
         width: 160
         height: 30
     - id: 4
@@ -6141,7 +6141,7 @@ MonoBehaviour:
 
           Delay(2)@2;
 
-          SetDialoguePanel(true)@3'
+          SetDialoguePanel(true)@3;SetContinueMode(original)@3'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -6185,8 +6185,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 168
-        y: 348
+        x: 156
+        y: 324
         width: 160
         height: 30
     - id: 30
@@ -6256,8 +6256,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 144
-        y: 192
+        x: 156
+        y: 180
         width: 160
         height: 30
     - id: 31
@@ -6327,8 +6327,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 161.83911
-        y: 237.21638
+        x: 156
+        y: 228
         width: 160
         height: 30
     entryGroups: []
@@ -6478,7 +6478,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: UnloadScene(CH01_SC03_BeigoSneakDoor, false);SetPortrait(Mai, pic=MaiNone);
+        value: SetPortrait(Mai, pic=MaiNone);SetContinueMode(false);UnloadScene(CH01_SC03_BeigoSneakDoor,
+          false)@1;SetContinueMode(original)@2
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -6522,8 +6523,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 216
-        y: 60
+        x: 204
+        y: 72
         width: 160
         height: 30
     - id: 2
@@ -6545,15 +6546,16 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: ...
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: 
+        value: ...
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SwitchScene(CH01_SC03_BaiFloatPages, Single, Cove);
+        value: SetDialoguePanel(false, immediate)@0;SwitchScene(CH01_SC03_BaiFloatPages,
+          Additive, FadeIn)@1;SetDialoguePanel(true)@4;SetContinueMode(original)@4.5
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -6579,7 +6581,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 24
+        originDialogueID: 2
+        destinationConversationID: 25
+        destinationDialogueID: 0
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -6587,13 +6595,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 161.6488
-        y: 132.21916
+        x: 204
+        y: 132
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 17.302738}
-    canvasZoom: 0.56099975
+    canvasScrollPosition: {x: 96.631165, y: 0}
+    canvasZoom: 0.8899985
   - id: 25
     fields:
     - title: Title
@@ -6681,17 +6689,17 @@ MonoBehaviour:
       - title: Background Image
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Comic Image
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       conversationID: 25
       isRoot: 1
       isGroup: 0
       nodeColor: 
       delaySimStatus: 0
-      falseConditionAction: 
+      falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 25
@@ -6707,8 +6715,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 30
+        x: 108
+        y: 24
         width: 160
         height: 30
     - id: 1
@@ -6738,7 +6746,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiShock);
+        value: SetPortrait(Mai, pic=MaiShock);SetContinueMode(false);UnloadScene(CH01_SC03_BaiFloatPages,
+          false)@1;SetContinueMode(original)@2
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -6778,8 +6787,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 163.15256
-        y: 85.01286
+        x: 264
+        y: 84
         width: 160
         height: 30
     - id: 2
@@ -6951,7 +6960,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SwitchScene(CH01_SC03_BeigoReveal, Single, Cover)
+        value: SwitchScene(CH01_SC03_BeigoReveal, Additive, FadeIn)
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -6977,7 +6986,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 25
+        originDialogueID: 31
+        destinationConversationID: 26
+        destinationDialogueID: 0
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -6985,12 +7000,12 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 161.70956
-        y: 243.03224
+        x: 216
+        y: 240
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 0, y: 232}
     canvasZoom: 0.665
   - id: 26
     fields:
@@ -7136,7 +7151,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiHesitate);SetActive(TapToContinueOverlay,false)
+        value: SetPortrait(Mai, pic=MaiHesitate);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -7176,8 +7191,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 161.11678
-        y: 153.91391
+        x: 192
+        y: 156
         width: 160
         height: 30
     - id: 11
@@ -7466,8 +7481,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 235.9649
-        y: 343.10956
+        x: 216
+        y: 336
         width: 160
         height: 30
     - id: 16
@@ -7537,8 +7552,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 268.61426
-        y: 499.4264
+        x: 228
+        y: 492
         width: 160
         height: 30
     - id: 18
@@ -7972,8 +7987,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 937.3494
-        y: 226.84836
+        x: 888
+        y: 216
         width: 160
         height: 30
     - id: 24
@@ -8114,8 +8129,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1224.2013
-        y: 91.34548
+        x: 1260
+        y: 72
         width: 160
         height: 30
     - id: 27
@@ -8185,8 +8200,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 1222.9152
-        y: 159.43927
+        x: 1260
+        y: 156
         width: 160
         height: 30
     - id: 28
@@ -8722,15 +8737,15 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: ' '
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: 
+        value: ' '
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetActive(TapToContinueOverlay,true)
+        value: UnloadScene(CH01_SC03_BeigoReveal, false)@1
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -8770,8 +8785,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159.873
-        y: 90.33511
+        x: 156
+        y: 72
         width: 160
         height: 30
     - id: 36
@@ -8841,8 +8856,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 151.93936
-        y: 400.06332
+        x: 108
+        y: 396
         width: 160
         height: 30
     - id: 37
@@ -8972,8 +8987,8 @@ MonoBehaviour:
       outgoingLinks:
       - originConversationID: 26
         originDialogueID: 38
-        destinationConversationID: -1
-        destinationDialogueID: -1
+        destinationConversationID: 9
+        destinationDialogueID: 0
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -9054,8 +9069,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 933.3082
-        y: 387.89163
+        x: 900
+        y: 384
         width: 160
         height: 30
     - id: 40
@@ -9085,7 +9100,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetDialoguePanel(false);SetActive(TapToContinueOverlay,true)
+        value: SetDialoguePanel(false);Continue()@2
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -9130,8 +9145,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.6925001
+    canvasScrollPosition: {x: 20.58562, y: 23.732414}
+    canvasZoom: 0.44000015
   - id: 9
     fields:
     - title: Title

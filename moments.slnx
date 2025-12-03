@@ -11,9 +11,9 @@
   <Project Path="FMODUnityEditor.csproj" />
   <Project Path="FMODUnity.csproj" />
   <Project Path="UI.csproj" />
+  <Project Path="Controller.csproj" />
   <Project Path="Capture.csproj" />
   <Project Path="Dialogue.csproj" />
-  <Project Path="Controller.csproj" />
   <Project Path="Traffic.csproj" />
   <Project Path="FMODUnityResonance.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />

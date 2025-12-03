@@ -6,20 +6,11 @@ using UnityEngine.UI;
 
 public class DialogueDebugManager : MonoBehaviour
 {
-    [System.Serializable]
-    public class ChapterEntry
-    {
-        [Tooltip("按鈕上顯示的文字")]
-        public string buttonName;
-        [Tooltip("要切換的場景名稱（留空代表留在當前場景）")]
-        public string sceneToLoad = "MainStoryScene";
-        [Tooltip("Dialogue System 的對話 ID")]
-        public string conversationStart = "CH01_SC02_SE01";
-    }
-
-    [SerializeField] private ChapterEntry[] chapters;
     [SerializeField] private Button buttonPrefab;
     [SerializeField] private Transform buttonParent;
+    [SerializeField] private string defaultSceneToLoad = "MainStoryScene";
+    [Tooltip("篩選對話標題的前綴（留空則顯示所有對話）")]
+    [SerializeField] private string conversationFilter = "";
 
     private static string pendingConversation;
     private static string pendingScene;
@@ -41,42 +32,54 @@ public class DialogueDebugManager : MonoBehaviour
             return;
         }
 
-        if (chapters == null || chapters.Length == 0) return;
-
-        foreach (var entry in chapters)
+        if (DialogueManager.masterDatabase == null)
         {
-            if (entry == null) continue;
+            Debug.LogError("DialogueDebugManager: DialogueManager.masterDatabase 不存在。");
+            return;
+        }
+
+        var conversations = DialogueManager.masterDatabase.conversations;
+        if (conversations == null || conversations.Count == 0)
+        {
+            Debug.LogWarning("DialogueDebugManager: 沒有找到任何對話。");
+            return;
+        }
+
+        foreach (var conversation in conversations)
+        {
+            if (conversation == null) continue;
+
+            string title = conversation.Title;
+            if (string.IsNullOrEmpty(title)) continue;
+
+            // 過濾對話（如果有設定篩選條件）
+            if (!string.IsNullOrEmpty(conversationFilter) && !title.StartsWith(conversationFilter))
+                continue;
 
             Button buttonInstance = Instantiate(buttonPrefab, buttonParent);
             TMP_Text label = buttonInstance.GetComponentInChildren<TMP_Text>();
             if (label != null)
             {
-                label.text = entry.buttonName;
+                label.text = title;
             }
 
-            var capturedEntry = entry;
-            buttonInstance.onClick.AddListener(() => StartChapter(capturedEntry));
+            var capturedTitle = title;
+            buttonInstance.onClick.AddListener(() => StartConversation(capturedTitle));
         }
     }
 
-    private void StartChapter(ChapterEntry entry)
+    private void StartConversation(string conversationTitle)
     {
-        if (entry == null)
+        if (string.IsNullOrEmpty(conversationTitle))
         {
-            Debug.LogWarning("DialogueDebugManager: ChapterEntry 為空。");
+            Debug.LogWarning("DialogueDebugManager: conversationTitle 為空。");
             return;
         }
 
-        if (string.IsNullOrEmpty(entry.conversationStart))
-        {
-            Debug.LogWarning($"DialogueDebugManager: '{entry.buttonName}' 沒有指定 conversationStart。");
-            return;
-        }
+        pendingConversation = conversationTitle;
+        pendingScene = defaultSceneToLoad;
 
-        pendingConversation = entry.conversationStart;
-        pendingScene = entry.sceneToLoad;
-
-        if (string.IsNullOrEmpty(entry.sceneToLoad) || entry.sceneToLoad == SceneManager.GetActiveScene().name)
+        if (string.IsNullOrEmpty(defaultSceneToLoad) || defaultSceneToLoad == SceneManager.GetActiveScene().name)
         {
             StartPendingConversation();
             return;
@@ -85,7 +88,7 @@ public class DialogueDebugManager : MonoBehaviour
         if (TransitionManager.Instance != null)
         {
             TransitionManager.Instance.LoadSceneWithTransition(
-                entry.sceneToLoad,
+                defaultSceneToLoad,
                 onLoadDone: () =>
                 {
                     StartPendingConversation();
@@ -94,7 +97,7 @@ public class DialogueDebugManager : MonoBehaviour
         else
         {
             SceneManager.sceneLoaded += HandleSceneLoaded;
-            SceneManager.LoadScene(entry.sceneToLoad);
+            SceneManager.LoadScene(defaultSceneToLoad);
         }
     }
 
