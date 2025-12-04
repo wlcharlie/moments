@@ -6181,7 +6181,7 @@ MonoBehaviour:
 
           Delay(2)@2;
 
-          SetDialoguePanel(true)@3;SetContinueMode(original)@3'
+          SetDialoguePanel(true)@3'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -6225,7 +6225,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 156
+        x: 168
         y: 324
         width: 160
         height: 30
@@ -10092,7 +10092,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 188.83998, y: 120.85766}
+    canvasScrollPosition: {x: 1.2626343, y: 0}
     canvasZoom: 0.7920007
   - id: 10
     fields:
@@ -13079,10 +13079,10 @@ MonoBehaviour:
       value: -1
       type: 5
       typeString: CustomFieldType_Actor
-    - title: "\u5730\u9EDE"
-      value: MART
-      type: 0
-      typeString: CustomFieldType_Text
+    - title: Event Location
+      value: 1
+      type: 7
+      typeString: CustomFieldType_Location
     overrideSettings:
       useOverrides: 0
       overrideSubtitleSettings: 0
@@ -13481,10 +13481,10 @@ MonoBehaviour:
       value: -1
       type: 5
       typeString: CustomFieldType_Actor
-    - title: "\u5730\u9EDE"
-      value: MART
-      type: 0
-      typeString: CustomFieldType_Text
+    - title: Event Location
+      value: 1
+      type: 7
+      typeString: CustomFieldType_Location
     overrideSettings:
       useOverrides: 0
       overrideSubtitleSettings: 0
@@ -13889,10 +13889,10 @@ MonoBehaviour:
       value: -1
       type: 5
       typeString: CustomFieldType_Actor
-    - title: "\u5730\u9EDE"
-      value: MRT
-      type: 0
-      typeString: CustomFieldType_Text
+    - title: Event Location
+      value: 2
+      type: 7
+      typeString: CustomFieldType_Location
     overrideSettings:
       useOverrides: 0
       overrideSubtitleSettings: 0
@@ -14149,10 +14149,10 @@ MonoBehaviour:
       value: -1
       type: 5
       typeString: CustomFieldType_Actor
-    - title: "\u5730\u9EDE"
-      value: MRT
-      type: 0
-      typeString: CustomFieldType_Text
+    - title: Event Location
+      value: 2
+      type: 7
+      typeString: CustomFieldType_Location
     overrideSettings:
       useOverrides: 0
       overrideSubtitleSettings: 0
@@ -14628,10 +14628,10 @@ MonoBehaviour:
       value: -1
       type: 5
       typeString: CustomFieldType_Actor
-    - title: "\u5730\u9EDE"
-      value: PARK
-      type: 0
-      typeString: CustomFieldType_Text
+    - title: Event Location
+      value: 4
+      type: 7
+      typeString: CustomFieldType_Location
     overrideSettings:
       useOverrides: 0
       overrideSubtitleSettings: 0
@@ -14959,10 +14959,10 @@ MonoBehaviour:
       value: -1
       type: 5
       typeString: CustomFieldType_Actor
-    - title: "\u5730\u9EDE"
-      value: STREET
-      type: 0
-      typeString: CustomFieldType_Text
+    - title: Event Location
+      value: 3
+      type: 7
+      typeString: CustomFieldType_Location
     overrideSettings:
       useOverrides: 0
       overrideSubtitleSettings: 0
@@ -15445,10 +15445,10 @@ MonoBehaviour:
       value: -1
       type: 5
       typeString: CustomFieldType_Actor
-    - title: "\u5730\u9EDE"
-      value: STREET
-      type: 0
-      typeString: CustomFieldType_Text
+    - title: Event Location
+      value: 3
+      type: 7
+      typeString: CustomFieldType_Location
     overrideSettings:
       useOverrides: 0
       overrideSubtitleSettings: 0
@@ -15827,8 +15827,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 4.6611967, y: 1.7051067}
+    canvasZoom: 1.0059997
   - id: 1
     fields:
     - title: Title
@@ -16369,9 +16369,11 @@ MonoBehaviour:
     Description\",\"value\":\"\",\"type\":0,\"typeString\":\"\"},{\"title\":\"Failure
     Description\",\"value\":\"\",\"type\":0,\"typeString\":\"\"},{\"title\":\"State\",\"value\":\"unassigned\",\"type\":0,\"typeString\":\"\"},{\"title\":\"Is
     Item\",\"value\":\"False\",\"type\":2,\"typeString\":\"CustomFieldType_Boolean\"}],\"locationFields\":[{\"title\":\"Name\",\"value\":\"\",\"type\":0,\"typeString\":\"\"},{\"title\":\"Description\",\"value\":\"\",\"type\":0,\"typeString\":\"\"}],\"variableFields\":[{\"title\":\"Name\",\"value\":\"\",\"type\":0,\"typeString\":\"\"},{\"title\":\"Initial
-    Value\",\"value\":\"\",\"type\":0,\"typeString\":\"\"},{\"title\":\"Description\",\"value\":\"\",\"type\":0,\"typeString\":\"\"}],\"conversationFields\":[{\"title\":\"Title\",\"value\":\"\",\"type\":0,\"typeString\":\"CustomFieldType_Text\"},{\"title\":\"Description\",\"value\":\"\",\"type\":0,\"typeString\":\"CustomFieldType_Text\"},{\"title\":\"Actor\",\"value\":\"0\",\"type\":5,\"typeString\":\"CustomFieldType_Actor\"},{\"title\":\"Conversant\",\"value\":\"0\",\"type\":5,\"typeString\":\"CustomFieldType_Actor\"},{\"title\":\"\u5730\u9EDE\",\"value\":\"\",\"type\":7,\"typeString\":\"CustomFieldType_Location\"}],\"dialogueEntryFields\":[{\"title\":\"Title\",\"value\":\"\",\"type\":0,\"typeString\":\"CustomFieldType_Text\"},{\"title\":\"Description\",\"value\":\"\",\"type\":0,\"typeString\":\"CustomFieldType_Text\"},{\"title\":\"Actor\",\"value\":\"\",\"type\":5,\"typeString\":\"CustomFieldType_Actor\"},{\"title\":\"Conversant\",\"value\":\"\",\"type\":5,\"typeString\":\"CustomFieldType_Actor\"},{\"title\":\"Menu
+    Value\",\"value\":\"\",\"type\":0,\"typeString\":\"\"},{\"title\":\"Description\",\"value\":\"\",\"type\":0,\"typeString\":\"\"}],\"conversationFields\":[{\"title\":\"Title\",\"value\":\"\",\"type\":0,\"typeString\":\"CustomFieldType_Text\"},{\"title\":\"Description\",\"value\":\"\",\"type\":0,\"typeString\":\"CustomFieldType_Text\"},{\"title\":\"Actor\",\"value\":\"0\",\"type\":5,\"typeString\":\"CustomFieldType_Actor\"},{\"title\":\"Conversant\",\"value\":\"0\",\"type\":5,\"typeString\":\"CustomFieldType_Actor\"},{\"title\":\"Event
+    Location\",\"value\":\"\",\"type\":7,\"typeString\":\"CustomFieldType_Location\"}],\"dialogueEntryFields\":[{\"title\":\"Title\",\"value\":\"\",\"type\":0,\"typeString\":\"CustomFieldType_Text\"},{\"title\":\"Description\",\"value\":\"\",\"type\":0,\"typeString\":\"CustomFieldType_Text\"},{\"title\":\"Actor\",\"value\":\"\",\"type\":5,\"typeString\":\"CustomFieldType_Actor\"},{\"title\":\"Conversant\",\"value\":\"\",\"type\":5,\"typeString\":\"CustomFieldType_Actor\"},{\"title\":\"Menu
     Text\",\"value\":\"\",\"type\":0,\"typeString\":\"CustomFieldType_Text\"},{\"title\":\"Dialogue
     Text\",\"value\":\"\",\"type\":0,\"typeString\":\"CustomFieldType_Text\"},{\"title\":\"Sequence\",\"value\":\"\",\"type\":0,\"typeString\":\"CustomFieldType_Text\"},{\"title\":\"ja\",\"value\":\"\",\"type\":4,\"typeString\":\"CustomFieldType_Localization\"},{\"title\":\"en\",\"value\":\"\",\"type\":4,\"typeString\":\"CustomFieldType_Localization\"},{\"title\":\"Background
     Image\",\"value\":\"\",\"type\":0,\"typeString\":\"CustomFieldType_Sprite\"},{\"title\":\"Comic
-    Image\",\"value\":\"\",\"type\":0,\"typeString\":\"CustomFieldType_Sprite\"}],\"actorPrimaryFieldTitles\":[],\"itemPrimaryFieldTitles\":[],\"questPrimaryFieldTitles\":[],\"locationPrimaryFieldTitles\":[],\"variablePrimaryFieldTitles\":[],\"conversationPrimaryFieldTitles\":[\"\u5730\u9EDE\"],\"dialogueEntryPrimaryFieldTitles\":[\"Background
-    Image\",\"Comic Image\"],\"npcLineColor\":{\"r\":1.0,\"g\":0.0,\"b\":0.0,\"a\":1.0},\"pcLineColor\":{\"r\":0.0,\"g\":0.0,\"b\":1.0,\"a\":1.0},\"repeatLineColor\":{\"r\":0.5,\"g\":0.5,\"b\":0.5,\"a\":1.0}}"
+    Image\",\"value\":\"\",\"type\":0,\"typeString\":\"CustomFieldType_Sprite\"}],\"actorPrimaryFieldTitles\":[],\"itemPrimaryFieldTitles\":[],\"questPrimaryFieldTitles\":[],\"locationPrimaryFieldTitles\":[],\"variablePrimaryFieldTitles\":[],\"conversationPrimaryFieldTitles\":[\"\u5730\u9EDE\",\"Event
+    Location\"],\"dialogueEntryPrimaryFieldTitles\":[\"Background Image\",\"Comic
+    Image\"],\"npcLineColor\":{\"r\":1.0,\"g\":0.0,\"b\":0.0,\"a\":1.0},\"pcLineColor\":{\"r\":0.0,\"g\":0.0,\"b\":1.0,\"a\":1.0},\"repeatLineColor\":{\"r\":0.5,\"g\":0.5,\"b\":0.5,\"a\":1.0}}"

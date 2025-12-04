@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: 26f7849e8d695495bb1ec78ddb7abe90
+guid: 3feddb9fe88164a8eaa5a19a5b9d63f4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5088503592753446604
-    second: Mai_Beigo_Spirt_0
+      213: -1459717924194889447
+    second: Mai_Spirt_02_0
   - first:
-      213: -7328162975840370041
-    second: Mai_Beigo_Spirt_1
+      213: -2129543035408594125
+    second: Mai_Spirt_02_1
+  - first:
+      213: -1141990052069258194
+    second: Mai_Spirt_02_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,7 +119,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mai_Beigo_Spirt_0
+      name: Mai_Spirt_02_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +134,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cce3e5cbe0ffd9640800000000000000
-      internalID: 5088503592753446604
+      spriteID: 911d718284a0ebbe0800000000000000
+      internalID: -1459717924194889447
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mai_Beigo_Spirt_1
+      name: Mai_Spirt_02_1
       rect:
         serializedVersion: 2
         x: 500
@@ -153,74 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7828dd889922d4a90800000000000000
-      internalID: -7328162975840370041
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mai_Beigo_Spirt_2
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 500
-        height: 627
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 44780389c8c2b4495b5781fc5775c838
-      internalID: 1589217724
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mai_Beigo_Spirt_3
-      rect:
-        serializedVersion: 2
-        x: 1500
-        y: 0
-        width: 500
-        height: 627
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 62f0875f214924a93962ad9708914516
-      internalID: 751433171
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mai_Beigo_Spirt_4
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 0
-        width: 500
-        height: 627
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58e1c67a129ab4d76950c98b61a6fbac
-      internalID: 720573672
+      spriteID: 33b409064e75272e0800000000000000
+      internalID: -2129543035408594125
       vertices: []
       indices: 
       edges: []
@@ -229,7 +166,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9f19bf7a72e1e49378d4e2f667e950a2
+    spriteID: 20abbe123f45444cdab1d2ef5f7a08f7
     internalID: 0
     vertices: []
     indices: 
@@ -241,11 +178,8 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":500.0,"y":627.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Mai_Beigo_Spirt_0: 5088503592753446604
-      Mai_Beigo_Spirt_1: -7328162975840370041
-      Mai_Beigo_Spirt_2: 1589217724
-      Mai_Beigo_Spirt_3: 751433171
-      Mai_Beigo_Spirt_4: 720573672
+      Mai_Spirt_02_0: -1459717924194889447
+      Mai_Spirt_02_1: -2129543035408594125
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
