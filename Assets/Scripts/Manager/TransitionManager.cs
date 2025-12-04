@@ -569,4 +569,138 @@ public class TransitionManager : MonoBehaviour
             StartCoroutine(SlideIn());
         }
     }
+
+    /// <summary>
+    /// 用於在對話之間切換時提供視覺轉場
+    /// </summary>
+    /// <param name="transitionType">轉場類型</param>
+    /// <param name="onTransitionDone">轉場完成後的回調函數</param>
+    public void DoConversationTransition(TransitionType transitionType, Action onTransitionDone = null)
+    {
+        if (!isTransitioning)
+        {
+            StartCoroutine(ConversationTransitionCoroutine(transitionType, onTransitionDone));
+        }
+        else
+        {
+            // 如果正在轉場，直接執行回調
+            onTransitionDone?.Invoke();
+        }
+    }
+
+    /// <summary>
+    /// 對話轉場協程
+    /// </summary>
+    private IEnumerator ConversationTransitionCoroutine(TransitionType transitionType, Action onTransitionDone)
+    {
+        isTransitioning = true;
+
+        switch (transitionType)
+        {
+            case TransitionType.Cover:
+                // Cover 轉場：滑入 -> 滑出
+                yield return StartCoroutine(SlideIn());
+                onTransitionDone?.Invoke(); // Callback after slide in
+                yield return StartCoroutine(SlideOut());
+                break;
+
+            case TransitionType.Splash:
+                // Splash 轉場：白色閃光
+                onTransitionDone?.Invoke(); // Callback before splash effect
+                yield return StartCoroutine(SplashEffect());
+                break;
+
+            case TransitionType.FadeIn:
+                // FadeIn 轉場：淡出 -> 淡入（需要找到對話 UI 的 CanvasGroup）
+                yield return StartCoroutine(FadeOutDialogueUI());
+                onTransitionDone?.Invoke(); // Callback after fade out
+                yield return StartCoroutine(FadeInDialogueUI());
+                break;
+
+            default:
+                // 預設：直接執行回調，無轉場效果
+                onTransitionDone?.Invoke();
+                break;
+        }
+
+        isTransitioning = false;
+    }
+
+    /// <summary>
+    /// 淡出對話 UI
+    /// </summary>
+    private IEnumerator FadeOutDialogueUI()
+    {
+        // 嘗試找到 Dialogue UI 的 CanvasGroup
+        CanvasGroup dialogueCanvasGroup = FindDialogueUICanvasGroup();
+        if (dialogueCanvasGroup == null)
+        {
+            yield break;
+        }
+
+        float elapsed = 0f;
+        while (elapsed < fadeOutDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / fadeOutDuration;
+            dialogueCanvasGroup.alpha = Mathf.Lerp(1f, 0f, t);
+            yield return null;
+        }
+
+        dialogueCanvasGroup.alpha = 0f;
+    }
+
+    /// <summary>
+    /// 淡入對話 UI
+    /// </summary>
+    private IEnumerator FadeInDialogueUI()
+    {
+        // 嘗試找到 Dialogue UI 的 CanvasGroup
+        CanvasGroup dialogueCanvasGroup = FindDialogueUICanvasGroup();
+        if (dialogueCanvasGroup == null)
+        {
+            yield break;
+        }
+
+        float elapsed = 0f;
+        while (elapsed < fadeInDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / fadeInDuration;
+            dialogueCanvasGroup.alpha = Mathf.Lerp(0f, 1f, t);
+            yield return null;
+        }
+
+        dialogueCanvasGroup.alpha = 1f;
+    }
+
+    /// <summary>
+    /// 尋找對話 UI 的 CanvasGroup
+    /// </summary>
+    private CanvasGroup FindDialogueUICanvasGroup()
+    {
+        // 嘗試從 DialogueManager 獲取 UI
+        if (PixelCrushers.DialogueSystem.DialogueManager.instance != null &&
+            PixelCrushers.DialogueSystem.DialogueManager.instance.dialogueUI != null)
+        {
+            GameObject uiGameObject = (PixelCrushers.DialogueSystem.DialogueManager.instance.dialogueUI as MonoBehaviour)?.gameObject;
+            if (uiGameObject != null)
+            {
+                CanvasGroup cg = uiGameObject.GetComponent<CanvasGroup>();
+                if (cg != null)
+                {
+                    return cg;
+                }
+
+                // 如果 UI GameObject 本身沒有 CanvasGroup，嘗試在子物件中尋找
+                cg = uiGameObject.GetComponentInChildren<CanvasGroup>();
+                if (cg != null)
+                {
+                    return cg;
+                }
+            }
+        }
+
+        return null;
+    }
 }

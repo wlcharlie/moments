@@ -110,6 +110,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26f7849e8d695495bb1ec78ddb7abe90
+    m_Address: Assets/Arts/Characters/Mai/Mai_Beigo_Spirt.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 29bc6ef4370e64666bcb052b925aa771
     m_Address: Assets/Arts/CGs/Home_EnterWay.png
     m_ReadOnly: 0
@@ -147,6 +152,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3e74dc1467eb24227955e1cc07658866
     m_Address: Assets/Arts/CGs/Sidewalk_Dusk.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3feddb9fe88164a8eaa5a19a5b9d63f4
+    m_Address: Assets/Arts/Characters/Mai/Mai_Spirt_02.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 42fb87d898f9e4cb1abbcf8ebe370533
+    m_Address: Assets/Arts/CGs/Home_LivingRoom_Center.jpg
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -350,6 +365,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bbb8fb64914084a38b801d0b447b8b6a
+    m_Address: Assets/Arts/CGs/Home_EnterWay_Open.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c261bd073206f4791a8311e6ed4acb36
     m_Address: Assets/Arts/Events/Ally.jpg
     m_ReadOnly: 0
@@ -392,6 +412,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d8af64e619b51476882d38522b59d797
     m_Address: Assets/Arts/CH/CH01/Beigo_Reveal_Page_03.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db2b023cca5d342a69ee86d6152aa70a
+    m_Address: Assets/Arts/CGs/Home_MaiRoom_Morning.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
