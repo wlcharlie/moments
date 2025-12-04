@@ -15,7 +15,7 @@ AssetOrigin:
   serializedVersion: 1
   productId: 11672
   packageName: Dialogue System for Unity
-  packageVersion: 2.2.61
+  packageVersion: 2.2.62.2
   assetPath: Assets/Plugins/Pixel Crushers/Dialogue System/Scripts/Editor/Dialogue
     Editor/DialogueEditorWindowDelegates.cs
-  uploadId: 804490
+  uploadId: 828106

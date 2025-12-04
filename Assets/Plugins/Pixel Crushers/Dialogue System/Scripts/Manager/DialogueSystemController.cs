@@ -149,6 +149,12 @@ namespace PixelCrushers.DialogueSystem
         public DialogueDebug.DebugLevel debugLevel = DialogueDebug.DebugLevel.Warning;
 
         /// <summary>
+        /// Invoke OnQuestStateChange events for quest entry changes as well as main quest state changes.
+        /// </summary>
+        [Tooltip("Invoke OnQuestStateChange events for quest entry changes as well as main quest state changes.")]
+        public bool invokeOnQuestStateChangeForEntries = true;
+
+        /// <summary>
         /// Raised when the Dialogue System receives an UpdateTracker message
         /// to update the quest tracker HUD and quest log window.
         /// </summary>
@@ -489,6 +495,7 @@ namespace PixelCrushers.DialogueSystem
                 DialogueTime.mode = dialogueTimeMode;
                 DialogueDebug.level = debugLevel;
                 m_lastDebugLevelSet = debugLevel;
+                QuestLog.invokeOnQuestStateChangeForEntries = invokeOnQuestStateChangeForEntries;
                 lastConversationStarted = string.Empty;
                 lastConversationEnded = string.Empty;
                 lastConversationID = -1;
@@ -594,15 +601,17 @@ namespace PixelCrushers.DialogueSystem
                 m_uiLocalizationManager = GetComponent<UILocalizationManager>() ?? PixelCrushers.GameObjectUtility.FindFirstObjectByType<UILocalizationManager>();
                 if (m_uiLocalizationManager == null)
                 {
-                    m_uiLocalizationManager = gameObject.AddComponent<UILocalizationManager>();
-
+                    if (gameObject != null)
+                    {
+                        m_uiLocalizationManager = gameObject.AddComponent<UILocalizationManager>();
+                    }
                 }
-                if (m_uiLocalizationManager.textTable == null)
+                if (m_uiLocalizationManager != null && m_uiLocalizationManager.textTable == null)
                 {
                     m_uiLocalizationManager.textTable = displaySettings.localizationSettings.textTable;
                 }
             }
-            m_uiLocalizationManager.currentLanguage = language;
+            if (m_uiLocalizationManager != null) m_uiLocalizationManager.currentLanguage = language;
             displaySettings.localizationSettings.language = language;
             Localization.language = language;
         }
@@ -1062,12 +1071,13 @@ namespace PixelCrushers.DialogueSystem
         /// <param name="overrideDialogueUI">
         /// Dialogue UI to use instead of default dialogue UI.
         /// </param>
+        /// <param name="actorOverrides">Other actors to override.</param>
         /// <example>
         /// Example:
-        /// <code>StartConversation("Shopkeeper Conversation", player, shopkeeper, 8, specialDialogueUI);</code>
+        /// <code>StartConversation("Shopkeeper Conversation", player, shopkeeper, 8, specialDialogueUI, actorOverrides);</code>
         /// </example>
         public void StartConversation(string title, Transform actor, Transform conversant,
-            int initialDialogueEntryID, IDialogueUI overrideDialogueUI)
+            int initialDialogueEntryID, IDialogueUI overrideDialogueUI, List<ActorOverride> actorOverrides)
         {
             if (warmupCoroutine != null)
             {
@@ -1106,7 +1116,8 @@ namespace PixelCrushers.DialogueSystem
                 lastConversationStarted = title;
 
                 // If we previously overrode display settings or UI, restore the original:
-                if ((m_overrodeDisplaySettings && m_originalDisplaySettings != null) || (m_originalDialogueUI != null))
+                if (!isConversationActive &&
+                    ((m_overrodeDisplaySettings && m_originalDisplaySettings != null) || (m_originalDialogueUI != null)))
                 {
                     RestoreOriginalUI();
                 }
@@ -1116,7 +1127,7 @@ namespace PixelCrushers.DialogueSystem
                 m_calledRandomizeNextEntry = false;
                 m_conversationController = new ConversationController();
                 var model = new ConversationModel(m_databaseManager.masterDatabase, title, actor, conversant, allowLuaExceptions, isDialogueEntryValid, 
-                    initialDialogueEntryID, stopEvaluationAtFirstValid, false, useLinearGroupMode);
+                    initialDialogueEntryID, stopEvaluationAtFirstValid, false, useLinearGroupMode, actorOverrides);
                 var needToSetRandomizeNextEntryAgain = m_calledRandomizeNextEntry; // Special case when START node leads to group node with RandomizeNextEntry().
                 m_calledRandomizeNextEntry = false;
                 if (!model.hasValidEntry && !useLinearGroupMode) // In linear group mode, model doesn't have responses yet because they're evaluated when subtitle finishes.
@@ -1168,6 +1179,42 @@ namespace PixelCrushers.DialogueSystem
                 m_conversationController.GotoState(model.firstState);
                 if (needToSetRandomizeNextEntryAgain) RandomizeNextEntry();
             }
+        }
+
+        /// <summary>
+        /// Starts a conversation, which also broadcasts an OnConversationStart message to the 
+        /// actor and conversant. Your scripts can listen for OnConversationStart to do anything
+        /// necessary at the beginning of a conversation, such as pausing other gameplay or 
+        /// temporarily disabling player control. See the Feature Demo scene, which uses the
+        /// SetEnabledOnDialogueEvent component to disable player control during conversations.
+        /// </summary>
+        /// <param name='title'>
+        /// The title of the conversation to look up in the master database.
+        /// </param>
+        /// <param name='actor'>
+        /// The transform of the actor (primary participant). The sequencer uses this to direct 
+        /// camera angles and perform other actions. In PC-NPC conversations, the actor is usually
+        /// the PC.
+        /// </param>
+        /// <param name='conversant'>
+        /// The transform of the conversant (the other participant). The sequencer uses this to 
+        /// direct camera angles and perform other actions. In PC-NPC conversations, the conversant
+        /// is usually the NPC.
+        /// </param>
+        /// <param name='initialDialogueEntryID'> 
+        /// The initial dialogue entry ID, or -1 to start from the beginning.
+        /// </param>
+        /// <param name="overrideDialogueUI">
+        /// Dialogue UI to use instead of default dialogue UI.
+        /// </param>
+        /// <example>
+        /// Example:
+        /// <code>StartConversation("Shopkeeper Conversation", player, shopkeeper, 8, specialDialogueUI);</code>
+        /// </example>
+        public void StartConversation(string title, Transform actor, Transform conversant,
+            int initialDialogueEntryID, IDialogueUI overrideDialogueUI)
+        {
+            StartConversation(title, actor, conversant, initialDialogueEntryID, overrideDialogueUI, null);
         }
 
         /// <summary>

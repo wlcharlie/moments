@@ -151,7 +151,7 @@ namespace PixelCrushers.DialogueSystem
         private int m_lastActorID = -1;
         protected int lastActorID { get { return m_lastActorID; } set { m_lastActorID = value; } }
         protected int frameLastSetContent = -1; // Frame when we last set this panel's content.
-        protected bool shouldShowContinueButton = false;
+        public bool shouldShowContinueButton { get; private set; } = false;
         protected const float WaitForCloseTimeoutDuration = 8f;
         private StandardDialogueUI m_dialogueUI = null;
         public StandardDialogueUI dialogueUI
@@ -159,7 +159,7 @@ namespace PixelCrushers.DialogueSystem
             get
             {
                 if (m_dialogueUI == null)
-                { 
+                {
                     m_dialogueUI = GetComponentInParent<StandardDialogueUI>();
                     if (m_dialogueUI == null) m_dialogueUI = DialogueManager.dialogueUI as StandardDialogueUI;
                 }
@@ -187,6 +187,13 @@ namespace PixelCrushers.DialogueSystem
                 addSpeakerNameFormat = addSpeakerNameFormat.Replace("\\n", "\n").Replace("\\t", "\t");
             }
             m_panelAnimator = GetComponent<Animator>();
+        }
+
+        protected override void Start()
+        {
+            base.Start();
+            var typewriter = GetTypewriter();
+            if (typewriter != null) typewriter.playOnEnable = false;
         }
 
         #endregion
@@ -236,7 +243,7 @@ namespace PixelCrushers.DialogueSystem
         /// <param name="portraitActorName">The (non-display) Name of the first actor who will use this panel.</param>
         /// <param name="displayName">The actor's display name.</param>
         /// <param name="dialogueActor">The actor's DialogueActor component, or null if none.</param>
-        public virtual void OpenOnStartConversation(Sprite portraitSprite, string portraitActorName, string displayName, 
+        public virtual void OpenOnStartConversation(Sprite portraitSprite, string portraitActorName, string displayName,
             DialogueActor dialogueActor)
         {
             if (isOpen) return;
@@ -385,7 +392,10 @@ namespace PixelCrushers.DialogueSystem
         /// </summary>
         public override void Close()
         {
-            StopAllCoroutines();
+            //StopAllCoroutines();
+            if (m_focusWhenOpenCoroutine != null) StopCoroutine(m_focusWhenOpenCoroutine);
+            if (m_showAfterClosingOtherPanelsCoroutine != null) StopCoroutine(m_showAfterClosingOtherPanelsCoroutine);
+            if (m_setAnimatorCoroutine != null) StopCoroutine(m_setAnimatorCoroutine);
             m_focusWhenOpenCoroutine = null;
             m_showAfterClosingOtherPanelsCoroutine = null;
             m_setAnimatorCoroutine = null;
@@ -554,9 +564,9 @@ namespace PixelCrushers.DialogueSystem
         }
 
         protected virtual void ShowContinueButtonNow()
-        { 
+        {
             Tools.SetGameObjectActive(continueButton, true);
-            if (InputDeviceManager.autoFocus) Select(); 
+            if (InputDeviceManager.autoFocus) Select();
             if (continueButton != null && continueButton.onClick.GetPersistentEventCount() == 0)
             {
                 continueButton.onClick.RemoveAllListeners();
@@ -612,7 +622,7 @@ namespace PixelCrushers.DialogueSystem
             lastActorID = subtitle.speakerInfo.id;
             CheckSubtitleAnimator(subtitle);
             if (!onlyShowNPCPortraits || subtitle.speakerInfo.isNPC)
-            {                
+            {
                 if (portraitImage != null)
                 {
                     var sprite = subtitle.GetSpeakerPortrait();

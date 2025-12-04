@@ -17,7 +17,7 @@ namespace PixelCrushers.DialogueSystem
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
             int fieldCount = 6;
-            return fieldCount * EditorGUIUtility.singleLineHeight;
+            return fieldCount * EditorGUIUtility.singleLineHeight + 2;
         }
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
@@ -60,6 +60,8 @@ namespace PixelCrushers.DialogueSystem
 
             singleFieldRect.y += EditorGUIUtility.singleLineHeight;
             EditorGUI.PropertyField(singleFieldRect, exclusiveProp);
+            singleFieldRect.y += EditorGUIUtility.singleLineHeight;
+            EditorGUI.HelpBox(singleFieldRect, "Actor is GameObject assigned to this track.", MessageType.None);
         }
 
         private void UpdateLength(string conversation, bool jumpToSpecificEntry, int entryID = -1)

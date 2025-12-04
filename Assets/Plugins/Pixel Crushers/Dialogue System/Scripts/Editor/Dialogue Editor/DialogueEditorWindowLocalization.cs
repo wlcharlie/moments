@@ -55,6 +55,9 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
         private bool exportLocalizationCreateNewFields = false;
 
         [SerializeField]
+        private bool exportIncludeEntriesWithoutText = false;
+
+        [SerializeField]
         private string localizationKeyField = "Articy Id";
 
         [SerializeField]
@@ -64,6 +67,7 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
         private GUIContent exportLocalizationKeyFieldLabel = new GUIContent("Use Key Field", "Tie each dialogue entry row to a key field (e.g., 'Articy Id' or 'Celtx ID') instead of conversation & entry IDs.");
         private GUIContent exportAssignFieldValuesLabel = new GUIContent("Assign Values", "If key field is blank for dialogue entry, assign a unique value to it.");
         private GUIContent exportLocalizationCreateNewFieldsLabel = new GUIContent("Create New Fields", "If Extra Dialogue Entry field doesn't exist in an entry or if Extra Quest Field doesn't exist for a quest, create field when importing.");
+        private GUIContent exportIncludeEntriesWithoutTextLabel = new GUIContent("Include Blank Entries", "Include entries without Dialogue Text or Menu Text in dialogue export.");
         private GUIContent exportLocalizationSortModeLabel = new GUIContent("Sort Entries?", "Export dialogue entries in a sorted order.");
         private GUIContent exportExtraEntryFieldsLabel = new GUIContent("Extra Dialogue Entry Fields", "(Optional) Extra dialogue entry fields to localize.");
         private GUIContent exportExtraQuestFieldsLabel = new GUIContent("Extra Quest Fields", "(Optional) Extra quest fields to localize.");
@@ -145,6 +149,7 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             EditorGUILayout.EndHorizontal();
 
             exportLocalizationCreateNewFields = EditorGUILayout.ToggleLeft(exportLocalizationCreateNewFieldsLabel, exportLocalizationCreateNewFields, GUILayout.Width(160));
+            exportIncludeEntriesWithoutText = EditorGUILayout.ToggleLeft(exportIncludeEntriesWithoutTextLabel, exportIncludeEntriesWithoutText, GUILayout.Width(160));
 
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField(exportLocalizationSortModeLabel, GUILayout.Width(80));
@@ -403,6 +408,10 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
                                 case DialogueEntrySortMethod.BreadthFirst:
                                     sortedEntries = BreadthFirstSortEntries(c.dialogueEntries);
                                     break;
+                            }
+                            if (exportIncludeEntriesWithoutText)
+                            {
+                                sortedEntries.RemoveAll(x => string.IsNullOrEmpty(x.DialogueText) && string.IsNullOrEmpty(x.MenuText));
                             }
                             foreach (var de in sortedEntries)
                             {

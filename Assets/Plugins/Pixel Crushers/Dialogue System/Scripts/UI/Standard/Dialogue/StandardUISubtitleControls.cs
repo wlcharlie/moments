@@ -90,7 +90,7 @@ namespace PixelCrushers.DialogueSystem
         public void SetDialogueUI(StandardDialogueUI dialogueUI)
         {
             this.dialogueUI = dialogueUI;
-            m_builtinPanels.ForEach(panel => panel.dialogueUI = dialogueUI);
+            m_builtinPanels.ForEach(panel => { if (panel != null) panel.dialogueUI = dialogueUI; });
         }
 
         public void ClearCache()
@@ -313,6 +313,7 @@ namespace PixelCrushers.DialogueSystem
             {
                 var panel = GetDialogueActorPanel(dialogueActor);
                 if (panel == null) panel = defaultPanel;
+                if (panel == null) return null;
                 panel.dialogueUI = dialogueUI;
                 m_actorPanelCache[speakerTransform] = panel;
                 m_useBarkUIs.Remove(speakerTransform);

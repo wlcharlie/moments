@@ -6181,7 +6181,7 @@ MonoBehaviour:
 
           Delay(2)@2;
 
-          SetDialoguePanel(true)@3;SetContinueMode(original)@3'
+          SetDialoguePanel(true)@3'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -6225,7 +6225,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 156
+        x: 168
         y: 324
         width: 160
         height: 30

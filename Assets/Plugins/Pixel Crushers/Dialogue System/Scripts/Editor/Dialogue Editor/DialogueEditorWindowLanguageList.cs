@@ -36,7 +36,8 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
                 if (field.type == FieldType.Localization && !string.IsNullOrEmpty(field.title))
                 {
                     // Don't add Dialogue Text:
-                    if (field.title.Equals("Dialogue Text")) break;
+                    if (field.title.Equals("Dialogue Text")) continue;
+                    if (field.title.StartsWith("Title ")) continue;
 
                     // Assume it's Chat Mapper-style localized dialogue text, in which case
                     // the language is the entire field title:

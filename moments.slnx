@@ -15,6 +15,7 @@
   <Project Path="Capture.csproj" />
   <Project Path="Dialogue.csproj" />
   <Project Path="Traffic.csproj" />
+  <Project Path="Camera.csproj" />
   <Project Path="FMODUnityResonance.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Data.csproj" />

@@ -632,6 +632,7 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             // Title:
             EditorGUI.BeginDisabledGroup(isStartEntry);
             entry.Title = EditorGUILayout.TextField(new GUIContent("Title", "Optional title for your reference only."), entry.Title);
+            DrawLocalizedVersions(entry, entry.fields, "Title {0}", false, FieldType.Text);
             EditorGUI.EndDisabledGroup();
 
             if (isStartEntry)
@@ -1042,20 +1043,20 @@ namespace PixelCrushers.DialogueSystem.DialogueEditor
             }
             if (onExecuteProperty != null)
             {
-                AssetDatabase.SaveAssets();
-                serializedObject.Update();
                 try
                 {
+                    if (Event.current.type != EventType.Repaint) AssetDatabase.SaveAssets();
+                    serializedObject.Update();
                     EditorGUILayout.PropertyField(onExecuteProperty);
+                    if (serializedObject.ApplyModifiedProperties())
+                    {
+                        SetDatabaseDirty("OnExecute");
+                        if (Event.current.type != EventType.Repaint) AssetDatabase.SaveAssets();
+                        AssetDatabase.Refresh();
+                    }
                 }
                 catch (Exception) // Catch serialization bug in some Unity versions.
                 {
-                }
-                if (serializedObject.ApplyModifiedProperties())
-                {
-                    SetDatabaseDirty("OnExecute");
-                    AssetDatabase.SaveAssets();
-                    AssetDatabase.Refresh();
                 }
             }
 
