@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: c3b30c7bf302c4edd845194f17411596
+guid: 34454d275e7534c96b70fab29ded3019
 TextureImporter:
   internalIDToNameTable:
+  - first:
+      213: -2600339571345743265
+    second: Frame 94_0
   - first:
       213: 649223268058989734
     second: Button_0
@@ -97,19 +100,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -131,11 +121,11 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 541
-        height: 141
+        width: 621
+        height: 133
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 57, y: 11, z: 131, w: 3}
+      border: {x: 58, y: 4, z: 151, w: 4}
       customData: 
       outline: []
       physicsShape: []
@@ -151,7 +141,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: cc145eb3feae64d6799fcb928bae85d3
+    spriteID: 3878d3721f92b4fafa256d372d8d39bc
     internalID: 0
     vertices: []
     indices: 
@@ -162,6 +152,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Button_0: 649223268058989734
+      Frame 94_0: -2600339571345743265
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
