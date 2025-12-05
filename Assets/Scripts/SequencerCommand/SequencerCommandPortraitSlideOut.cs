@@ -1,17 +1,18 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using PixelCrushers.DialogueSystem;
 
 namespace PixelCrushers.DialogueSystem.SequencerCommands
 {
     /// <summary>
-    /// 讓 Portrait 從原定位往右滑出
+    /// 讓 Portrait 從原定位往右滑出並淡出
     /// 用法: PortraitSlideOut([duration], [offsetX])
     /// - duration: 動畫持續時間（秒），預設為 0.5
     /// - offsetX: 目標位置的 X 偏移量（相對於原始位置），預設為 500（向右移動）
     /// 
     /// 範例:
-    /// - PortraitSlideOut() - 使用預設值（0.5秒，向右移動 500）
+    /// - PortraitSlideOut() - 使用預設值（0.5秒，向右移動 500，同時淡出）
     /// - PortraitSlideOut(0.8) - 0.8秒動畫
     /// - PortraitSlideOut(0.8, 600) - 0.8秒動畫，向右移動 600
     /// </summary>
@@ -19,7 +20,10 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
     {
         private Coroutine slideCoroutine;
         private RectTransform portraitRectTransform;
+        private CanvasGroup portraitCanvasGroup;
+        private Image portraitImage;
         private Vector2 originalAnchoredPosition;
+        private float originalAlpha;
 
         public void Start()
         {
@@ -41,6 +45,25 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
             
             // 保存原始位置到靜態變數，供 PortraitRestore 使用
             SequencerCommandPortraitRestore.SaveOriginalPosition(originalAnchoredPosition);
+
+            // 獲取 CanvasGroup 或 Image 組件來控制透明度
+            portraitCanvasGroup = portraitRectTransform.GetComponent<CanvasGroup>();
+            if (portraitCanvasGroup == null)
+            {
+                portraitImage = portraitRectTransform.GetComponent<Image>();
+                if (portraitImage != null)
+                {
+                    originalAlpha = portraitImage.color.a;
+                }
+                else
+                {
+                    originalAlpha = 1f;
+                }
+            }
+            else
+            {
+                originalAlpha = portraitCanvasGroup.alpha;
+            }
 
             // 開始滑出動畫
             slideCoroutine = StartCoroutine(SlideOutCoroutine(duration, offsetX));
@@ -128,7 +151,7 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
                 originalAnchoredPosition.y
             );
 
-            // 執行動畫
+            // 執行動畫（同時移動和淡出）
             float elapsed = 0f;
             while (elapsed < duration)
             {
@@ -141,11 +164,34 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
                 // 插值移動
                 portraitRectTransform.anchoredPosition = Vector2.Lerp(startPosition, targetPosition, t);
 
+                // 插值透明度（從原始透明度淡出到 0）
+                float alpha = Mathf.Lerp(originalAlpha, 0f, t);
+                if (portraitCanvasGroup != null)
+                {
+                    portraitCanvasGroup.alpha = alpha;
+                }
+                else if (portraitImage != null)
+                {
+                    Color color = portraitImage.color;
+                    color.a = alpha;
+                    portraitImage.color = color;
+                }
+
                 yield return null;
             }
 
-            // 確保到達目標位置
+            // 確保到達目標位置和完全透明
             portraitRectTransform.anchoredPosition = targetPosition;
+            if (portraitCanvasGroup != null)
+            {
+                portraitCanvasGroup.alpha = 0f;
+            }
+            else if (portraitImage != null)
+            {
+                Color color = portraitImage.color;
+                color.a = 0f;
+                portraitImage.color = color;
+            }
 
             Stop();
         }
