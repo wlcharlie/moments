@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using PixelCrushers.DialogueSystem;
 
@@ -18,9 +19,12 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
     {
         private Coroutine restoreCoroutine;
         private RectTransform portraitRectTransform;
+        private CanvasGroup portraitCanvasGroup;
+        private Image portraitImage;
 
-        // 靜態變數用於保存原始位置（由其他 portrait 命令設置）
+        // 靜態變數用於保存原始位置和透明度（由其他 portrait 命令設置）
         private static Vector2? savedOriginalPosition = null;
+        private static float? savedOriginalAlpha = null;
         private static bool hasSavedPosition = false;
 
         public void Start()
@@ -37,26 +41,49 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
                 return;
             }
 
-            // 檢查是否有保存的原始位置
-            if (!hasSavedPosition || !savedOriginalPosition.HasValue)
+            // 獲取 CanvasGroup 或 Image 組件來控制透明度
+            portraitCanvasGroup = portraitRectTransform.GetComponent<CanvasGroup>();
+            if (portraitCanvasGroup == null)
             {
-                Debug.LogWarning("PortraitRestore: 沒有保存的原始位置，無法還原");
-                Stop();
-                return;
+                portraitImage = portraitRectTransform.GetComponent<Image>();
             }
 
-            Vector2 targetPosition = savedOriginalPosition.Value;
+            // 計算目標位置：X=200，Y 使用保存的原始位置或當前位置
+            Vector2 targetPosition;
+            if (hasSavedPosition && savedOriginalPosition.HasValue)
+            {
+                // 使用保存的原始位置的 Y，但 X 設為 200
+                targetPosition = new Vector2(200f, savedOriginalPosition.Value.y);
+            }
+            else
+            {
+                // 如果沒有保存的位置，使用當前 Y，X 設為 200
+                targetPosition = new Vector2(200f, portraitRectTransform.anchoredPosition.y);
+            }
+
+            // 獲取目標透明度（如果有保存的原始透明度，否則設為 1）
+            float targetAlpha = savedOriginalAlpha.HasValue ? savedOriginalAlpha.Value : 1f;
 
             // 如果 duration 為 0，立即還原
             if (duration <= 0f)
             {
                 portraitRectTransform.anchoredPosition = targetPosition;
+                if (portraitCanvasGroup != null)
+                {
+                    portraitCanvasGroup.alpha = targetAlpha;
+                }
+                else if (portraitImage != null)
+                {
+                    Color color = portraitImage.color;
+                    color.a = targetAlpha;
+                    portraitImage.color = color;
+                }
                 Stop();
                 return;
             }
 
             // 開始還原動畫
-            restoreCoroutine = StartCoroutine(RestoreCoroutine(targetPosition, duration));
+            restoreCoroutine = StartCoroutine(RestoreCoroutine(targetPosition, targetAlpha, duration));
         }
 
         private RectTransform FindPortraitImage()
@@ -126,7 +153,7 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
             return null;
         }
 
-        private IEnumerator RestoreCoroutine(Vector2 targetPosition, float duration)
+        private IEnumerator RestoreCoroutine(Vector2 targetPosition, float targetAlpha, float duration)
         {
             if (portraitRectTransform == null)
             {
@@ -134,10 +161,19 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
                 yield break;
             }
 
-            // 記錄當前位置
+            // 記錄當前位置和透明度
             Vector2 startPosition = portraitRectTransform.anchoredPosition;
+            float startAlpha = 1f;
+            if (portraitCanvasGroup != null)
+            {
+                startAlpha = portraitCanvasGroup.alpha;
+            }
+            else if (portraitImage != null)
+            {
+                startAlpha = portraitImage.color.a;
+            }
 
-            // 執行動畫
+            // 執行動畫（同時移動和恢復透明度）
             float elapsed = 0f;
             while (elapsed < duration)
             {
@@ -150,11 +186,34 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
                 // 插值移動
                 portraitRectTransform.anchoredPosition = Vector2.Lerp(startPosition, targetPosition, t);
 
+                // 插值透明度
+                float alpha = Mathf.Lerp(startAlpha, targetAlpha, t);
+                if (portraitCanvasGroup != null)
+                {
+                    portraitCanvasGroup.alpha = alpha;
+                }
+                else if (portraitImage != null)
+                {
+                    Color color = portraitImage.color;
+                    color.a = alpha;
+                    portraitImage.color = color;
+                }
+
                 yield return null;
             }
 
-            // 確保到達目標位置
+            // 確保到達目標位置和透明度
             portraitRectTransform.anchoredPosition = targetPosition;
+            if (portraitCanvasGroup != null)
+            {
+                portraitCanvasGroup.alpha = targetAlpha;
+            }
+            else if (portraitImage != null)
+            {
+                Color color = portraitImage.color;
+                color.a = targetAlpha;
+                portraitImage.color = color;
+            }
 
             Stop();
         }
@@ -169,7 +228,7 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
         }
 
         /// <summary>
-        /// 靜態方法：保存原始位置（供其他 portrait 命令使用）
+        /// 靜態方法：保存原始位置和透明度（供其他 portrait 命令使用）
         /// </summary>
         public static void SaveOriginalPosition(Vector2 position)
         {
@@ -178,11 +237,20 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
         }
 
         /// <summary>
-        /// 靜態方法：清除保存的位置
+        /// 靜態方法：保存原始透明度
+        /// </summary>
+        public static void SaveOriginalAlpha(float alpha)
+        {
+            savedOriginalAlpha = alpha;
+        }
+
+        /// <summary>
+        /// 靜態方法：清除保存的位置和透明度
         /// </summary>
         public static void ClearSavedPosition()
         {
             savedOriginalPosition = null;
+            savedOriginalAlpha = null;
             hasSavedPosition = false;
         }
     }

@@ -65,6 +65,9 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
                 originalAlpha = portraitCanvasGroup.alpha;
             }
 
+            // 保存原始透明度到靜態變數，供 PortraitRestore 使用
+            SequencerCommandPortraitRestore.SaveOriginalAlpha(originalAlpha);
+
             // 開始滑出動畫
             slideCoroutine = StartCoroutine(SlideOutCoroutine(duration, offsetX));
         }

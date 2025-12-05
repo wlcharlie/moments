@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using PixelCrushers.DialogueSystem;
 
@@ -41,6 +42,20 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
             
             // 保存原始位置到靜態變數，供 PortraitRestore 使用
             SequencerCommandPortraitRestore.SaveOriginalPosition(originalAnchoredPosition);
+
+            // 獲取並保存原始透明度
+            CanvasGroup canvasGroup = portraitRectTransform.GetComponent<CanvasGroup>();
+            Image image = portraitRectTransform.GetComponent<Image>();
+            float originalAlpha = 1f;
+            if (canvasGroup != null)
+            {
+                originalAlpha = canvasGroup.alpha;
+            }
+            else if (image != null)
+            {
+                originalAlpha = image.color.a;
+            }
+            SequencerCommandPortraitRestore.SaveOriginalAlpha(originalAlpha);
 
             // 開始滑入動畫
             slideCoroutine = StartCoroutine(SlideInCoroutine(duration, offsetX));
