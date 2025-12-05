@@ -2,10 +2,19 @@ using PixelCrushers.DialogueSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum GameMode
+{
+    Story,
+    Event
+}
+
 public class GameManager : MonoBehaviour
 {
     // Singleton 模式
     public static GameManager Instance { get; private set; }
+
+    // 遊戲模式
+    public GameMode CurrentMode { get; private set; } = GameMode.Story;
 
     void Awake()
     {
@@ -54,14 +63,14 @@ public class GameManager : MonoBehaviour
         GameObject uiTitleSceneButtons = GameObject.Find("UITitleSceneButtons");
         if (uiTitleSceneButtons != null)
         {
-            Transform menuTransform = uiTitleSceneButtons.transform.Find("Menu");
+            Transform menuTransform = uiTitleSceneButtons.transform.Find("SafeArea/Menu");
             if (menuTransform != null)
             {
                 menuTransform.gameObject.SetActive(true);
             }
             else
             {
-                Debug.LogWarning("在 UITitleSceneButtons 下找不到 'Menu' 子物件");
+                Debug.LogWarning("在 UITitleSceneButtons 下找不到 'SafeArea/Menu' 子物件");
             }
         }
         else
@@ -148,6 +157,7 @@ public class GameManager : MonoBehaviour
     public void OnStoryModeButtonClicked()
     {
         Debug.Log("開始遊戲");
+        CurrentMode = GameMode.Story;
 
         // 讀取存檔中的對話進度
         string conversationToResume = GetSavedConversation();
@@ -173,12 +183,22 @@ public class GameManager : MonoBehaviour
     public void OnEventModeButtonClicked()
     {
         Debug.Log("進入事件模式");
-        // TODO: 後續補上邏輯
+        CurrentMode = GameMode.Event;
+        if (TransitionManager.Instance != null)
+        {
+            Debug.Log("開始遊戲過場");
+            TransitionManager.Instance.LoadSceneWithTransition("ExploreScene", TransitionType.LoadingScreen);
+        }
+        else
+        {
+            SceneManager.LoadScene("ExploreScene"); // 後備方案
+        }
     }
 
     public void OnDebugModeButtonClicked()
     {
         Debug.Log("進入偵錯模式");
+        CurrentMode = GameMode.Story;
         TransitionManager.Instance.LoadSceneWithTransition("DialogueDebugScene", TransitionType.LoadingScreen);
     }
 
@@ -194,7 +214,6 @@ public class GameManager : MonoBehaviour
     // Key: 存檔中記錄的對話, Value: 小遊戲結束後要進入的對話
     private static readonly System.Collections.Generic.Dictionary<string, string> minigameNextConversationMap = new()
     {
-        { "CH01_SC02_SE01", "COMM_STREET_01" },
         { "CH01_SC04_SE01", "CH01_SC04_SE02" },
     };
 
@@ -202,20 +221,20 @@ public class GameManager : MonoBehaviour
     /// 取得小遊戲結束後應該進入的對話
     /// 根據存檔中記錄的對話查找映射表
     /// </summary>
-    private string GetMinigameNextConversation()
-    {
-        string savedConversation = GetSavedConversation();
+    // private string GetMinigameNextConversation()
+    // {
+    //     string savedConversation = GetSavedConversation();
 
-        if (minigameNextConversationMap.TryGetValue(savedConversation, out string nextConversation))
-        {
-            Debug.Log($"找到映射: {savedConversation} -> {nextConversation}");
-            return nextConversation;
-        }
+    //     if (minigameNextConversationMap.TryGetValue(savedConversation, out string nextConversation))
+    //     {
+    //         Debug.Log($"找到映射: {savedConversation} -> {nextConversation}");
+    //         return nextConversation;
+    //     }
 
-        // 如果沒有映射，直接返回存檔中的對話
-        Debug.Log($"沒有找到 {savedConversation} 的映射，使用存檔對話");
-        return savedConversation;
-    }
+    //     // 如果沒有映射，直接返回存檔中的對話
+    //     Debug.Log($"沒有找到 {savedConversation} 的映射，使用存檔對話");
+    //     return savedConversation;
+    // }
 
     /// <summary>
     /// 切換到 MainStoryScene 並從存檔繼續對話
@@ -223,22 +242,40 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void ResumeConversation()
     {
-        string conversationToResume = GetMinigameNextConversation();
-        Debug.Log($"ResumeConversation: 準備從對話 {conversationToResume} 繼續");
-
-        if (TransitionManager.Instance != null)
+        if (CurrentMode == GameMode.Story)
         {
-            TransitionManager.Instance.LoadSceneWithTransition("MainStoryScene", TransitionType.Cover, onLoadDone: () =>
+            string conversationToResume = GetSavedConversation();
+            Debug.Log($"ResumeConversation: 準備從對話 {conversationToResume} 繼續");
+
+            if (TransitionManager.Instance != null)
             {
+                TransitionManager.Instance.LoadSceneWithTransition("MainStoryScene", TransitionType.Cover, onLoadDone: () =>
+                {
+                    DialogueManager.StopAllConversations();
+                    DialogueManager.StartConversation(conversationToResume);
+                });
+            }
+            else
+            {
+                SceneManager.LoadScene("MainStoryScene");
                 DialogueManager.StopAllConversations();
                 DialogueManager.StartConversation(conversationToResume);
-            });
+            }
         }
         else
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("MainStoryScene");
-            DialogueManager.StopAllConversations();
-            DialogueManager.StartConversation(conversationToResume);
+            Debug.Log("ResumeConversation: 回到 ExploreScene");
+
+            if (TransitionManager.Instance != null)
+            {
+                DialogueManager.StopAllConversations();
+                TransitionManager.Instance.LoadSceneWithTransition("ExploreScene", TransitionType.Cover);
+            }
+            else
+            {
+                DialogueManager.StopAllConversations();
+                SceneManager.LoadScene("ExploreScene");
+            }
         }
     }
 

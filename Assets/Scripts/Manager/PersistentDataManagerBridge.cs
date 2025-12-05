@@ -40,6 +40,13 @@ public class PersistentDataManagerBridge : ScriptableObject
         Debug.Log($"Conversation ID: {conversationID}");
         Debug.Log($"Conversation Title: {conversationTitle}");
 
+        // TEMP 只存 CH 開頭 title
+        if (!conversationTitle.StartsWith("CH"))
+        {
+            Debug.Log("PersistentDataManagerBridge: conversation title 不以 'CH' 開頭，跳過儲存");
+            return;
+        }
+
         // 儲存 conversation title 到 dialogue.json
         if (PersistentDataManager.Instance != null)
         {

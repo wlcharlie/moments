@@ -20,7 +20,7 @@ public class Temp : MonoBehaviour
             Debug.Log("已切換到 MainStoryScene");
             DialogueManager.SetDialoguePanel(true, immediate: true);
             DialogueManager.StopAllConversations();
-            DialogueManager.StartConversation("CH01_SC04_SE03");
+            DialogueManager.StartConversation("CH01_SC04_SE04");
         });
     }
 }

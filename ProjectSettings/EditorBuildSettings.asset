@@ -38,6 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CH01_SC03_BeigoReveal.unity
     guid: 0506b1453532646d598c2fc0acf0ee2f
+  - enabled: 1
+    path: Assets/Scenes/ExploreScene.unity
+    guid: a114d9b434b584da4a21328d430a21b3
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 580c278d777854186a74b9011fb3c4f0, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

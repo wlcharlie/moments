@@ -118,12 +118,12 @@ MonoBehaviour:
       type: 0
       typeString: 
     portrait: {fileID: 0}
-    spritePortrait: {fileID: -3648823657333449042, guid: 9d419586e68b6424e99a9dc1e08cd1aa, type: 3}
+    spritePortrait: {fileID: 5959547488426311021, guid: 032d61a6049ef4881b0bb9bba90cea74, type: 3}
     alternatePortraits: []
     spritePortraits:
-    - {fileID: 5057972397926533640, guid: 661e1839bdb804fe9976fa560d96cfc9, type: 3}
-    - {fileID: -1212688818919483392, guid: 4133061ccd5b143169515f10697e5449, type: 3}
-    - {fileID: 670109915176814998, guid: fd74561c488c44a6f91a0a956e718d52, type: 3}
+    - {fileID: -301534287408287532, guid: 032d61a6049ef4881b0bb9bba90cea74, type: 3}
+    - {fileID: -2479567998064020727, guid: 032d61a6049ef4881b0bb9bba90cea74, type: 3}
+    - {fileID: -1291636712210362462, guid: 032d61a6049ef4881b0bb9bba90cea74, type: 3}
     - {fileID: -8124901713907631946, guid: 5edadd4171f494b3cbfd6cd2ad8c4b07, type: 3}
     - {fileID: 7115573143849444869, guid: 57cf2ce21d62346efa2ec1aa4bf7d8b8, type: 3}
   - id: 3
@@ -1523,7 +1523,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 158.00153
-        y: 121.34578
+        y: 92.30763
         width: 160
         height: 30
     - id: 2

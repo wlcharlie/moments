@@ -28,13 +28,15 @@ public class DiceController : MonoBehaviour
         StartRoll();
         yield return new WaitForSeconds(rollDuration);
         StopRoll(result);
-        OnRollComplete?.Invoke(result);
         yield return new WaitForSeconds(2f);
         diceVisual.SetActive(false);
+        OnRollComplete?.Invoke(result);
     }
 
     private void StartRoll()
     {
+        // 播放FMOD obj_dice_drop
+        FMODUnity.RuntimeManager.PlayOneShot("event:/object/obj_dice_drop");
         animator.enabled = true;
         animator.Play("roll");
     }

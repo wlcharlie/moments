@@ -30,6 +30,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 051a5f0e7a06746179b38b5a42e88ded
+    m_Address: Assets/Arts/CGs/work/Office_Work_Dusk_Focus_01.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 09be421e5aa684e62839d792ed1ec5ec
     m_Address: Assets/Arts/Events/LanePark.jpg
     m_ReadOnly: 0
@@ -70,6 +75,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 154b59668ed8b4318bcd01983811ccdd
+    m_Address: Assets/Arts/CGs/work/Office_Work_Day_Empty.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1690a91c2f2c245e68ae84a419a1d769
     m_Address: Assets/Arts/Events/COMM_STREET_01.jpg
     m_ReadOnly: 0
@@ -77,6 +87,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 16bf4bd61ecc34de1889c7db9c4999b0
     m_Address: Assets/Arts/CGs/Home_BaiRoom_Pick.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18acee88d4f19424da3425f5fa66d573
+    m_Address: Assets/Arts/CGs/work/Office_Work_Day_Focus_02.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -110,6 +125,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 223027eea78274608922751831cd383d
+    m_Address: Assets/Arts/CGs/Office_Room_Focus_Dusk.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 249b019cc19954611b93e0de0ad71c81
+    m_Address: Assets/Arts/CGs/work/Office_Work_Dusk_Focus_03.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 255ec36ef4ec64488969ecf8e5e2b646
     m_Address: Assets/Arts/Characters/Mai/Mai_Happy.png
     m_ReadOnly: 0
@@ -137,6 +162,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 314d5e73c180044f7a1cd2b79ecd1395
     m_Address: Assets/Arts/CH/CH01/CH01_Book_Spirt.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 33c5b39204bcb40048deaa0e5bcdc727
+    m_Address: Assets/Arts/CGs/Doorstep_Dusk.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -182,6 +212,21 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 435243a1214574957a42c7cb7b5edec3
     m_Address: Assets/Arts/CGs/Office_Room_Colleague.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 43868efcfa7dd49959282c7841fd64c1
+    m_Address: Assets/Arts/CGs/work/Office_Work_Dusk_Focus_02.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 441aed78720284dec820c8b74108414e
+    m_Address: Assets/Arts/CGs/work/Office_Work_Dusk_Focus_G02.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 48febcd08af1c4254b035b5962df7e3b
+    m_Address: Assets/Arts/CGs/Office_Work_Spirt.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -260,6 +305,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5fd4af529c9ba4f8fba2d9033ee1b8bc
+    m_Address: Assets/Arts/CGs/work/Office_Work_Day_Look.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 67b5220193069442fa146f1e6a001dab
     m_Address: Assets/Arts/Characters/Mai/Mai_Uncomfortable.png
     m_ReadOnly: 0
@@ -272,6 +322,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 68726823dc34f4cbeb9b071f003c666a
     m_Address: Assets/Arts/CGs/Home_LivingRoom_evening.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6d3adcea90f1e420bbb8b2ab3d03ab6a
+    m_Address: Assets/Arts/CGs/Sidewalk_Day.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -292,6 +347,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7d2de126c71c14a978259b955f3a57a6
     m_Address: Assets/Arts/Comics/CH01_SC02_SE03_Beigo_Head.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f5f9a587f99b4eaa91eddd299b06739
+    m_Address: Assets/Arts/CGs/work/Office_Work_Duck_Empty.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -345,6 +405,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 992df5865a2af4db48b318799646a8bf
+    m_Address: Assets/Arts/CGs/work/Office_Work_Day_Phone.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a49b96021aa684d16aae539d3cc39096
     m_Address: Assets/Arts/CGs/Street_ToHome.png
     m_ReadOnly: 0
@@ -395,6 +460,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c2882eceb062e47bcbe8ef89520fcd05
+    m_Address: Assets/Arts/CGs/work/Office_Work_Dusk_Focus_G03.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c5ba67595b7dc489692165cd9b1c73b9
     m_Address: Assets/Arts/CGs/Office_Room_Look.png
     m_ReadOnly: 0
@@ -407,6 +477,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c8c42b5a95e334f8a88461cbb80efd91
     m_Address: Assets/Arts/Events/COMM_STREET_01_OPT_02.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cda8b3ce250ba4dbf9fde8eea4c400f9
+    m_Address: Assets/Arts/CGs/work/Office_Work_Dusk_Look.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d128512c91d6545b7a4985f032f8fc9d
+    m_Address: Assets/Arts/CGs/work/Office_Work_Day_Focus_01.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -445,6 +525,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e1e54b23d81584819a9460e7f9aff727
+    m_Address: Assets/Arts/CGs/work/Office_Work_Night_Phone.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e2706502ae8af4f61b7dac3191db11ff
     m_Address: Assets/Arts/Characters/Mai/Mai_NormalTalk.png
     m_ReadOnly: 0
@@ -470,6 +555,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ee708d76041224b0baac0d00f0437d6c
+    m_Address: Assets/Arts/CGs/work/Office_Work_Dusk_Phone.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f14f0dea15beb401e8128b55ba1cdcd0
+    m_Address: Assets/Arts/CGs/work/Office_Work_Day_Focus_03.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f2710f9977d0c4ee685efd2245feaf06
     m_Address: Assets/Arts/CGs/Office_Desk_Dusk.png
     m_ReadOnly: 0
@@ -487,6 +582,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f52a13f36fa87465ea67d4007c800d6c
     m_Address: Assets/Arts/CGs/Home_LivingRoom.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f79498158f5d945908b9c4befdb562e8
+    m_Address: Assets/Arts/CGs/work/Office_Work_Dusk_Focus_G01.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

@@ -142,16 +142,19 @@ public class TransitionManager : MonoBehaviour
         // 階段 1: 從右邊滑入至中間
         yield return StartCoroutine(SlideIn());
 
-        // 非同步載入場景
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, loadSceneMode);
-
-        // 等待場景載入完成
-        while (!asyncLoad.isDone)
+        // 檢查是否需要載入（場景尚未載入時才執行）
+        if (!IsSceneLoaded(sceneName))
         {
-            yield return null;
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, loadSceneMode);
+
+            // 等待場景載入完成
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
+            }
         }
 
-        // 場景載入完成，觸發回調
+        // 場景準備完成，觸發回調
         onLoadDone?.Invoke();
 
         // 階段 2: 從中間滑出至左邊
@@ -163,16 +166,19 @@ public class TransitionManager : MonoBehaviour
     /// </summary>
     private IEnumerator SplashTransition(string sceneName, LoadSceneMode loadSceneMode, Action onLoadDone)
     {
-        // 非同步載入場景
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, loadSceneMode);
-
-        // 等待場景載入完成
-        while (!asyncLoad.isDone)
+        // 檢查是否需要載入（場景尚未載入時才執行）
+        if (!IsSceneLoaded(sceneName))
         {
-            yield return null;
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, loadSceneMode);
+
+            // 等待場景載入完成
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
+            }
         }
 
-        // 場景載入完成，觸發回調
+        // 場景準備完成，觸發回調
         onLoadDone?.Invoke();
 
         // 白色閃光效果
@@ -189,20 +195,23 @@ public class TransitionManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.4f);
 
-        // 非同步載入場景
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, loadSceneMode);
-
-        // 等待場景載入完成，同時更新進度條
-        while (!asyncLoad.isDone)
+        // 檢查是否需要載入（場景尚未載入時才執行）
+        if (!IsSceneLoaded(sceneName))
         {
-            UpdateLoadingProgress(asyncLoad.progress);
-            yield return null;
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, loadSceneMode);
+
+            // 等待場景載入完成，同時更新進度條
+            while (!asyncLoad.isDone)
+            {
+                UpdateLoadingProgress(asyncLoad.progress);
+                yield return null;
+            }
         }
 
         // 確保進度達到 100%
         UpdateLoadingProgress(1f);
 
-        // 場景載入完成，觸發回調
+        // 場景準備完成，觸發回調
         onLoadDone?.Invoke();
 
         // 短暫延遲讓使用者看到 100%
@@ -217,22 +226,25 @@ public class TransitionManager : MonoBehaviour
     /// </summary>
     private IEnumerator FadeInTransition(string sceneName, Action onLoadDone)
     {
-        // 非同步載入場景（Additive 模式）
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-
-        // 等待場景載入完成
-        while (!asyncLoad.isDone)
+        // 檢查是否需要載入（場景尚未載入時才執行）
+        if (!IsSceneLoaded(sceneName))
         {
-            yield return null;
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+
+            // 等待場景載入完成
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
+            }
+
+            // 取得新載入的場景
+            Scene loadedScene = SceneManager.GetSceneByName(sceneName);
+
+            // 對場景中所有根物件的 CanvasGroup 執行淡入
+            yield return StartCoroutine(FadeInSceneCanvasGroups(loadedScene));
         }
 
-        // 取得新載入的場景
-        Scene loadedScene = SceneManager.GetSceneByName(sceneName);
-
-        // 對場景中所有根物件的 CanvasGroup 執行淡入
-        yield return StartCoroutine(FadeInSceneCanvasGroups(loadedScene));
-
-        // 場景載入完成，觸發回調
+        // 場景準備完成，觸發回調
         onLoadDone?.Invoke();
     }
 
@@ -293,6 +305,15 @@ public class TransitionManager : MonoBehaviour
                 cg.alpha = 1f;
             }
         }
+    }
+
+    /// <summary>
+    /// 檢查場景是否已經載入
+    /// </summary>
+    private bool IsSceneLoaded(string sceneName)
+    {
+        Scene scene = SceneManager.GetSceneByName(sceneName);
+        return scene.IsValid() && scene.isLoaded;
     }
 
     /// <summary>

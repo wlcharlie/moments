@@ -3635,7 +3635,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SwitchScene(TrafficScene);StopConversation()
+        value: 'SwitchScene(ExploreScene);
+
+          SaveData(mainStory, CH01_SC02_SE02);
+
+          StopConversation()'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -3749,8 +3753,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 35.38471, y: 0}
-    canvasZoom: 0.62449616
+    canvasScrollPosition: {x: 34.72523, y: 0.05388828}
+    canvasZoom: 0.6239962
   - id: 6
     fields:
     - title: Title
@@ -10744,7 +10748,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SwitchScene(ExploreScene);StopConversation();
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -10770,13 +10774,7 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 27
-        originDialogueID: 7
-        destinationConversationID: 10
-        destinationDialogueID: 0
-        isConnector: 0
-        priority: 2
+      outgoingLinks: []
       conditionsString: 
       userScript: 
       onExecute:
@@ -10790,7 +10788,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasZoom: 0.7570002
   - id: 10
     fields:
     - title: Title
@@ -11619,8 +11617,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 113.17206, y: 0}
-    canvasZoom: 1.0130007
+    canvasScrollPosition: {x: 205.96236, y: 78.05507}
+    canvasZoom: 0.8150006
   - id: 11
     fields:
     - title: Title
@@ -14054,7 +14052,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'Delay(2)@2;
+
+          StopConversation()@2;
+
+          ResumeConversation()@2;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -14088,8 +14090,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 49
-        y: 205
+        x: 72
+        y: 204
         width: 160
         height: 30
     - id: 4
@@ -14119,7 +14121,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'Delay(2)@2;
+
+          StopConversation()@2;
+
+          ResumeConversation()@2;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -14153,8 +14159,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 261
-        y: 205
+        x: 252
+        y: 204
         width: 160
         height: 30
     entryGroups: []
@@ -14425,8 +14431,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 49
-        y: 206
+        x: 36
+        y: 204
         width: 160
         height: 30
     - id: 4
@@ -14496,8 +14502,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 260
-        y: 202
+        x: 252
+        y: 180
         width: 160
         height: 30
     - id: 5
@@ -14527,7 +14533,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SwitchScene(DialogueDebugScene);
+        value: 'Delay(2)@2;
+
+          ResumeConversation()@2;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -14561,8 +14569,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159
-        y: 289
+        x: 156
+        y: 288
         width: 160
         height: 30
     entryGroups: []
@@ -15164,8 +15172,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 49
-        y: 220
+        x: 48
+        y: 216
         width: 160
         height: 30
     - id: 4
@@ -15235,8 +15243,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 262
-        y: 220
+        x: 276
+        y: 216
         width: 160
         height: 30
     - id: 5
@@ -15266,7 +15274,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SwitchScene(DialogueDebugScene);
+        value: 'Delay(2)@2;
+
+          ResumeConversation()@2;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -15300,8 +15310,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 163
-        y: 305
+        x: 144
+        y: 300
         width: 160
         height: 30
     entryGroups: []
@@ -16122,8 +16132,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 23.626156, y: 15.061705}
-    canvasZoom: 0.5525007
+    canvasScrollPosition: {x: 155.2644, y: 138.7219}
+    canvasZoom: 0.98800105
   - id: 15
     fields:
     - title: Title
