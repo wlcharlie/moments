@@ -35,6 +35,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0af456080831945ea937c185c22fa877
+    m_Address: Assets/Arts/Comics/CH01_SC04/Comic_Map_Tutorial_02.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0bb2e1f56bd454df194f7049557bbe5b
     m_Address: Assets/Arts/CH/CH01/CH01_SC02_SE03_Head.png
     m_ReadOnly: 0
@@ -150,6 +155,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3c21dd16ef5f842eea5a12508b6d5ecd
+    m_Address: Assets/Arts/Comics/CH01_SC04/Comic_Take_MRT.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3e74dc1467eb24227955e1cc07658866
     m_Address: Assets/Arts/CGs/Sidewalk_Dusk.png
     m_ReadOnly: 0
@@ -187,6 +197,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4f8f8a4ec8c35416bad37553f1d71844
     m_Address: Assets/Arts/CGs/Office_Lobby.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f9775c6964854f188dd3e2a6214afb9
+    m_Address: Assets/Arts/Comics/CH01_SC04/Comic_Map_Tutorial_01.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -367,6 +382,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bbb8fb64914084a38b801d0b447b8b6a
     m_Address: Assets/Arts/CGs/Home_EnterWay_Open.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bdeeddec2d5dc4315a487ae535ef6f44
+    m_Address: Assets/Data/Dialogue Database.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
