@@ -66,50 +66,77 @@ public class DialogueEventManager : ScriptableObject
 
     private static void HandleComicImage(Subtitle subtitle)
     {
+        // 處理原有的 Comic Image（向後相容）
         Field comicField = subtitle.dialogueEntry.fields.Find(f => f.title == "Comic Image");
-        string comicImagePath = comicField?.value;
-
-        GameObject comicObject = GameObject.Find("ComicImage");
-        if (comicObject != null)
+        if (comicField != null)
         {
-            SpriteRenderer spriteRenderer = comicObject.GetComponent<SpriteRenderer>();
-            if (spriteRenderer != null)
+            string comicImagePath = comicField.value;
+            SetComicImage("ComicImage", comicImagePath);
+        }
+
+        // 處理 Comic Image Left
+        Field comicLeftField = subtitle.dialogueEntry.fields.Find(f => f.title == "Comic Image Left");
+        if (comicLeftField != null)
+        {
+            string comicLeftImagePath = comicLeftField.value;
+            SetComicImage("ComicImageLeft", comicLeftImagePath);
+        }
+
+        // 處理 Comic Image Right
+        Field comicRightField = subtitle.dialogueEntry.fields.Find(f => f.title == "Comic Image Right");
+        if (comicRightField != null)
+        {
+            string comicRightImagePath = comicRightField.value;
+            SetComicImage("ComicImageRight", comicRightImagePath);
+        }
+    }
+
+    /// <summary>
+    /// 設置指定名稱的 Comic Image GameObject 的 Sprite
+    /// </summary>
+    /// <param name="gameObjectName">GameObject 的名稱（例如 "ComicImage", "ComicImageLeft", "ComicImageRight"）</param>
+    /// <param name="comicImagePath">Comic Image 的路徑（Addressables 路徑），如果為 null 或空字串則清空 sprite</param>
+    private static void SetComicImage(string gameObjectName, string comicImagePath)
+    {
+        GameObject comicObject = GameObject.Find(gameObjectName);
+        if (comicObject == null)
+        {
+            Debug.LogWarning($"找不到 {gameObjectName} 物件");
+            return;
+        }
+
+        SpriteRenderer spriteRenderer = comicObject.GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+        {
+            Debug.LogWarning($"{gameObjectName} 物件沒有 SpriteRenderer 組件");
+            return;
+        }
+
+        if (!string.IsNullOrEmpty(comicImagePath))
+        {
+            // 使用 Addressables 載入並設置新的 Comic Image
+            Addressables.LoadAssetAsync<Sprite>(comicImagePath).Completed += (AsyncOperationHandle<Sprite> handle) =>
             {
-                if (!string.IsNullOrEmpty(comicImagePath))
+                if (handle.Status == AsyncOperationStatus.Succeeded)
                 {
-                    // 使用 Addressables 載入並設置新的 Comic Image
-                    Addressables.LoadAssetAsync<Sprite>(comicImagePath).Completed += (AsyncOperationHandle<Sprite> handle) =>
+                    Sprite comicSprite = handle.Result;
+                    Debug.Log($"更改 {gameObjectName} 為: {comicImagePath}");
+                    if (spriteRenderer != null)
                     {
-                        if (handle.Status == AsyncOperationStatus.Succeeded)
-                        {
-                            Sprite comicSprite = handle.Result;
-                            Debug.Log($"更改漫畫圖片為: {comicImagePath}");
-                            if (spriteRenderer != null)
-                            {
-                                spriteRenderer.sprite = comicSprite;
-                            }
-                        }
-                        else
-                        {
-                            Debug.LogWarning($"找不到漫畫圖片: {comicImagePath}");
-                        }
-                    };
+                        spriteRenderer.sprite = comicSprite;
+                    }
                 }
                 else
                 {
-                    // 當 Comic Image field 為 null 或 empty 時，清空 sprite
-                    Debug.Log("清空漫畫圖片");
-                    spriteRenderer.sprite = null;
+                    Debug.LogWarning($"找不到漫畫圖片: {comicImagePath}");
                 }
-            }
-            else
-            {
-                Debug.LogWarning("Comic Image 物件沒有 SpriteRenderer 組件");
-            }
+            };
         }
         else
         {
-            Debug.LogWarning("找不到 Comic Image 物件");
+            // 當 Comic Image field 為 null 或 empty 時，清空 sprite
+            Debug.Log($"清空 {gameObjectName}");
+            spriteRenderer.sprite = null;
         }
     }
 

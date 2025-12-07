@@ -265,6 +265,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5502480fd6609465186a32f8264860e5
+    m_Address: Assets/Arts/Comics/Comic_LeftRight/Comic_MRT_Door_Spirt.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 555f00c5aea8348a9a937e4125339edc
     m_Address: Assets/Arts/Comics/CH01_SC03/Comic_Beigo_Reveal_01.png
     m_ReadOnly: 0
@@ -455,6 +460,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c2395b98f1543408cad4e070f8ad594b
+    m_Address: Assets/Arts/CGs/Bg_Cream.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c261bd073206f4791a8311e6ed4acb36
     m_Address: Assets/Arts/Events/Ally.jpg
     m_ReadOnly: 0
@@ -522,6 +532,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dcf6a1f11e8c54ae487dc130dac86180
     m_Address: Assets/Arts/Events/COMM_STREET_01_OPT_01.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e022dafa47edf460d9a079f1e045f549
+    m_Address: Assets/Arts/Comics/Comic_LeftRight/CH01_SC04_Dog_Run.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
