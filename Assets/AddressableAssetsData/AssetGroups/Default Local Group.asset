@@ -25,6 +25,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 02c8265dfca874abea2ef79c7ec2b4a6
+    m_Address: Assets/Arts/Comics/Comic_LeftRight/MRT_Door_Open_02.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 04fca40d752a74be29db6c000aab163a
     m_Address: Assets/Arts/CH/CH01/BG_Circle_Vortex.jpg
     m_ReadOnly: 0
@@ -57,6 +62,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0ce2cad945b0f47a1833e7c353bbd5d1
     m_Address: Assets/Arts/CH/CH01/BaiFloatPages.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0d585ac1a7e3d4b77b51803b18d690ca
+    m_Address: Assets/Arts/Comics/CH01_SC04/Comic_Camera.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -365,6 +375,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85510cbff90ef4d45bb9877cd4c3e4d6
+    m_Address: Assets/Arts/Comics/Comic_LeftRight/MRT_Door_Open_03.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 85d7b2ca29e2f442598dcea2314b1945
     m_Address: Assets/Arts/CGs/Home_LivingRoom_night.png
     m_ReadOnly: 0
@@ -497,6 +512,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d128512c91d6545b7a4985f032f8fc9d
     m_Address: Assets/Arts/CGs/work/Office_Work_Day_Focus_01.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d13d19c743b5e4cb788b9fa3ec00746b
+    m_Address: Assets/Arts/CH/CH01/CH01_SC04_MRT_DogStuck.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
