@@ -135,6 +135,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2210c9c115e264319a752c6cbd5e4c8d
+    m_Address: Assets/Arts/Comics/CH01_SC04/Tutorial_Sprit.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 223027eea78274608922751831cd383d
     m_Address: Assets/Arts/CGs/Office_Room_Focus_Dusk.png
     m_ReadOnly: 0
@@ -250,6 +255,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c0bc3f1684a34fe696d8875368bd86e
+    m_Address: Assets/Arts/Comics/CH01_SC04/location_tip_0.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4f8f8a4ec8c35416bad37553f1d71844
     m_Address: Assets/Arts/CGs/Office_Lobby.png
     m_ReadOnly: 0
@@ -272,6 +282,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 525345ecf838c4d1588dddbee9a37b7d
     m_Address: Assets/Arts/Comics/CH01_SC03/Comic_Beigo_Reveal_02.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 54640d5e3147d4e51afd72478935cbcb
+    m_Address: Assets/Arts/Comics/CH01_SC04/location_tip_1.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -312,6 +327,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5bc234bc9c0bc4916aba4c7c21a16d08
     m_Address: Assets/Arts/Comics/CH01_SC03_SE03_Book.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5cb2a4af61a654891919816ca30223ae
+    m_Address: Assets/Arts/Comics/CH01_SC04/location_tip_7.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -375,6 +395,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8519b294c27a441bbadf88e0b264e1bd
+    m_Address: Assets/Arts/Comics/CH01_SC04/Location_Hint.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 85510cbff90ef4d45bb9877cd4c3e4d6
     m_Address: Assets/Arts/Comics/Comic_LeftRight/MRT_Door_Open_03.png
     m_ReadOnly: 0
@@ -382,6 +407,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 85d7b2ca29e2f442598dcea2314b1945
     m_Address: Assets/Arts/CGs/Home_LivingRoom_night.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 87e9e37b4aa994fd6b9767a23b8c3bd9
+    m_Address: Assets/Arts/Comics/CH01_SC04/location_tip_2.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -430,6 +460,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9caedb4759e794b6fabf4c6884f83edd
+    m_Address: Assets/Arts/Comics/CH01_SC04/location_tip_4.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9d463ed25c2884d5da7abd298f872428
+    m_Address: Assets/Arts/Comics/CH01_SC04/location_tip_6.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a49b96021aa684d16aae539d3cc39096
     m_Address: Assets/Arts/CGs/Street_ToHome.png
     m_ReadOnly: 0
@@ -450,8 +490,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a93f9808c5ed8431692a9fa62a39cd27
+    m_Address: Assets/Arts/Comics/CH01_SC04/location_tip_3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a9623ee5847534da3862ebccd6687aff
     m_Address: Assets/Arts/Comics/CH01_SC02_SE03_Beigo_Stand_Book.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b6d4f6d6bff0e47ad9c3c58c8b360a5f
+    m_Address: Assets/Arts/Comics/CH01_SC04/location_tip_5.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

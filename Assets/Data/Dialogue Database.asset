@@ -10515,7 +10515,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Description
-        value: 
+        value: tutorial_01
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
@@ -10535,7 +10535,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Beigo, pic=2);
+        value: SetPortrait(Beigo, pic=2);SkipComicFade(center);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -10551,7 +10551,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image
-        value: Assets/Arts/Comics/CH01_SC04/Comic_Map_Tutorial_01.png
+        value: Assets/Arts/Comics/CH01_SC04/location_tip_0.png
         type: 0
         typeString: CustomFieldType_Sprite
       conversationID: 27
@@ -10575,8 +10575,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 161
-        y: 199
+        x: 162.32101
+        y: 192.39499
         width: 160
         height: 30
     - id: 5
@@ -10586,7 +10586,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Description
-        value: 
+        value: tutorial_02
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
@@ -10606,7 +10606,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: Continue()@0.15;SkipComicFade(center);SetDialoguePanel(false, immediate)@0;
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -10622,9 +10622,13 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image
-        value: Assets/Arts/Comics/CH01_SC04/Comic_Map_Tutorial_02.png
+        value: Assets/Arts/Comics/CH01_SC04/location_tip_1.png
         type: 0
         typeString: CustomFieldType_Sprite
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
       conversationID: 27
       isRoot: 0
       isGroup: 0
@@ -10636,7 +10640,7 @@ MonoBehaviour:
       - originConversationID: 27
         originDialogueID: 5
         destinationConversationID: 27
-        destinationDialogueID: 6
+        destinationDialogueID: 8
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -10646,8 +10650,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 165
-        y: 253
+        x: 359.18738
+        y: 194.87576
         width: 160
         height: 30
     - id: 6
@@ -10707,7 +10711,7 @@ MonoBehaviour:
       - originConversationID: 27
         originDialogueID: 6
         destinationConversationID: 27
-        destinationDialogueID: 7
+        destinationDialogueID: 14
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -10717,8 +10721,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 167
-        y: 309
+        x: 165.67899
+        y: 373.72922
         width: 160
         height: 30
     - id: 7
@@ -10764,7 +10768,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image
-        value: Assets/Arts/Comics/CH01_SC04/Comic_Take_MRT.png
+        value: Assets/Arts/Comics/CH01_SC04/Location_Hint.png
         type: 0
         typeString: CustomFieldType_Sprite
       conversationID: 27
@@ -10782,8 +10786,505 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 166.09354
-        y: 366.06122
+        x: 382.73816
+        y: 424.18542
+        width: 160
+        height: 30
+    - id: 8
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: tutorial_03
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u5C0F\u8C9D\u72D7\u5DF2\u7D93\u5E6B\u4F60\u6A19\u793A\u5728\u5730\u5716\u4E0A\u4E86\uFF01"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: Continue()@0.15;SkipComicFade(center);SkipTypewriter(current)
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: Assets/Arts/Comics/CH01_SC04/location_tip_2.png
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 27
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 27
+        originDialogueID: 8
+        destinationConversationID: 27
+        destinationDialogueID: 9
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 569.934
+        y: 191.54544
+        width: 160
+        height: 30
+    - id: 9
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: tutorial_04
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u5C0F\u8C9D\u72D7\u5DF2\u7D93\u5E6B\u4F60\u6A19\u793A\u5728\u5730\u5716\u4E0A\u4E86\uFF01"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: Continue()@0.15;SkipComicFade(center);
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: Assets/Arts/Comics/CH01_SC04/location_tip_3.png
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 27
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 27
+        originDialogueID: 9
+        destinationConversationID: 27
+        destinationDialogueID: 10
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 772.0471
+        y: 200.79263
+        width: 160
+        height: 30
+    - id: 10
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: tutorial_04
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u5C0F\u8C9D\u72D7\u5DF2\u7D93\u5E6B\u4F60\u6A19\u793A\u5728\u5730\u5716\u4E0A\u4E86\uFF01"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: Continue()@0.15;SkipComicFade(center);
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: Assets/Arts/Comics/CH01_SC04/location_tip_4.png
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 27
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 27
+        originDialogueID: 10
+        destinationConversationID: 27
+        destinationDialogueID: 11
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 781.29425
+        y: 299.8678
+        width: 160
+        height: 30
+    - id: 11
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: tutorial_04
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u5C0F\u8C9D\u72D7\u5DF2\u7D93\u5E6B\u4F60\u6A19\u793A\u5728\u5730\u5716\u4E0A\u4E86\uFF01"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: Continue()@0.15;SkipComicFade(center);
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: Assets/Arts/Comics/CH01_SC04/location_tip_5.png
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 27
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 27
+        originDialogueID: 11
+        destinationConversationID: 27
+        destinationDialogueID: 12
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 579.1806
+        y: 305.1517
+        width: 160
+        height: 30
+    - id: 12
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: tutorial_04
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u5C0F\u8C9D\u72D7\u5DF2\u7D93\u5E6B\u4F60\u6A19\u793A\u5728\u5730\u5716\u4E0A\u4E86\uFF01"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: Continue()@0.15;SkipComicFade(center);
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: Assets/Arts/Comics/CH01_SC04/location_tip_6.png
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 27
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 27
+        originDialogueID: 12
+        destinationConversationID: 27
+        destinationDialogueID: 13
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 357.25223
+        y: 301.18884
+        width: 160
+        height: 30
+    - id: 13
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: tutorial_04
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u5C0F\u8C9D\u72D7\u5DF2\u7D93\u5E6B\u4F60\u6A19\u793A\u5728\u5730\u5716\u4E0A\u4E86\uFF01"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: SetDialoguePanel(true, immediate)@0;
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: Assets/Arts/Comics/CH01_SC04/location_tip_7.png
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 27
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 27
+        originDialogueID: 13
+        destinationConversationID: 27
+        destinationDialogueID: 6
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 164.38564
+        y: 307.79382
+        width: 160
+        height: 30
+    - id: 14
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: SetDialoguePanel(false, immediate)@0;Continue()@0.65;
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: Assets/Arts/Comics/CH01_SC04/Location_Hint.png
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 27
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 27
+        originDialogueID: 14
+        destinationConversationID: 27
+        destinationDialogueID: 7
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 167
+        y: 423.72922
         width: 160
         height: 30
     entryGroups: []
@@ -11570,7 +12071,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 165.22623
-        y: 277.3004
+        y: 278.5274
         width: 160
         height: 30
     - id: 16

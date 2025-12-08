@@ -9,7 +9,6 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 public class DialogueEventManager : ScriptableObject
 {
     public static DialogueEventManager Instance { get; private set; }
-    private static float comicFadeDuration = 0.3f;
 
     public void Initialize()
     {
