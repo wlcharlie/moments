@@ -11,19 +11,19 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
             string statusType = GetParameter(0); // "Heart", "Money", "Energy"
             int amount = GetParameterAsInt(1);   // 變化數值（可以是正數或負數）
 
-            // 調用 GameManager 更新對應的狀態
-            if (GameManager.Instance != null)
+            // 調用 PlayerStatusManager 更新對應的狀態
+            if (PlayerStatusManager.Instance != null)
             {
                 switch (statusType)
                 {
                     case "Heart":
-                        GameManager.Instance.UpdateStatusHeart(amount);
+                        PlayerStatusManager.Instance.UpdateStatusHeart(amount);
                         break;
                     case "Money":
-                        GameManager.Instance.UpdateStatusMoney(amount);
+                        PlayerStatusManager.Instance.UpdateStatusMoney(amount);
                         break;
                     case "Energy":
-                        GameManager.Instance.UpdateStatusEnergy(amount);
+                        PlayerStatusManager.Instance.UpdateStatusEnergy(amount);
                         break;
                     default:
                         Debug.LogWarning($"UpdateStatus: Unknown status type '{statusType}'. Use 'Heart', 'Money', or 'Energy'.");
@@ -32,7 +32,7 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
             }
             else
             {
-                Debug.LogError("UpdateStatus: GameManager.Instance is null.");
+                Debug.LogError("UpdateStatus: PlayerStatusManager.Instance is null.");
             }
 
             // 立即完成命令

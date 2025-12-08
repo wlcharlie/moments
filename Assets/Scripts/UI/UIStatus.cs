@@ -30,18 +30,76 @@ public class UIStatus : MonoBehaviour
 
     [SerializeField] private ComponentReferences references;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         references.meterObject.GetComponent<UnityEngine.UI.Image>().color = GetStatusColor();
         references.imageObject.GetComponent<UnityEngine.UI.Image>().sprite = GetStatusSprite();
-        UpdateMeterHeight();
+
+        // 從 PlayerStatusManager 取得初始值
+        InitializeFromPlayerStatus();
+
+        // 訂閱狀態變化事件
+        SubscribeToStatusChanges();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnDestroy()
     {
+        UnsubscribeFromStatusChanges();
+    }
 
+    private void InitializeFromPlayerStatus()
+    {
+        if (PlayerStatusManager.Instance == null) return;
+
+        float initialValue = statusType switch
+        {
+            StatusType.Heart => PlayerStatusManager.Instance.StatusHeart / 100f,
+            StatusType.Money => PlayerStatusManager.Instance.StatusMoney / 100f,
+            StatusType.Energy => PlayerStatusManager.Instance.StatusEnergy / 100f,
+            _ => 0.5f
+        };
+        SetValue(initialValue);
+    }
+
+    private void SubscribeToStatusChanges()
+    {
+        if (PlayerStatusManager.Instance == null) return;
+
+        switch (statusType)
+        {
+            case StatusType.Heart:
+                PlayerStatusManager.Instance.OnStatusHeartChanged += OnStatusChanged;
+                break;
+            case StatusType.Money:
+                PlayerStatusManager.Instance.OnStatusMoneyChanged += OnStatusChanged;
+                break;
+            case StatusType.Energy:
+                PlayerStatusManager.Instance.OnStatusEnergyChanged += OnStatusChanged;
+                break;
+        }
+    }
+
+    private void UnsubscribeFromStatusChanges()
+    {
+        if (PlayerStatusManager.Instance == null) return;
+
+        switch (statusType)
+        {
+            case StatusType.Heart:
+                PlayerStatusManager.Instance.OnStatusHeartChanged -= OnStatusChanged;
+                break;
+            case StatusType.Money:
+                PlayerStatusManager.Instance.OnStatusMoneyChanged -= OnStatusChanged;
+                break;
+            case StatusType.Energy:
+                PlayerStatusManager.Instance.OnStatusEnergyChanged -= OnStatusChanged;
+                break;
+        }
+    }
+
+    private void OnStatusChanged(int newValue)
+    {
+        SetValue(newValue / 100f);
     }
 
     void OnValidate()

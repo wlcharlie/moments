@@ -14652,11 +14652,11 @@ MonoBehaviour:
       - title: Title
         value: START
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Description
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Actor
         value: 1
         type: 5
@@ -14668,15 +14668,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Dialogue Text
         value: 
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: Sequence
         value: None()
         type: 0
-        typeString: 
+        typeString: CustomFieldType_Text
       - title: ja
         value: 
         type: 4
@@ -14862,14 +14862,14 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 36
-        y: 204
+        x: 48
+        y: 192
         width: 160
         height: 30
     - id: 4
       fields:
       - title: Title
-        value: 
+        value: "\u5E97\u54E1\u505A\u932F\u5496\u5561\uFF0C\u8981\u600E\u9EBC\u505A\u5462\uFF1F"
         type: 0
         typeString: CustomFieldType_Text
       - title: Description
@@ -14893,7 +14893,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'UpdateStatus(Heart, -2); '
+        value: 'UpdateStatus(Heart, -10); '
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -14937,8 +14937,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 276
-        y: 204
+        x: 300
+        y: 192
         width: 160
         height: 30
     - id: 5
@@ -14970,9 +14970,9 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          Delay(1)@1;
+          Delay(2)@2;
 
-          ResumeConversation()@1;'
+          ResumeConversation()@2;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -15011,8 +15011,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 0, y: 22.44989}
+    canvasZoom: 0.73099935
   - id: 18
     fields:
     - title: Title
@@ -15573,7 +15573,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'UpdateStatus(Energy, +2); UpdateStatus(Heart, +2); '
+        value: 'UpdateStatus(Energy, +10); UpdateStatus(Heart, +10); '
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -15644,7 +15644,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'UpdateStatus(Energy, -2); '
+        value: 'UpdateStatus(Energy, -10); '
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -15684,7 +15684,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 276
+        x: 240
         y: 216
         width: 160
         height: 30
@@ -15717,9 +15717,9 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetContinueMode(false);
 
-          Delay(1)@1;
+          Delay(2)@2;
 
-          ResumeConversation()@1;'
+          ResumeConversation()@2;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -15753,7 +15753,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 144
+        x: 168
         y: 300
         width: 160
         height: 30

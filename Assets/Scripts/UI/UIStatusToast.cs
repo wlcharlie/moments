@@ -25,16 +25,26 @@ public class UIStatusToast : MonoBehaviour
         rectTransform.anchoredPosition = new Vector2(-150, -154); // 初始隱藏位置
 
         // 訂閱狀態變化事件
-        if (GameManager.Instance != null)
+        if (PlayerStatusManager.Instance != null)
         {
             // 初始化前一次的值
-            previousHeartValue = GameManager.Instance.StatusHeart;
-            previousMoneyValue = GameManager.Instance.StatusMoney;
-            previousEnergyValue = GameManager.Instance.StatusEnergy;
+            previousHeartValue = PlayerStatusManager.Instance.StatusHeart;
+            previousMoneyValue = PlayerStatusManager.Instance.StatusMoney;
+            previousEnergyValue = PlayerStatusManager.Instance.StatusEnergy;
 
-            GameManager.Instance.OnStatusHeartChanged += OnStatusHeartChanged;
-            GameManager.Instance.OnStatusMoneyChanged += OnStatusMoneyChanged;
-            GameManager.Instance.OnStatusEnergyChanged += OnStatusEnergyChanged;
+            PlayerStatusManager.Instance.OnStatusHeartChanged += OnStatusHeartChanged;
+            PlayerStatusManager.Instance.OnStatusMoneyChanged += OnStatusMoneyChanged;
+            PlayerStatusManager.Instance.OnStatusEnergyChanged += OnStatusEnergyChanged;
+        }
+    }
+
+    void OnDestroy()
+    {
+        if (PlayerStatusManager.Instance != null)
+        {
+            PlayerStatusManager.Instance.OnStatusHeartChanged -= OnStatusHeartChanged;
+            PlayerStatusManager.Instance.OnStatusMoneyChanged -= OnStatusMoneyChanged;
+            PlayerStatusManager.Instance.OnStatusEnergyChanged -= OnStatusEnergyChanged;
         }
     }
 

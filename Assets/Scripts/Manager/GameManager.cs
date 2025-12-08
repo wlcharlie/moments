@@ -330,39 +330,43 @@ public class GameManager : MonoBehaviour
         return score;
     }
 
-    // 角色狀態
-    private int statusHeart = 50;
-    private int statusMoney = 50;
-    private int statusEnergy = 50;
+    // ===== 角色狀態（委派給 PlayerStatusManager）=====
+    // 保留向後相容性，實際邏輯已移至 PlayerStatusManager
 
-    public int StatusHeart { get => statusHeart; }
-    public int StatusMoney { get => statusMoney; }
-    public int StatusEnergy { get => statusEnergy; }
+    public int StatusHeart => PlayerStatusManager.Instance?.StatusHeart ?? 50;
+    public int StatusMoney => PlayerStatusManager.Instance?.StatusMoney ?? 50;
+    public int StatusEnergy => PlayerStatusManager.Instance?.StatusEnergy ?? 50;
 
-    // 角色狀態監聽
-    public delegate void StatusChangedHandler(int newValue);
-    public event StatusChangedHandler OnStatusHeartChanged;
-    public event StatusChangedHandler OnStatusMoneyChanged;
-    public event StatusChangedHandler OnStatusEnergyChanged;
+    public event PlayerStatusManager.StatusChangedHandler OnStatusHeartChanged
+    {
+        add => PlayerStatusManager.Instance.OnStatusHeartChanged += value;
+        remove => PlayerStatusManager.Instance.OnStatusHeartChanged -= value;
+    }
+
+    public event PlayerStatusManager.StatusChangedHandler OnStatusMoneyChanged
+    {
+        add => PlayerStatusManager.Instance.OnStatusMoneyChanged += value;
+        remove => PlayerStatusManager.Instance.OnStatusMoneyChanged -= value;
+    }
+
+    public event PlayerStatusManager.StatusChangedHandler OnStatusEnergyChanged
+    {
+        add => PlayerStatusManager.Instance.OnStatusEnergyChanged += value;
+        remove => PlayerStatusManager.Instance.OnStatusEnergyChanged -= value;
+    }
 
     public void UpdateStatusHeart(int amount)
     {
-        statusHeart = Mathf.Clamp(statusHeart + amount, 0, 100);
-        OnStatusHeartChanged?.Invoke(statusHeart);
-        Debug.Log($"心情值: {statusHeart}");
+        PlayerStatusManager.Instance?.UpdateStatusHeart(amount);
     }
 
     public void UpdateStatusMoney(int amount)
     {
-        statusMoney = Mathf.Clamp(statusMoney + amount, 0, 100);
-        OnStatusMoneyChanged?.Invoke(statusMoney);
-        Debug.Log($"金錢值: {statusMoney}");
+        PlayerStatusManager.Instance?.UpdateStatusMoney(amount);
     }
 
     public void UpdateStatusEnergy(int amount)
     {
-        statusEnergy = Mathf.Clamp(statusEnergy + amount, 0, 100);
-        OnStatusEnergyChanged?.Invoke(statusEnergy);
-        Debug.Log($"體力值: {statusEnergy}");
+        PlayerStatusManager.Instance?.UpdateStatusEnergy(amount);
     }
 }
