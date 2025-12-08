@@ -13,6 +13,7 @@
   <Project Path="UI.csproj" />
   <Project Path="Controller.csproj" />
   <Project Path="Capture.csproj" />
+  <Project Path="Interface.csproj" />
   <Project Path="Dialogue.csproj" />
   <Project Path="Traffic.csproj" />
   <Project Path="Camera.csproj" />
@@ -21,4 +22,5 @@
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Data.csproj" />
   <Project Path="InputSystem.csproj" />
+  <Project Path="Service.csproj" />
 </Solution>

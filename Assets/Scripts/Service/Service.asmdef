@@ -1,14 +1,8 @@
 {
-    "name": "Manager",
+    "name": "Service",
     "rootNamespace": "",
     "references": [
-        "DialogueSystem",
-        "Utils",
-        "Unity.TextMeshPro",
-        "Data",
-        "FMODUnity",
-        "Interface",
-        "Service"
+        "GUID:a3c3fe4f753e149d5afc7de8e1243605"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

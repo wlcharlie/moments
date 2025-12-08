@@ -98,6 +98,8 @@ public class DialogueEventManager : ScriptableObject
     /// <param name="comicImagePath">Comic Image 的路徑（Addressables 路徑），如果為 null 或空字串則清空 sprite</param>
     private static void SetComicImage(string gameObjectName, string comicImagePath)
     {
+        Debug.Log($"SetComicImage: 處理 {gameObjectName}，路徑={comicImagePath}");
+
         GameObject comicObject = GameObject.Find(gameObjectName);
         if (comicObject == null)
         {
@@ -170,7 +172,7 @@ public class DialogueEventManager : ScriptableObject
         string characterImagePath = null;
 
         object fieldValue = characterField.value;
-        
+
         // 方式 1: 如果欄位值是 Sprite 物件
         if (fieldValue is Sprite spriteValue)
         {

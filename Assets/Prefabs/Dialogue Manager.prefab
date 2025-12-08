@@ -557,7 +557,6 @@ RectTransform:
   - {fileID: 5973843074267834559}
   - {fileID: 3790728935950361551}
   - {fileID: 9124991319993139989}
-  - {fileID: 1321338933285242215}
   - {fileID: 3554532768055849331}
   m_Father: {fileID: 6515549597684884240}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1439,7 +1438,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 6292565745306710404}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.5
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1554,7 +1553,6 @@ GameObject:
   - component: {fileID: 3554532768055849331}
   - component: {fileID: 2031877692275866117}
   - component: {fileID: 8864748888836273119}
-  - component: {fileID: 1714711197744465105}
   - component: {fileID: 1004594125805294178}
   - component: {fileID: 2636674272370988552}
   - component: {fileID: 8406382582908544542}
@@ -1576,7 +1574,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1321338933285242215}
   m_Father: {fileID: 5073270541115934059}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1622,32 +1621,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1714711197744465105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2204670946861495688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 4
-  m_Spacing: 5
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 1
-  m_ChildControlHeight: 1
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!114 &1004594125805294178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1754,9 +1727,9 @@ GameObject:
   - component: {fileID: 7163379835895521670}
   - component: {fileID: 634745259526860530}
   - component: {fileID: 8950821888042768516}
-  - component: {fileID: 2026717604986778660}
   - component: {fileID: 4042817412981196347}
   - component: {fileID: 7997223056567466832}
+  - component: {fileID: 1099633935287009394}
   m_Layer: 5
   m_Name: Response Button Template
   m_TagString: Untagged
@@ -1892,24 +1865,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &2026717604986778660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2238008854371107003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05399fb241106df4fbea2cb9b72f8a5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 634745259526860530}
-  label:
-    m_uiText: {fileID: 0}
-    m_textMeshProUGUI: {fileID: 2273407563225108337}
-  setLabelColor: 1
-  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &4042817412981196347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1937,6 +1892,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Nobi.UiRoundedCorners::Nobi.UiRoundedCorners.ImageWithRoundedCorners
   radius: 20
   image: {fileID: 7163379835895521670}
+--- !u!114 &1099633935287009394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238008854371107003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178ff9344845548e4852cf5b7004d2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Dialogue::TrackedResponseButton
+  button: {fileID: 634745259526860530}
+  label:
+    m_uiText: {fileID: 0}
+    m_textMeshProUGUI: {fileID: 2273407563225108337}
+  setLabelColor: 1
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2400000359115191250
 GameObject:
   m_ObjectHideFlags: 0
@@ -2611,7 +2584,6 @@ GameObject:
   - component: {fileID: 1321338933285242215}
   - component: {fileID: 5110834471274929997}
   - component: {fileID: 3344318601710430171}
-  - component: {fileID: 3659618339222381022}
   - component: {fileID: 1699772967034807063}
   - component: {fileID: 308449624597073931}
   - component: {fileID: 32968214684338216}
@@ -2630,20 +2602,20 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3033128501809156032}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2862381550089230476}
   - {fileID: 5403409032035525453}
-  m_Father: {fileID: 5073270541115934059}
+  m_Father: {fileID: 3554532768055849331}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 659, y: -68}
-  m_SizeDelta: {x: 186, y: 45}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 21, y: -32}
+  m_SizeDelta: {x: 133.01001, y: 32}
+  m_Pivot: {x: 1, y: 1}
 --- !u!222 &5110834471274929997
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2682,62 +2654,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3659618339222381022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3033128501809156032}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Highlighted
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 3344318601710430171}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 32968214684338216}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: OnFastForward
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1699772967034807063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2974,7 +2890,7 @@ MonoBehaviour:
   buttonAlignment: 0
   showUnusedButtons: 0
   buttons: []
-  buttonTemplate: {fileID: 2026717604986778660}
+  buttonTemplate: {fileID: 0}
   buttonTemplateHolder: {fileID: 4912877264987257346}
   buttonTemplateScrollbar: {fileID: 1410027911064253136}
   scrollbarEnabler: {fileID: 0}
@@ -4994,7 +4910,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 125852, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: m_Name
-      value: Dialogue Manager Variant
+      value: Dialogue Manager
       objectReference: {fileID: 0}
     - target: {fileID: 425660, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: m_LocalPosition.x

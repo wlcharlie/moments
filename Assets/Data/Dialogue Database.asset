@@ -11383,7 +11383,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image Right
-        value: Assets/Arts/Comics/Comic_LeftRight/CH01_SC04_Dog_Run.png
+        value: Assets/Arts/Comics/Comic_LeftRight/Comic_MRT_Door_Spirt.png
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image Left
@@ -11490,8 +11490,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 162.68085
-        y: 224.62564
+        x: 168
+        y: 228
         width: 160
         height: 30
     - id: 15
@@ -11569,8 +11569,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 163.99924
-        y: 278.5274
+        x: 168
+        y: 276
         width: 160
         height: 30
     - id: 16
@@ -11648,8 +11648,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 163.9992
-        y: 330.0611
+        x: 180
+        y: 324
         width: 160
         height: 30
     - id: 17
@@ -11727,8 +11727,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160.31818
-        y: 374.2329
+        x: 168
+        y: 384
         width: 160
         height: 30
     - id: 18
@@ -14483,11 +14483,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Delay(2)@2;
+        value: 'SetContinueMode(false);
 
-          StopConversation()@2;
+          Delay(1)@1;
 
-          ResumeConversation()@2;'
+          ResumeConversation()@1;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -14552,11 +14552,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Delay(2)@2;
+        value: 'SetContinueMode(false);
 
-          StopConversation()@2;
+          Delay(1)@1;
 
-          ResumeConversation()@2;'
+          ResumeConversation()@1;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -14912,6 +14912,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Sprite
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
       conversationID: 20
       isRoot: 0
       isGroup: 0
@@ -14933,8 +14937,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 252
-        y: 180
+        x: 276
+        y: 204
         width: 160
         height: 30
     - id: 5
@@ -14964,9 +14968,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Delay(2)@2;
+        value: 'SetContinueMode(false);
 
-          ResumeConversation()@2;'
+          Delay(1)@1;
+
+          ResumeConversation()@1;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -15226,7 +15232,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetContinueMode(false);
+
+          Delay(1)@1;
+
+          ResumeConversation()@1;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -15610,7 +15620,7 @@ MonoBehaviour:
     - id: 4
       fields:
       - title: Title
-        value: 
+        value: "\u53EA\u5269\u4E0B\u535A\u611B\u5EA7"
         type: 0
         typeString: CustomFieldType_Text
       - title: Description
@@ -15705,9 +15715,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Delay(2)@2;
+        value: 'SetContinueMode(false);
 
-          ResumeConversation()@2;'
+          Delay(1)@1;
+
+          ResumeConversation()@1;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -15973,7 +15985,13 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiAwkward);
+        value: 'SetPortrait(Mai, pic=MaiAwkward);
+
+          SetContinueMode(false);
+
+          Delay(1)@1;
+
+          ResumeConversation()@1;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -16038,7 +16056,13 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiHappy);
+        value: 'SetPortrait(Mai, pic=MaiHappy);
+
+          SetContinueMode(false);
+
+          Delay(1)@1;
+
+          ResumeConversation()@1;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -16447,7 +16471,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetContinueMode(false);
+
+          Delay(1)@1;
+
+          ResumeConversation()@1;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -16487,8 +16515,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 59
-        y: 255.06454
+        x: 132
+        y: 252
         width: 160
         height: 30
     - id: 7
@@ -16518,7 +16546,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetContinueMode(false);
+
+          Delay(1)@1;
+
+          ResumeConversation()@1;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -16861,7 +16893,13 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiAwkward);
+        value: 'SetPortrait(Mai, pic=MaiAwkward);
+
+          SetContinueMode(false);
+
+          Delay(1)@1;
+
+          ResumeConversation()@1;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -16926,7 +16964,13 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiUncomfortable);
+        value: 'SetPortrait(Mai, pic=MaiUncomfortable);
+
+          SetContinueMode(false);
+
+          Delay(1)@1;
+
+          ResumeConversation()@1;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
