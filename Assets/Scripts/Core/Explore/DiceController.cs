@@ -22,6 +22,15 @@ public class DiceController : MonoBehaviour
         StartCoroutine(RollCoroutine(result));
     }
 
+    /// <summary>
+    /// 擲出指定結果的骰子（用於強制移動）
+    /// </summary>
+    public void RollWithResult(int forcedResult)
+    {
+        int result = Mathf.Clamp(forcedResult, 1, 6);
+        StartCoroutine(RollCoroutine(result));
+    }
+
     private IEnumerator RollCoroutine(int result)
     {
         diceVisual.SetActive(true);

@@ -28,6 +28,9 @@ public class ExploreMapController : MonoBehaviour
     [SerializeField] private float lineCurvature = 0.3f;
     [SerializeField] private float lineWidth = 0.1f;
 
+    [Header("標記設定")]
+    [SerializeField] private Sprite markedDotSprite;
+
     [Header("編輯器預覽")]
     [SerializeField] private GameMode previewMode = GameMode.Story;
 
@@ -42,6 +45,55 @@ public class ExploreMapController : MonoBehaviour
     /// 取得所有生成的節點
     /// </summary>
     public IReadOnlyList<MapNode> Nodes => generatedNodes;
+
+    /// <summary>
+    /// 根據 ConversationTitle 查找節點
+    /// </summary>
+    public MapNode FindNodeByConversationTitle(string conversationTitle)
+    {
+        if (string.IsNullOrEmpty(conversationTitle)) return null;
+
+        foreach (MapNode node in generatedNodes)
+        {
+            if (node.ConversationTitle == conversationTitle)
+            {
+                return node;
+            }
+        }
+        return null;
+    }
+
+    /// <summary>
+    /// 標記指定 ConversationTitle 的節點
+    /// </summary>
+    public MapNode MarkNodeByConversationTitle(string conversationTitle)
+    {
+        MapNode node = FindNodeByConversationTitle(conversationTitle);
+        if (node != null)
+        {
+            node.SetMarked(true);
+            Debug.Log($"[ExploreMapController] 已標記節點: {node.NodeName} ({conversationTitle})");
+        }
+        else
+        {
+            Debug.LogWarning($"[ExploreMapController] 找不到 ConversationTitle 為 {conversationTitle} 的節點");
+        }
+        return node;
+    }
+
+    /// <summary>
+    /// 清除所有節點的標記
+    /// </summary>
+    public void ClearAllMarks()
+    {
+        foreach (MapNode node in generatedNodes)
+        {
+            if (node.IsMarked)
+            {
+                node.SetMarked(false);
+            }
+        }
+    }
 
     /// <summary>
     /// 根據遊戲模式生成地圖
@@ -89,6 +141,7 @@ public class ExploreMapController : MonoBehaviour
             Vector2 position = CalculateNodePosition(nodeIndex);
             MapNode node = CreateNodeAt(position);
             node.Initialize(events[i], defaultDotSprite, lineCurvature, lineWidth);
+            node.SetMarkedSprite(markedDotSprite);
             generatedNodes.Add(node);
 
             // 第一個節點設為起點（如果沒有建立起點節點）
@@ -233,6 +286,7 @@ public class ExploreMapController : MonoBehaviour
             Vector2 position = CalculateNodePosition(nodeIndex);
             MapNode node = CreateNodeAt(position);
             node.Initialize(events[i], defaultDotSprite, lineCurvature, lineWidth);
+            node.SetMarkedSprite(markedDotSprite);
             generatedNodes.Add(node);
 
             if (previousNode != null)

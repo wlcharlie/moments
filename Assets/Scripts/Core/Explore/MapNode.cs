@@ -22,6 +22,10 @@ public class MapNode : MonoBehaviour
     [SerializeField] private float thumbnailScale = 0.5f;
     [SerializeField] private Vector2 thumbnailOffset = new(0, 1f);
 
+    [Header("標記設定")]
+    [SerializeField] private bool isMarked;
+    [SerializeField] private Sprite markedDotSprite;
+
     [Header("連結")]
     [SerializeField] private MapNode nextNode;
     [SerializeField] private float lineWidth = 0.1f;
@@ -38,6 +42,7 @@ public class MapNode : MonoBehaviour
     private LineRenderer lineRenderer;
     private Vector3 lastPosition;
     private Vector3 lastNextNodePosition;
+    private Sprite originalDotSprite;
 
     public string NodeName => nodeName;
     public Sprite Thumbnail => thumbnail;
@@ -46,6 +51,7 @@ public class MapNode : MonoBehaviour
     public bool IsEmpty => isEmpty;
     public bool IsStart => isStart;
     public bool IsEnd => isEnd;
+    public bool IsMarked => isMarked;
 
     /// <summary>
     /// 從 EventData 初始化節點
@@ -81,6 +87,57 @@ public class MapNode : MonoBehaviour
         isEnd = end;
 
         SetupVisuals();
+    }
+
+    /// <summary>
+    /// 設定標記用的 Dot 圖片
+    /// </summary>
+    public void SetMarkedSprite(Sprite sprite)
+    {
+        markedDotSprite = sprite;
+        Debug.Log($"[MapNode] {nodeName} 設定 markedDotSprite: {(sprite != null ? sprite.name : "null")}");
+    }
+
+    /// <summary>
+    /// 設定節點標記狀態
+    /// </summary>
+    public void SetMarked(bool marked)
+    {
+        if (isMarked == marked) return;
+
+        isMarked = marked;
+
+        Debug.Log($"[MapNode] {nodeName} SetMarked({marked}) - dotRenderer: {(dotRenderer != null ? "有" : "null")}, markedDotSprite: {(markedDotSprite != null ? markedDotSprite.name : "null")}");
+
+        if (dotRenderer == null)
+        {
+            Debug.LogWarning($"[MapNode] {nodeName} dotRenderer 為 null，無法切換圖片");
+            return;
+        }
+
+        if (marked)
+        {
+            if (markedDotSprite != null)
+            {
+                // 保存原始圖片並替換為標記圖片
+                if (originalDotSprite == null)
+                {
+                    originalDotSprite = dotSprite;
+                }
+                dotRenderer.sprite = markedDotSprite;
+                Debug.Log($"[MapNode] {nodeName} 已切換為標記圖片: {markedDotSprite.name}");
+            }
+            else
+            {
+                Debug.LogWarning($"[MapNode] {nodeName} markedDotSprite 為 null，無法顯示標記");
+            }
+        }
+        else if (originalDotSprite != null)
+        {
+            // 恢復原始圖片
+            dotRenderer.sprite = originalDotSprite;
+            Debug.Log($"[MapNode] {nodeName} 已恢復原始圖片");
+        }
     }
 
     /// <summary>
@@ -131,10 +188,17 @@ public class MapNode : MonoBehaviour
     {
         if (this == null) return;
 
-        // 更新 Dot
+        // 更新 Dot（如果有標記則使用標記圖片）
         if (dotRenderer != null)
         {
-            dotRenderer.sprite = dotSprite;
+            if (isMarked && markedDotSprite != null)
+            {
+                dotRenderer.sprite = markedDotSprite;
+            }
+            else
+            {
+                dotRenderer.sprite = dotSprite;
+            }
         }
 
         // 更新 Thumbnail

@@ -128,4 +128,30 @@ public class MapPlayer : MonoBehaviour
         currentNode = node;
         transform.position = node.transform.position;
     }
+
+    /// <summary>
+    /// 計算從當前節點到目標節點的步數
+    /// </summary>
+    /// <returns>步數，如果無法到達則返回 -1</returns>
+    public int CalculateStepsToNode(MapNode targetNode)
+    {
+        if (currentNode == null || targetNode == null) return -1;
+
+        MapNode node = currentNode;
+        int steps = 0;
+        int maxSteps = 100; // 防止無限迴圈
+
+        while (node != null && node != targetNode && steps < maxSteps)
+        {
+            node = node.NextNode;
+            steps++;
+        }
+
+        if (node == targetNode)
+        {
+            return steps;
+        }
+
+        return -1; // 無法到達
+    }
 }
