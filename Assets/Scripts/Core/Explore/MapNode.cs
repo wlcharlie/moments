@@ -10,6 +10,12 @@ public class MapNode : MonoBehaviour
     [Header("節點資訊")]
     [SerializeField] private string nodeName;
     [SerializeField] private Sprite thumbnail;
+    [Tooltip("空節點僅作為路徑點，不計入步數")]
+    [SerializeField] private bool isEmpty;
+    [Tooltip("起點節點")]
+    [SerializeField] private bool isStart;
+    [Tooltip("終點節點")]
+    [SerializeField] private bool isEnd;
 
     [Header("視覺設定")]
     [SerializeField] private Sprite dotSprite;
@@ -18,21 +24,52 @@ public class MapNode : MonoBehaviour
 
     [Header("連結")]
     [SerializeField] private MapNode nextNode;
+    [SerializeField] private float lineWidth = 0.1f;
+    [SerializeField] private Color lineColor = new(0.831f, 0.741f, 0.639f, 1f); // #D4BDA3
+    [Tooltip("曲線彎曲程度，0 = 直線")]
+    [SerializeField] private float curvature = 0.5f;
+    [SerializeField] private int curveSegments = 20;
 
     [Header("事件")]
     [SerializeField] private string conversationId;
 
     private SpriteRenderer dotRenderer;
     private SpriteRenderer thumbnailRenderer;
+    private LineRenderer lineRenderer;
+    private Vector3 lastPosition;
+    private Vector3 lastNextNodePosition;
 
     public string NodeName => nodeName;
     public Sprite Thumbnail => thumbnail;
     public MapNode NextNode => nextNode;
     public string ConversationId => conversationId;
+    public bool IsEmpty => isEmpty;
+    public bool IsStart => isStart;
+    public bool IsEnd => isEnd;
 
     private void OnEnable()
     {
         SetupVisuals();
+        SetupLine();
+        lastPosition = transform.position;
+        lastNextNodePosition = nextNode != null ? nextNode.transform.position : Vector3.zero;
+    }
+
+    private void Update()
+    {
+        // 檢查位置是否改變，更新連線
+        if (lineRenderer != null && nextNode != null)
+        {
+            bool positionChanged = transform.position != lastPosition;
+            bool nextNodeMoved = nextNode.transform.position != lastNextNodePosition;
+
+            if (positionChanged || nextNodeMoved)
+            {
+                UpdateLinePositions();
+                lastPosition = transform.position;
+                lastNextNodePosition = nextNode.transform.position;
+            }
+        }
     }
 
     private void OnValidate()
@@ -40,6 +77,7 @@ public class MapNode : MonoBehaviour
 #if UNITY_EDITOR
         // 延遲更新，避免在 OnValidate 中直接操作物件
         UnityEditor.EditorApplication.delayCall += UpdateVisuals;
+        UnityEditor.EditorApplication.delayCall += UpdateLine;
 #endif
     }
 
@@ -68,6 +106,118 @@ public class MapNode : MonoBehaviour
         }
     }
 
+    private void UpdateLine()
+    {
+        if (this == null) return;
+
+        if (lineRenderer != null)
+        {
+            lineRenderer.startWidth = lineWidth;
+            lineRenderer.endWidth = lineWidth;
+            lineRenderer.startColor = lineColor;
+            lineRenderer.endColor = lineColor;
+            UpdateLinePositions();
+        }
+
+        // 如果有 nextNode 但沒有 LineRenderer，建立它
+        if (nextNode != null && lineRenderer == null)
+        {
+            SetupLine();
+        }
+        // 如果沒有 nextNode 但有 LineRenderer，移除它
+        else if (nextNode == null && lineRenderer != null)
+        {
+            DestroyImmediate(lineRenderer.gameObject);
+            lineRenderer = null;
+        }
+    }
+
+    private void SetupLine()
+    {
+        if (nextNode == null) return;
+
+        Transform existing = transform.Find("Line");
+        if (existing != null)
+        {
+            lineRenderer = existing.GetComponent<LineRenderer>();
+        }
+        else
+        {
+            GameObject lineObj = new("Line");
+            lineObj.transform.SetParent(transform);
+            lineObj.transform.localPosition = Vector3.zero;
+            lineRenderer = lineObj.AddComponent<LineRenderer>();
+            lineRenderer.useWorldSpace = true;
+            lineRenderer.sortingOrder = 3;
+
+            // 使用預設的 Sprite 材質
+            lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        }
+
+        lineRenderer.startWidth = lineWidth;
+        lineRenderer.endWidth = lineWidth;
+        lineRenderer.startColor = lineColor;
+        lineRenderer.endColor = lineColor;
+        lineRenderer.positionCount = curveSegments + 1;
+
+        UpdateLinePositions();
+    }
+
+    private void UpdateLinePositions()
+    {
+        if (lineRenderer == null || nextNode == null) return;
+
+        Vector3 start = transform.position;
+        Vector3 end = nextNode.transform.position;
+
+        // 計算曲線控制點 (垂直於連線方向偏移)
+        Vector3 direction = (end - start).normalized;
+        Vector3 perpendicular = new(-direction.y, direction.x, 0);
+        Vector3 midPoint = (start + end) / 2f;
+        Vector3 controlPoint = midPoint + perpendicular * curvature;
+
+        // 使用二次貝茲曲線
+        lineRenderer.positionCount = curveSegments + 1;
+        for (int i = 0; i <= curveSegments; i++)
+        {
+            float t = i / (float)curveSegments;
+            Vector3 point = QuadraticBezier(start, controlPoint, end, t);
+            lineRenderer.SetPosition(i, point);
+        }
+    }
+
+    private Vector3 QuadraticBezier(Vector3 p0, Vector3 p1, Vector3 p2, float t)
+    {
+        // B(t) = (1-t)²P0 + 2(1-t)tP1 + t²P2
+        float u = 1 - t;
+        return u * u * p0 + 2 * u * t * p1 + t * t * p2;
+    }
+
+    /// <summary>
+    /// 取得從此節點到下一節點的曲線上的位置 (t: 0~1)
+    /// </summary>
+    public Vector3 GetPositionOnCurve(float t)
+    {
+        if (nextNode == null) return transform.position;
+
+        Vector3 start = transform.position;
+        Vector3 end = nextNode.transform.position;
+
+        // 如果沒有彎曲，直接線性插值
+        if (Mathf.Approximately(curvature, 0f))
+        {
+            return Vector3.Lerp(start, end, t);
+        }
+
+        // 計算曲線控制點
+        Vector3 direction = (end - start).normalized;
+        Vector3 perpendicular = new(-direction.y, direction.x, 0);
+        Vector3 midPoint = (start + end) / 2f;
+        Vector3 controlPoint = midPoint + perpendicular * curvature;
+
+        return QuadraticBezier(start, controlPoint, end, t);
+    }
+
     private void SetupVisuals()
     {
         // 建立節點底座 (SpotDot)
@@ -86,7 +236,7 @@ public class MapNode : MonoBehaviour
                 dotRenderer = dotObj.AddComponent<SpriteRenderer>();
             }
             dotRenderer.sprite = dotSprite;
-            dotRenderer.sortingOrder = 0;
+            dotRenderer.sortingOrder = 4;
         }
 
         // 建立縮圖
@@ -106,7 +256,7 @@ public class MapNode : MonoBehaviour
                 thumbnailRenderer = thumbObj.AddComponent<SpriteRenderer>();
             }
             thumbnailRenderer.sprite = thumbnail;
-            thumbnailRenderer.sortingOrder = 1;
+            thumbnailRenderer.sortingOrder = 5;
         }
     }
 

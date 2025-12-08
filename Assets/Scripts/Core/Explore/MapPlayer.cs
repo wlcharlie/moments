@@ -9,8 +9,8 @@ public class MapPlayer : MonoBehaviour
 {
     [Header("設定")]
     [SerializeField] private MapNode startNode;
-    [SerializeField] private float moveSpeed = 3f;
-    [SerializeField] private float nodeArriveThreshold = 0.01f;
+    [Tooltip("沿曲線移動的時間 (秒)")]
+    [SerializeField] private float moveDuration = 0.5f;
 
     [Header("狀態 (唯讀)")]
     [SerializeField] private MapNode currentNode;
@@ -67,25 +67,53 @@ public class MapPlayer : MonoBehaviour
     private IEnumerator MoveCoroutine(int steps)
     {
         IsMoving = true;
+        int stepsRemaining = steps;
 
-        for (int i = 0; i < steps; i++)
+        // 如果起點是 Start 節點，不計入步數，先移動離開
+        if (currentNode.IsStart)
         {
             MapNode targetNode = currentNode.NextNode;
+            if (targetNode != null)
+            {
+                yield return MoveAlongCurve(currentNode);
+                currentNode = targetNode;
+                OnNodePassed?.Invoke(currentNode);
+            }
+        }
 
-            if (targetNode == null)
+        while (stepsRemaining > 0)
+        {
+            // 到達終點節點，停止移動
+            if (currentNode.IsEnd)
             {
                 Debug.Log($"已到達終點: {currentNode.NodeName}");
                 break;
             }
 
-            // 移動到下一個節點
-            yield return MoveToPosition(targetNode.transform.position);
+            MapNode targetNode = currentNode.NextNode;
+
+            if (targetNode == null)
+            {
+                Debug.Log($"已到達路線盡頭: {currentNode.NodeName}");
+                break;
+            }
+
+            // 沿著曲線移動到下一個節點
+            yield return MoveAlongCurve(currentNode);
 
             currentNode = targetNode;
             OnNodePassed?.Invoke(currentNode);
 
-            // 每步之間稍微停頓
-            yield return new WaitForSeconds(0.1f);
+            // 只有非空節點才計入步數
+            if (!currentNode.IsEmpty)
+            {
+                stepsRemaining--;
+                // 每步之間稍微停頓 (只在還有步數時)
+                if (stepsRemaining > 0)
+                {
+                    yield return new WaitForSeconds(0.1f);
+                }
+            }
         }
 
         IsMoving = false;
@@ -93,19 +121,24 @@ public class MapPlayer : MonoBehaviour
         OnMoveComplete?.Invoke(currentNode);
     }
 
-    private IEnumerator MoveToPosition(Vector3 targetPosition)
+    private IEnumerator MoveAlongCurve(MapNode fromNode)
     {
-        while (Vector3.Distance(transform.position, targetPosition) > nodeArriveThreshold)
+        float elapsed = 0f;
+
+        while (elapsed < moveDuration)
         {
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                targetPosition,
-                moveSpeed * Time.deltaTime
-            );
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / moveDuration);
+
+            // 使用 ease-out 讓移動更自然
+            float easedT = 1f - (1f - t) * (1f - t);
+
+            transform.position = fromNode.GetPositionOnCurve(easedT);
             yield return null;
         }
 
-        transform.position = targetPosition;
+        // 確保到達終點
+        transform.position = fromNode.GetPositionOnCurve(1f);
     }
 
     /// <summary>
