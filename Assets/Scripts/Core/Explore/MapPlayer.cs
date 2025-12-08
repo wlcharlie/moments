@@ -8,7 +8,6 @@ using UnityEngine;
 public class MapPlayer : MonoBehaviour
 {
     [Header("設定")]
-    [SerializeField] private MapNode startNode;
     [Tooltip("沿曲線移動的時間 (秒)")]
     [SerializeField] private float moveDuration = 0.5f;
 
@@ -27,16 +26,6 @@ public class MapPlayer : MonoBehaviour
     /// 每經過一個節點時觸發
     /// </summary>
     public event Action<MapNode> OnNodePassed;
-
-    private void Start()
-    {
-        // 初始化位置到起始節點
-        if (startNode != null)
-        {
-            currentNode = startNode;
-            transform.position = startNode.transform.position;
-        }
-    }
 
     /// <summary>
     /// 移動指定步數
@@ -69,24 +58,14 @@ public class MapPlayer : MonoBehaviour
         IsMoving = true;
         int stepsRemaining = steps;
 
-        // 如果起點是 Start 節點，不計入步數，先移動離開
-        if (currentNode.IsStart)
-        {
-            MapNode targetNode = currentNode.NextNode;
-            if (targetNode != null)
-            {
-                yield return MoveAlongCurve(currentNode);
-                currentNode = targetNode;
-                OnNodePassed?.Invoke(currentNode);
-            }
-        }
+        Debug.Log($"[MapPlayer] 開始移動，步數: {steps}");
 
         while (stepsRemaining > 0)
         {
             // 到達終點節點，停止移動
             if (currentNode.IsEnd)
             {
-                Debug.Log($"已到達終點: {currentNode.NodeName}");
+                Debug.Log($"[MapPlayer] 已到達終點: {currentNode.NodeName}");
                 break;
             }
 
@@ -94,7 +73,7 @@ public class MapPlayer : MonoBehaviour
 
             if (targetNode == null)
             {
-                Debug.Log($"已到達路線盡頭: {currentNode.NodeName}");
+                Debug.Log($"[MapPlayer] 已到達路線盡頭: {currentNode.NodeName}");
                 break;
             }
 
@@ -102,22 +81,20 @@ public class MapPlayer : MonoBehaviour
             yield return MoveAlongCurve(currentNode);
 
             currentNode = targetNode;
+            stepsRemaining--;
             OnNodePassed?.Invoke(currentNode);
 
-            // 只有非空節點才計入步數
-            if (!currentNode.IsEmpty)
+            Debug.Log($"[MapPlayer] 到達 {currentNode.NodeName}，剩餘步數: {stepsRemaining}");
+
+            // 每步之間稍微停頓 (只在還有步數時)
+            if (stepsRemaining > 0)
             {
-                stepsRemaining--;
-                // 每步之間稍微停頓 (只在還有步數時)
-                if (stepsRemaining > 0)
-                {
-                    yield return new WaitForSeconds(0.1f);
-                }
+                yield return new WaitForSeconds(0.1f);
             }
         }
 
         IsMoving = false;
-        Debug.Log($"到達節點: {currentNode.NodeName}");
+        Debug.Log($"[MapPlayer] 移動完成，最終節點: {currentNode.NodeName}");
         OnMoveComplete?.Invoke(currentNode);
     }
 

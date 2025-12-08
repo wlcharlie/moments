@@ -1,18 +1,25 @@
-using System.Collections.Generic;
 using PixelCrushers.DialogueSystem;
 using UnityEngine;
-
 
 public class ExploreGameManager : MonoBehaviour
 {
     [Header("骰子")]
     [SerializeField] private DiceController diceController;
 
-    [Header("地圖移動")]
+    [Header("地圖")]
+    [SerializeField] private ExploreMapController mapController;
     [SerializeField] private MapPlayer mapPlayer;
 
-    private readonly List<string> storyModeConversationIds = new() { "COMM_MRT_02", "COMM_MART_02" };
-    private readonly List<string> eventModeConversationIds = new() { "COMM_MRT_02", "COMM_MART_02" };
+    [Header("模式設定")]
+    [Tooltip("勾選後使用下方指定的模式，否則使用 GameManager 的模式")]
+    [SerializeField] private bool useOverrideMode;
+    [SerializeField] private GameMode overrideMode = GameMode.Story;
+
+    /// <summary>
+    /// 取得當前使用的遊戲模式（優先使用 GameManager，若設定 override 則使用指定模式）
+    /// </summary>
+    private GameMode CurrentGameMode =>
+        useOverrideMode ? overrideMode : GameManager.Instance?.CurrentMode ?? overrideMode;
 
     // 特定流程表
     // Key: 存檔中記錄的對話, Value: 小遊戲結束後要進入的對話
@@ -32,6 +39,33 @@ public class ExploreGameManager : MonoBehaviour
         {
             mapPlayer.OnMoveComplete += HandleMoveComplete;
         }
+
+        // 根據當前模式生成地圖
+        if (mapController == null)
+        {
+            Debug.LogError("[ExploreGameManager] mapController 未設定");
+            return;
+        }
+
+        GameMode mode = CurrentGameMode;
+        Debug.Log($"[ExploreGameManager] 開始生成地圖，模式: {mode} (useOverride: {useOverrideMode})");
+
+        MapNode startNode = mapController.GenerateMap(mode);
+
+        if (startNode == null)
+        {
+            Debug.LogError("[ExploreGameManager] GenerateMap 返回 null，地圖生成失敗");
+            return;
+        }
+
+        if (mapPlayer == null)
+        {
+            Debug.LogError("[ExploreGameManager] mapPlayer 未設定");
+            return;
+        }
+
+        mapPlayer.TeleportToNode(startNode);
+        Debug.Log($"[ExploreGameManager] 玩家已傳送到起點: {startNode.NodeName}, 位置: {startNode.transform.position}");
     }
 
     void OnDestroy()
@@ -51,69 +85,30 @@ public class ExploreGameManager : MonoBehaviour
     {
         Debug.Log($"骰子結果: {result}");
 
-        // 如果有 MapPlayer，先移動玩家
         if (mapPlayer != null)
         {
             mapPlayer.MoveSteps(result);
-            return; // 等待移動完成後再處理對話
         }
-
-        // 沒有 MapPlayer 時，直接使用原本邏輯
-        StartConversationFromResult(result);
     }
 
     private void HandleMoveComplete(MapNode arrivedNode)
     {
         Debug.Log($"玩家到達節點: {arrivedNode.NodeName}");
 
-        // 優先使用節點上設定的對話
-        if (!string.IsNullOrEmpty(arrivedNode.ConversationId))
+        if (!string.IsNullOrEmpty(arrivedNode.ConversationTitle))
         {
-            StartConversation(arrivedNode.ConversationId);
-            return;
+            StartConversation(arrivedNode.ConversationTitle);
         }
-
-        // 沒有設定對話時，使用原本的邏輯
-        StartConversationFromResult(1);
     }
 
-    private void StartConversationFromResult(int result)
+    private void StartConversation(string conversationTitle)
     {
-
-        return; // Temporary disable conversation starting
-        string conversationId;
-
-        // 檢查 flowConversationMap 是否有對應的對話
-        DialogueData dialogueData = PersistentDataManager.Instance?.LoadData<DialogueData>("dialogue");
-        string mainStory = dialogueData?.GetValue("mainStory");
-
-        if (!string.IsNullOrEmpty(mainStory) && flowConversationMap.TryGetValue(mainStory, out string mappedConversation))
-        {
-            // 使用 flowConversationMap 中對應的對話
-            conversationId = mappedConversation;
-            Debug.Log($"使用 flowConversationMap: {mainStory} -> {conversationId}");
-        }
-        else
-        {
-            // 使用原本的隨機對話邏輯
-            List<string> conversationIds = GameManager.Instance.CurrentMode == GameMode.Story
-                ? storyModeConversationIds
-                : eventModeConversationIds;
-
-            int index = (result - 1) % conversationIds.Count;
-            conversationId = conversationIds[index];
-            Debug.Log($"模式: {GameManager.Instance.CurrentMode}, 對話: {conversationId}");
-        }
-
-        StartConversation(conversationId);
-    }
-
-    private void StartConversation(string conversationId)
-    {
+        Debug.Log($"開始對話: {conversationTitle}");
+        return;
         TransitionManager.Instance.LoadSceneWithTransition("MainStoryScene", TransitionType.Cover, onLoadDone: () =>
         {
             DialogueManager.StopConversation();
-            DialogueManager.StartConversation(conversationId);
+            DialogueManager.StartConversation(conversationTitle);
         });
     }
 }

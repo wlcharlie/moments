@@ -31,7 +31,7 @@ public class MapNode : MonoBehaviour
     [SerializeField] private int curveSegments = 20;
 
     [Header("事件")]
-    [SerializeField] private string conversationId;
+    [SerializeField] private string conversationTitle;
 
     private SpriteRenderer dotRenderer;
     private SpriteRenderer thumbnailRenderer;
@@ -42,10 +42,56 @@ public class MapNode : MonoBehaviour
     public string NodeName => nodeName;
     public Sprite Thumbnail => thumbnail;
     public MapNode NextNode => nextNode;
-    public string ConversationId => conversationId;
+    public string ConversationTitle => conversationTitle;
     public bool IsEmpty => isEmpty;
     public bool IsStart => isStart;
     public bool IsEnd => isEnd;
+
+    /// <summary>
+    /// 從 EventData 初始化節點
+    /// </summary>
+    public void Initialize(EventData eventData, Sprite defaultDotSprite, float lineCurvature = 0.5f, float lineThickness = 0.1f)
+    {
+        nodeName = eventData.name;
+        thumbnail = eventData.thumbnail;
+        conversationTitle = eventData.conversationTitle;
+        dotSprite = defaultDotSprite;
+        curvature = lineCurvature;
+        lineWidth = lineThickness;
+        isEmpty = false;
+        isStart = false;
+        isEnd = false;
+
+        SetupVisuals();
+    }
+
+    /// <summary>
+    /// 初始化為空節點 (起點/終點/路徑點)
+    /// </summary>
+    public void InitializeEmpty(string name, Sprite defaultDotSprite, bool start = false, bool end = false, float lineCurvature = 0.5f, float lineThickness = 0.1f)
+    {
+        nodeName = name;
+        thumbnail = null;
+        conversationTitle = null;
+        dotSprite = defaultDotSprite;
+        curvature = lineCurvature;
+        lineWidth = lineThickness;
+        isEmpty = !start && !end; // 起點終點不算空節點
+        isStart = start;
+        isEnd = end;
+
+        SetupVisuals();
+    }
+
+    /// <summary>
+    /// 設定下一個節點
+    /// </summary>
+    public void SetNextNode(MapNode node)
+    {
+        nextNode = node;
+        SetupLine();
+        lastNextNodePosition = nextNode != null ? nextNode.transform.position : Vector3.zero;
+    }
 
     private void OnEnable()
     {
