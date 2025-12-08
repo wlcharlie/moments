@@ -96,7 +96,8 @@ public class DialogueEventManager : ScriptableObject
     /// </summary>
     /// <param name="gameObjectName">GameObject 的名稱（例如 "ComicImage", "ComicImageLeft", "ComicImageRight"）</param>
     /// <param name="comicImagePath">Comic Image 的路徑（Addressables 路徑），如果為 null 或空字串則清空 sprite</param>
-    private static void SetComicImage(string gameObjectName, string comicImagePath)
+    /// <param name="skipFade">是否跳過淡入效果，直接顯示</param>
+    public static void SetComicImage(string gameObjectName, string comicImagePath, bool skipFade = false)
     {
         Debug.Log($"SetComicImage: 處理 {gameObjectName}，路徑={comicImagePath}");
 
@@ -114,31 +115,51 @@ public class DialogueEventManager : ScriptableObject
             return;
         }
 
+        // 獲取 ComicImageFader 組件
+        ComicImageFader fader = comicObject.GetComponent<ComicImageFader>();
+
         if (!string.IsNullOrEmpty(comicImagePath))
         {
-            // 使用 Addressables 載入並設置新的 Comic Image
+            // 先嘗試作為完整路徑載入
             Addressables.LoadAssetAsync<Sprite>(comicImagePath).Completed += (AsyncOperationHandle<Sprite> handle) =>
             {
                 if (handle.Status == AsyncOperationStatus.Succeeded)
                 {
                     Sprite comicSprite = handle.Result;
-                    Debug.Log($"更改 {gameObjectName} 為: {comicImagePath}");
-                    if (spriteRenderer != null)
-                    {
-                        spriteRenderer.sprite = comicSprite;
-                    }
+                    Debug.Log($"更改 {gameObjectName} 為: {comicImagePath} (跳過淡入: {skipFade})");
+                    ApplyComicSprite(spriteRenderer, fader, comicSprite, skipFade);
                 }
                 else
                 {
-                    Debug.LogWarning($"找不到漫畫圖片: {comicImagePath}");
+                    // 如果路徑載入失敗，嘗試通過名稱查找
+                    Debug.Log($"路徑載入失敗，嘗試通過名稱查找: {comicImagePath}");
+                    LoadSpriteByName(comicImagePath, (sprite) =>
+                    {
+                        if (sprite != null)
+                        {
+                            Debug.Log($"通過名稱找到 Sprite: {comicImagePath} (跳過淡入: {skipFade})");
+                            ApplyComicSprite(spriteRenderer, fader, sprite, skipFade);
+                        }
+                        else
+                        {
+                            Debug.LogWarning($"找不到漫畫圖片: {comicImagePath}（已嘗試路徑和名稱查找）");
+                        }
+                    });
                 }
             };
         }
         else
         {
             // 當 Comic Image field 為 null 或 empty 時，清空 sprite
-            Debug.Log($"清空 {gameObjectName}");
-            spriteRenderer.sprite = null;
+            Debug.Log($"清空 {gameObjectName} (跳過淡出: {skipFade})");
+            if (skipFade && fader != null)
+            {
+                fader.SetSpriteDirectly(null);
+            }
+            else
+            {
+                spriteRenderer.sprite = null;
+            }
         }
     }
 
@@ -222,6 +243,101 @@ public class DialogueEventManager : ScriptableObject
             // 當 Character Image field 為 null 或 empty 時，清空 sprite（角色退場）
             Debug.Log("清空角色圖片");
             spriteRenderer.sprite = null;
+        }
+    }
+
+    /// <summary>
+    /// 應用 Comic Sprite 到 SpriteRenderer
+    /// </summary>
+    private static void ApplyComicSprite(SpriteRenderer spriteRenderer, ComicImageFader fader, Sprite sprite, bool skipFade)
+    {
+        if (spriteRenderer != null)
+        {
+            if (skipFade && fader != null)
+            {
+                // 使用直接設置方法跳過淡入
+                fader.SetSpriteDirectly(sprite);
+            }
+            else
+            {
+                // 正常設置，會觸發淡入效果
+                spriteRenderer.sprite = sprite;
+            }
+        }
+    }
+
+    /// <summary>
+    /// 通過 Sprite 名稱查找並載入 Sprite
+    /// </summary>
+    private static void LoadSpriteByName(string spriteName, System.Action<Sprite> onComplete)
+    {
+        // 使用 Addressables 查找所有 Sprite 資源
+        var locationsHandle = Addressables.LoadResourceLocationsAsync("t:Sprite");
+        locationsHandle.Completed += (AsyncOperationHandle<System.Collections.Generic.IList<UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation>> handle) =>
+        {
+            if (handle.Status == AsyncOperationStatus.Succeeded && handle.Result != null && handle.Result.Count > 0)
+            {
+                // 遍歷所有位置，查找名稱匹配的 Sprite
+                int totalLocations = handle.Result.Count;
+                int completedCount = 0;
+                Sprite foundSprite = null;
+
+                foreach (var location in handle.Result)
+                {
+                    // 載入 Sprite 並檢查名稱
+                    Addressables.LoadAssetAsync<Sprite>(location).Completed += (AsyncOperationHandle<Sprite> spriteHandle) =>
+                    {
+                        completedCount++;
+                        
+                        if (spriteHandle.Status == AsyncOperationStatus.Succeeded && foundSprite == null)
+                        {
+                            Sprite sprite = spriteHandle.Result;
+                            if (sprite != null && sprite.name == spriteName)
+                            {
+                                foundSprite = sprite;
+                                onComplete?.Invoke(sprite);
+                                return;
+                            }
+                        }
+                        
+                        // 如果所有資源都檢查完畢且沒找到，嘗試使用 DialogueManager.LoadAsset
+                        if (completedCount >= totalLocations && foundSprite == null)
+                        {
+                            TryLoadSpriteByDialogueManager(spriteName, onComplete);
+                        }
+                    };
+                }
+            }
+            else
+            {
+                // 如果 Addressables 查找失敗，嘗試使用 DialogueManager.LoadAsset
+                TryLoadSpriteByDialogueManager(spriteName, onComplete);
+            }
+        };
+    }
+
+    /// <summary>
+    /// 嘗試使用 DialogueManager 載入 Sprite
+    /// </summary>
+    private static void TryLoadSpriteByDialogueManager(string spriteName, System.Action<Sprite> onComplete)
+    {
+        if (DialogueManager.instance != null)
+        {
+            DialogueManager.LoadAsset(spriteName, typeof(Sprite), (asset) =>
+            {
+                if (asset is Sprite sprite)
+                {
+                    onComplete?.Invoke(sprite);
+                }
+                else
+                {
+                    onComplete?.Invoke(null);
+                }
+            });
+        }
+        else
+        {
+            onComplete?.Invoke(null);
         }
     }
 

@@ -157,6 +157,105 @@ SetBackgroundColor(#FFFFFF80)
 
 ---
 
+### SetComicImage
+
+設置 Comic Image 並可選擇跳過淡入效果。
+
+**語法：**
+
+```
+SetComicImage(position, imagePath[, skipFade])
+```
+
+**參數：**
+
+| 參數        | 類型   | 必需 | 預設值 | 說明                                                                                    |
+| ----------- | ------ | ---- | ------ | --------------------------------------------------------------------------------------- |
+| `position`  | string | ✅   | -      | 位置：`"left"`（左側）、`"right"`（右側）、`"center"`（中央），或直接提供 GameObject 名稱 |
+| `imagePath` | string | ✅   | -      | Sprite 名稱（例如 `"CH01_SC04_Dog_Run_0"`）或 Addressables 路徑，空字串表示清空圖片      |
+| `skipFade`  | bool   | ❌   | `true` | 是否跳過淡入效果（`true`/`false`）                                                       |
+
+**位置選項說明：**
+
+- `"left"`：對應到 `ComicImageLeft` GameObject
+- `"right"`：對應到 `ComicImageRight` GameObject
+- `"center"` 或 `"centre"`：對應到 `ComicImage` GameObject
+- 也可以直接提供 GameObject 名稱，例如 `"ComicImageLeft"`
+
+**範例：**
+
+```
+// 使用 Sprite 名稱（推薦，不需要輸入完整路徑）
+SetComicImage(left, CH01_SC04_Dog_Run_0)
+SetComicImage(right, MRT_Door_Open_03_0)
+SetComicImage(center, panel_center)
+
+// 也可以使用完整 Addressables 路徑
+SetComicImage(left, Assets/Arts/Comics/panel_left.png)
+SetComicImage(right, Assets/Arts/Comics/panel_right.png)
+
+// 清空圖片
+SetComicImage(left, )  // 直接清空，不淡出
+SetComicImage(left, , false)  // 清空並使用淡出效果
+```
+
+**注意：**
+
+- 此命令預設跳過淡入效果（`skipFade` 預設為 `true`），適合需要連續顯示圖片的情況
+- `imagePath` 參數支援兩種格式：
+  - **Sprite 名稱**（推薦）：直接使用 Sprite 的名稱，例如 `"CH01_SC04_Dog_Run_0"`，系統會自動查找對應的 Sprite
+  - **完整路徑**：使用 Addressables 完整路徑，例如 `"Assets/Arts/Comics/panel_left.png"`
+- 如果 `imagePath` 為空字串，會清空對應位置的圖片
+- 如果 `skipFade` 設為 `false`，會使用正常的淡入淡出效果
+
+---
+
+### SkipComicFade
+
+跳過 Comic Image 的淡入/淡出效果。當圖片已經在對話欄位中設置好時，可以使用此命令來控制是否跳過淡入或淡出效果。
+
+**語法：**
+
+```
+SkipComicFade(position[, fadeType])
+```
+
+**參數：**
+
+| 參數       | 類型   | 必需 | 預設值  | 說明                                                                                    |
+| ---------- | ------ | ---- | ------- | --------------------------------------------------------------------------------------- |
+| `position` | string | ✅   | -       | 位置：`"left"`（左側）、`"right"`（右側）、`"center"`（中央），或直接提供 GameObject 名稱 |
+| `fadeType` | string | ❌   | `"both"` | 淡入淡出類型：`"in"`（只跳過淡入）、`"out"`（只跳過淡出）、`"both"`（跳過淡入和淡出）      |
+
+**使用場景：**
+
+當你在對話欄位中已經設置了 Comic Image（例如 "Comic Image Left"），但想要在 sequencer 中控制跳過淡入或淡出效果時使用。
+
+**範例：**
+
+```
+// 跳過下一次淡入和淡出（預設）
+SkipComicFade(left)
+
+// 只跳過淡入效果（圖片顯示時直接出現，不淡入）
+SkipComicFade(left, in)
+
+// 只跳過淡出效果（圖片清空時直接消失，不淡出）
+SkipComicFade(left, out)
+
+// 跳過淡入和淡出
+SkipComicFade(right, both)
+```
+
+**注意：**
+
+- 此命令只會影響**下一次** sprite 變更的淡入淡出效果
+- 如果圖片已經在對話欄位中設置好，在對話條目的 Sequence 中使用此命令即可
+- 使用 `SkipComicFade(left, in)` 後，當對話條目顯示時，圖片會直接出現而不淡入
+- 使用 `SkipComicFade(left, out)` 後，當圖片被清空時，會直接消失而不淡出
+
+---
+
 ## 音效
 
 ### FMODPlay
@@ -381,6 +480,8 @@ CameraShake(0.5, 0.3)@2.5
 
 ## 更新記錄
 
+- **2024-XX-XX**：新增 `SkipComicFade` 命令，支援跳過 Comic Image 的淡入淡出效果
+- **2024-XX-XX**：新增 `SetComicImage` 命令，支援跳過淡入效果
 - **2024-XX-XX**：新增 `SwitchScene` 轉場類型參數支援
 - **2024-XX-XX**：新增 `ShowSceneDetail` 的 `left-center-up` 位置選項
 - **2024-XX-XX**：建立初始文件

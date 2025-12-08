@@ -8,6 +8,7 @@ public class ComicImageFader : MonoBehaviour
 
     private Sprite previousSprite;
     private Coroutine currentFadeCoroutine;
+    private bool skipNextFade = false;
 
     void Start()
     {
@@ -39,6 +40,22 @@ public class ComicImageFader : MonoBehaviour
         // Stop any ongoing fade
         if (currentFadeCoroutine != null)
             StopCoroutine(currentFadeCoroutine);
+
+        // Check if we should skip fade for this change
+        if (skipNextFade)
+        {
+            skipNextFade = false;
+            // Directly set alpha to 1 if showing an image, or 0 if clearing
+            if (newSprite != null)
+            {
+                SetAlpha(1f);
+            }
+            else
+            {
+                SetAlpha(0f);
+            }
+            return;
+        }
 
         if (oldSprite == null && newSprite != null)
         {
@@ -120,5 +137,33 @@ public class ComicImageFader : MonoBehaviour
         if (currentFadeCoroutine != null)
             StopCoroutine(currentFadeCoroutine);
         currentFadeCoroutine = StartCoroutine(FadeOut());
+    }
+
+    /// <summary>
+    /// 設置下一個 sprite 變更時跳過淡入淡出效果
+    /// </summary>
+    public void SkipNextFade()
+    {
+        skipNextFade = true;
+    }
+
+    /// <summary>
+    /// 直接設置 sprite 並跳過淡入效果（立即顯示）
+    /// </summary>
+    public void SetSpriteDirectly(Sprite sprite)
+    {
+        if (currentFadeCoroutine != null)
+            StopCoroutine(currentFadeCoroutine);
+        
+        spriteRenderer.sprite = sprite;
+        if (sprite != null)
+        {
+            SetAlpha(1f);
+        }
+        else
+        {
+            SetAlpha(0f);
+        }
+        previousSprite = sprite;
     }
 }
