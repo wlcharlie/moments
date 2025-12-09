@@ -10836,7 +10836,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Delay(1)@0;
+        value: 'SetDialoguePanel(false)@0;
+
+          Delay(1)@0;
 
           SwitchScene(ExploreScene)@1;
 
