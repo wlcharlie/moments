@@ -9569,8 +9569,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.7635005
+    canvasScrollPosition: {x: 0, y: 358.72067}
+    canvasZoom: 0.42949995
   - id: 9
     fields:
     - title: Title
@@ -10734,8 +10734,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 372
-        y: 180
+        x: 348
+        y: 168
         width: 160
         height: 30
     - id: 6
@@ -10795,7 +10795,7 @@ MonoBehaviour:
       - originConversationID: 27
         originDialogueID: 6
         destinationConversationID: 27
-        destinationDialogueID: 14
+        destinationDialogueID: 7
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -10805,8 +10805,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 165.67899
-        y: 373.72922
+        x: 180
+        y: 384
         width: 160
         height: 30
     - id: 7
@@ -10836,7 +10836,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SwitchScene(ExploreScene);StopConversation();
+        value: 'Delay(1)@0;
+
+          SwitchScene(ExploreScene)@1;
+
+          StopConversation()@1.1;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -10870,8 +10874,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 382.73816
-        y: 424.18542
+        x: 180
+        y: 432
         width: 160
         height: 30
     - id: 8
@@ -11300,80 +11304,9 @@ MonoBehaviour:
         y: 307.79382
         width: 160
         height: 30
-    - id: 14
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: SetDialoguePanel(false, immediate)@0;Continue()@0.65;
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: ja
-        value: 
-        type: 4
-        typeString: CustomFieldType_Localization
-      - title: en
-        value: 
-        type: 4
-        typeString: CustomFieldType_Localization
-      - title: Background Image
-        value: 
-        type: 0
-        typeString: CustomFieldType_Sprite
-      - title: Comic Image
-        value: Assets/Arts/Comics/CH01_SC04/Location_Hint.png
-        type: 0
-        typeString: CustomFieldType_Sprite
-      conversationID: 27
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 27
-        originDialogueID: 14
-        destinationConversationID: 27
-        destinationDialogueID: 7
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 167
-        y: 423.72922
-        width: 160
-        height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.57549983
+    canvasScrollPosition: {x: 123.666, y: 127.10117}
+    canvasZoom: 0.80200064
   - id: 10
     fields:
     - title: Title
@@ -15203,7 +15136,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiBlank);
+        value: 'SetDialoguePanel(true);
+
+          SetPortrait(Mai, pic=MaiBlank)@1;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -15463,8 +15398,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.90050143
+    canvasScrollPosition: {x: 10.194056, y: 13.614632}
+    canvasZoom: 0.6770016
   - id: 18
     fields:
     - title: Title
@@ -15873,7 +15808,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetDialoguePanel(true);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -16209,8 +16144,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 198.62766}
-    canvasZoom: 0.6495003
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.36650047
   - id: 16
     fields:
     - title: Title
