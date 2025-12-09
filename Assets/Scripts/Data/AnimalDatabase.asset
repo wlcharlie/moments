@@ -17,22 +17,22 @@ MonoBehaviour:
     animalName: Bear
     mainSprite: {fileID: 5418251923771880902, guid: 22d7c02d6b2e04e32837dcece12ea3c5, type: 3}
     captureSprites: []
-    collected: 1
-    seen: 1
+    collected: 0
+    seen: 0
     description: 
   - no: 002
     animalName: Capybara
     mainSprite: {fileID: -9032679894510146780, guid: 22d7c02d6b2e04e32837dcece12ea3c5, type: 3}
     captureSprites: []
-    collected: 1
-    seen: 1
+    collected: 0
+    seen: 0
     description: 
   - no: 003
     animalName: Chier
     mainSprite: {fileID: -572441457409238538, guid: 22d7c02d6b2e04e32837dcece12ea3c5, type: 3}
     captureSprites: []
     collected: 0
-    seen: 1
+    seen: 0
     description: 
   - no: 004
     animalName: Collie
@@ -66,8 +66,8 @@ MonoBehaviour:
     animalName: Golden
     mainSprite: {fileID: 6319160278514444104, guid: 22d7c02d6b2e04e32837dcece12ea3c5, type: 3}
     captureSprites: []
-    collected: 0
-    seen: 0
+    collected: 1
+    seen: 1
     description: 
   - no: 009
     animalName: Hamusta

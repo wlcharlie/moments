@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 87f8e353fcec745689ea9221aea55eb3
+guid: ed7ceaf9d4ddf4a24a555fc07ff5d45a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3258685852930623476
-    second: penquin_0
-  - first:
-      213: -7655751420855066036
-    second: Penquin_0
+      213: 5063264526325634978
+    second: Golden_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Penquin_0
+      name: Golden_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c42ed3705ae41c590800000000000000
-      internalID: -7655751420855066036
+      spriteID: 2a7d977a244544640800000000000000
+      internalID: 5063264526325634978
       vertices: []
       indices: 
       edges: []
@@ -141,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: cf92bdde53e1a467facb123cd2ec85d2
+    spriteID: 823f9e4008e4943f4b73d5a275e69ab2
     internalID: 0
     vertices: []
     indices: 
@@ -151,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Penquin_0: -7655751420855066036
-      penquin_0: 3258685852930623476
+      Golden_0: 5063264526325634978
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

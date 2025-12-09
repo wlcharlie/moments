@@ -5878,7 +5878,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 47.21666, y: 59.68086}
+    canvasScrollPosition: {x: 238.55182, y: 204.82326}
     canvasZoom: 0.72050023
   - id: 22
     fields:
@@ -12260,7 +12260,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u554A..\u5C3E\u5DF4...\n\u5C3E\u5DF4\u6C92\u6709\u8D95\u4E0A\u6377\u904B"
+        value: "\u554A..\u5C3E\u5DF4\uFF01\n\u5C3E\u5DF4\u6C92\u6709\u8D95\u4E0A\u6377\u904B"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -12312,8 +12312,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 172.58806
-        y: 393.8648
+        x: 192
+        y: 396
         width: 160
         height: 30
     - id: 18
@@ -12633,8 +12633,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 29.237976}
-    canvasZoom: 0.48150027
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.4790005
   - id: 11
     fields:
     - title: Title
@@ -16209,8 +16209,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 212.3401}
-    canvasZoom: 0.6720003
+    canvasScrollPosition: {x: 0, y: 198.62766}
+    canvasZoom: 0.6495003
   - id: 16
     fields:
     - title: Title
