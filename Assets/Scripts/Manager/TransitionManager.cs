@@ -343,7 +343,7 @@ public class TransitionManager : MonoBehaviour
         if (useFadeOut)
         {
             // 執行淡出效果
-            yield return StartCoroutine(FadeOutSceneCanvasGroups(scene));
+            yield return StartCoroutine(FadeOutSceneGameObjects(scene));
         }
 
         // 卸載場景
@@ -360,18 +360,19 @@ public class TransitionManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 對場景中所有 CanvasGroup 執行淡出效果
+    /// 對場景中所有 CanvasGroup 和 SpriteRenderer 執行淡出效果
     /// </summary>
-    private IEnumerator FadeOutSceneCanvasGroups(Scene scene)
+    private IEnumerator FadeOutSceneGameObjects(Scene scene)
     {
         if (!scene.IsValid())
         {
             yield break;
         }
 
-        // 取得場景中所有根物件的 CanvasGroup
+        // 取得場景中所有根物件的 CanvasGroup 和 SpriteRenderer
         GameObject[] rootObjects = scene.GetRootGameObjects();
         System.Collections.Generic.List<CanvasGroup> canvasGroups = new System.Collections.Generic.List<CanvasGroup>();
+        System.Collections.Generic.List<SpriteRenderer> spriteRenderers = new System.Collections.Generic.List<SpriteRenderer>();
 
         foreach (GameObject root in rootObjects)
         {
@@ -380,10 +381,14 @@ public class TransitionManager : MonoBehaviour
             {
                 canvasGroups.Add(cg);
             }
+
+            // 收集根物件及其所有子物件的 SpriteRenderer
+            SpriteRenderer[] renderers = root.GetComponentsInChildren<SpriteRenderer>(true);
+            spriteRenderers.AddRange(renderers);
         }
 
-        // 如果沒有 CanvasGroup，直接結束
-        if (canvasGroups.Count == 0)
+        // 如果沒有任何可淡出的物件，直接結束
+        if (canvasGroups.Count == 0 && spriteRenderers.Count == 0)
         {
             yield break;
         }
@@ -404,6 +409,16 @@ public class TransitionManager : MonoBehaviour
                 }
             }
 
+            foreach (SpriteRenderer sr in spriteRenderers)
+            {
+                if (sr != null)
+                {
+                    Color color = sr.color;
+                    color.a = alpha;
+                    sr.color = color;
+                }
+            }
+
             yield return null;
         }
 
@@ -413,6 +428,16 @@ public class TransitionManager : MonoBehaviour
             if (cg != null)
             {
                 cg.alpha = 0f;
+            }
+        }
+
+        foreach (SpriteRenderer sr in spriteRenderers)
+        {
+            if (sr != null)
+            {
+                Color color = sr.color;
+                color.a = 0f;
+                sr.color = color;
             }
         }
     }

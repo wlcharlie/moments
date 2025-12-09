@@ -4388,15 +4388,30 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: "\u7E7C\u7E8C\u52A0\u6CB9"
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: 
+        value: "\u7E7C\u7E8C\u52A0\u6CB9"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetContinueMode(false)@0;
+
+          Delay(1)@0;
+
+          SwitchScene(WorkRoutineScene,
+          Additive, FadeIn)@1;
+
+          SetDialoguePanel(false)@1;
+
+          UnloadScene(WorkRoutineScene)@6;
+
+          Continue()@7;
+
+          SetContinueMode(original)@7;
+
+          SetDialoguePanel(true)@7'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -4415,6 +4430,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Sprite
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
       conversationID: 6
       isRoot: 0
       isGroup: 0
@@ -4425,7 +4444,7 @@ MonoBehaviour:
       outgoingLinks:
       - originConversationID: 6
         originDialogueID: 8
-        destinationConversationID: 22
+        destinationConversationID: 7
         destinationDialogueID: 0
         isConnector: 0
         priority: 2
@@ -4436,13 +4455,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 371
-        y: 81
+        x: 396
+        y: 72
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 74.57483, y: 0}
-    canvasZoom: 0.9004996
+    canvasScrollPosition: {x: 65.02116, y: 41.50803}
+    canvasZoom: 0.757499
   - id: 7
     fields:
     - title: Title
@@ -6113,8 +6132,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 104}
-    canvasZoom: 1
+    canvasScrollPosition: {x: 28.859396, y: 24.23455}
+    canvasZoom: 0.45950013
   - id: 8
     fields:
     - title: Title
