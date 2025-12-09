@@ -3278,7 +3278,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiBlank);
+        value: SetPortrait(Mai, pic=11);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
