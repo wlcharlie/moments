@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Comic_Beigo_Reveal
+  serializedVersion: 7
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves: []
+  m_PositionCurves: []
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves:
+  - serializedVersion: 2
+    curve:
+    - time: 0
+      value: {fileID: 3896742546897518701, guid: 555f00c5aea8348a9a937e4125339edc, type: 3}
+    - time: 0.6333333
+      value: {fileID: 5098179830074882556, guid: 525345ecf838c4d1588dddbee9a37b7d, type: 3}
+    - time: 1.2666667
+      value: {fileID: 1529718645774882686, guid: 9387f0f2315ef4a22bd57b7d96c3ba32, type: 3}
+    - time: 1.8666667
+      value: {fileID: -9027780691064715835, guid: d8084cb8aa1d34747bea6d0bed2585db, type: 3}
+    - time: 2.5
+      value: {fileID: -9027780691064715835, guid: d8084cb8aa1d34747bea6d0bed2585db, type: 3}
+    attribute: m_Sprite
+    path: 
+    classID: 212
+    script: {fileID: 0}
+    flags: 2
+  m_SampleRate: 30
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - serializedVersion: 2
+      path: 0
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    pptrCurveMapping:
+    - {fileID: 3896742546897518701, guid: 555f00c5aea8348a9a937e4125339edc, type: 3}
+    - {fileID: 5098179830074882556, guid: 525345ecf838c4d1588dddbee9a37b7d, type: 3}
+    - {fileID: 1529718645774882686, guid: 9387f0f2315ef4a22bd57b7d96c3ba32, type: 3}
+    - {fileID: -9027780691064715835, guid: d8084cb8aa1d34747bea6d0bed2585db, type: 3}
+    - {fileID: -9027780691064715835, guid: d8084cb8aa1d34747bea6d0bed2585db, type: 3}
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 2.5333333
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves: []
+  m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events: []

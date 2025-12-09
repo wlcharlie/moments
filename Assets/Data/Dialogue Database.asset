@@ -7563,7 +7563,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiHesitate);
+        value: 'SetPortrait(Mai, pic=MaiHesitate);
+
+          SetActive(Comic_Beigo_Reveal,
+          true);
+
+          SetContinueMode(false);
+
+          SetContinueMode(true)@2;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -7603,7 +7610,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 192
+        x: 168
         y: 156
         width: 160
         height: 30
@@ -7634,7 +7641,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Beigo, pic=2);
+        value: SetPortrait(Beigo, pic=2);SetActive(Comic_Beigo_Reveal, false)
         type: 0
         typeString: CustomFieldType_Text
       - title: ja

@@ -1664,7 +1664,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 155.79007
+        x: 157
         y: 233.23657
         width: 160
         height: 30
@@ -1807,7 +1807,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 155.79007
-        y: 336.78815
+        y: 337.99808
         width: 160
         height: 30
     - id: 6
@@ -1877,8 +1877,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 157
-        y: 392.91595
+        x: 158.20993
+        y: 394.12585
         width: 160
         height: 30
     - id: 7
@@ -2303,7 +2303,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 379.00302
+        x: 380.21295
         y: 279.0015
         width: 160
         height: 30
@@ -2992,7 +2992,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 95
-        y: 289
+        y: 287.6894
         width: 160
         height: 30
     - id: 6
@@ -3940,7 +3940,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 160
-        y: 80
+        y: 81.29199
         width: 160
         height: 30
     - id: 2
@@ -4041,7 +4041,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiUncomfortable);
+        value: SetPortrait(Mai, pic=11);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -4325,7 +4325,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetBackgroundColor(#808080);SetPortrait(Mai, pic=10);
+        value: 'SetBackgroundColor(#808080);SetPortrait(Mai, pic=10);UpdateStatus(Heart,
+          -1)@0.5; '
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -4366,7 +4367,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 371
-        y: 29
+        y: 27.708038
         width: 160
         height: 30
     - id: 8
@@ -4406,6 +4407,8 @@ MonoBehaviour:
           SetDialoguePanel(false)@1;
 
           UnloadScene(WorkRoutineScene)@6;
+
+          SetBackgroundColor(#FFFFFF)@6;
 
           Continue()@7;
 
@@ -4460,8 +4463,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 65.02116, y: 41.50803}
-    canvasZoom: 0.757499
+    canvasScrollPosition: {x: 0, y: 73.29199}
+    canvasZoom: 0.77399915
   - id: 7
     fields:
     - title: Title
@@ -4819,7 +4822,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiPuzzled); CharacterShake(start, 0.1, 2, 0);
+        value: ' SetPortrait(Mai, pic=8); CharacterShake(start, 0.1, 2, 0);
+
+          SetDialoguePanel(false,
+          immediate)@0;
+
+          SetDialoguePanel(true, immediate)@0.5;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -4863,8 +4871,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 104.98746
-        y: 450.00385
+        x: 103.59953
+        y: 447.22803
         width: 160
         height: 30
     - id: 6
@@ -4894,7 +4902,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetPortrait(Mai, pic=MaiPuzzled); '
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -5010,7 +5018,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 353.05182
-        y: 139.7676
+        y: 138.37967
         width: 160
         height: 30
     - id: 10
@@ -5080,7 +5088,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 354.33966
+        x: 352.95172
         y: 305.9128
         width: 160
         height: 30
@@ -5152,7 +5160,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 354.06915
-        y: 370.09976
+        y: 368.71182
         width: 160
         height: 30
     - id: 12
@@ -5223,7 +5231,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 355.35693
-        y: 437.8588
+        y: 436.47092
         width: 160
         height: 30
     - id: 13
@@ -5466,7 +5474,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetPortrait(Mai, pic=4);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -5507,7 +5515,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 564.0518
-        y: 211.43532
+        y: 212.82326
         width: 160
         height: 30
     - id: 17
@@ -5648,8 +5656,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 600
-        y: 288
+        x: 570.85364
+        y: 324.08606
         width: 160
         height: 30
     - id: 19
@@ -6274,7 +6282,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u56DE\u5230\u5BB6"
+        value: "<i>\u56DE\u5230\u5BB6</i>"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -6349,7 +6357,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiBeigoNormal);
+        value: SetPortrait(Mai, pic=14);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -6691,8 +6699,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.5545033
+    canvasScrollPosition: {x: 55.237717, y: 0}
+    canvasZoom: 1.1220036
   - id: 24
     fields:
     - title: Title
@@ -6806,7 +6814,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 180
+        x: 204
         y: 12
         width: 160
         height: 30
@@ -6837,8 +6845,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiNone);SetContinueMode(false);UnloadScene(CH01_SC03_BeigoSneakDoor,
-          false)@1;SetContinueMode(original)@2
+        value: 'SetPortrait(Mai, pic=MaiNone);
+
+          SetContinueMode(false);
+
+          UnloadScene(CH01_SC03_BeigoSneakDoor,
+          false)@1;
+
+          SetContinueMode(original)@2'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -6882,8 +6896,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 190.51685
-        y: 73.1236
+        x: 204
+        y: 72
         width: 160
         height: 30
     - id: 2
@@ -6913,8 +6927,14 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetDialoguePanel(false, immediate)@0;SwitchScene(CH01_SC03_BaiFloatPages,
-          Additive, FadeIn)@1;SetDialoguePanel(true)@4;SetContinueMode(original)@4.5
+        value: 'SetDialoguePanel(false, immediate)@0;
+
+          SwitchScene(CH01_SC03_BaiFloatPages,
+          Additive, FadeIn)@1;
+
+          SetDialoguePanel(true)@4;
+
+          SetContinueMode(original)@4.5'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -6954,8 +6974,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 187.14606
-        y: 130.8764
+        x: 204
+        y: 132
         width: 160
         height: 30
     entryGroups: []
@@ -7074,7 +7094,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 108
+        x: 204
         y: 24
         width: 160
         height: 30
@@ -7105,8 +7125,16 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiShock);SetContinueMode(false);UnloadScene(CH01_SC03_BaiFloatPages,
-          false)@1;SetContinueMode(original)@2
+        value: 'SetPortrait(Mai, pic=MaiShock);
+
+          SetContinueMode(false);
+
+          UnloadScene(CH01_SC03_BaiFloatPages,
+          false)@1;
+
+          Delay(1)@1;
+
+          Continue()@1.1;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -7125,6 +7153,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Sprite
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
       conversationID: 25
       isRoot: 0
       isGroup: 0
@@ -7146,8 +7178,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 264
-        y: 85.51976
+        x: 204
+        y: 108
         width: 160
         height: 30
     - id: 2
@@ -7177,7 +7209,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiBeigoNormal);
+        value: 'SetPortrait(Mai, pic=MaiBeigoNormal);
+
+          Delay(1.5)@0;
+
+          Continue()@1.5;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -7196,6 +7232,10 @@ MonoBehaviour:
         value: Assets/Arts/Comics/CH01_SC03_SE03_Book.png
         type: 0
         typeString: CustomFieldType_Sprite
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
       conversationID: 25
       isRoot: 0
       isGroup: 0
@@ -7217,8 +7257,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160.29657
-        y: 136.71469
+        x: 204
+        y: 192
         width: 160
         height: 30
     - id: 30
@@ -7248,7 +7288,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SkipComicFade(center);
+
+          Delay(1.5)@0;
+
+          Continue()@1.5;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -7288,8 +7332,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 161.70956
-        y: 193.03224
+        x: 252
+        y: 240
         width: 160
         height: 30
     - id: 31
@@ -7319,7 +7363,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SwitchScene(CH01_SC03_BeigoReveal, Additive, FadeIn)
+        value: 'SetDialoguePanel(false, immediate);
+
+          SwitchScene(CH01_SC03_BeigoReveal,
+          Additive, FadeIn);
+
+          Continue()@5;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -7338,6 +7387,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Sprite
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
       conversationID: 25
       isRoot: 0
       isGroup: 0
@@ -7359,13 +7412,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 216
-        y: 240
+        x: 300
+        y: 312
         width: 160
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.6580005
+    canvasZoom: 0.7480003
   - id: 26
     fields:
     - title: Title
@@ -9096,15 +9149,20 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: ' '
+        value: '... '
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: ' '
+        value: ...
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: UnloadScene(CH01_SC03_BeigoReveal, false)@1
+        value: 'SetContinueMode(true);
+
+          UnloadScene(CH01_SC03_BeigoReveal,
+          false)@1;
+
+          SetDialoguePanel(true)@1.5;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -9116,7 +9174,7 @@ MonoBehaviour:
         type: 4
         typeString: CustomFieldType_Localization
       - title: Background Image
-        value: Assets/Arts/CH/CH01/BaiFloat.png
+        value: Assets/Arts/CH/CH01/BaiFloat_ZoomIn.png
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image
@@ -9144,8 +9202,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 156
-        y: 72
+        x: 168
+        y: 96
         width: 160
         height: 30
     - id: 36
@@ -9504,8 +9562,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 20.58562, y: 23.732414}
-    canvasZoom: 0.44000015
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.7635005
   - id: 9
     fields:
     - title: Title
@@ -10523,8 +10581,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 173
-        y: 136.65503
+        x: 156
+        y: 132
         width: 160
         height: 30
     - id: 4
@@ -10669,8 +10727,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 359.18738
-        y: 194.87576
+        x: 372
+        y: 180
         width: 160
         height: 30
     - id: 6
@@ -11308,7 +11366,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.7570002
+    canvasZoom: 0.57549983
   - id: 10
     fields:
     - title: Title
@@ -15804,7 +15862,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u9032\u4E86\u8ECA\u5EC2\uFF0C\u525B\u597D\u53EA\u5269\u4E0B\u535A\u611B\u5EA7\u3002"
+        value: "<i>\u9032\u4E86\u8ECA\u5EC2\uFF0C\u525B\u597D\u53EA\u5269\u4E0B\u535A\u611B\u5EA7\u3002</i>"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -15820,7 +15878,7 @@ MonoBehaviour:
         type: 4
         typeString: CustomFieldType_Localization
       - title: Background Image
-        value: Assets/Arts/CGs/reference/MRT_PrioritySeat.jpg
+        value: Assets/Arts/Events/MRT_Seat_01.png
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image
@@ -15925,7 +15983,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 184
+        x: 182.82144
         y: 218
         width: 160
         height: 30
@@ -15956,7 +16014,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: "UpdateStatus(Energy, +2); \nUpdateStatus(Heart, +2); "
+        value: "SetPortrait(Mai, pic=10);\nUpdateStatus(Energy, +2); \nUpdateStatus(Heart,
+          +2); "
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -15997,7 +16056,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 80
-        y: 302
+        y: 300.82144
         width: 160
         height: 30
     - id: 4
@@ -16027,7 +16086,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'UpdateStatus(Energy, -2); '
+        value: "UpdateStatus(Energy, -2); \nSetPortrait(Mai, pic=6);"
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -16139,7 +16198,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 2.3571167}
+    canvasScrollPosition: {x: 0, y: 292.82144}
     canvasZoom: 0.84849954
   - id: 16
     fields:
