@@ -15804,7 +15804,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u9032\u4E86\u8ECA\u5EC2\uFF0C\u525B\u597D\u53EA\u5269\u4E0B\u535A\u611B\u5EA7\u3002"
+        value: "<i>\u9032\u4E86\u8ECA\u5EC2\uFF0C\u525B\u597D\u53EA\u5269\u4E0B\u535A\u611B\u5EA7\u3002</i>"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -15820,7 +15820,7 @@ MonoBehaviour:
         type: 4
         typeString: CustomFieldType_Localization
       - title: Background Image
-        value: Assets/Arts/CGs/reference/MRT_PrioritySeat.jpg
+        value: Assets/Arts/Events/MRT_Seat_01.png
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image
@@ -15925,7 +15925,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 184
+        x: 182.82144
         y: 218
         width: 160
         height: 30
@@ -15956,7 +15956,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: "UpdateStatus(Energy, +2); \nUpdateStatus(Heart, +2); "
+        value: "SetPortrait(Mai, pic=10);\nUpdateStatus(Energy, +2); \nUpdateStatus(Heart,
+          +2); "
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -15997,7 +15998,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 80
-        y: 302
+        y: 300.82144
         width: 160
         height: 30
     - id: 4
@@ -16027,7 +16028,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'UpdateStatus(Energy, -2); '
+        value: "UpdateStatus(Energy, -2); \nSetPortrait(Mai, pic=6);"
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -16139,8 +16140,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.60749906
+    canvasScrollPosition: {x: 0, y: 2.3571167}
+    canvasZoom: 0.84849954
   - id: 16
     fields:
     - title: Title
