@@ -5474,7 +5474,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=5);
+        value: SetPortrait(Mai, pic=4);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -5515,7 +5515,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 564.0518
-        y: 211.43532
+        y: 212.82326
         width: 160
         height: 30
     - id: 17
@@ -5656,8 +5656,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 600
-        y: 288
+        x: 570.85364
+        y: 324.08606
         width: 160
         height: 30
     - id: 19
@@ -6282,7 +6282,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u56DE\u5230\u5BB6"
+        value: "<i>\u56DE\u5230\u5BB6</i>"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -6357,7 +6357,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiBeigoNormal);
+        value: SetPortrait(Mai, pic=14);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
