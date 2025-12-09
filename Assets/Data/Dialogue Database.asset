@@ -4254,7 +4254,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetPortrait(Mai, pic=2);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -4294,8 +4294,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 158.93558
-        y: 331
+        x: 157.8251
+        y: 329.8895
         width: 160
         height: 30
     - id: 7
@@ -4325,7 +4325,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetBackgroundColor(#808080);
+        value: SetBackgroundColor(#808080);SetPortrait(Mai, pic=10);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
