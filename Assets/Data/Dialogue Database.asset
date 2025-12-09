@@ -1664,7 +1664,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 155.79007
+        x: 157
         y: 233.23657
         width: 160
         height: 30
@@ -1807,7 +1807,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 155.79007
-        y: 336.78815
+        y: 337.99808
         width: 160
         height: 30
     - id: 6
@@ -1877,8 +1877,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 157
-        y: 392.91595
+        x: 158.20993
+        y: 394.12585
         width: 160
         height: 30
     - id: 7
@@ -2303,7 +2303,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 379.00302
+        x: 380.21295
         y: 279.0015
         width: 160
         height: 30
@@ -2992,7 +2992,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 95
-        y: 289
+        y: 287.6894
         width: 160
         height: 30
     - id: 6
@@ -3940,7 +3940,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 160
-        y: 80
+        y: 81.29199
         width: 160
         height: 30
     - id: 2
@@ -4041,7 +4041,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiUncomfortable);
+        value: SetPortrait(Mai, pic=11);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -4325,7 +4325,8 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetBackgroundColor(#808080);SetPortrait(Mai, pic=10);
+        value: 'SetBackgroundColor(#808080);SetPortrait(Mai, pic=10);UpdateStatus(Heart,
+          -1)@0.5; '
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -4366,7 +4367,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 371
-        y: 29
+        y: 27.708038
         width: 160
         height: 30
     - id: 8
@@ -4406,6 +4407,8 @@ MonoBehaviour:
           SetDialoguePanel(false)@1;
 
           UnloadScene(WorkRoutineScene)@6;
+
+          SetBackgroundColor(#FFFFFF)@6;
 
           Continue()@7;
 
@@ -4460,8 +4463,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 65.02116, y: 41.50803}
-    canvasZoom: 0.757499
+    canvasScrollPosition: {x: 75.31882, y: 0}
+    canvasZoom: 0.77399915
   - id: 7
     fields:
     - title: Title
@@ -6691,8 +6694,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.5545033
+    canvasScrollPosition: {x: 55.237717, y: 0}
+    canvasZoom: 1.1220036
   - id: 24
     fields:
     - title: Title
