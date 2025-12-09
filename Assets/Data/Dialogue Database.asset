@@ -12199,7 +12199,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetDialoguePanel(true, immediate)@0;
+        value: SetDialoguePanel(true, immediate)@1;
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -12568,8 +12568,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 21.913467, y: 0}
-    canvasZoom: 0.8150006
+    canvasScrollPosition: {x: 0, y: 29.237976}
+    canvasZoom: 0.48150027
   - id: 11
     fields:
     - title: Title
@@ -15349,11 +15349,11 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: ...
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: 
+        value: ...
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -15393,13 +15393,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 156
-        y: 288
+        x: 168
+        y: 276
         width: 160
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasZoom: 0.90050143
   - id: 18
     fields:
     - title: Title
@@ -15777,8 +15777,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159
-        y: 30
+        x: 184
+        y: 50
         width: 160
         height: 30
     - id: 1
@@ -15848,8 +15848,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159
-        y: 78
+        x: 184
+        y: 134
         width: 160
         height: 30
     - id: 2
@@ -15879,7 +15879,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiAwkward)
+        value: SetPortrait(Mai, pic=MaiAwkward);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -15925,8 +15925,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 156
-        y: 136
+        x: 184
+        y: 218
         width: 160
         height: 30
     - id: 3
@@ -15956,7 +15956,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'UpdateStatus(Energy, +2); UpdateStatus(Heart, +2); '
+        value: "UpdateStatus(Energy, +2); \nUpdateStatus(Heart, +2); "
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -15996,8 +15996,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 48
-        y: 216
+        x: 80
+        y: 302
         width: 160
         height: 30
     - id: 4
@@ -16067,8 +16067,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 276
-        y: 216
+        x: 288
+        y: 302
         width: 160
         height: 30
     - id: 5
@@ -16090,11 +16090,11 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: 
+        value: ...
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: 
+        value: ...
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -16134,13 +16134,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 144
-        y: 300
+        x: 192
+        y: 408
         width: 160
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasZoom: 0.60749906
   - id: 16
     fields:
     - title: Title

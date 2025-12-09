@@ -22,6 +22,9 @@ public class PersistentDataManagerBridge : ScriptableObject
     {
         if (PersistentDataManager.Instance != null)
             PersistentDataManager.Instance.DeleteAllSaveData();
+
+        if (PlayerDataManager.Instance != null)
+            PlayerDataManager.Instance.ResetPlayerId();
     }
 
     /// <summary>

@@ -16,8 +16,8 @@ MonoBehaviour:
   - name: "\u8D85\u5546\u5496\u5561\u88FD\u4F5C\u932F\u8AA4"
     thumbnail: {fileID: 7721783800750714897, guid: b94e4d8fec8c64fbc9e7e4228ea14735, type: 3}
     conversationTitle: COMM_MART_02
-    canStoryMode: 1
-    canEventMode: 1
+    canStoryMode: 0
+    canEventMode: 0
   - name: "\u6377\u904B\u53EA\u5269\u4E0B\u535A\u611B\u5EA7"
     thumbnail: {fileID: -3652250744483321266, guid: 2aad0e2221216471dbe72ac38786dc50, type: 3}
     conversationTitle: COMM_MRT_02
