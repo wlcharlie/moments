@@ -65,7 +65,8 @@ MonoBehaviour:
   - no: 008
     animalName: Golden
     mainSprite: {fileID: 6319160278514444104, guid: 22d7c02d6b2e04e32837dcece12ea3c5, type: 3}
-    captureSprites: []
+    captureSprites:
+    - {fileID: 5063264526325634978, guid: ed7ceaf9d4ddf4a24a555fc07ff5d45a, type: 3}
     collected: 1
     seen: 1
     description: 
