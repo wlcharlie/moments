@@ -15391,8 +15391,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 252
-        y: 180
+        x: 276
+        y: 204
         width: 160
         height: 30
     - id: 5
@@ -15414,17 +15414,17 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: ...
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: ...
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Delay(2)@2;
+        value: 'SetDialoguePanel(false);
 
-          ResumeConversation()@2;'
+          ResumeConversation()@0.5;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -15458,8 +15458,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 168
-        y: 276
+        x: 156
+        y: 312
         width: 160
         height: 30
     entryGroups: []
@@ -16062,8 +16062,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 80
-        y: 300.82144
+        x: 60
+        y: 300
         width: 160
         height: 30
     - id: 4
@@ -16156,17 +16156,17 @@ MonoBehaviour:
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
-        value: ...
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: ...
+        value: 
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'Delay(2)@2;
+        value: 'SetDialoguePanel(false);
 
-          ResumeConversation()@2;'
+          ResumeConversation()@0.5;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -16185,6 +16185,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Sprite
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
       conversationID: 21
       isRoot: 0
       isGroup: 0
@@ -16200,13 +16204,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 192
+        x: 228
         y: 408
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 292.82144}
-    canvasZoom: 0.84849954
+    canvasScrollPosition: {x: 0, y: 212.3401}
+    canvasZoom: 0.6720003
   - id: 16
     fields:
     - title: Title
