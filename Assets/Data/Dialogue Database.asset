@@ -4822,7 +4822,12 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=MaiPuzzled); CharacterShake(start, 0.1, 2, 0);
+        value: ' SetPortrait(Mai, pic=8); CharacterShake(start, 0.1, 2, 0);
+
+          SetDialoguePanel(false,
+          immediate)@0;
+
+          SetDialoguePanel(true, immediate)@0.5;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -4866,8 +4871,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 104.98746
-        y: 450.00385
+        x: 103.59953
+        y: 447.22803
         width: 160
         height: 30
     - id: 6
@@ -4897,7 +4902,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetPortrait(Mai, pic=MaiPuzzled); '
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -5013,7 +5018,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 353.05182
-        y: 139.7676
+        y: 138.37967
         width: 160
         height: 30
     - id: 10
@@ -5083,7 +5088,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 354.33966
+        x: 352.95172
         y: 305.9128
         width: 160
         height: 30
@@ -5155,7 +5160,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 354.06915
-        y: 370.09976
+        y: 368.71182
         width: 160
         height: 30
     - id: 12
@@ -5226,7 +5231,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 355.35693
-        y: 437.8588
+        y: 436.47092
         width: 160
         height: 30
     - id: 13
@@ -5469,7 +5474,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: SetPortrait(Mai, pic=5);
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
