@@ -5878,8 +5878,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 238.55182, y: 204.82326}
-    canvasZoom: 0.72050023
+    canvasScrollPosition: {x: 236.29489, y: 201.97859}
+    canvasZoom: 0.7084994
   - id: 22
     fields:
     - title: Title
@@ -6468,8 +6468,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 157.8034
-        y: 277.8034
+        x: 180
+        y: 276
         width: 160
         height: 30
     - id: 4
@@ -6499,9 +6499,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'RestoreSceneDetail(0)@0;
+        value: 'SetDialoguePanel(false, immediate)@0;
 
-          SetDialoguePanel(false, immediate)@0;
+          RestoreSceneDetail(0)@0;
 
           SwitchScene(CH01_SC03_BeigoSneakDoor,
           Additive, FadeIn)@1;
@@ -6694,7 +6694,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 156
+        x: 144
         y: 228
         width: 160
         height: 30
