@@ -168,8 +168,11 @@ public class ExploreMapController : MonoBehaviour
             return null;
         }
 
-        // 使用固定 seed 打亂事件順序
-        ShuffleListWithSeed(events, seed);
+        // Story 模式不打亂順序，Event 模式使用 seed 打亂
+        if (mode == GameMode.Event)
+        {
+            ShuffleListWithSeed(events, seed);
+        }
 
         int nodeIndex = 0;
         MapNode previousNode = null;

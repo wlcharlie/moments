@@ -63,25 +63,34 @@ public class ExploreGameManager : MonoBehaviour
         GameMode mode = CurrentGameMode;
         MapNode playerStartNode;
 
-        // 嘗試載入存檔
-        ExploreMapSaveData saveData = LoadMapState();
-        if (saveData != null && saveData.isValid && saveData.mode == mode)
+        // Story 模式不使用存檔，Event 模式嘗試載入存檔
+        if (mode == GameMode.Event)
         {
-            // 使用存檔的 seed 生成相同的地圖
-            Debug.Log($"[ExploreGameManager] 載入存檔，seed: {saveData.seed}, 玩家位置: {saveData.playerNodeIndex}");
-            mapController.GenerateMap(mode, saveData.seed);
-            playerStartNode = mapController.GetNodeByIndex(saveData.playerNodeIndex);
-
-            if (playerStartNode == null)
+            ExploreMapSaveData saveData = LoadMapState();
+            if (saveData != null && saveData.isValid && saveData.mode == mode)
             {
-                Debug.LogWarning("[ExploreGameManager] 存檔的節點索引無效，重置到起點");
-                playerStartNode = mapController.StartNode;
+                // 使用存檔的 seed 生成相同的地圖
+                Debug.Log($"[ExploreGameManager] 載入存檔，seed: {saveData.seed}, 玩家位置: {saveData.playerNodeIndex}");
+                mapController.GenerateMap(mode, saveData.seed);
+                playerStartNode = mapController.GetNodeByIndex(saveData.playerNodeIndex);
+
+                if (playerStartNode == null)
+                {
+                    Debug.LogWarning("[ExploreGameManager] 存檔的節點索引無效，重置到起點");
+                    playerStartNode = mapController.StartNode;
+                }
+            }
+            else
+            {
+                // 新遊戲
+                Debug.Log($"[ExploreGameManager] 開始新地圖，模式: {mode} (useOverride: {useOverrideMode})");
+                playerStartNode = mapController.GenerateMap(mode);
             }
         }
         else
         {
-            // 新遊戲
-            Debug.Log($"[ExploreGameManager] 開始新地圖，模式: {mode} (useOverride: {useOverrideMode})");
+            // Story 模式：直接生成固定順序的地圖
+            Debug.Log($"[ExploreGameManager] Story 模式，生成固定地圖");
             playerStartNode = mapController.GenerateMap(mode);
         }
 
@@ -102,8 +111,11 @@ public class ExploreGameManager : MonoBehaviour
             Debug.Log($"[ExploreGameManager] 設定循環節點: {loopBackNode.NodeName}");
         }
 
-        // 立即保存當前狀態
-        SaveMapState();
+        // Event 模式才保存狀態
+        if (mode == GameMode.Event)
+        {
+            SaveMapState();
+        }
 
         // StoryMode: 檢查是否有強制流程
         if (mode == GameMode.Story)
@@ -275,8 +287,11 @@ public class ExploreGameManager : MonoBehaviour
     {
         Debug.Log($"玩家到達節點: {arrivedNode.NodeName}");
 
-        // 保存當前狀態
-        SaveMapState();
+        // Event 模式才保存狀態
+        if (CurrentGameMode == GameMode.Event)
+        {
+            SaveMapState();
+        }
 
         if (!string.IsNullOrEmpty(arrivedNode.ConversationTitle))
         {
