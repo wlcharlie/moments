@@ -35,6 +35,7 @@ public class ExploreMapController : MonoBehaviour
     [SerializeField] private GameMode previewMode = GameMode.Story;
 
     private readonly List<MapNode> generatedNodes = new();
+    private int currentSeed;
 
     /// <summary>
     /// 取得起點節點
@@ -42,9 +43,49 @@ public class ExploreMapController : MonoBehaviour
     public MapNode StartNode => generatedNodes.Count > 0 ? generatedNodes[0] : null;
 
     /// <summary>
+    /// 取得當前地圖使用的 seed
+    /// </summary>
+    public int CurrentSeed => currentSeed;
+
+    /// <summary>
     /// 取得所有生成的節點
     /// </summary>
     public IReadOnlyList<MapNode> Nodes => generatedNodes;
+
+    /// <summary>
+    /// 取得節點的索引
+    /// </summary>
+    public int GetNodeIndex(MapNode node)
+    {
+        return generatedNodes.IndexOf(node);
+    }
+
+    /// <summary>
+    /// 根據索引取得節點
+    /// </summary>
+    public MapNode GetNodeByIndex(int index)
+    {
+        if (index < 0 || index >= generatedNodes.Count) return null;
+        return generatedNodes[index];
+    }
+
+    /// <summary>
+    /// 取得第一個事件節點 (跳過起點)
+    /// </summary>
+    public MapNode FirstEventNode
+    {
+        get
+        {
+            foreach (MapNode node in generatedNodes)
+            {
+                if (!node.IsStart && !node.IsEnd && !node.IsEmpty)
+                {
+                    return node;
+                }
+            }
+            return null;
+        }
+    }
 
     /// <summary>
     /// 根據 ConversationTitle 查找節點
@@ -100,6 +141,16 @@ public class ExploreMapController : MonoBehaviour
     /// </summary>
     public MapNode GenerateMap(GameMode mode)
     {
+        // 使用隨機 seed
+        int seed = Random.Range(int.MinValue, int.MaxValue);
+        return GenerateMap(mode, seed);
+    }
+
+    /// <summary>
+    /// 根據遊戲模式和指定 seed 生成地圖 (用於恢復存檔)
+    /// </summary>
+    public MapNode GenerateMap(GameMode mode, int seed)
+    {
         if (eventDatabase == null)
         {
             Debug.LogError("EventDatabase 未設定");
@@ -107,6 +158,7 @@ public class ExploreMapController : MonoBehaviour
         }
 
         ClearMap();
+        currentSeed = seed;
 
         // 取得該模式可用的事件
         List<EventData> events = eventDatabase.GetEventsForMode(mode);
@@ -116,8 +168,8 @@ public class ExploreMapController : MonoBehaviour
             return null;
         }
 
-        // 打亂事件順序
-        ShuffleList(events);
+        // 使用固定 seed 打亂事件順序
+        ShuffleListWithSeed(events, seed);
 
         int nodeIndex = 0;
         MapNode previousNode = null;
@@ -194,16 +246,21 @@ public class ExploreMapController : MonoBehaviour
         }
         generatedNodes.Clear();
 
-        // 清除 nodeContainer 中的所有子物件
+        // 清除 nodeContainer 中的 MapNode 子物件 (不清除 Player 等其他物件)
         Transform container = nodeContainer != null ? nodeContainer : transform;
-        int containerCount = container.childCount;
+        int containerCount = 0;
         for (int i = container.childCount - 1; i >= 0; i--)
         {
             Transform child = container.GetChild(i);
-            if (Application.isPlaying)
-                Destroy(child.gameObject);
-            else
-                DestroyImmediate(child.gameObject);
+            // 只清除有 MapNode 組件的物件
+            if (child.GetComponent<MapNode>() != null)
+            {
+                containerCount++;
+                if (Application.isPlaying)
+                    Destroy(child.gameObject);
+                else
+                    DestroyImmediate(child.gameObject);
+            }
         }
 
         Debug.Log($"[ExploreMapController] ClearMap 執行完成，已清除 {count} 個追蹤節點，{containerCount} 個容器子物件");
@@ -234,11 +291,12 @@ public class ExploreMapController : MonoBehaviour
         return new Vector2(x, y);
     }
 
-    private static void ShuffleList<T>(List<T> list)
+    private static void ShuffleListWithSeed<T>(List<T> list, int seed)
     {
+        System.Random rng = new(seed);
         for (int i = list.Count - 1; i > 0; i--)
         {
-            int j = Random.Range(0, i + 1);
+            int j = rng.Next(0, i + 1);
             (list[i], list[j]) = (list[j], list[i]);
         }
     }

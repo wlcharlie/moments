@@ -3,12 +3,15 @@ using UnityEngine;
 
 public class ExploreGameManager : MonoBehaviour
 {
+    private const string SAVE_KEY = "exploreMap";
+
     [Header("骰子")]
     [SerializeField] private DiceController diceController;
 
     [Header("地圖")]
     [SerializeField] private ExploreMapController mapController;
     [SerializeField] private MapPlayer mapPlayer;
+    [SerializeField] private MapCameraFollow mapCameraFollow;
 
     [Header("模式設定")]
     [Tooltip("勾選後使用下方指定的模式，否則使用 GameManager 的模式")]
@@ -41,6 +44,7 @@ public class ExploreGameManager : MonoBehaviour
         if (mapPlayer != null)
         {
             mapPlayer.OnMoveComplete += HandleMoveComplete;
+            mapPlayer.OnLoopBack += HandleLoopBack;
         }
 
         // 根據當前模式生成地圖
@@ -50,25 +54,56 @@ public class ExploreGameManager : MonoBehaviour
             return;
         }
 
-        GameMode mode = CurrentGameMode;
-        Debug.Log($"[ExploreGameManager] 開始生成地圖，模式: {mode} (useOverride: {useOverrideMode})");
-
-        MapNode startNode = mapController.GenerateMap(mode);
-
-        if (startNode == null)
-        {
-            Debug.LogError("[ExploreGameManager] GenerateMap 返回 null，地圖生成失敗");
-            return;
-        }
-
         if (mapPlayer == null)
         {
             Debug.LogError("[ExploreGameManager] mapPlayer 未設定");
             return;
         }
 
-        mapPlayer.TeleportToNode(startNode);
-        Debug.Log($"[ExploreGameManager] 玩家已傳送到起點: {startNode.NodeName}, 位置: {startNode.transform.position}");
+        GameMode mode = CurrentGameMode;
+        MapNode playerStartNode;
+
+        // 嘗試載入存檔
+        ExploreMapSaveData saveData = LoadMapState();
+        if (saveData != null && saveData.isValid && saveData.mode == mode)
+        {
+            // 使用存檔的 seed 生成相同的地圖
+            Debug.Log($"[ExploreGameManager] 載入存檔，seed: {saveData.seed}, 玩家位置: {saveData.playerNodeIndex}");
+            mapController.GenerateMap(mode, saveData.seed);
+            playerStartNode = mapController.GetNodeByIndex(saveData.playerNodeIndex);
+
+            if (playerStartNode == null)
+            {
+                Debug.LogWarning("[ExploreGameManager] 存檔的節點索引無效，重置到起點");
+                playerStartNode = mapController.StartNode;
+            }
+        }
+        else
+        {
+            // 新遊戲
+            Debug.Log($"[ExploreGameManager] 開始新地圖，模式: {mode} (useOverride: {useOverrideMode})");
+            playerStartNode = mapController.GenerateMap(mode);
+        }
+
+        if (playerStartNode == null)
+        {
+            Debug.LogError("[ExploreGameManager] GenerateMap 返回 null，地圖生成失敗");
+            return;
+        }
+
+        mapPlayer.TeleportToNode(playerStartNode);
+        Debug.Log($"[ExploreGameManager] 玩家已傳送到: {playerStartNode.NodeName}, 位置: {playerStartNode.transform.position}");
+
+        // 設定終點循環回的節點 (第一個事件節點)
+        MapNode loopBackNode = mapController.FirstEventNode;
+        if (loopBackNode != null)
+        {
+            mapPlayer.SetLoopBackNode(loopBackNode);
+            Debug.Log($"[ExploreGameManager] 設定循環節點: {loopBackNode.NodeName}");
+        }
+
+        // 立即保存當前狀態
+        SaveMapState();
 
         // StoryMode: 檢查是否有強制流程
         if (mode == GameMode.Story)
@@ -129,6 +164,59 @@ public class ExploreGameManager : MonoBehaviour
         if (mapPlayer != null)
         {
             mapPlayer.OnMoveComplete -= HandleMoveComplete;
+            mapPlayer.OnLoopBack -= HandleLoopBack;
+        }
+    }
+
+    /// <summary>
+    /// 保存地圖狀態
+    /// </summary>
+    private void SaveMapState()
+    {
+        if (PersistentDataManager.Instance == null || mapController == null || mapPlayer == null)
+        {
+            return;
+        }
+
+        ExploreMapSaveData saveData = new()
+        {
+            mode = CurrentGameMode,
+            seed = mapController.CurrentSeed,
+            playerNodeIndex = mapController.GetNodeIndex(mapPlayer.CurrentNode),
+            isValid = true
+        };
+
+        PersistentDataManager.Instance.SaveData(saveData, SAVE_KEY);
+        Debug.Log($"[ExploreGameManager] 已保存地圖狀態: seed={saveData.seed}, playerNodeIndex={saveData.playerNodeIndex}");
+    }
+
+    /// <summary>
+    /// 載入地圖狀態
+    /// </summary>
+    private ExploreMapSaveData LoadMapState()
+    {
+        if (PersistentDataManager.Instance == null)
+        {
+            return null;
+        }
+
+        if (!PersistentDataManager.Instance.HasSaveData(SAVE_KEY))
+        {
+            return null;
+        }
+
+        return PersistentDataManager.Instance.LoadData<ExploreMapSaveData>(SAVE_KEY);
+    }
+
+    /// <summary>
+    /// 清除地圖存檔 (開始新遊戲時呼叫)
+    /// </summary>
+    public void ClearMapSave()
+    {
+        if (PersistentDataManager.Instance != null)
+        {
+            PersistentDataManager.Instance.DeleteSaveData(SAVE_KEY);
+            Debug.Log("[ExploreGameManager] 已清除地圖存檔");
         }
     }
 
@@ -163,6 +251,12 @@ public class ExploreGameManager : MonoBehaviour
     {
         Debug.Log($"[ExploreGameManager] 骰子結果: {result}");
 
+        // 玩家開始移動時，重置拖曳狀態讓自動跟隨生效
+        if (mapCameraFollow != null)
+        {
+            mapCameraFollow.ResetDragState();
+        }
+
         if (mapPlayer != null)
         {
             mapPlayer.MoveSteps(result);
@@ -181,9 +275,22 @@ public class ExploreGameManager : MonoBehaviour
     {
         Debug.Log($"玩家到達節點: {arrivedNode.NodeName}");
 
+        // 保存當前狀態
+        SaveMapState();
+
         if (!string.IsNullOrEmpty(arrivedNode.ConversationTitle))
         {
             StartConversation(arrivedNode.ConversationTitle);
+        }
+    }
+
+    private void HandleLoopBack()
+    {
+        Debug.Log("[ExploreGameManager] 玩家循環回起點，重置地圖視角");
+
+        if (mapCameraFollow != null)
+        {
+            mapCameraFollow.SnapToCenter();
         }
     }
 

@@ -11,6 +11,10 @@ public class MapPlayer : MonoBehaviour
     [Tooltip("沿曲線移動的時間 (秒)")]
     [SerializeField] private float moveDuration = 0.5f;
 
+    [Header("循環設定")]
+    [Tooltip("到達終點後循環回的目標節點 (由 ExploreMapController 設定)")]
+    [SerializeField] private MapNode loopBackNode;
+
     [Header("狀態 (唯讀)")]
     [SerializeField] private MapNode currentNode;
 
@@ -26,6 +30,19 @@ public class MapPlayer : MonoBehaviour
     /// 每經過一個節點時觸發
     /// </summary>
     public event Action<MapNode> OnNodePassed;
+
+    /// <summary>
+    /// 循環回起點時觸發
+    /// </summary>
+    public event Action OnLoopBack;
+
+    /// <summary>
+    /// 設定到達終點後要循環回的節點
+    /// </summary>
+    public void SetLoopBackNode(MapNode node)
+    {
+        loopBackNode = node;
+    }
 
     /// <summary>
     /// 移動指定步數
@@ -62,19 +79,32 @@ public class MapPlayer : MonoBehaviour
 
         while (stepsRemaining > 0)
         {
-            // 到達終點節點，停止移動
-            if (currentNode.IsEnd)
-            {
-                Debug.Log($"[MapPlayer] 已到達終點: {currentNode.NodeName}");
-                break;
-            }
-
             MapNode targetNode = currentNode.NextNode;
 
-            if (targetNode == null)
+            // 到達終點節點，循環回第一格
+            if (currentNode.IsEnd || targetNode == null)
             {
-                Debug.Log($"[MapPlayer] 已到達路線盡頭: {currentNode.NodeName}");
-                break;
+                if (loopBackNode != null)
+                {
+                    Debug.Log($"[MapPlayer] 到達終點，循環回: {loopBackNode.NodeName}");
+                    // 直接傳送到循環節點
+                    currentNode = loopBackNode;
+                    transform.position = currentNode.transform.position;
+                    stepsRemaining--;
+                    OnLoopBack?.Invoke();
+                    OnNodePassed?.Invoke(currentNode);
+
+                    if (stepsRemaining > 0)
+                    {
+                        yield return new WaitForSeconds(0.1f);
+                    }
+                    continue;
+                }
+                else
+                {
+                    Debug.Log($"[MapPlayer] 已到達終點且無循環設定: {currentNode.NodeName}");
+                    break;
+                }
             }
 
             // 沿著曲線移動到下一個節點

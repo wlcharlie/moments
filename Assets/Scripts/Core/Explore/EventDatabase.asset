@@ -28,3 +28,33 @@ MonoBehaviour:
     conversationTitle: CH01_SC04_SE03
     canStoryMode: 1
     canEventMode: 0
+  - name: "\u524D\u9762\u7684\u4EBA\u6C92\u6709\u95DC\u5305\u5305"
+    thumbnail: {fileID: -3652250744483321266, guid: 2aad0e2221216471dbe72ac38786dc50, type: 3}
+    conversationTitle: COMM_MRT_03
+    canStoryMode: 1
+    canEventMode: 1
+  - name: "\u88AB\u554F\u53EF\u4E0D\u53EF\u4EE5\u8FFD\u8E64"
+    thumbnail: {fileID: -692078636420456154, guid: e4a9f0091a8e04b318bf3f8829125aa4, type: 3}
+    conversationTitle: COMM_STREET_03
+    canStoryMode: 1
+    canEventMode: 1
+  - name: "\u88AB\u554F\u53EF\u4E0D\u53EF\u4EE5\u8FFD\u8E64"
+    thumbnail: {fileID: -692078636420456154, guid: e4a9f0091a8e04b318bf3f8829125aa4, type: 3}
+    conversationTitle: COMM_STREET_03
+    canStoryMode: 1
+    canEventMode: 1
+  - name: "\u88AB\u554F\u53EF\u4E0D\u53EF\u4EE5\u8FFD\u8E64"
+    thumbnail: {fileID: -692078636420456154, guid: e4a9f0091a8e04b318bf3f8829125aa4, type: 3}
+    conversationTitle: COMM_STREET_03
+    canStoryMode: 1
+    canEventMode: 1
+  - name: "\u88AB\u554F\u53EF\u4E0D\u53EF\u4EE5\u8FFD\u8E64"
+    thumbnail: {fileID: -692078636420456154, guid: e4a9f0091a8e04b318bf3f8829125aa4, type: 3}
+    conversationTitle: COMM_STREET_03
+    canStoryMode: 1
+    canEventMode: 1
+  - name: "\u88AB\u554F\u53EF\u4E0D\u53EF\u4EE5\u8FFD\u8E64"
+    thumbnail: {fileID: -692078636420456154, guid: e4a9f0091a8e04b318bf3f8829125aa4, type: 3}
+    conversationTitle: COMM_STREET_03
+    canStoryMode: 1
+    canEventMode: 1
