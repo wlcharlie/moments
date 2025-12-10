@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7463017241101722530}
   - component: {fileID: 1261873090074213328}
   - component: {fileID: 3257132990589970885}
+  - component: {fileID: 8674514012327791122}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -154,3 +155,17 @@ MonoBehaviour:
   designWidth: 786
   designHeight: 1704
   pixelsPerUnit: 100
+--- !u!114 &8674514012327791122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7281103720635803615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}

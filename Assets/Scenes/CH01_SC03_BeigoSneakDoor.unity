@@ -564,8 +564,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1780076342}
   - component: {fileID: 1780076341}
-  - component: {fileID: 1780076344}
-  - component: {fileID: 1780076343}
   m_Layer: 0
   m_Name: Director
   m_TagString: Untagged
@@ -592,8 +590,8 @@ PlayableDirector:
     value: {fileID: 1009688759}
   - key: {fileID: -5963686980040123787, guid: 529d0188aa3074686b06fc7473f2401f, type: 2}
     value: {fileID: 1062075529}
-  - key: {fileID: 4607015893189287390, guid: 529d0188aa3074686b06fc7473f2401f, type: 2}
-    value: {fileID: 1780076343}
+  - key: {fileID: -8532694348396119954, guid: 529d0188aa3074686b06fc7473f2401f, type: 2}
+    value: {fileID: 1795194052}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1780076342
@@ -611,52 +609,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1780076343
-MonoBehaviour:
+--- !u!1 &1795194052
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1780076340}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 32106f15f4c794f5baeb4b57a38f298c, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1780076344}
-          m_TargetAssemblyTypeName: DirectorAutoReturnToScene, Assembly-CSharp
-          m_MethodName: ReturnToScene
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1780076344
-MonoBehaviour:
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1795194053}
+  m_Layer: 0
+  m_Name: FMOD
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1795194053
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1780076340}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 194ad12ffacb244c9b2d2cf2e615ae19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DirectorAutoReturnToScene
-  targetSceneName: MainStoryScene
-  conversationId: CH01_SC03_SE02
-  transitionType: 1
-  useTransition: 1
+  m_GameObject: {fileID: 1795194052}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 398.22534, y: 896, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -664,3 +647,4 @@ SceneRoots:
   - {fileID: 371138463}
   - {fileID: 498633712}
   - {fileID: 1780076342}
+  - {fileID: 1795194053}
