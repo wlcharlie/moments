@@ -10,6 +10,10 @@ public class EventData
     public Sprite thumbnail;
     [Delayed] public string conversationTitle;
 
+    [Header("啟用設定")]
+    [Tooltip("是否啟用此事件")]
+    public bool isAble = true;
+
     [Header("遊戲模式")]
     [Tooltip("在故事模式中可使用")]
     public bool canStoryMode = true;

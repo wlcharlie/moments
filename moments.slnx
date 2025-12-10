@@ -3,6 +3,7 @@
   <Project Path="DialogueSystemEditor.csproj" />
   <Project Path="PixelCrushers.csproj" />
   <Project Path="PixelCrushersEditor.csproj" />
+  <Project Path="Explore.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Utils.csproj" />
   <Project Path="Manager.csproj" />
@@ -17,7 +18,6 @@
   <Project Path="Dialogue.csproj" />
   <Project Path="Traffic.csproj" />
   <Project Path="Camera.csproj" />
-  <Project Path="Explore.csproj" />
   <Project Path="FMODUnityResonance.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Data.csproj" />

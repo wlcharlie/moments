@@ -12660,7 +12660,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetDialoguePanel(true, immediate)@0;
+        value: 'SetDialoguePanel(true, immediate);
+
+          SetEventAble(CH01_SC04_SE03,
+          true);'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
