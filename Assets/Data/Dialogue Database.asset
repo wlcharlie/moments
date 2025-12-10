@@ -11532,8 +11532,10 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetDialoguePanel(true, immediate)@0.4;SwitchConversation(CH01_SC04_SE02,
+        value: 'SetDialoguePanel(true, immediate)@0.4;SwitchConversation(CH01_SC04_SE02,
           Splash)@0.5;
+
+          FMODPlay(object/obj_room_door_open)'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -11567,8 +11569,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 168.26262
-        y: 524.1412
+        x: 192
+        y: 516
         width: 160
         height: 30
     - id: 14
@@ -11718,8 +11720,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 1.2626343, y: 0}
-    canvasZoom: 0.7920007
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.48400128
   - id: 27
     fields:
     - title: Title
@@ -12703,7 +12705,7 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 117.06334, y: 0}
+    canvasScrollPosition: {x: 0, y: 72}
     canvasZoom: 0.80900097
   - id: 10
     fields:
