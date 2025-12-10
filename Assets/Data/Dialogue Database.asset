@@ -7068,8 +7068,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160.39224
-        y: 276.89124
+        x: 144
+        y: 276
         width: 160
         height: 30
     - id: 4
@@ -7108,7 +7108,9 @@ MonoBehaviour:
 
           Delay(2)@2;
 
-          SetDialoguePanel(true)@3'
+          SetDialoguePanel(true)@3;
+
+          SetContinueMode(false)@3.5;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -7152,8 +7154,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 153.73979
-        y: 321.3262
+        x: 156
+        y: 336
         width: 160
         height: 30
     - id: 30
@@ -7299,8 +7301,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 55.237717, y: 0}
-    canvasZoom: 1.1220036
+    canvasScrollPosition: {x: 26.135433, y: 0}
+    canvasZoom: 1.0255032
   - id: 24
     fields:
     - title: Title
@@ -7447,12 +7449,10 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetPortrait(Mai, pic=MaiNone);
 
-          SetContinueMode(false);
-
           UnloadScene(CH01_SC03_BeigoSneakDoor,
           false)@1;
 
-          SetContinueMode(original)@2'
+          Continue()@2;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -7574,7 +7574,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 204
+        x: 216
         y: 132
         width: 160
         height: 30
