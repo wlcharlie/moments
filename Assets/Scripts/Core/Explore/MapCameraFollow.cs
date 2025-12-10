@@ -18,8 +18,11 @@ public class MapCameraFollow : MonoBehaviour
     [Tooltip("玩家要保持在畫面的 X 位置 (世界座標)")]
     [SerializeField] private float playerScreenX = 0f;
 
-    [Tooltip("玩家與固定位置的距離超過此值時才移動地圖")]
+    [Tooltip("玩家與中心距離超過此值時觸發平移")]
     [SerializeField] private float moveThreshold = 4f;
+
+    [Tooltip("觸發平移時，地圖移動的距離")]
+    [SerializeField] private float moveAmount = 8f;
 
     [Tooltip("平滑速度 (數值越大越即時)")]
     [SerializeField] private float smoothSpeed = 8f;
@@ -52,20 +55,18 @@ public class MapCameraFollow : MonoBehaviour
         // 玩家的世界座標 X
         float playerWorldX = target.position.x;
 
-        // 計算玩家與固定位置的距離
+        // 計算玩家與中心的距離
         float distance = playerWorldX - playerScreenX;
 
         // 只有距離超過閾值時才移動地圖
         if (Mathf.Abs(distance) < moveThreshold) return;
 
-        // 計算容器需要移動多少 (只移動超出閾值的部分)
-        float offsetX = distance > 0
-            ? playerScreenX + moveThreshold - playerWorldX
-            : playerScreenX - moveThreshold - playerWorldX;
+        // 根據方向決定平移量
+        float targetOffsetX = distance > 0 ? -moveAmount : moveAmount;
 
         // 平滑移動容器
         Vector3 pos = mapContainer.localPosition;
-        pos.x = Mathf.Lerp(pos.x, pos.x + offsetX, smoothSpeed * Time.deltaTime);
+        pos.x = Mathf.Lerp(pos.x, pos.x + targetOffsetX, smoothSpeed * Time.deltaTime);
         mapContainer.localPosition = pos;
     }
 
@@ -152,9 +153,8 @@ public class MapCameraFollow : MonoBehaviour
 
         if (Mathf.Abs(distance) < moveThreshold) return;
 
-        float offsetX = distance > 0
-            ? playerScreenX + moveThreshold - playerWorldX
-            : playerScreenX - moveThreshold - playerWorldX;
+        // 根據方向決定平移量
+        float offsetX = distance > 0 ? -moveAmount : moveAmount;
 
         Vector3 pos = mapContainer.localPosition;
         pos.x += offsetX;
