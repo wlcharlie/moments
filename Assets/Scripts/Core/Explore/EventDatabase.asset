@@ -43,27 +43,21 @@ MonoBehaviour:
     isAble: 1
     canStoryMode: 1
     canEventMode: 1
-  - name: "\u88AB\u554F\u53EF\u4E0D\u53EF\u4EE5\u8FFD\u8E64"
-    thumbnail: {fileID: -692078636420456154, guid: e4a9f0091a8e04b318bf3f8829125aa4, type: 3}
-    conversationTitle: COMM_STREET_03
+  - name: "\u8857\u982D\u651D\u5F71\u5E2B"
+    thumbnail: {fileID: -734796840722011684, guid: 4765116a41c8c4695bf3d294d0d56144, type: 3}
+    conversationTitle: COMM_PARK_01
     isAble: 1
     canStoryMode: 1
     canEventMode: 1
-  - name: "\u88AB\u554F\u53EF\u4E0D\u53EF\u4EE5\u8FFD\u8E64"
-    thumbnail: {fileID: -692078636420456154, guid: e4a9f0091a8e04b318bf3f8829125aa4, type: 3}
-    conversationTitle: COMM_STREET_03
+  - name: "\u8DEF\u908A\u6709\u53EF\u611B\u7684\u72D7\u52FE"
+    thumbnail: {fileID: -734796840722011684, guid: 4765116a41c8c4695bf3d294d0d56144, type: 3}
+    conversationTitle: COMM_PARK_02
     isAble: 1
     canStoryMode: 1
     canEventMode: 1
-  - name: "\u88AB\u554F\u53EF\u4E0D\u53EF\u4EE5\u8FFD\u8E64"
-    thumbnail: {fileID: -692078636420456154, guid: e4a9f0091a8e04b318bf3f8829125aa4, type: 3}
-    conversationTitle: COMM_STREET_03
-    isAble: 1
-    canStoryMode: 1
-    canEventMode: 1
-  - name: "\u88AB\u554F\u53EF\u4E0D\u53EF\u4EE5\u8FFD\u8E64"
-    thumbnail: {fileID: -692078636420456154, guid: e4a9f0091a8e04b318bf3f8829125aa4, type: 3}
-    conversationTitle: COMM_STREET_03
+  - name: "\u540C\u4E8B\u6A5F\u68B0\u9375\u76E4"
+    thumbnail: {fileID: 4433539168102762298, guid: 4775f0619fada4f058009f2492a677c0, type: 3}
+    conversationTitle: COMM_WORK_01
     isAble: 1
     canStoryMode: 1
     canEventMode: 1
