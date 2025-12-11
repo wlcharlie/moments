@@ -84,4 +84,48 @@ public static class FMODAudioManager
         }
         return false;
     }
+
+    /// <summary>
+    /// Pause an FMOD event.
+    /// </summary>
+    public static void PauseEvent(string eventPath)
+    {
+        if (activeEvents.TryGetValue(eventPath, out EventInstance instance))
+        {
+            instance.setPaused(true);
+        }
+    }
+
+    /// <summary>
+    /// Resume a paused FMOD event.
+    /// </summary>
+    public static void ResumeEvent(string eventPath)
+    {
+        if (activeEvents.TryGetValue(eventPath, out EventInstance instance))
+        {
+            instance.setPaused(false);
+        }
+    }
+
+    /// <summary>
+    /// Pause all active FMOD events.
+    /// </summary>
+    public static void PauseAllEvents()
+    {
+        foreach (var kvp in activeEvents)
+        {
+            kvp.Value.setPaused(true);
+        }
+    }
+
+    /// <summary>
+    /// Resume all paused FMOD events.
+    /// </summary>
+    public static void ResumeAllEvents()
+    {
+        foreach (var kvp in activeEvents)
+        {
+            kvp.Value.setPaused(false);
+        }
+    }
 }

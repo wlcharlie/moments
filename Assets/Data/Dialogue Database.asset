@@ -1939,7 +1939,9 @@ MonoBehaviour:
       - title: Sequence
         value: 'SetBackgroundColor(#ffffff);
 
-          PortraitSlideIn();'
+          PortraitSlideIn();
+
+          FMODPlay(object/obj_room_door_knock)'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja

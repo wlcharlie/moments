@@ -171,6 +171,7 @@ public class GameManager : MonoBehaviour
             {
                 // 場景載入完成後啟動對話
                 DialogueManager.StartConversation(conversationToResume);
+                FMODAudioManager.PlayEvent("event:/music/music_piece_main");
             });
         }
         else
@@ -190,6 +191,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("開始遊戲過場");
             TransitionManager.Instance.LoadSceneWithTransition("ExploreScene", TransitionType.LoadingScreen);
+            FMODAudioManager.PlayEvent("event:/music/music_piece_main");
         }
         else
         {
