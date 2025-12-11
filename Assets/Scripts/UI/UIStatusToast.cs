@@ -4,13 +4,13 @@ using TMPro;
 
 public class UIStatusToast : MonoBehaviour
 {
+    public static UIStatusToast Instance { get; private set; }
+
+    [SerializeField] RectTransform rectTransform;
     [SerializeField] private float displayDuration = 2f;
     [SerializeField] private TextMeshProUGUI statusName;
     [SerializeField] private UIStatus statusIcon;
     [SerializeField] private UIArrow statusArrow;
-
-
-    private RectTransform rectTransform;
 
     private Coroutine hideCoroutine;
 
@@ -19,9 +19,22 @@ public class UIStatusToast : MonoBehaviour
     private int previousMoneyValue;
     private int previousEnergyValue;
 
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
+
     void Start()
     {
-        rectTransform = GetComponent<RectTransform>();
         rectTransform.anchoredPosition = new Vector2(-198, 0); // 初始隱藏位置
 
         // 訂閱狀態變化事件

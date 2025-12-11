@@ -4,6 +4,8 @@ using UnityEngine.UI;
 [ExecuteInEditMode]
 public class UILetterboxMask : MonoBehaviour
 {
+    public static UILetterboxMask Instance { get; private set; }
+
     [SerializeField] private RectTransform topBar;
     [SerializeField] private RectTransform bottomBar;
     [SerializeField] private RectTransform leftBar;
@@ -15,8 +17,19 @@ public class UILetterboxMask : MonoBehaviour
 
     void Start()
     {
-        if (persistRoot != null)
-            DontDestroyOnLoad(persistRoot);
+        if (Application.isPlaying)
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                if (persistRoot != null)
+                    DontDestroyOnLoad(persistRoot);
+            }
+            else
+            {
+                Destroy(persistRoot != null ? persistRoot : gameObject);
+            }
+        }
     }
 
     void OnEnable()
