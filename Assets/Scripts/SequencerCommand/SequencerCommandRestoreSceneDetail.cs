@@ -48,6 +48,15 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
                 Debug.Log("RestoreSceneDetail: 使用當前狀態作為原始狀態。");
             }
 
+            // 如果 duration 為 0，直接還原不播放動畫
+            if (duration <= 0f)
+            {
+                backgroundTransform.localScale = originalScale;
+                backgroundTransform.position = originalPosition;
+                Stop();
+                return;
+            }
+
             // 開始恢復動畫
             StartCoroutine(RestoreAnimation(duration));
         }
