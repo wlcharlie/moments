@@ -16703,7 +16703,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u4E00\u5B9A\u5C0F\u767D\u4E5F\u662F\u55F7\uFF01"
+        value: "\u5C0F\u767D\u4E00\u5B9A\u4E5F\u662F\u55F7\uFF01"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -17615,8 +17615,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 176.06267, y: 103.29006}
-    canvasZoom: 0.6170006
+    canvasScrollPosition: {x: 126.542274, y: 26.602167}
+    canvasZoom: 0.50900024
   - id: 17
     fields:
     - title: Title
