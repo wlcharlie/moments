@@ -369,4 +369,23 @@ public class GameManager : MonoBehaviour
     {
         PlayerStatusManager.Instance?.UpdateStatusEnergy(amount);
     }
+
+    // ===== 遊戲結束 =====
+
+    /// <summary>
+    /// 開啟指定網址
+    /// </summary>
+    /// <param name="url">網址</param>
+    public void OpenURL(string url)
+    {
+        if (string.IsNullOrEmpty(url))
+        {
+            Debug.LogWarning("網址為空");
+            return;
+        }
+
+        Debug.Log($"開啟網址: {url}");
+        Application.OpenURL(url);
+    }
+
 }

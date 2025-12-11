@@ -39,4 +39,10 @@ public class GameManagerBridge : ScriptableObject
         if (GameManager.Instance != null)
             GameManager.Instance.OnFollowUsButtonClicked();
     }
+
+    public static void OpenURL(string url)
+    {
+        if (GameManager.Instance != null)
+            GameManager.Instance.OpenURL(url);
+    }
 }
