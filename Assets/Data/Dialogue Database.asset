@@ -229,6 +229,28 @@ MonoBehaviour:
     spritePortrait: {fileID: 0}
     alternatePortraits: []
     spritePortraits: []
+  - id: 7
+    fields:
+    - title: Name
+      value: "\u540C\u4E8B"
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Pictures
+      value: '[]'
+      type: 3
+      typeString: CustomFieldType_Files
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: IsPlayer
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    portrait: {fileID: 0}
+    spritePortrait: {fileID: 0}
+    alternatePortraits: []
+    spritePortraits: []
   items: []
   locations:
   - id: 1
@@ -839,7 +861,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 696
-        y: 180
+        y: 181.31061
         width: 160
         height: 30
     - id: 3
@@ -1331,8 +1353,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 701.1973
-        y: 426.89352
+        x: 699.8867
+        y: 428.20413
         width: 160
         height: 30
     - id: 11
@@ -1544,7 +1566,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 216
+        x: 217.31061
         y: 204
         width: 160
         height: 30
@@ -2812,7 +2834,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 96
-        y: 192
+        y: 190.7952
         width: 160
         height: 30
     - id: 18
@@ -3690,7 +3712,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 28.976196, y: 41.45516}
-    canvasZoom: 0.5124959
+    canvasZoom: 0.83
   - id: 19
     fields:
     - title: Title
@@ -9359,7 +9381,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 157.14041
-        y: 262.29446
+        y: 263.53668
         width: 160
         height: 30
     - id: 13
@@ -9430,7 +9452,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 48
-        y: 336
+        y: 337.24222
         width: 160
         height: 30
     - id: 14
@@ -12075,7 +12097,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u63A5\u4E0B\u4F86\u8A72\u600E\u9EBC\u627E\u5462\uFF1F"
+        value: "\u8A72\u53BB\u54EA\u88E1\u627E\u5462\uFF1F"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -12119,8 +12141,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 158
-        y: 80
+        x: 159.22324
+        y: 78.776764
         width: 160
         height: 30
     - id: 2
@@ -12146,7 +12168,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u5C0F\u8C9D\u72D7\u53EF\u4EE5\u611F\u77E5\u5230\u5925\u4F34\u5011\u7684\u5B58\u5728\u55F7\uFF01"
+        value: "\u5C0F\u8C9D\u72D7\u53EF\u4EE5\u611F\u77E5\u5230\u5C0F\u65E5\u7378\u5011\u7684\u5B58\u5728\u55F7\uFF01"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -12180,7 +12202,13 @@ MonoBehaviour:
       - originConversationID: 27
         originDialogueID: 2
         destinationConversationID: 27
-        destinationDialogueID: 4
+        destinationDialogueID: 14
+        isConnector: 0
+        priority: 2
+      - originConversationID: 27
+        originDialogueID: 2
+        destinationConversationID: 27
+        destinationDialogueID: 15
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -12190,8 +12218,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 156
-        y: 130.75311
+        x: 154.77676
+        y: 131.97636
         width: 160
         height: 30
     - id: 4
@@ -12263,8 +12291,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 180
-        y: 192
+        x: 123.51242
+        y: 337.6299
         width: 160
         height: 30
     - id: 5
@@ -12345,8 +12373,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 361.71567
-        y: 196.67825
+        x: 367.8319
+        y: 343.46713
         width: 160
         height: 30
     - id: 6
@@ -12416,8 +12444,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 180
-        y: 384
+        x: 184.89297
+        y: 491.64517
         width: 160
         height: 30
     - id: 7
@@ -12487,8 +12515,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 180
-        y: 432
+        x: 184.89297
+        y: 539.64526
         width: 160
         height: 30
     - id: 8
@@ -12558,8 +12586,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 569.934
-        y: 191.54544
+        x: 574.827
+        y: 338.33432
         width: 160
         height: 30
     - id: 9
@@ -12629,8 +12657,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 772.0471
-        y: 200.79263
+        x: 776.9402
+        y: 347.5815
         width: 160
         height: 30
     - id: 10
@@ -12700,8 +12728,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 781.29425
-        y: 299.8678
+        x: 786.18726
+        y: 407.51297
         width: 160
         height: 30
     - id: 11
@@ -12771,8 +12799,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 579.1806
-        y: 305.1517
+        x: 584.0736
+        y: 412.79688
         width: 160
         height: 30
     - id: 12
@@ -12842,8 +12870,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 357.25223
-        y: 301.18884
+        x: 362.1452
+        y: 408.834
         width: 160
         height: 30
     - id: 13
@@ -12916,13 +12944,226 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 164.38564
-        y: 306.54694
+        x: 169.27861
+        y: 414.1921
+        width: 160
+        height: 30
+    - id: 14
+      fields:
+      - title: Title
+        value: "\u5C0F\u65E5\u7378\uFF1F"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: "\u5C0F\u65E5\u7378\uFF1F"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u5C0F\u65E5\u7378\uFF1F"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 27
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 27
+        originDialogueID: 14
+        destinationConversationID: 27
+        destinationDialogueID: 16
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 417.77347
+        y: 148.94885
+        width: 160
+        height: 30
+    - id: 15
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: "\u8981\u600E\u9EBC\u627E\u5230\u5C0F\u65E5\u7378\u5462\uFF1F"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u8981\u600E\u9EBC\u627E\u5230\u5C0F\u65E5\u7378\u5462\uFF1F"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 27
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 27
+        originDialogueID: 15
+        destinationConversationID: 27
+        destinationDialogueID: 4
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 133.98167
+        y: 218.67363
+        width: 160
+        height: 30
+    - id: 16
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u65E5\u7378\u662F\u5C0F\u767D\u5E6B\u6211\u5011\u53D6\u7684\u540D\u5B57\u55F7\uFF01"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 27
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 27
+        originDialogueID: 16
+        destinationConversationID: 27
+        destinationDialogueID: 4
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 392.0854
+        y: 249.10172
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 72}
-    canvasZoom: 0.80900097
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.81750077
   - id: 10
     fields:
     - title: Title
@@ -13138,7 +13379,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u55EF\u55EF\uFF1F\u597D\u3002\u62CD\u7167\uFF1F\u53EA\u80FD\u59D1\u4E14\u4E00\u8A66\u4E86"
+        value: "\u62CD\u7167\uFF01\uFF1F\uFF1F\u628A\u7260\u62CD\u4E0B\u4F86\u55CE\uFF1F\uFF1F\u597D\u3001\u597D\u5594\u5C31\u8A66\u8A66\u770B\u5427"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -13197,7 +13438,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 1
+        value: 3
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -13209,7 +13450,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u6309\u4E0B\u62CD\u7167\u9375\uFF0C\u5373\u53EF\u5B8C\u6210\u62CD\u7167"
+        value: "<i>\u5728\u5C0F\u65E5\u7378\u8DD1\u8D70\u4E4B\u524D\uFF0C\u8D95\u5FEB\u628A\u7260\u62CD\u4E0B\u4F86\uFF01</i>"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -13254,7 +13495,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 394.773
-        y: 323.5336
+        y: 324.73404
         width: 160
         height: 30
     - id: 9
@@ -13809,11 +14050,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u554A..\u5C3E\u5DF4\uFF01\n\u5C3E\u5DF4\u6C92\u6709\u8D95\u4E0A\u6377\u904B"
+        value: "\u554A...\u5C3E\u5DF4...\u5C3E\u5DF4\u6C92\u6709\u8D95\u4E0A\u96FB\u8ECA"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetDialoguePanel(true, immediate)@1;
+        value: SetDialoguePanel(true, immediate)@0;
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -13851,7 +14092,7 @@ MonoBehaviour:
       - originConversationID: 10
         originDialogueID: 17
         destinationConversationID: 10
-        destinationDialogueID: 18
+        destinationDialogueID: 22
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -13861,8 +14102,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 192
-        y: 396
+        x: 165.58942
+        y: 394.79956
         width: 160
         height: 30
     - id: 18
@@ -13888,7 +14129,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u55F7\uFF01\u7260\u9084\u4E00\u81C9\u82E5\u7121\u5176\u4E8B\u7684\u6A23\u5B50\uFF01"
+        value: "\u6C6A\u55F7\uFF01\uFF01\u5C0F\u65E5\u7378\uFF01"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -13941,7 +14182,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 410.62476
-        y: 19.631897
+        y: 18.43142
         width: 160
         height: 30
     - id: 19
@@ -13967,7 +14208,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u9019\u4E5F\u592A\u5927\u610F\u4E86\u5427\u2026\u2026\u5C45\u7136\u5B8C\u5168\u6C92\u6CE8\u610F\u5230\u3002"
+        value: "\u54A6\uFF01\uFF1F\u7260\u5C31\u662F\u55CE\uFF1F"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -14019,8 +14260,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 410.6246
-        y: 78.52751
+        x: 407.02322
+        y: 76.12654
         width: 160
         height: 30
     - id: 20
@@ -14034,11 +14275,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 4
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 4
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -14046,7 +14287,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u9019\u5446\u840C\u7684\u8868\u73FE....\n\u662F\u5C0F\u8C9D\u72D7\u7684\u5925\u4F34\u9EC3\u91D1\u7375\u72AC! "
+        value: "\u90A3\u6211\u63A5\u4E0B\u4F86\u8981\u600E\u9EBC\u8FA6\uFF1F\uFF1F"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -14099,7 +14340,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 408.17087
-        y: 133.74225
+        y: 151.74951
         width: 160
         height: 30
     - id: 21
@@ -14125,7 +14366,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u5FEB\u9EDE\u6B63\u7528\u9019\u500B\u628A\u5B83\u62CD\u8D77\u4F86\uFF01"
+        value: "\u62CD\uFF01\u6C6A\u55F7\uFF01\uFF01\u62CD\u7167\uFF01"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -14181,9 +14422,74 @@ MonoBehaviour:
         y: 203.68082
         width: 160
         height: 30
+    - id: 22
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u592A\u5927\u610F\u4E86\u5427  \u8981\u4E0D\u8981\u53BB\u5E6B\u7260\u628A\u5C3E\u5DF4\u62C9\u51FA\u4F86\u5462\n"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 10
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks: []
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 164.38892
+        y: 444.79956
+        width: 160
+        height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.4790005
+    canvasZoom: 0.8329995
   - id: 11
     fields:
     - title: Title
@@ -14324,7 +14630,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u592A\u597D\u4E86 \uFF01\n\u53EA\u8981\u7E7C\u7E8C\u6536\u96C6\uFF0C\u5C0F\u767D\u5C31\u6703\u6062\u5FA9...."
+        value: "\u592A\u597D\u4E86\uFF5E\u53EA\u8981\u7E7C\u7E8C\u9019\u6A23\uFF0C\u6162\u6162\u628A\u5C0F\u65E5\u7378\u6536\u96C6\u56DE\u4F86\uFF0C\u5C0F\u767D\u5C31\u6703\u6062\u5FA9\u539F\u72C0\u5427\uFF01"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -14358,77 +14664,6 @@ MonoBehaviour:
       - originConversationID: 11
         originDialogueID: 1
         destinationConversationID: 11
-        destinationDialogueID: 2
-        isConnector: 0
-        priority: 2
-      conditionsString: 
-      userScript: 
-      onExecute:
-        m_PersistentCalls:
-          m_Calls: []
-      canvasRect:
-        serializedVersion: 2
-        x: 160
-        y: 80
-        width: 160
-        height: 30
-    - id: 2
-      fields:
-      - title: Title
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Description
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Actor
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Conversant
-        value: 1
-        type: 5
-        typeString: CustomFieldType_Actor
-      - title: Menu Text
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Dialogue Text
-        value: "\u4F60\u770B\u8457\u7167\u7247\u4EE5\u53CA\u767C\u751F\u7684\u4E00\u5207\u82E5\u6709\u6240\u601D\u3002\u5C07\u7167\u7247\u4EA4\u7D66\u5C0F\u8C9D\u72D7\u4FDD\u7BA1\u3002"
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: Sequence
-        value: 
-        type: 0
-        typeString: CustomFieldType_Text
-      - title: ja
-        value: 
-        type: 4
-        typeString: CustomFieldType_Localization
-      - title: en
-        value: 
-        type: 4
-        typeString: CustomFieldType_Localization
-      - title: Background Image
-        value: 
-        type: 0
-        typeString: CustomFieldType_Sprite
-      - title: Comic Image
-        value: 
-        type: 0
-        typeString: CustomFieldType_Sprite
-      conversationID: 11
-      isRoot: 0
-      isGroup: 0
-      nodeColor: 
-      delaySimStatus: 0
-      falseConditionAction: Block
-      conditionPriority: 2
-      outgoingLinks:
-      - originConversationID: 11
-        originDialogueID: 2
-        destinationConversationID: 11
         destinationDialogueID: 3
         isConnector: 0
         priority: 2
@@ -14439,8 +14674,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 161
-        y: 132.2555
+        x: 160
+        y: 79.172195
         width: 160
         height: 30
     - id: 3
@@ -14466,8 +14701,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u554A\uFF0C\u6642\u9593\u5DF2\u7D93\u904E\u4E86\u9019\u9EBC\u665A\u4E86
-          \u8981\u8D95\u53BB\u4E0A\u73ED\u4E86"
+        value: "\u554A\uFF01\u5DF2\u7D93\u9019\u9EBC\u665A\u4E86\uFF01\u8981\u8D95\u5FEB\u53BB\u516C\u53F8\u624D\u884C\uFF01"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -14511,8 +14745,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 159
-        y: 182.2555
+        x: 158.17218
+        y: 181.42767
         width: 160
         height: 30
     - id: 4
@@ -14538,7 +14772,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u8D95\u4E0A\u4E86\u4E0A\u73ED\u6642\u9593\u5230\u516C\u53F8"
+        value: "\u96D6\u7136\u5F88\u60F3\u56DE\u53BB\u78BA\u8A8D\u4E00\u4E0B\u5C0F\u767D\u7684\u72C0\u6CC1...\u4F46\u5148\u53BB\u4E0A\u73ED\u5427"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -14597,13 +14831,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 231
+        x: 157.51657
+        y: 240.93372
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 15.28804}
-    canvasZoom: 0.5990001
+    canvasScrollPosition: {x: 87.07677, y: 0}
+    canvasZoom: 1.2080002
   - id: 12
     fields:
     - title: Title
@@ -14874,11 +15108,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 6
+        value: 7
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 1
+        value: 7
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -14936,7 +15170,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
+        x: 158.99649
         y: 196.8771
         width: 160
         height: 30
@@ -15280,6 +15514,152 @@ MonoBehaviour:
       outgoingLinks:
       - originConversationID: 12
         originDialogueID: 8
+        destinationConversationID: 12
+        destinationDialogueID: 9
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 180
+        y: 373.92258
+        width: 160
+        height: 30
+    - id: 9
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'SetDialoguePanel(false, immediate)@0;
+
+          Continue()@0.5;'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: Assets/Arts/CGs/Sidewalk_Night.png
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 12
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 12
+        originDialogueID: 9
+        destinationConversationID: 12
+        destinationDialogueID: 10
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 169.96484
+        y: 440.98233
+        width: 160
+        height: 30
+    - id: 10
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'SetDialoguePanel(true, immediate)@0.49;
+
+          Continue()@0.5;'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: Assets/Arts/CGs/Doorstep_Night.png
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 12
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 12
+        originDialogueID: 10
         destinationConversationID: 13
         destinationDialogueID: 0
         isConnector: 0
@@ -15291,8 +15671,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 180
-        y: 396
+        x: 401.77655
+        y: 446.8278
         width: 160
         height: 30
     entryGroups: []
@@ -15482,8 +15862,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 168.03896
-        y: 76.96103
+        x: 157.13722
+        y: 141.20332
         width: 160
         height: 30
     - id: 2
@@ -15497,11 +15877,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 4
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 4
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -15509,11 +15889,15 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u55F7\u55F7\uFF01\u59B3\u505A\u5F97\u5F88\u597D\u55F7\uFF01\u6536\u96C6\u5230\u7B2C\u4E00\u5F35\u7167\u7247\uFF01"
+        value: "\u4E0D\u77E5\u9053\u5C0F\u767D\u73FE\u5728\u600E\u9EBC\u4E86"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SetBackgroundColor(#808080);
+
+          SetPortrait(Mai, pic=11);
+
+          PortraitSlideOut()@2;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -15553,8 +15937,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 161
-        y: 130
+        x: 163.4241
+        y: 190.60597
         width: 160
         height: 30
     - id: 3
@@ -15568,11 +15952,11 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 1
+        value: 3
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
-        value: 1
+        value: 3
         type: 5
         typeString: CustomFieldType_Actor
       - title: Menu Text
@@ -15580,11 +15964,13 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u9032\u5230\u5C0F\u767D\u623F\u9593\uFF0C\u5C0F\u767D\u4F9D\u820A....."
+        value: .....
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=9);
+        value: 'SetPortrait(Mai, pic=9);
+
+          SetBackgroundColor(#ffffff);'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -15614,7 +16000,7 @@ MonoBehaviour:
       - originConversationID: 13
         originDialogueID: 3
         destinationConversationID: 13
-        destinationDialogueID: 4
+        destinationDialogueID: 13
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -15624,8 +16010,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 161.03897
-        y: 205.97403
+        x: 157.40256
+        y: 254.4588
         width: 160
         height: 30
     - id: 4
@@ -15651,7 +16037,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u6253\u958B\u7E6A\u672C\u4F86\u77A7\u77A7\u597D\u4E86"
+        value: "\u4F86\u7FFB\u7FFB\u770B\u756B\u518A\u597D\u4E86"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -15671,7 +16057,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image
-        value: Assets/Arts/Comics/CH01_SC03/Comic_Beigo_Reveal_01.png
+        value: 
         type: 0
         typeString: CustomFieldType_Sprite
       conversationID: 13
@@ -15685,7 +16071,7 @@ MonoBehaviour:
       - originConversationID: 13
         originDialogueID: 4
         destinationConversationID: 13
-        destinationDialogueID: 5
+        destinationDialogueID: 17
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -15695,8 +16081,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160
-        y: 276.75327
+        x: 426.66632
+        y: 132.51086
         width: 160
         height: 30
     - id: 5
@@ -15722,11 +16108,16 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u51FA\u73FE\u4E86!\u9EC3\u91D1\u7375\u72AC\u51FA\u73FE\u5728\u756B\u518A\u4E0A\u4E86\u3002"
+        value: "\u554A\uFF01\u591A\u4E86\u4E00\u96BB\u5C0F\u65E5\u7378\uFF01"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: 'SkipComicFade(center);
+
+          SetDialoguePanel(true, immediate);
+
+          SetPortrait(Mai,
+          pic=2);'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -15742,7 +16133,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Sprite
       - title: Comic Image
-        value: 
+        value: Assets/Arts/Comics/CH01_SC05/golden_book_02.png
         type: 0
         typeString: CustomFieldType_Sprite
       conversationID: 13
@@ -15766,8 +16157,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 157.96106
-        y: 335.0649
+        x: 425.8395
+        y: 310.82236
         width: 160
         height: 30
     - id: 6
@@ -15793,7 +16184,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u53EA\u8981\u4E00\u96BB\u4E00\u96BB\u6536\u96C6\u8D77\u4F86\uFF0C\u6211\u60F3\u5C0F\u767D\u5C31\u80FD\u6062\u5FA9\uFF0C\u55F7\uFF01"
+        value: "\u53EA\u8981\u5C0F\u65E5\u7378\u4E00\u96BB\u4E00\u96BB\u627E\u56DE\u4F86\u4F86\uFF0C\u5C0F\u767D\u4E00\u5B9A\u5C31\u80FD\u6062\u5FA9\u539F\u72C0\u4E86"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -15837,8 +16228,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 160.03897
-        y: 410
+        x: 423.069
+        y: 389.394
         width: 160
         height: 30
     - id: 9
@@ -15864,11 +16255,13 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u767D\u5929\u7684\u4E8B\u4EF6\u3001\u5947\u602A\u7684\u76F8\u6A5F\u3001\u5DE5\u4F5C\u52A0\u73ED\uFF0C\u9084\u6709\u5C0F\u767D\u7684\u72C0\u6CC1\u2026\u2026\u96D6\u7136\u5F88\u6DF7\u4E82\uFF0C\u4F46\u53EF\u4E0D\u80FD\u505C\u4E0B\u4F86...."
+        value: "\u9677\u5165\u6C88\u7761\u7684\u5C0F\u767D\u3001\u7A81\u7136\u51FA\u73FE\u7684\u5C0F\u8C9D\u72D7..."
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=5);
+        value: 'SetPortrait(Mai, pic=5);
+
+          SetBackgroundColor(#808080);'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -15898,7 +16291,7 @@ MonoBehaviour:
       - originConversationID: 13
         originDialogueID: 9
         destinationConversationID: 13
-        destinationDialogueID: 12
+        destinationDialogueID: 19
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -15908,8 +16301,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 527.4155
-        y: 164.5195
+        x: 683.77893
+        y: 119.67107
         width: 160
         height: 30
     - id: 10
@@ -15935,7 +16328,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u611F\u8B1D\uFF01\u8A66\u73A9\u7248 \xB7 \u7AE0\u7BC0\u7D50\u675F\u3002\u9664\u4E86\u7E7C\u7E8C\u9AD4\u9A57\u904A\u6232\uFF0C\u53EF\u4EE5\u5230\u9996\u9801\u9078\u64C7\u4E8B\u4EF6\u6A21\u5F0F\u5916\uFF0C\u8ACB\u5E6B\u6211\u5011\u586B\u5BEB\u56DE\u994B\u4EE5\u53CA\u95DC\u6CE8\u6211\u5011\uFF0C\u611F\u8B1D\u60A8\u3002"
+        value: "\u4EE5\u4E0A\u662F\u6240\u6709\u8A66\u73A9\u7248\u7AE0\u7BC0\uFF01\n\u5982\u679C\u60F3\u7E7C\u7E8C\u9AD4\u9A57\u904A\u6232\uFF0C\u53EF\u4EE5\u56DE\u5230\u9996\u9801\u9EDE\u9078\u300E\u4E8B\u4EF6\u6A21\u5F0F\u300F\u3002\n"
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
@@ -15969,7 +16362,7 @@ MonoBehaviour:
       - originConversationID: 13
         originDialogueID: 10
         destinationConversationID: 13
-        destinationDialogueID: 11
+        destinationDialogueID: 28
         isConnector: 0
         priority: 2
       conditionsString: 
@@ -15979,8 +16372,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 528
-        y: 312
+        x: 1173.749
+        y: 177.44574
         width: 160
         height: 30
     - id: 11
@@ -16056,11 +16449,11 @@ MonoBehaviour:
             m_CallState: 2
       canvasRect:
         serializedVersion: 2
-        x: 526.12964
-        y: 389.24686
+        x: 1176.7491
+        y: 431.60312
         width: 160
         height: 30
-    - id: 12
+    - id: 13
       fields:
       - title: Title
         value: 
@@ -16071,7 +16464,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Actor
-        value: 4
+        value: 1
         type: 5
         typeString: CustomFieldType_Actor
       - title: Conversant
@@ -16083,11 +16476,13 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Dialogue Text
-        value: "\u55F7"
+        value: "\u600E\u9EBC\u6703...\u597D\u50CF\u4E00\u9EDE\u8B8A\u5316\u90FD\u6C92\u6709..."
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Beigo, pic=4);
+        value: 'PortraitRestore();
+
+          SetPortrait(Mai, pic=10);'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -16115,7 +16510,1016 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 13
-        originDialogueID: 12
+        originDialogueID: 13
+        destinationConversationID: 13
+        destinationDialogueID: 14
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 158.61469
+        y: 305.6709
+        width: 160
+        height: 30
+    - id: 14
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u5C0F\u767D\u597D\u50CF...\u6C92\u6709\u4EC0\u9EBC\u8B8A\u5316\uFF0C\u6536\u96C6\u5C0F\u65E5\u7378\u771F\u7684\u6709\u7528\u55CE\uFF1F"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: SetPortrait(Mai, pic=11);
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
+      conversationID: 13
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 13
+        originDialogueID: 14
+        destinationConversationID: 13
+        destinationDialogueID: 15
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 157.40248
+        y: 353.24664
+        width: 160
+        height: 30
+    - id: 15
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u6536\u96C6\u5230\u5C0F\u65E5\u7378\u5F8C\uFF0C\u5C0F\u8C9D\u72D7\u611F\u89BA\u66F4\u6709\u7CBE\u795E\u4E86\uFF01"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 13
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 13
+        originDialogueID: 15
+        destinationConversationID: 13
+        destinationDialogueID: 16
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 162.25092
+        y: 403.2467
+        width: 160
+        height: 30
+    - id: 16
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 4
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u4E00\u5B9A\u5C0F\u767D\u4E5F\u662F\u55F7\uFF01"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 13
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 13
+        originDialogueID: 16
+        destinationConversationID: 13
+        destinationDialogueID: 4
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 161.0388
+        y: 455.67096
+        width: 160
+        height: 30
+    - id: 17
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'Continue()@0.3;
+
+          SkipComicFade(center);
+
+          SetDialoguePanel(false,
+          immediate)@0;'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: Assets/Arts/Comics/CH01_SC05/golden_book_01.png
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 13
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 13
+        originDialogueID: 17
+        destinationConversationID: 13
+        destinationDialogueID: 18
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 429.09067
+        y: 190.99574
+        width: 160
+        height: 30
+    - id: 18
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'SkipComicFade(center);
+
+          Continue()@0.3;'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: Assets/Arts/Comics/CH01_SC05/golden_book_02.png
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 13
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 13
+        originDialogueID: 18
+        destinationConversationID: 13
+        destinationDialogueID: 5
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 429.09067
+        y: 243.41986
+        width: 160
+        height: 30
+    - id: 19
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u70BA\u4EC0\u9EBC\u756B\u518A\u88E1\u7684\u6771\u897F\u6703\u6D88\u5931\uFF1F"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 13
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 13
+        originDialogueID: 19
+        destinationConversationID: 13
+        destinationDialogueID: 20
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 682.5668
+        y: 169.67107
+        width: 160
+        height: 30
+    - id: 20
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u8DD1\u51FA\u4F86\u7684\u5C0F\u65E5\u7378\u53C8\u662F\u4EC0\u9EBC\uFF1F"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 13
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 13
+        originDialogueID: 20
+        destinationConversationID: 13
+        destinationDialogueID: 21
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 682.5668
+        y: 220.88316
+        width: 160
+        height: 30
+    - id: 21
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u9019\u4E9B\u5C0F\u65E5\u7378\u548C\u5C0F\u767D\u9677\u5165\u6C88\u7761\u6709\u4EC0\u9EBC\u95DC\u4FC2\u55CE\uFF1F"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 13
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 13
+        originDialogueID: 21
+        destinationConversationID: 13
+        destinationDialogueID: 22
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 682.5668
+        y: 270.88318
+        width: 160
+        height: 30
+    - id: 22
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u597D\u6DF7\u4E82...\u611F\u89BA\u6709\u597D\u591A\u554F\u984C\u90FD\u9084\u6C92\u91D0\u6E05..."
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'SetBackgroundColor(#ffffff);
+
+          SetPortrait(Mai, pic=11);'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 13
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 13
+        originDialogueID: 22
+        destinationConversationID: 13
+        destinationDialogueID: 23
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 684.99835
+        y: 319.67108
+        width: 160
+        height: 30
+    - id: 23
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u516C\u53F8\u61C9\u8A72\u4E5F\u6C92\u8FA6\u6CD5\u56E0\u70BA\u9019\u6A23\u5C31\u8ACB\u5047...\n"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: SetPortrait(Mai, pic=4);
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 13
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 13
+        originDialogueID: 23
+        destinationConversationID: 13
+        destinationDialogueID: 24
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 683.7789
+        y: 380.558
+        width: 160
+        height: 30
+    - id: 24
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u4F46\u5C0F\u767D\u6703\u8B8A\u6210\u9019\u6A23...\u4E5F\u662F\u6211\u9020\u6210\u7684.."
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 'SetBackgroundColor(#808080);
+
+          SetPortrait(Mai, pic=11);'
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 13
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 13
+        originDialogueID: 24
+        destinationConversationID: 13
+        destinationDialogueID: 25
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 884.7473
+        y: 118.209595
+        width: 160
+        height: 30
+    - id: 25
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u7B97\u4E86\uFF01\u641E\u4E0D\u61C2\u7684\u4E8B\u60F3\u518D\u591A\u4E5F\u6C92\u7528\uFF01"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: SetPortrait(Mai, pic=16);
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 13
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 13
+        originDialogueID: 25
+        destinationConversationID: 13
+        destinationDialogueID: 26
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 884.7473
+        y: 170.6398
+        width: 160
+        height: 30
+    - id: 26
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u5148\u628A\u5C0F\u65E5\u7378\u5011\u4E00\u96BB\u4E00\u96BB\u627E\u56DE\u4F86\u7684"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 13
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 13
+        originDialogueID: 26
+        destinationConversationID: 13
+        destinationDialogueID: 27
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 884.7473
+        y: 220.6398
+        width: 160
+        height: 30
+    - id: 27
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u7B49\u7B49\u6211\u5594\uFF5E\u5C0F\u767D"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 13
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 13
+        originDialogueID: 27
         destinationConversationID: 13
         destinationDialogueID: 10
         isConnector: 0
@@ -16127,13 +17531,84 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 527.4155
-        y: 242.57147
+        x: 883.5367
+        y: 270.6398
+        width: 160
+        height: 30
+    - id: 28
+      fields:
+      - title: Title
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Description
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Actor
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Conversant
+        value: 1
+        type: 5
+        typeString: CustomFieldType_Actor
+      - title: Menu Text
+        value: 
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Dialogue Text
+        value: "\u53E6\u5916\uFF0C\u5E0C\u671B\u60A8\u53EF\u4EE5\u5E6B\u6211\u5011\u586B\u5BEB\u56DE\u994B\u8868\u55AE\uFF0C\u4E26\u95DC\u6CE8\u6211\u5011\uFF0C\u4EE5\u4FBF\u65E5\u5F8C\u7372\u5F97\u66F4\u591A\u904A\u6232\u6700\u65B0\u6D88\u606F\u3002\n\u8B1D\u8B1D\u60A8\u7684\u9AD4\u9A57\u904A\u73A9\uFF01"
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: Sequence
+        value: SetPortrait(Mai, pic=MaiHappy)
+        type: 0
+        typeString: CustomFieldType_Text
+      - title: ja
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: en
+        value: 
+        type: 4
+        typeString: CustomFieldType_Localization
+      - title: Background Image
+        value: Assets/Arts/CGs/Sidewalk_Night.png
+        type: 0
+        typeString: CustomFieldType_Sprite
+      - title: Comic Image
+        value: 
+        type: 0
+        typeString: CustomFieldType_Sprite
+      conversationID: 13
+      isRoot: 0
+      isGroup: 0
+      nodeColor: 
+      delaySimStatus: 0
+      falseConditionAction: Block
+      conditionPriority: 2
+      outgoingLinks:
+      - originConversationID: 13
+        originDialogueID: 28
+        destinationConversationID: 13
+        destinationDialogueID: 11
+        isConnector: 0
+        priority: 2
+      conditionsString: 
+      userScript: 
+      onExecute:
+        m_PersistentCalls:
+          m_Calls: []
+      canvasRect:
+        serializedVersion: 2
+        x: 1184.5648
+        y: 319.51193
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 112.18655, y: 34.267174}
-    canvasZoom: 0.6535005
+    canvasScrollPosition: {x: 62.126617, y: 0}
+    canvasZoom: 0.82000065
   - id: 17
     fields:
     - title: Title
@@ -18448,8 +19923,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 228
-        y: 96
+        x: 207
+        y: 90
         width: 160
         height: 30
     - id: 2

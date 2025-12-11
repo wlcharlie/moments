@@ -490,6 +490,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a8f794af123954a72ba8dbb668d3d8b3
+    m_Address: Assets/Arts/Comics/CH01_SC05/golden_book_02.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a9100856ee26b42579d92fee5ded5d25
     m_Address: Assets/Arts/Events/HarmonyPark.jpg
     m_ReadOnly: 0
@@ -577,6 +582,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d36ce1c112dce4a4cae22b3527b6c38f
     m_Address: Assets/Arts/CH/CH01/BaiFloat.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d41b26b51281f459baa140143d187098
+    m_Address: Assets/Arts/Comics/CH01_SC05/golden_book_01.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
