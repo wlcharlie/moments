@@ -56,7 +56,7 @@ MonoBehaviour:
     canStoryMode: 1
     canEventMode: 1
   - name: "\u540C\u4E8B\u6A5F\u68B0\u9375\u76E4"
-    thumbnail: {fileID: 4433539168102762298, guid: 4775f0619fada4f058009f2492a677c0, type: 3}
+    thumbnail: {fileID: -1272677867225930765, guid: 7785c0de74d5144fd9b51df49067fcfc, type: 3}
     conversationTitle: COMM_WORK_01
     isAble: 1
     canStoryMode: 1
