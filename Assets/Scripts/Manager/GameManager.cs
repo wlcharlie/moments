@@ -184,6 +184,8 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("進入事件模式");
         CurrentMode = GameMode.Event;
+        // 清除 exploreMap.json
+        PersistentDataManager.Instance.DeleteSaveData("exploreMap");
         if (TransitionManager.Instance != null)
         {
             Debug.Log("開始遊戲過場");
@@ -209,13 +211,6 @@ public class GameManager : MonoBehaviour
     }
 
     // ===== 流程 管理 =====
-
-    // 小遊戲結束後的對話映射表
-    // Key: 存檔中記錄的對話, Value: 小遊戲結束後要進入的對話
-    private static readonly System.Collections.Generic.Dictionary<string, string> minigameNextConversationMap = new()
-    {
-        { "CH01_SC04_SE01", "CH01_SC04_SE02" },
-    };
 
     /// <summary>
     /// 取得小遊戲結束後應該進入的對話
