@@ -14477,7 +14477,13 @@ MonoBehaviour:
       delaySimStatus: 0
       falseConditionAction: Block
       conditionPriority: 2
-      outgoingLinks: []
+      outgoingLinks:
+      - originConversationID: 10
+        originDialogueID: 22
+        destinationConversationID: 10
+        destinationDialogueID: 18
+        isConnector: 0
+        priority: 2
       conditionsString: 
       userScript: 
       onExecute:
@@ -14491,7 +14497,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.8329995
+    canvasZoom: 0.7209992
   - id: 11
     fields:
     - title: Title
@@ -14838,8 +14844,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 87.07677, y: 0}
-    canvasZoom: 1.2080002
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.7235
   - id: 12
     fields:
     - title: Title
@@ -15679,7 +15685,7 @@ MonoBehaviour:
         height: 30
     entryGroups: []
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.996499
+    canvasZoom: 0.82799876
   - id: 13
     fields:
     - title: Title
@@ -17609,8 +17615,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 62.126617, y: 0}
-    canvasZoom: 0.82000065
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.25200054
   - id: 17
     fields:
     - title: Title
