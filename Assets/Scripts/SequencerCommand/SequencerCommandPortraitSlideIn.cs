@@ -21,6 +21,8 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
         private Coroutine slideCoroutine;
         private RectTransform portraitRectTransform;
         private Vector2 originalAnchoredPosition;
+        private Vector2 targetAnchoredPosition;
+        private bool hasTargetPosition;
 
         public void Start()
         {
@@ -39,6 +41,10 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
 
             // 記錄原始位置
             originalAnchoredPosition = portraitRectTransform.anchoredPosition;
+
+            // 目標位置就是原始位置（若被 Continue 中斷，OnDestroy 會直接 snap 到此位置避免停在半路）
+            targetAnchoredPosition = originalAnchoredPosition;
+            hasTargetPosition = true;
             
             // 保存原始位置到靜態變數，供 PortraitRestore 使用
             SequencerCommandPortraitRestore.SaveOriginalPosition(originalAnchoredPosition);
@@ -170,11 +176,17 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
 
         public void OnDestroy()
         {
-            // 如果命令被中斷，確保 portrait 回到正確位置
-            if (portraitRectTransform != null && slideCoroutine != null)
+            // 如果命令被中斷，停止協程並落到終態，避免停在半路（位置）
+            if (portraitRectTransform == null) return;
+
+            if (slideCoroutine != null)
             {
                 StopCoroutine(slideCoroutine);
-                portraitRectTransform.anchoredPosition = originalAnchoredPosition;
+            }
+
+            if (hasTargetPosition)
+            {
+                portraitRectTransform.anchoredPosition = targetAnchoredPosition;
             }
         }
     }

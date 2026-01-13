@@ -8,11 +8,11 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
     /// <summary>
     /// 讓 Portrait 從指定起始位置移動到指定結束位置
     /// 用法: PortraitMove(startX, endX, [duration])
-    /// - startX: 起始位置的 X 座標（相對於原始位置的偏移量）
-    /// - endX: 結束位置的 X 座標（相對於原始位置的偏移量）
+    /// - startX: 起始位置的 X 座標（相對於「保存的原始定位」的偏移量）
+    /// - endX: 結束位置的 X 座標（相對於「保存的原始定位」的偏移量）
     /// - duration: 動畫持續時間（秒），預設為 0.5
     /// 
-    /// 注意：起始點會使用 Unity 中設定的原始位置作為基準
+    /// 注意：基準點會使用第一次保存的原始定位（避免連續命令時 0 變成「當前位置」）
     /// 
     /// 範例:
     /// - PortraitMove(300, 600) - 從原始位置 +300 移動到原始位置 +600，使用預設 0.5 秒
@@ -25,6 +25,8 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
         private Coroutine moveCoroutine;
         private RectTransform portraitRectTransform;
         private Vector2 originalAnchoredPosition;
+        private Vector2 targetAnchoredPosition;
+        private bool hasTargetPosition;
 
         public void Start()
         {
@@ -42,11 +44,12 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
                 return;
             }
 
-            // 記錄原始位置（Unity 中設定的原始位置）
-            originalAnchoredPosition = portraitRectTransform.anchoredPosition;
-            
-            // 保存原始位置到靜態變數，供 PortraitRestore 使用
-            SequencerCommandPortraitRestore.SaveOriginalPosition(originalAnchoredPosition);
+            // 取得基準原始位置：優先使用已保存的原始定位（避免 0 變成「當前位置」）
+            if (!SequencerCommandPortraitRestore.TryGetSavedOriginalPosition(out originalAnchoredPosition))
+            {
+                originalAnchoredPosition = portraitRectTransform.anchoredPosition;
+                SequencerCommandPortraitRestore.SaveOriginalPosition(originalAnchoredPosition);
+            }
 
             // 獲取並保存原始透明度
             CanvasGroup canvasGroup = portraitRectTransform.GetComponent<CanvasGroup>();
@@ -62,8 +65,22 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
             }
             SequencerCommandPortraitRestore.SaveOriginalAlpha(originalAlpha);
 
+            // 計算起始/結束位置（相對於保存的原始定位）
+            Vector2 startPosition = new Vector2(
+                originalAnchoredPosition.x + startX,
+                originalAnchoredPosition.y
+            );
+            Vector2 endPosition = new Vector2(
+                originalAnchoredPosition.x + endX,
+                originalAnchoredPosition.y
+            );
+
+            // 預先計算目標位置（若被 Continue 中斷，OnDestroy 會直接 snap 到此位置避免停在半路）
+            targetAnchoredPosition = endPosition;
+            hasTargetPosition = true;
+
             // 開始移動動畫
-            moveCoroutine = StartCoroutine(MoveCoroutine(startX, endX, duration));
+            moveCoroutine = StartCoroutine(MoveCoroutine(startPosition, endPosition, duration));
         }
 
         private RectTransform FindPortraitImage()
@@ -133,24 +150,13 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
             return null;
         }
 
-        private IEnumerator MoveCoroutine(float startX, float endX, float duration)
+        private IEnumerator MoveCoroutine(Vector2 startPosition, Vector2 endPosition, float duration)
         {
             if (portraitRectTransform == null)
             {
                 Stop();
                 yield break;
             }
-
-            // 計算起始和結束位置（相對於原始位置的偏移量）
-            // 原始位置是 Unity 中設定的初始位置
-            Vector2 startPosition = new Vector2(
-                originalAnchoredPosition.x + startX,
-                originalAnchoredPosition.y
-            );
-            Vector2 endPosition = new Vector2(
-                originalAnchoredPosition.x + endX,
-                originalAnchoredPosition.y
-            );
 
             // 設置起始位置
             portraitRectTransform.anchoredPosition = startPosition;
@@ -183,6 +189,11 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
             if (portraitRectTransform != null && moveCoroutine != null)
             {
                 StopCoroutine(moveCoroutine);
+                // Continue/跳過時避免卡在中間：直接落到目標位置
+                if (hasTargetPosition)
+                {
+                    portraitRectTransform.anchoredPosition = targetAnchoredPosition;
+                }
             }
         }
     }

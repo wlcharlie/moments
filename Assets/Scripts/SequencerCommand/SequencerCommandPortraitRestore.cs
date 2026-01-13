@@ -21,6 +21,9 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
         private RectTransform portraitRectTransform;
         private CanvasGroup portraitCanvasGroup;
         private Image portraitImage;
+        private Vector2 targetAnchoredPosition;
+        private float targetAlpha;
+        private bool hasTargets;
 
         // 靜態變數用於保存原始位置和透明度（由其他 portrait 命令設置）
         private static Vector2? savedOriginalPosition = null;
@@ -48,21 +51,25 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
                 portraitImage = portraitRectTransform.GetComponent<Image>();
             }
 
-            // 計算目標位置：X=200，Y 使用保存的原始位置或當前位置
+            // 計算目標位置：優先使用保存的原始位置（避免 0 變成「當前位置」）
             Vector2 targetPosition;
             if (hasSavedPosition && savedOriginalPosition.HasValue)
             {
-                // 使用保存的原始位置的 Y，但 X 設為 200
-                targetPosition = new Vector2(200f, savedOriginalPosition.Value.y);
+                // 直接還原到保存的原始位置（含 X/Y）
+                targetPosition = savedOriginalPosition.Value;
             }
             else
             {
-                // 如果沒有保存的位置，使用當前 Y，X 設為 200
+                // 如果沒有保存的位置，維持舊行為：X=200，Y 使用當前值
                 targetPosition = new Vector2(200f, portraitRectTransform.anchoredPosition.y);
             }
 
             // 獲取目標透明度（如果有保存的原始透明度，否則設為 1）
-            float targetAlpha = savedOriginalAlpha.HasValue ? savedOriginalAlpha.Value : 1f;
+            targetAlpha = savedOriginalAlpha.HasValue ? savedOriginalAlpha.Value : 1f;
+
+            // 保存目標（若被 Continue 中斷，OnDestroy 會直接 snap 回去避免停在半路）
+            targetAnchoredPosition = targetPosition;
+            hasTargets = true;
 
             // 如果 duration 為 0，立即還原
             if (duration <= 0f)
@@ -220,10 +227,27 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
 
         public void OnDestroy()
         {
-            // 如果命令被中斷，停止協程
-            if (portraitRectTransform != null && restoreCoroutine != null)
+            // 如果命令被中斷，停止協程並落到終態，避免停在半路（位置/透明度）
+            if (portraitRectTransform == null) return;
+
+            if (restoreCoroutine != null)
             {
                 StopCoroutine(restoreCoroutine);
+            }
+
+            if (hasTargets)
+            {
+                portraitRectTransform.anchoredPosition = targetAnchoredPosition;
+                if (portraitCanvasGroup != null)
+                {
+                    portraitCanvasGroup.alpha = targetAlpha;
+                }
+                else if (portraitImage != null)
+                {
+                    Color color = portraitImage.color;
+                    color.a = targetAlpha;
+                    portraitImage.color = color;
+                }
             }
         }
 
@@ -232,8 +256,12 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
         /// </summary>
         public static void SaveOriginalPosition(Vector2 position)
         {
-            savedOriginalPosition = position;
-            hasSavedPosition = true;
+            // 只在第一次保存，避免後續命令把「當前位置」覆蓋掉原始定位
+            if (!hasSavedPosition)
+            {
+                savedOriginalPosition = position;
+                hasSavedPosition = true;
+            }
         }
 
         /// <summary>
@@ -241,7 +269,26 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
         /// </summary>
         public static void SaveOriginalAlpha(float alpha)
         {
-            savedOriginalAlpha = alpha;
+            // 只在第一次保存，避免後續命令覆蓋掉原始透明度
+            if (!savedOriginalAlpha.HasValue)
+            {
+                savedOriginalAlpha = alpha;
+            }
+        }
+
+        /// <summary>
+        /// 靜態方法：嘗試取得保存的原始位置（如果存在）
+        /// </summary>
+        public static bool TryGetSavedOriginalPosition(out Vector2 position)
+        {
+            if (hasSavedPosition && savedOriginalPosition.HasValue)
+            {
+                position = savedOriginalPosition.Value;
+                return true;
+            }
+
+            position = default;
+            return false;
         }
 
         /// <summary>

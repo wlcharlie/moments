@@ -24,6 +24,8 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
         private Image portraitImage;
         private Vector2 originalAnchoredPosition;
         private float originalAlpha;
+        private Vector2 targetAnchoredPosition;
+        private bool hasTargetPosition;
 
         public void Start()
         {
@@ -67,6 +69,13 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
 
             // 保存原始透明度到靜態變數，供 PortraitRestore 使用
             SequencerCommandPortraitRestore.SaveOriginalAlpha(originalAlpha);
+
+            // 預先計算目標位置（若被 Continue 中斷，OnDestroy 會直接 snap 到此位置避免停在半路）
+            targetAnchoredPosition = new Vector2(
+                originalAnchoredPosition.x + offsetX,
+                originalAnchoredPosition.y
+            );
+            hasTargetPosition = true;
 
             // 開始滑出動畫
             slideCoroutine = StartCoroutine(SlideOutCoroutine(duration, offsetX));
@@ -201,10 +210,25 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
 
         public void OnDestroy()
         {
-            // 如果命令被中斷，停止協程
+            // 如果命令被中斷，停止協程並落到終態，避免停在半路（位置/透明度）
             if (portraitRectTransform != null && slideCoroutine != null)
             {
                 StopCoroutine(slideCoroutine);
+                if (hasTargetPosition)
+                {
+                    portraitRectTransform.anchoredPosition = targetAnchoredPosition;
+                }
+
+                if (portraitCanvasGroup != null)
+                {
+                    portraitCanvasGroup.alpha = 0f;
+                }
+                else if (portraitImage != null)
+                {
+                    Color color = portraitImage.color;
+                    color.a = 0f;
+                    portraitImage.color = color;
+                }
             }
         }
     }
