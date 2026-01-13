@@ -860,8 +860,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 696
-        y: 181.31061
+        x: 693.2008
+        y: 179.91101
         width: 160
         height: 30
     - id: 3
@@ -999,7 +999,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 701.18945
-        y: 311.7134
+        y: 313.113
         width: 160
         height: 30
     - id: 6
@@ -1140,7 +1140,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 636
+        x: 634.60046
         y: 36
         width: 160
         height: 30
@@ -1283,7 +1283,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 698.59937
-        y: 117.19176
+        y: 118.591354
         width: 160
         height: 30
     - id: 10
@@ -1353,7 +1353,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 699.8867
+        x: 698.0735
         y: 428.20413
         width: 160
         height: 30
@@ -1642,8 +1642,8 @@ MonoBehaviour:
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 35.64384, y: 0.7192654}
-    canvasZoom: 0.76299727
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.5514975
   - id: 4
     fields:
     - title: Title
@@ -1788,7 +1788,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: "PortraitMove(0,500)@0; \nSetDialoguePanel(true, immediate)@0;\nSetPortrait(Mai,
+        value: "PortraitMove(-100,0)@0; \nSetDialoguePanel(true, immediate)@0;\nSetPortrait(Mai,
           pic=7)@1;"
         type: 0
         typeString: CustomFieldType_Text
@@ -1834,7 +1834,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 96
-        y: 396
+        y: 393.59036
         width: 160
         height: 30
     - id: 2
@@ -1907,7 +1907,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 96
-        y: 444
+        y: 445.20483
         width: 160
         height: 30
     - id: 5
@@ -2866,7 +2866,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 'PortraitMove(0,-500)@0;
+        value: 'PortraitMove(500,0)@0;
 
           PortraitRestore();
 
@@ -11380,7 +11380,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 170.62625
-        y: 70.16162
+        y: 71.57805
         width: 160
         height: 30
     - id: 2
@@ -11525,7 +11525,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 168.31299
+        x: 170.60922
         y: 228.04031
         width: 160
         height: 30
@@ -11556,7 +11556,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: SetPortrait(Mai, pic=16);PortraitSlideIn(0.7);
+        value: 'SetPortrait(Mai, pic=16);
+
+          required PortraitSlideIn(0.7);'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -11596,8 +11598,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 170.78792
-        y: 341.1212
+        x: 165.53372
+        y: 336.7935
         width: 160
         height: 30
     - id: 6
@@ -11667,8 +11669,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 169.52525
-        y: 409.74722
+        x: 171.82149
+        y: 410.32523
         width: 160
         height: 30
     - id: 12
@@ -11739,7 +11741,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 170.22217
-        y: 179.39247
+        y: 178.05647
         width: 160
         height: 30
     - id: 13
@@ -11807,7 +11809,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 192
-        y: 516
+        y: 515.12024
         width: 160
         height: 30
     - id: 14
@@ -11837,7 +11839,15 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: PortraitMove(0, 500)@0;Continue()@0.75;
+        value: 'SetContinueMode(false);
+
+          PortraitMove(0, 500, 0.75) ->
+          Message(PortraitMoveDone);
+
+          SetContinueMode(true) @Message(PortraitMoveDone);
+
+          Continue()
+          @Message(PortraitMoveDone);'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -11856,6 +11866,10 @@ MonoBehaviour:
         value: 
         type: 0
         typeString: CustomFieldType_Sprite
+      - title: Response Menu Sequence
+        value: 
+        type: 0
+        typeString: 
       conversationID: 9
       isRoot: 0
       isGroup: 0
@@ -11877,8 +11891,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 366.5455
-        y: 228.79785
+        x: 367.7221
+        y: 223.79486
         width: 160
         height: 30
     - id: 15
@@ -11908,7 +11922,9 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: PortraitMove(0, -500)@0.;Continue()@0.75;
+        value: 'required PortraitMove(500, 0)@.25;
+
+          Continue() @8;'
         type: 0
         typeString: CustomFieldType_Text
       - title: ja
@@ -11952,13 +11968,13 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 374.121
-        y: 336.87878
+        x: 371.60843
+        y: 334.10236
         width: 160
         height: 30
     entryGroups: []
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.48400128
+    canvasScrollPosition: {x: 164.50362, y: 147.42871}
+    canvasZoom: 0.7294982
   - id: 27
     fields:
     - title: Title
