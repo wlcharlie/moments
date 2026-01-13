@@ -292,6 +292,21 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
         }
 
         /// <summary>
+        /// 靜態方法：嘗試取得保存的原始透明度（如果存在）
+        /// </summary>
+        public static bool TryGetSavedOriginalAlpha(out float alpha)
+        {
+            if (savedOriginalAlpha.HasValue)
+            {
+                alpha = savedOriginalAlpha.Value;
+                return true;
+            }
+
+            alpha = 1f;
+            return false;
+        }
+
+        /// <summary>
         /// 靜態方法：清除保存的位置和透明度
         /// </summary>
         public static void ClearSavedPosition()
